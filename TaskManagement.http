@@ -1,0 +1,28 @@
+# Cambiar según sea necesario para apuntar a tu instancia local o de desarrollo.
+@host = https://localhost:5001
+@taskId = 00000000-0000-0000-0000-000000000000
+
+# Generar con:
+# dotnet user-jwts create --project ./src/TaskManagement.API/TaskManagement.API.csproj --audience https://localhost:5001 --audience http://localhost:5000 --claim nameid=11111111-1111-1111-1111-111111111111 --claim name=dev-user --output token
+@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiI3MjRjMWQ3YiIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc3ODc4NjM2NSwiZXhwIjoxNzg2NzM1MTY1LCJpYXQiOjE3Nzg3ODYzNjUsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.ievH6W81g0ub7oPXgNDyXpSIOonVEpeYAqOS3e1lt_w
+
+### Create Task
+# This endpoint reads CreatedBy from User.GetUserId(), so use a token that contains NameIdentifier (sub/nameid).
+POST {{host}}/api/tasks
+Authorization: Bearer {{bearerToken}}
+Content-Type: application/json
+
+{
+  "title": "Finish Clean Architecture demo",
+  "description": "Wire up in-memory SQLite and verify endpoint tests",
+  "priority": "High",
+  "dueDate": "2026-05-20T18:00:00Z"
+}
+
+### Get Task By Id
+GET {{host}}/api/tasks/{{taskId}}
+Accept: application/json
+
+### Complete Task
+POST {{host}}/api/tasks/{{taskId}}/complete
+Accept: application/json
