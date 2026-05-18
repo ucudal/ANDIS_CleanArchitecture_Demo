@@ -1,16 +1,21 @@
 // TaskManagement.API/Middleware/ExceptionHandlingMiddleware.cs
-namespace TaskManagement.API.Middleware;
-
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
 using TaskManagement.Application.Exceptions;
 using TaskManagement.Domain.Exceptions;
 
-public sealed class ExceptionHandlingMiddleware
+namespace TaskManagement.API.Middleware;
+
+internal sealed class ExceptionHandlingMiddleware
 {
+    private static readonly Action<ILogger, string, Exception?> LogRequestFailure =
+        LoggerMessage.Define<string>(
+            LogLevel.Error,
+            new EventId(1000, nameof(ExceptionHandlingMiddleware)),
+            "Request failed: {Message}");
+
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+
     public ExceptionHandlingMiddleware(
         RequestDelegate next,
         ILogger<ExceptionHandlingMiddleware> logger)
@@ -18,18 +23,24 @@ public sealed class ExceptionHandlingMiddleware
         _next = next;
         _logger = logger;
     }
+
     public async Task InvokeAsync(HttpContext context)
     {
+        ArgumentNullException.ThrowIfNull(context);
+
         try
         {
-            await _next(context);
+            await _next(context).ConfigureAwait(false);
         }
+#pragma warning disable CA1031
         catch (Exception ex)
+#pragma warning restore CA1031
         {
-            _logger.LogError(ex, "Request failed: {Message}", ex.Message);
-            await HandleExceptionAsync(context, ex);
+            LogRequestFailure(_logger, ex.Message, ex);
+            await HandleExceptionAsync(context, ex).ConfigureAwait(false);
         }
     }
+
     private static Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         context.Response.ContentType = "application/json";

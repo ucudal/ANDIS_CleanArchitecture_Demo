@@ -1,25 +1,23 @@
 // TaskManagement.API/Controllers/TasksController.cs
-namespace TaskManagement.API.Controllers;
-
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TaskManagement.API.Requests;
 using TaskManagement.API.Extensions;
+using TaskManagement.API.Requests;
 using TaskManagement.Application.Commands.CompleteTask;
 using TaskManagement.Application.Commands.CreateTask;
 using TaskManagement.Application.Queries.GetTaskById;
 
-[ApiController]
-[Route("api/[controller]")]
-[Produces("application/json")]
-public sealed class TasksController : ControllerBase
+namespace TaskManagement.API.Controllers;
+
+internal sealed class TasksController : ControllerBase
 {
     private readonly IMediator _mediator;
     public TasksController(IMediator mediator)
     {
         _mediator = mediator;
     }
+
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(TaskDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -29,7 +27,7 @@ public sealed class TasksController : ControllerBase
     {
         var result = await _mediator.Send(
             new GetTaskByIdQuery(id),
-            cancellationToken);
+            cancellationToken).ConfigureAwait(false);
 
         if (result.IsSuccess)
         {
@@ -49,6 +47,8 @@ public sealed class TasksController : ControllerBase
         [FromBody] CreateTaskRequest request,
         CancellationToken cancellationToken)
     {
+        ArgumentNullException.ThrowIfNull(request);
+
         var command = new CreateTaskCommand(
             request.Title,
             request.Description,
@@ -56,13 +56,16 @@ public sealed class TasksController : ControllerBase
             request.DueDate,
             User.GetUserId() // Extension method
         );
-        var result = await _mediator.Send(command, cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken).ConfigureAwait(false);
 
         if (result.IsSuccess)
         {
             return CreatedAtAction(
                 nameof(GetById),
-                new { id = result.Value },
+                new
+                {
+                    id = result.Value
+                },
                 result.Value);
         }
 
@@ -79,7 +82,7 @@ public sealed class TasksController : ControllerBase
     {
         var result = await _mediator.Send(
             new CompleteTaskCommand(id),
-            cancellationToken);
+            cancellationToken).ConfigureAwait(false);
 
         if (result.IsSuccess)
         {
@@ -98,7 +101,7 @@ public sealed class TasksController : ControllerBase
             Status = StatusCodes.Status400BadRequest
         };
     }
-    
+
     private static ValidationProblemDetails CreateValidationProblemDetails(
         IReadOnlyList<string> errors)
     {

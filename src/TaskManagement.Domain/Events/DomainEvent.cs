@@ -1,7 +1,7 @@
 // TaskManagement.Domain/Events/DomainEvent.cs
-namespace TaskManagement.Domain.Events;
-
 using TaskManagement.Domain.Entities;
+
+namespace TaskManagement.Domain.Events;
 
 public abstract class DomainEvent
 {
@@ -10,9 +10,18 @@ public abstract class DomainEvent
 }
 public class TaskCreatedEvent : DomainEvent
 {
-    public Guid TaskId { get; }
-    public string Title { get; }
-    public Guid CreatedBy { get; }
+    public Guid TaskId
+    {
+        get;
+    }
+    public string Title
+    {
+        get;
+    }
+    public Guid CreatedBy
+    {
+        get;
+    }
     public TaskCreatedEvent(Guid taskId, string title, Guid createdBy)
     {
         TaskId = taskId;
@@ -22,8 +31,14 @@ public class TaskCreatedEvent : DomainEvent
 }
 public class TaskCompletedEvent : DomainEvent
 {
-    public Guid TaskId { get; }
-    public DateTime CompletedAt { get; }
+    public Guid TaskId
+    {
+        get;
+    }
+    public DateTime CompletedAt
+    {
+        get;
+    }
     public TaskCompletedEvent(Guid taskId, DateTime completedAt)
     {
         TaskId = taskId;
@@ -32,9 +47,18 @@ public class TaskCompletedEvent : DomainEvent
 }
 public class TaskAssignedEvent : DomainEvent
 {
-    public Guid TaskId { get; }
-    public Guid AssignedTo { get; }
-    public Guid? PreviousAssignee { get; }
+    public Guid TaskId
+    {
+        get;
+    }
+    public Guid AssignedTo
+    {
+        get;
+    }
+    public Guid? PreviousAssignee
+    {
+        get;
+    }
     public TaskAssignedEvent(Guid taskId, Guid assignedTo, Guid? previousAssignee)
     {
         TaskId = taskId;
@@ -44,9 +68,18 @@ public class TaskAssignedEvent : DomainEvent
 }
 public class TaskPriorityChangedEvent : DomainEvent
 {
-    public Guid TaskId { get; }
-    public TaskPriority OldPriority { get; }
-    public TaskPriority NewPriority { get; }
+    public Guid TaskId
+    {
+        get;
+    }
+    public TaskPriority OldPriority
+    {
+        get;
+    }
+    public TaskPriority NewPriority
+    {
+        get;
+    }
     public TaskPriorityChangedEvent(Guid taskId, TaskPriority oldPriority, TaskPriority newPriority)
     {
         TaskId = taskId;

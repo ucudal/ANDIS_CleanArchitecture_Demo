@@ -1,14 +1,16 @@
 // TaskManagement.Infrastructure/Persistence/Configurations/TaskConfiguration.cs
-namespace TaskManagement.Infrastructure.Persistence.Configurations;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TaskManagement.Domain.Entities;
+
+namespace TaskManagement.Infrastructure.Persistence.Configurations;
 
 public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
 {
     public void Configure(EntityTypeBuilder<TaskItem> builder)
     {
+        ArgumentNullException.ThrowIfNull(builder);
+
         builder.ToTable("Tasks");
         builder.HasKey(t => t.Id);
         builder.Property(t => t.Title)

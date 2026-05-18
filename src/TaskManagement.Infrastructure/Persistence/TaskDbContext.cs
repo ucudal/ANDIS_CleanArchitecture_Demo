@@ -1,9 +1,9 @@
-namespace TaskManagement.Infrastructure.Persistence;
-
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Infrastructure.Persistence.Configurations;
+
+namespace TaskManagement.Infrastructure.Persistence;
 
 public sealed class TaskDbContext : DbContext, IUnitOfWork
 {
@@ -13,6 +13,8 @@ public sealed class TaskDbContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        ArgumentNullException.ThrowIfNull(modelBuilder);
+
         modelBuilder.ApplyConfiguration(new TaskConfiguration());
         base.OnModelCreating(modelBuilder);
     }

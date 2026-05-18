@@ -1,8 +1,8 @@
-namespace TaskManagement.API.Extensions;
-
 using System.Security.Claims;
 
-public static class ClaimsPrincipalExtensions
+namespace TaskManagement.API.Extensions;
+
+internal static class ClaimsPrincipalExtensions
 {
     public static Guid GetUserId(this ClaimsPrincipal user)
     {

@@ -1,6 +1,6 @@
-namespace TaskManagement.Domain.Interfaces;
-
 using TaskManagement.Domain.Events;
+
+namespace TaskManagement.Domain.Interfaces;
 
 public interface IDomainEventDispatcher
 {

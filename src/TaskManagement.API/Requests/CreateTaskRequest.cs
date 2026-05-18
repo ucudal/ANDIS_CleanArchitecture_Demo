@@ -1,8 +1,8 @@
-namespace TaskManagement.API.Requests;
-
 using TaskManagement.Domain.Entities;
 
-public sealed record CreateTaskRequest(
+namespace TaskManagement.API.Requests;
+
+internal sealed record CreateTaskRequest(
     string Title,
     string Description,
     TaskPriority Priority,

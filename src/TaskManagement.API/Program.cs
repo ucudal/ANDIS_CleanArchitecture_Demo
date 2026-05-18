@@ -1,21 +1,26 @@
 // TaskManagement.API/Program.cs
-using TaskManagement.API.Extensions;
+
+using System.Reflection;
+using System.Text.Json.Serialization;
+using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using TaskManagement.API.Middleware;
+using TaskManagement.Application.Behaviors;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Interfaces;
 using TaskManagement.Infrastructure.EventDispatching;
 using TaskManagement.Infrastructure.Persistence;
 using TaskManagement.Infrastructure.Persistence.Repositories;
-using MediatR;
-using FluentValidation;
-using TaskManagement.Application.Behaviors;
-using Microsoft.Data.Sqlite;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Load user-secrets explicitly so dotnet user-jwts tokens work even when
+// the process is started without ASPNETCORE_ENVIRONMENT=Development.
+builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: true);
 
 const string connectionString = "Data Source=file:taskmanagement?mode=memory&cache=shared";
 builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
@@ -23,10 +28,12 @@ builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
     ["ConnectionStrings:DefaultConnection"] = connectionString
 });
 
-var keepAliveConnection = new SqliteConnection(connectionString);
-keepAliveConnection.Open();
-
-builder.Services.AddSingleton(keepAliveConnection);
+builder.Services.AddSingleton<SqliteConnection>(_ =>
+{
+    var connection = new SqliteConnection(connectionString);
+    connection.Open();
+    return connection;
+});
 
 var bearerSection = builder.Configuration.GetSection("Authentication:Schemes:Bearer");
 var validIssuer = bearerSection["ValidIssuer"];
@@ -86,7 +93,10 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure middleware pipeline
-app.UseExceptionHandling();
+
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

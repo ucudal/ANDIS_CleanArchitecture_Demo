@@ -1,7 +1,7 @@
 // TaskManagement.Domain/Interfaces/ITaskRepository.cs
-namespace TaskManagement.Domain.Interfaces;
-
 using TaskManagement.Domain.Entities;
+
+namespace TaskManagement.Domain.Interfaces;
 
 public interface ITaskRepository
 {

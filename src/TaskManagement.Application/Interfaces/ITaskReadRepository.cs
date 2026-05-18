@@ -1,6 +1,6 @@
-namespace TaskManagement.Application.Interfaces;
-
 using TaskManagement.Application.Queries.GetTaskById;
+
+namespace TaskManagement.Application.Interfaces;
 
 public interface ITaskReadRepository
 {

@@ -1,13 +1,20 @@
-# Cambiar según sea necesario para apuntar a tu instancia local o de desarrollo.
 @host = https://localhost:5001
-@taskId = 00000000-0000-0000-0000-000000000000
 
-# Generar con:
-# dotnet user-jwts create --project ./src/TaskManagement.API/TaskManagement.API.csproj --audience https://localhost:5001 --audience http://localhost:5000 --claim nameid=11111111-1111-1111-1111-111111111111 --claim name=dev-user --output token
-@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiI3MjRjMWQ3YiIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc3ODc4NjM2NSwiZXhwIjoxNzg2NzM1MTY1LCJpYXQiOjE3Nzg3ODYzNjUsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.ievH6W81g0ub7oPXgNDyXpSIOonVEpeYAqOS3e1lt_w
+# Actualizar esta variable con el ID de la tarea creada en el endpoint "Create
+# Task". Este ID se usará en los endpoints "Get Task By Id" y "Complete Task".
+@taskId = b1452c02-bffe-4c32-aedb-a2cf13f24129
 
-### Create Task
-# This endpoint reads CreatedBy from User.GetUserId(), so use a token that contains NameIdentifier (sub/nameid).
+# El endpoint para generar una tarea requiere autenticación. Generar el token
+# requerido con el siguiente comando, ejecutado en la raíz del proyecto y
+# copiarlo en la variable bearerToken a continuación.
+#
+#   dotnet user-jwts create --project ./src/TaskManagement.API/TaskManagement.API.csproj --audience https://localhost:5001 --audience http://localhost:5000 --claim nameid=11111111-1111-1111-1111-111111111111 --claim name=dev-user --output token
+#
+@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiI3ZDc3MjIwYyIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc3ODc5NzM1NSwiZXhwIjoxNzg2NzQ2MTU1LCJpYXQiOjE3Nzg3OTczNTYsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.ZsUbrxttpO_jp7JmP9xItwq0_5vgPU82kj17p3dJu5k
+
+# Create Task: crea una tarea nueva; copiar el ID de la tarea creada y
+# actualizar la variable taskId para usarla en los endpoints Get Task By Id y
+# Complete Task.
 POST {{host}}/api/tasks
 Authorization: Bearer {{bearerToken}}
 Content-Type: application/json
@@ -19,10 +26,15 @@ Content-Type: application/json
   "dueDate": "2026-05-20T18:00:00Z"
 }
 
-### Get Task By Id
+# Get Task By Id: recupera una tarea; el ID debe ser el mismo que el de la tarea
+# creada en el endpoint Create Task.
 GET {{host}}/api/tasks/{{taskId}}
 Accept: application/json
 
-### Complete Task
+# Complete Task: marca una tarea como completada; el ID debe ser el mismo que el
+# de la tarea creada en el endpoint Create Task. Después de completar la tarea,
+# se puede usar el endpoint Get Task By Id para verificar que su estado se ha
+# actualizado a "Completed".
 POST {{host}}/api/tasks/{{taskId}}/complete
+Authorization: Bearer {{bearerToken}}
 Accept: application/json

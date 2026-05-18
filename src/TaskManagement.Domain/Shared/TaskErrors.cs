@@ -1,4 +1,4 @@
-namespace TaskManagement.Domain.Shared;
+namespace TaskManagement.Domain.Common;
 
 public static class TaskErrors
 {

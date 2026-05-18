@@ -1,10 +1,9 @@
 // TaskManagement.Infrastructure/Persistence/Repositories/TaskRepository.cs
-namespace TaskManagement.Infrastructure.Persistence.Repositories;
-
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Domain.Interfaces;
-using TaskManagement.Infrastructure.Persistence;
+
+namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
 public sealed class TaskRepository : ITaskRepository
 {
@@ -19,7 +18,7 @@ public sealed class TaskRepository : ITaskRepository
     {
         return await _dbContext.Tasks
             .AsNoTracking() // Read-only query
-            .FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+            .FirstOrDefaultAsync(t => t.Id == id, cancellationToken).ConfigureAwait(false);
     }
     public async Task<IReadOnlyList<TaskItem>> GetByAssigneeAsync(
         Guid userId,
@@ -30,21 +29,22 @@ public sealed class TaskRepository : ITaskRepository
             .Where(t => t.AssignedTo == userId)
             .OrderByDescending(t => t.Priority)
             .ThenBy(t => t.DueDate)
-            .ToListAsync(cancellationToken);
+            .ToListAsync(cancellationToken).ConfigureAwait(false);
     }
     public async Task<IReadOnlyList<TaskItem>> GetOverdueAsync(
         CancellationToken cancellationToken = default)
     {
         return await _dbContext.Tasks
             .AsNoTracking()
-            .Where(t => t.DueDate < DateTime.UtcNow && t.Status != TaskStatus.Completed)
-            .ToListAsync(cancellationToken);
+            .Where(t => t.DueDate < DateTime.UtcNow
+                && t.Status != TaskManagement.Domain.Entities.TaskStatus.Completed)
+            .ToListAsync(cancellationToken).ConfigureAwait(false);
     }
     public async Task AddAsync(
         TaskItem task,
         CancellationToken cancellationToken = default)
     {
-        await _dbContext.Tasks.AddAsync(task, cancellationToken);
+        await _dbContext.Tasks.AddAsync(task, cancellationToken).ConfigureAwait(false);
     }
     public void Update(TaskItem task)
     {

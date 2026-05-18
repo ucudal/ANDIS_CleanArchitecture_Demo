@@ -1,11 +1,11 @@
 // TaskManagement.Application/Commands/CreateTask/CreateTaskCommand.cs
-namespace TaskManagement.Application.Commands.CreateTask;
-
 using MediatR;
 using TaskManagement.Application.Interfaces;
+using TaskManagement.Domain.Common;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Domain.Interfaces;
-using TaskManagement.Domain.Shared;
+
+namespace TaskManagement.Application.Commands.CreateTask;
 
 public sealed record CreateTaskCommand(
     string Title,
@@ -35,6 +35,8 @@ public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand
         CreateTaskCommand request,
         CancellationToken cancellationToken)
     {
+        ArgumentNullException.ThrowIfNull(request);
+
         var createResult = TaskItem.Create(
             request.Title,
             request.Description,
@@ -42,13 +44,13 @@ public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand
             request.DueDate,
             request.CreatedBy);
         if (createResult.IsFailure)
-            return Result<Guid>.Failure(createResult.Errors);
+            return Result.Failure<Guid>(createResult.Errors);
         var task = createResult.Value!;
-        await _taskRepository.AddAsync(task, cancellationToken);
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
+        await _taskRepository.AddAsync(task, cancellationToken).ConfigureAwait(false);
+        await _unitOfWork.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         // Dispatch domain events after successful persistence
-        await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken);
+        await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken).ConfigureAwait(false);
         task.ClearDomainEvents();
-        return Result<Guid>.Success(task.Id);
+        return Result.Success(task.Id);
     }
 }
