@@ -5,6 +5,40 @@ using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
+/// <summary>
+/// TaskRepository is the write repository for TaskItem entities.
+///
+/// Role in Clean Architecture:
+/// - Part of the Infrastructure Layer
+/// - Implements ITaskRepository interface (defined in Domain Layer)
+/// - Data access implementation: Translates domain operations to database queries
+/// - Dependency inversion: Domain depends on interface, not this implementation
+///
+/// Repository Pattern Benefits:
+/// - Abstracts Entity Framework details from domain and application layers
+/// - Provides domain-oriented API (not query-focused)
+/// - Enables unit testing through mock implementations
+/// - Allows swapping database technology without changing application code
+///
+/// Write Operations vs Read Operations:
+/// - This repository: Write operations (Add, Update, Delete)
+/// - TaskReadRepository: Read operations (optimized queries)
+/// - Separation follows CQRS: Different strategies for reads and writes
+///
+/// Implementation Details:
+/// - Uses Entity Framework Core for database access
+/// - AsNoTracking for read-only queries (GetByIdAsync, GetByAssigneeAsync, GetOverdueAsync)
+/// - Tracking enabled for write operations (AddAsync, Update, Delete)
+/// - Returns immutable collections (IReadOnlyList) to prevent client modifications
+///
+/// Methods:
+/// - GetByIdAsync: Find task by ID (read)
+/// - GetByAssigneeAsync: Find tasks assigned to user (read)
+/// - GetOverdueAsync: Find incomplete overdue tasks (read)
+/// - AddAsync: Persist new task entity (write)
+/// - Update: Mark existing task for update (write)
+/// - Delete: Mark existing task for deletion (write)
+/// </summary>
 public sealed class TaskRepository : ITaskRepository
 {
     private readonly TaskDbContext _dbContext;

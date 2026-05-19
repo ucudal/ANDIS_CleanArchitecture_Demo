@@ -10,6 +10,41 @@ using TaskManagement.Application.Queries.GetTaskById;
 
 namespace TaskManagement.API.Controllers;
 
+/// <summary>
+/// TasksController is the REST API endpoint for task management operations.
+///
+/// Role in Clean Architecture:
+/// - Part of the UI Layer (API presentation)
+/// - Entry point for HTTP requests
+/// - Translates HTTP requests to application commands/queries
+/// - Handles HTTP-specific concerns (status codes, content negotiation)
+/// - No business logic: delegates to application layer
+///
+/// Controller Responsibilities:
+/// - Map HTTP routes to business operations
+/// - Accept HTTP requests and convert to commands/queries
+/// - Handle authorization and authentication
+/// - Invoke application layer through MediatR
+/// - Transform results to appropriate HTTP responses
+/// - Handle exceptions and return error responses
+///
+/// Separation of Concerns:
+/// - Does NOT contain business logic (delegated to application)
+/// - Does NOT interact directly with database (delegated to infrastructure)
+/// - Does NOT validate business rules (delegated to domain/application)
+/// - Only translates HTTP semantics to application operations
+///
+/// Dependencies:
+/// - IMediator: Send commands and queries to application layer
+/// - Authorization: Validate user permissions before operations
+/// - DTOs (CreateTaskRequest, TaskDto): Transfer data
+///
+/// Design Patterns:
+/// - Command/Query pattern through MediatR
+/// - Result pattern for consistent error handling
+/// - REST conventions (POST for creation, DELETE for removal, etc.)
+/// - HTTP status codes: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.
+/// </summary>
 internal sealed class TasksController : ControllerBase
 {
     private readonly IMediator _mediator;

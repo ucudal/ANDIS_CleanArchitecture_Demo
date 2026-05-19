@@ -1,4 +1,41 @@
-// TaskManagement.API/Program.cs
+// This file is the composition root and startup configuration for the application.
+//
+// Role in Clean Architecture:
+// - Part of the UI Layer (API layer)
+// - Composition Root: Wires up all dependencies through Dependency Injection
+// - Configuration: Sets up middleware pipeline, authentication, and services
+// - Entry point: ASP.NET Core executes this file on application startup
+//
+// Responsibilities:
+// - Register services from all layers into the DI container
+// - Configure authentication and authorization
+// - Add data access and persistence services
+// - Configure middleware pipeline (order matters!)
+// - Initialize database if needed
+//
+// Dependency Injection Pattern:
+// - Registers interfaces from Application and Domain layers
+// - Implementations from Infrastructure layer
+// - Controllers use registered services (constructor injection)
+// - MediatR handlers use registered services
+//
+// Architecture Layer Registration:
+// - Domain Layer: IUnitOfWork, ITaskRepository, IDomainEventDispatcher
+// - Application Layer: MediatR, FluentValidation, ValidationBehavior
+// - Infrastructure Layer: DbContext, Repositories, Event Dispatcher
+// - UI Layer: Controllers, Middleware
+//
+// Composition Root Guidelines:
+// - UI layer can reference Infrastructure for DI registration
+// - Infrastructure implements interfaces from other layers
+// - Domain and Application layers remain independent
+// - This file is the only place Infrastructure is directly referenced
+//
+// Middleware Pipeline:
+// - Order is critical: earlier middleware processes requests first
+// - ExceptionHandlingMiddleware: Usually first to catch all exceptions
+// - Authentication, Authorization: Security-related middleware
+// - MapControllers: Routes requests to controllers
 
 using System.Reflection;
 using System.Text.Json.Serialization;

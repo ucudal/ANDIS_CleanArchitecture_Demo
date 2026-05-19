@@ -3,3 +3,14 @@ https://medium.com/@michaelmaurice410/clean-architecture-in-net-a-complete-produ
 
 
 ![Task Management Containers](https://www.plantuml.com/plantuml/png/ZLDDRzD04BtxLmpcW2EXvD8JGgYj7MXGceJ4ACTeR4_2qlMkjRkkY13_dTcrtI3SIit17vitxyrxCtu7duMa3v2ZVRX7XIUgIRb3gfL3eSZOQTFMChgs3etpJs-4AcLR4NnChsRfrGNvAOesZDSgQIsPzn1_vrlCzzGGEhA0ge8wI5XmB6VZIHJjpjPHVRZLhQhGd1DxjbpYku5BEz2XuWdyZe1_Jve9DgA7Nz3Jcyt2wzxiDjFLF6Uq8TXJ0VtvNPvlW5JLQA6SXQCsePs-Dy_0ZVqlqpmZqpHIbEY4Li7cMqWbMWjBKHYs4dSHG8cMs5EMh_dgCs1LCaSioOvqAbtpmrWg2-SlgSoL4qvuaKUKBO4kVbBf-BMZ0wbFeXnf2NKqE9PQ-6FhJ5kwrj1BadxIWcUYIWgUw1TxKYY3kPC9eOpiPKLI5SDqirlFi_ksX0mT5XnIU7Syh7uz0h4XoSjJGSKWvliJHLkI_OPrm-UCxJ3MsTVTUkNNoeF2tzta5kfHFp1lEyo3CK-G8GXF15YmTon3_o3gHePKk84Vn6aCLSsGxL3M9rthYkI_g9xxbUIXhYy9IMq9AplR6-4wZ-ljFSo0GmkVpjrwVrZElynNMJA9hdcZ_VVv5m00)
+
+## FluentValidation
+
+[FluentValidation](https://github.com/FluentValidation/FluentValidation) es una
+librería de .NET para constuir reglas de validación fuertemente tipadas.
+
+
+
+
+
+

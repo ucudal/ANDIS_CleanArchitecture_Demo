@@ -7,6 +7,43 @@ using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.EventDispatching;
 
+/// <summary>
+/// MediatRDomainEventDispatcher is the implementation of domain event publishing using MediatR.
+///
+/// Role in Clean Architecture:
+/// - Part of the Infrastructure Layer
+/// - Implements IDomainEventDispatcher interface (defined in Domain Layer)
+/// - Infrastructure concern: Details of how events are dispatched
+/// - Decouples domain logic from event handling mechanisms
+///
+/// Domain Event Dispatching:
+/// - Publishes domain events raised by aggregates
+/// - Executes registered event handlers asynchronously
+/// - Supports cross-cutting concerns (emails, notifications, logging)
+/// - Maintains clean domain code free of infrastructure knowledge
+///
+/// MediatR Integration:
+/// - Uses MediatR.Publish for async event distribution
+/// - Supports multiple handlers per event
+/// - Handlers execute in parallel unless explicitly ordered
+/// - Supports transaction handling and error resilience
+///
+/// Event Flow:
+/// 1. Domain entity raises domain event (e.g., TaskCreatedEvent)
+/// 2. Application service persists entity changes
+/// 3. Application service calls IDomainEventDispatcher.DispatchAsync
+/// 4. MediatRDomainEventDispatcher publishes events via MediatR
+/// 5. MediatR finds and executes all registered INotificationHandler&lt;TEvent&gt;
+/// 6. Handlers execute side effects (send email, update read model, etc.)
+///
+/// Benefits:
+/// - Decouples events from handlers
+/// - Supports multiple handlers per event without coordination
+/// - Infrastructure can be swapped (MediatR -> other event bus)
+/// - Handlers can be added/removed without domain changes
+/// - Enables asynchronous and delayed event processing
+/// </summary>
+
 public sealed class MediatRDomainEventDispatcher : IDomainEventDispatcher
 {
     private readonly IMediator _mediator;

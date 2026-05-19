@@ -9,6 +9,41 @@ using TaskManagement.Application.Queries.SearchTasks;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
+/// <summary>
+/// TaskReadRepository is the read repository for optimized task queries.
+///
+/// Role in Clean Architecture:
+/// - Part of the Infrastructure Layer
+/// - Implements ITaskReadRepository interface (defined in Application Layer)
+/// - Optimized data access: Provides efficient read-only queries
+/// - Dependency inversion: Application depends on interface, not this implementation
+///
+/// CQRS Pattern - Read Side:
+/// - Separated from write repository (TaskRepository)
+/// - Optimized for query performance and scalability
+/// - Can use different technologies (Dapper, raw SQL, read models)
+/// - Returns DTOs instead of domain entities
+///
+/// Read Repository Benefits:
+/// - Independent optimization from write model
+/// - Can use raw SQL or specialized query tools
+/// - Can query denormalized views or materialized read models
+/// - Returns only required fields (projection)
+/// - Supports caching strategies optimized for reads
+///
+/// Separation Benefits:
+/// - Write side optimizes for consistency and business rules
+/// - Read side optimizes for query performance and data shape
+/// - Can scale independently based on read/write patterns
+/// - Supports eventual consistency patterns
+///
+/// Implementation:
+/// - Uses ITaskReadRepository interface from Application Layer
+/// - Typically uses Dapper or Entity Framework with AsNoTracking
+/// - Returns IReadOnlyList&lt;TaskDto&gt; for read operations
+/// - Handles pagination for large result sets
+/// </summary>
+
 public sealed class TaskReadRepository : ITaskReadRepository
 {
     private readonly string _connectionString;
