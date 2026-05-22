@@ -1,0 +1,3 @@
+<map id="TaskManagement.Application.Interfaces.IUnitOfWork" name="TaskManagement.Application.Interfaces.IUnitOfWork">
+<area shape="rect" id="Node000001" title="IUnitOfWork es la abstracción para coordinar la persistencia de cambios de entidades." alt="" coords="5,5,191,87"/>
+</map>

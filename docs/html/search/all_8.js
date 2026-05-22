@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['dark_20mode_0',['Disable Dark Mode',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2tricks.html#tricks-darkmode',1,'']]],
+  ['dark_20mode_20toggle_1',['Dark Mode Toggle',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2extensions.html#extension-dark-mode-toggle',1,'']]],
+  ['dbcontext_2',['DbContext',['../classDbContext.html',1,'']]],
+  ['de_20aplicación_3',['2. Capa de aplicación',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md52',1,'']]],
+  ['de_20clases_20e_20interfaces_20definidos_20en_20cada_20capa_4',['Resumen de clases e interfaces definidos en cada capa',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md50',1,'']]],
+  ['de_20clean_20architecture_5',['Beneficios de Clean Architecture',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md57',1,'']]],
+  ['de_20dominio_6',['1. Capa de dominio',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md51',1,'']]],
+  ['de_20infraestructura_7',['3. Capa de infraestructura',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md54',1,'']]],
+  ['de_20interfaz_8',['4. Capa de interfaz',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md55',1,'']]],
+  ['de_20proyectos_9',['Estructura de proyectos',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md45',1,'']]],
+  ['definidos_20en_20cada_20capa_10',['Resumen de clases e interfaces definidos en cada capa',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md50',1,'']]],
+  ['dependency_11',['npm/xpm dependency',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/doxygen-awesome-css/README.md#autotoc_md38',1,'']]],
+  ['deprecated_20list_12',['Deprecated List',['../deprecated.html',1,'']]],
+  ['diagrams_13',['Diagrams',['../classMyLibrary_1_1Example.html#autotoc_md26',1,'']]],
+  ['diagrams_20with_20graphviz_14',['Diagrams with Graphviz',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2tricks.html#tricks-graphviz',1,'']]],
+  ['disable_20dark_20mode_15',['Disable Dark Mode',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2tricks.html#tricks-darkmode',1,'']]],
+  ['domainevent_16',['DomainEvent',['../classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html',1,'TaskManagement::Domain::Events']]],
+  ['domaineventwrapper_2d1_2dg_17',['DomainEventWrapper-1-g',['../classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper-1-g.html',1,'TaskManagement::Infrastructure::EventDispatching']]],
+  ['domainexception_18',['DomainException',['../classTaskManagement_1_1Domain_1_1Exceptions_1_1DomainException.html',1,'TaskManagement::Domain::Exceptions']]],
+  ['dominio_19',['1. Capa de dominio',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md51',1,'']]],
+  ['doxygen_20generator_20',['Doxygen generator',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2customization.html#autotoc_md4',1,'']]],
+  ['drapper_21',['Drapper',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md49',1,'']]]
+];

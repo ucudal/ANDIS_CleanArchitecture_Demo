@@ -1,0 +1,4 @@
+var namespaceTaskManagement_1_1Application_1_1Commands_1_1CreateTask =
+[
+    [ "CreateTaskCommandHandler", "classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html", null ]
+];

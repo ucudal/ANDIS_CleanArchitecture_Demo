@@ -1,0 +1,5 @@
+<map id="IPipelineBehavior" name="IPipelineBehavior">
+<area shape="rect" id="Node000001" title=" " alt="" coords="42,5,154,72"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html" title="ValidationBehavior es un comportamiento de pipeline de MediatR para validar comandos y consultas." alt="" coords="5,120,191,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,87,101,120,96,120,96,87"/>
+</map>
