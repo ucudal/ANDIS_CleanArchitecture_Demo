@@ -4,25 +4,46 @@ using TaskManagement.Domain.Events;
 namespace TaskManagement.Domain.Entities;
 
 /// <summary>
-/// TaskItem is a Domain Entity representing a task in the system.
+/// <c>TaskItem</c> es una <a
+/// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Entity.md">entidad</a>
+/// de dominio que representa una tarea en el sistema.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer)
-/// - Encapsulates business logic and rules related to task management
-/// - Contains domain-driven design principles with aggregate root pattern
-/// - Manages state transitions through domain methods (Complete, AssignTo, UpdatePriority)
-/// - Maintains invariants and business rules (validation, constraints)
-/// - Emits domain events to communicate important domain occurrences
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte del core de la aplicación en la capa de dominio</item>
+/// <item>Encapsula lógica de negocio y reglas relacionadas con la gestión de
+/// tareas</item>
+/// <item>Contiene principios de Domain Driven Design con el patrón <a
+/// href="https://martinfowler.com/bliki/DDD_Aggregate.html">Aggregate
+/// Root</a></item>
+/// <item>Gestiona transiciones de estado a través de métodos de dominio: <see
+/// cref="TaskItem.Complete"/>, <see cref="TaskItem.AssignTo"/>, <see
+/// cref="TaskItem.UpdatePriority"/></item>
+/// <item>Mantiene invariantes y reglas de negocio tales como validación y
+/// restricciones</item>
+/// <item>Emite eventos de dominio para comunicar ocurrencias importantes del
+/// dominio</item>
+/// </list>
 ///
-/// Key Characteristics:
-/// - Contains all data necessary to represent a task
-/// - Validates business rules internally (title length, due date, status transitions)
-/// - Manages domain events collection for eventual consistency
-/// - Uses factory pattern (Create method) for consistent entity creation
-/// - Enforces business constraints (cannot modify completed tasks, etc.)
+/// Características clave:
+/// <list type="bullet">
+/// <item>Contiene todos los datos necesarios para representar una tarea</item>
+/// <item>Valida reglas de negocio internamente -longitud de título, fecha de
+/// vencimiento, transiciones de estado-</item>
+/// <item>Gestiona la colección de eventos de dominio para desacoplamiento de la
+/// infraestructura y facilidad del testing</item>
+/// <item>Utiliza patrón <a
+/// href="https://refactoring.guru/design-patterns/factory-method">Factory</a>
+/// <see cref="TaskItem.Create(string, string, TaskPriority, DateTime?, Guid)"/>
+/// para creación consistente de entidades</item>
+/// <item>Aplica restricciones de negocio: no se puede modificar tareas
+/// completadas, etc.</item>
+/// </list>
 ///
-/// Dependencies: Only depends on other Domain layer types (DomainEvent, Result, TaskErrors)
-/// No dependencies on Infrastructure or Application layers - maintains independence for testability.
+/// Dependencias: Solo depende de otros tipos de la capa de Dominio —<see
+/// cref="DomainEvent"/>, <see cref="Result"/>, <see cref="TaskErrors"/>) Sin
+/// dependencias en capas de Infraestructura o Aplicación - mantiene
+/// independencia para testabilidad.
 /// </summary>
 public class TaskItem
 {
@@ -70,12 +91,12 @@ public class TaskItem
         get; private set;
     }
 
-    // Domain events for eventual consistency
+    // Eventos de dominio para desacoplamiento de la infraestructura y facilidad del testing.
     private readonly List<DomainEvent> _domainEvents = [];
 
     public IReadOnlyCollection<DomainEvent> DomainEvents => _domainEvents.AsReadOnly();
-    // EF Core protected constructor
 
+    // Constructor protegido de EF Core
     protected TaskItem()
     {
     }

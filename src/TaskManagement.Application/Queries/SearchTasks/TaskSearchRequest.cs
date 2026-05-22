@@ -1,49 +1,49 @@
 namespace TaskManagement.Application.Queries.SearchTasks;
 
 /// <summary>
-/// TaskSearchRequest is the input DTO for advanced task search operations.
+/// <c>TaskSearchRequest</c> es el DTO de entrada para operaciones avanzadas de búsqueda de tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Input DTO: Transfers search filter data to query handlers
-/// - Specification pattern: Encapsulates filtering and sorting logic
-/// - Supports complex querying with multiple filter options
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - DTO de entrada: Transfiere datos de filtro de búsqueda a manejadores de consulta
+/// - Patrón de especificación: Encapsula lógica de filtrado y clasificación
+/// - Soporta consultas complejas con múltiples opciones de filtro
 ///
-/// Filtering Capabilities:
-/// - Title: Filter tasks by partial title match
-/// - Status: Filter tasks by current status
-/// - Priority: Filter tasks by priority level
-/// - AssignedTo: Filter tasks assigned to specific user
+/// Capacidades de Filtrado:
+/// - Título: Filtrar tareas por coincidencia parcial de título
+/// - Estado: Filtrar tareas por estado actual
+/// - Prioridad: Filtrar tareas por nivel de prioridad
+/// - AsignadoA: Filtrar tareas asignadas a usuario específicos
 ///
-/// Pagination Support:
-/// - Page: Current page number (1-based)
-/// - PageSize: Number of items per page (default 20)
-/// - Enables efficient handling of large result sets
-/// - Prevents loading entire database at once
+/// Soporte de Paginación:
+/// - Página: Número de página actual (basado en 1)
+/// - TamanyoPagina: Número de elementos por página (por defecto 20)
+/// - Habilita manejo eficiente de conjuntos de resultados grandes
+/// - Previene carga de toda base de datos a la vez
 ///
-/// Sorting Support:
-/// - SortBy: Column name to sort by (default "CreatedAt")
-/// - SortDirection: "ASC" or "DESC" (default "DESC")
-/// - Allows flexible result ordering
-/// - Client controls sort order
+/// Soporte de Clasificación:
+/// - OrdenarPor: Nombre de columna por el que ordenar (por defecto "CreatedAt")
+/// - DirecciónOrdenamiento: "ASC" o "DESC" (por defecto "DESC")
+/// - Permite ordenamiento flexible de resultados
+/// - El cliente controla el orden de clasificación
 ///
-/// Filtering Semantics:
-/// - Null values: Optional filters, only applied if provided
-/// - Default values: Page=1, PageSize=20, SortBy="CreatedAt", SortDirection="DESC"
-/// - Empty results: Valid response if no tasks match filters
+/// Semántica de Filtrado:
+/// - Valores nulos: Filtros opcionales, solo aplicados si se proporcionan
+/// - Valores por defecto: Pagina=1, TamanyoPagina=20, OrdenarPor="CreatedAt", DireccionOrdenamiento="DESC"
+/// - Resultados vacíos: Respuesta válida si ninguna tarea coincide con filtros
 ///
-/// Design Pattern - Specification Pattern:
-/// - Encapsulates query criteria in a single type
-/// - Type-safe: No string parsing or manipulation
-/// - Reusable: Can be used by multiple query handlers
-/// - Testable: Can test search logic in isolation
+/// Patrón de Diseño - Patrón de Especificación:
+/// - Encapsula criterios de consulta en un solo tipo
+/// - Seguro de tipo: Sin análisis o manipulación de cadenas
+/// - Reutilizable: Puede ser utilizado por múltiples manejadores de consulta
+/// - Testeable: Puede probar lógica de búsqueda en aislamiento
 ///
-/// Usage Flow:
-/// 1. Client sends HTTP GET with search parameters
-/// 2. Controller deserializes to TaskSearchRequest
-/// 3. Query handler uses criteria to build database query
-/// 4. Repository executes filtered query
-/// 5. Returns PagedResult&lt;TaskDto&gt; with filtered results
+/// Flujo de Uso:
+/// 1. Cliente envía HTTP GET con parámetros de búsqueda
+/// 2. Controlador deserializa a TaskSearchRequest
+/// 3. Manejador de consulta utiliza criterios para construir consulta de base de datos
+/// 4. Repositorio ejecuta consulta filtrada
+/// 5. Devuelve PagedResult&lt;TaskDto&gt; con resultados filtrados
 /// </summary>
 public sealed record TaskSearchRequest(
     string? Title = null,

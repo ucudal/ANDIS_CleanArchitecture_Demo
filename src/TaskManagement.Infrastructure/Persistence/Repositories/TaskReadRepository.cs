@@ -10,38 +10,38 @@ using TaskManagement.Application.Queries.SearchTasks;
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
 /// <summary>
-/// TaskReadRepository is the read repository for optimized task queries.
+/// <c>TaskReadRepository</c> es el repositorio de lectura para consultas de tarea optimizadas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Infrastructure Layer
-/// - Implements ITaskReadRepository interface (defined in Application Layer)
-/// - Optimized data access: Provides efficient read-only queries
-/// - Dependency inversion: Application depends on interface, not this implementation
+/// Rol en Clean Architecture:
+/// - Parte de la capa de Infraestructura
+/// - Implementa interfaz <see cref="ITaskReadRepository"/> (definida en Capa de Aplicación)
+/// - Acceso a datos optimizado: Proporciona consultas eficientes de solo lectura
+/// - Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación
 ///
-/// CQRS Pattern - Read Side:
-/// - Separated from write repository (TaskRepository)
-/// - Optimized for query performance and scalability
-/// - Can use different technologies (Dapper, raw SQL, read models)
-/// - Returns DTOs instead of domain entities
+/// Patrón CQRS - Lado de Lectura:
+/// - Separado del repositorio de escritura (<see cref="TaskRepository"/>)
+/// - Optimizado para rendimiento y escalabilidad de consultas
+/// - Puede usar diferentes tecnologías (<see cref="Dapper"/>, SQL sin procesar, modelos de lectura)
+/// - Devuelve DTOs en lugar de entidades de dominio
 ///
-/// Read Repository Benefits:
-/// - Independent optimization from write model
-/// - Can use raw SQL or specialized query tools
-/// - Can query denormalized views or materialized read models
-/// - Returns only required fields (projection)
-/// - Supports caching strategies optimized for reads
+/// Beneficios del Repositorio de Lectura:
+/// - Optimización independiente del modelo de escritura
+/// - Puede usar SQL sin procesar o herramientas de consulta especializadas
+/// - Puede consultar vistas desnormalizadas o modelos de lectura materializados
+/// - Devuelve solo campos requeridos (proyección)
+/// - Soporta estrategias de caché optimizadas para lecturas
 ///
-/// Separation Benefits:
-/// - Write side optimizes for consistency and business rules
-/// - Read side optimizes for query performance and data shape
-/// - Can scale independently based on read/write patterns
-/// - Supports eventual consistency patterns
+/// Beneficios de Separación:
+/// - El lado de escritura optimiza para consistencia y reglas de negocio
+/// - El lado de lectura optimiza para rendimiento de consulta y forma de datos
+/// - Puede escalar independientemente basado en patrones de lectura/escritura
+/// - Separa la optimización de lecturas del lado de escritura (patrón CQRS)
 ///
-/// Implementation:
-/// - Uses ITaskReadRepository interface from Application Layer
-/// - Typically uses Dapper or Entity Framework with AsNoTracking
-/// - Returns IReadOnlyList&lt;TaskDto&gt; for read operations
-/// - Handles pagination for large result sets
+/// Implementación:
+/// - Utiliza interfaz <see cref="ITaskReadRepository"/> de Capa de Aplicación
+/// - Típicamente utiliza <see cref="Dapper"/> o Entity Framework con <c>AsNoTracking</c>
+/// - Devuelve <see cref="IReadOnlyList{T}"/> para operaciones de lectura
+/// - Maneja paginación para conjuntos de resultados grandes
 /// </summary>
 
 public sealed class TaskReadRepository : ITaskReadRepository

@@ -3,45 +3,54 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Events;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.EventDispatching;
 
 /// <summary>
-/// MediatRDomainEventDispatcher is the implementation of domain event publishing using MediatR.
+/// <c>MediatRDomainEventDispatcher</c> es la implementación de publicación de eventos de dominio utilizando <see cref="MediatR"/>.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Infrastructure Layer
-/// - Implements IDomainEventDispatcher interface (defined in Domain Layer)
-/// - Infrastructure concern: Details of how events are dispatched
-/// - Decouples domain logic from event handling mechanisms
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte de la capa de Infraestructura</item>
+/// <item>Implementa interfaz <see cref="IDomainEventDispatcher"/> (definida en Capa de Aplicación)</item>
+/// <item>Preocupación de infraestructura: Detalles de cómo se envían los eventos</item>
+/// <item>Desacopla lógica de dominio de mecanismos de manejo de eventos</item>
+/// </list>
 ///
-/// Domain Event Dispatching:
-/// - Publishes domain events raised by aggregates
-/// - Executes registered event handlers asynchronously
-/// - Supports cross-cutting concerns (emails, notifications, logging)
-/// - Maintains clean domain code free of infrastructure knowledge
+/// Envío de Eventos de Dominio:
+/// <list type="bullet">
+/// <item>Publica eventos de dominio elevados por agregados</item>
+/// <item>Ejecuta manejadores de eventos registrados de forma asíncróna</item>
+/// <item>Soporta preocupaciones transversales (correos, notificaciones, registro)</item>
+/// <item>Mantiene código de dominio limpio libre de conocimiento de infraestructura</item>
+/// </list>
 ///
-/// MediatR Integration:
-/// - Uses MediatR.Publish for async event distribution
-/// - Supports multiple handlers per event
-/// - Handlers execute in parallel unless explicitly ordered
-/// - Supports transaction handling and error resilience
+/// Integración con <see cref="MediatR"/>:
+/// <list type="bullet">
+/// <item>Utiliza método <c>Publish</c> para distribución de eventos asíncróna</item>
+/// <item>Soporta múltiples manejadores por evento</item>
+/// <item>Los manejadores se ejecutan en paralelo a menos que se ordene explícitamente</item>
+/// <item>Soporta manejo de transacciones y resiliencia de errores</item>
+/// </list>
 ///
-/// Event Flow:
-/// 1. Domain entity raises domain event (e.g., TaskCreatedEvent)
-/// 2. Application service persists entity changes
-/// 3. Application service calls IDomainEventDispatcher.DispatchAsync
-/// 4. MediatRDomainEventDispatcher publishes events via MediatR
-/// 5. MediatR finds and executes all registered INotificationHandler&lt;TEvent&gt;
-/// 6. Handlers execute side effects (send email, update read model, etc.)
+/// Flujo de Eventos:
+/// <list type="number">
+/// <item>Entidad de dominio eleva evento de dominio (ej. TaskCreatedEvent)</item>
+/// <item>Servicio de aplicación persiste cambios de entidades</item>
+/// <item>Servicio de aplicación llama a <see cref="IDomainEventDispatcher"/>.<see cref="IDomainEventDispatcher.DispatchAsync"/></item>
+/// <item><see cref="MediatRDomainEventDispatcher"/> publica eventos a través de <see cref="MediatR"/></item>
+/// <item><see cref="MediatR"/> encuentra y ejecuta todos los <see cref="INotificationHandler{TEvent}"/> registrados</item>
+/// <item>Los manejadores ejecutan efectos secundarios (enviar correo, actualizar modelo de lectura, etc.)</item>
+/// </list>
 ///
-/// Benefits:
-/// - Decouples events from handlers
-/// - Supports multiple handlers per event without coordination
-/// - Infrastructure can be swapped (MediatR -> other event bus)
-/// - Handlers can be added/removed without domain changes
-/// - Enables asynchronous and delayed event processing
+/// Beneficios:
+/// <list type="bullet">
+/// <item>Desacopla eventos de manejadores</item>
+/// <item>Soporta múltiples manejadores por evento sin coordinación</item>
+/// <item>La infraestructura puede ser intercambiada (<see cref="MediatR"/> -&gt; otro bus de eventos)</item>
+/// <item>Los manejadores pueden ser agregados/eliminados sin cambios de dominio</item>
+/// <item>Habilita procesamiento de eventos asíncróno y retrasado</item>
+/// </list>
 /// </summary>
 
 public sealed class MediatRDomainEventDispatcher : IDomainEventDispatcher
@@ -61,7 +70,7 @@ public sealed class MediatRDomainEventDispatcher : IDomainEventDispatcher
 
         foreach (var domainEvent in events)
         {
-            // Wrap domain events in INotification for MediatR
+            // Envolver eventos de dominio en INotification para MediatR
             var notification = WrapEvent(domainEvent);
             await _mediator.Publish(notification, cancellationToken).ConfigureAwait(false);
         }
@@ -84,7 +93,7 @@ public sealed class DomainEventWrapper<T> : INotification where T : DomainEvent
     public DomainEventWrapper(T @event) => Event = @event;
 }
 
-// Event handler example
+// Ejemplo de manejador de eventos
 public sealed class TaskCompletedNotificationHandler
     : INotificationHandler<DomainEventWrapper<TaskCompletedEvent>>
 {

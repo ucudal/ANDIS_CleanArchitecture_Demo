@@ -1,41 +1,41 @@
-// This file is the composition root and startup configuration for the application.
+// Este archivo es la raíz de composición y configuración de inicio de la aplicación.
 //
-// Role in Clean Architecture:
-// - Part of the UI Layer (API layer)
-// - Composition Root: Wires up all dependencies through Dependency Injection
-// - Configuration: Sets up middleware pipeline, authentication, and services
-// - Entry point: ASP.NET Core executes this file on application startup
+// Rol en Clean Architecture:
+// - Parte de la capa de presentación (Capa de API)
+// - Raíz de Composición: Conecta todas las dependencias a través de Inyección de Dependencias
+// - Configuración: Configura pipeline de middleware, autenticación y servicios
+// - Punto de entrada: ASP.NET Core ejecuta este archivo en el inicio de la aplicación
 //
-// Responsibilities:
-// - Register services from all layers into the DI container
-// - Configure authentication and authorization
-// - Add data access and persistence services
-// - Configure middleware pipeline (order matters!)
-// - Initialize database if needed
+// Responsabilidades:
+// - Registrar servicios de todas las capas en el contenedor de DI
+// - Configurar autenticación y autorización
+// - Agregar servicios de acceso a datos y persistencia
+// - Configurar pipeline de middleware (¡el orden importa!)
+// - Inicializar base de datos si es necesario
 //
-// Dependency Injection Pattern:
-// - Registers interfaces from Application and Domain layers
-// - Implementations from Infrastructure layer
-// - Controllers use registered services (constructor injection)
-// - MediatR handlers use registered services
+// Patrón de Inyección de Dependencias:
+// - Registra interfaces de capas de Aplicación y Dominio
+// - Implementaciones de capa de Infraestructura
+// - Los controladores usan servicios registrados (inyección de constructor)
+// - Los manejadores de MediatR usan servicios registrados
 //
-// Architecture Layer Registration:
-// - Domain Layer: IUnitOfWork, ITaskRepository, IDomainEventDispatcher
-// - Application Layer: MediatR, FluentValidation, ValidationBehavior
-// - Infrastructure Layer: DbContext, Repositories, Event Dispatcher
-// - UI Layer: Controllers, Middleware
+// Registro de Capa de Arquitectura:
+// - Capa de Dominio: IUnitOfWork, ITaskRepository
+// - Capa de Aplicación: IDomainEventDispatcher, MediatR, FluentValidation, ValidationBehavior
+// - Capa de Infraestructura: DbContext, Repositorios, Distribuidor de Eventos
+// - Capa de UI: Controladores, Middleware
 //
-// Composition Root Guidelines:
-// - UI layer can reference Infrastructure for DI registration
-// - Infrastructure implements interfaces from other layers
-// - Domain and Application layers remain independent
-// - This file is the only place Infrastructure is directly referenced
+// Directrices de Raíz de Composición:
+// - La capa de UI puede hacer referencia a Infraestructura para registro de DI
+// - Infraestructura implementa interfaces de otras capas
+// - Las capas de Dominio y Aplicación permanecen independientes
+// - Este archivo es el único lugar donde se hace referencia directa a Infraestructura
 //
-// Middleware Pipeline:
-// - Order is critical: earlier middleware processes requests first
-// - ExceptionHandlingMiddleware: Usually first to catch all exceptions
-// - Authentication, Authorization: Security-related middleware
-// - MapControllers: Routes requests to controllers
+// pipeline de Middleware:
+// - El orden es crítico: el middleware anterior procesa solicitudes primero
+// - ExceptionHandlingMiddleware: Usualmente primero para capturar todas las excepciones
+// - Autenticación, Autorización: Middleware relacionado con seguridad
+// - MapControllers: Enruta solicitudes a controladores
 
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -55,8 +55,8 @@ using TaskManagement.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load user-secrets explicitly so dotnet user-jwts tokens work even when
-// the process is started without ASPNETCORE_ENVIRONMENT=Development.
+// Cargar secretos de usuario explícitamente para que los tokens dotnet user-jwts funcionen incluso cuando
+// el proceso se inicia sin ASPNETCORE_ENVIRONMENT=Development.
 builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: true);
 
 const string connectionString = "Data Source=file:taskmanagement?mode=memory&cache=shared";
@@ -105,7 +105,7 @@ builder.Services
     });
 builder.Services.AddAuthorization();
 
-// Add services to container
+// Agregar servicios al contenedor
 builder.Services
     .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(TaskManagement.Application.Commands.CreateTask.CreateTaskCommand).Assembly))
     .AddValidatorsFromAssembly(typeof(TaskManagement.Application.Commands.CreateTask.CreateTaskCommand).Assembly)
@@ -129,7 +129,7 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.EnsureCreated();
 }
 
-// Configure middleware pipeline
+// Configurar pipeline de middleware
 
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();

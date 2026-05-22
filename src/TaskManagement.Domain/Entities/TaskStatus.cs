@@ -1,18 +1,18 @@
 namespace TaskManagement.Domain.Entities;
 
 /// <summary>
-/// TaskStatus is a Domain Value Object (Enum) representing possible states of a task.
+/// <c>TaskStatus</c> es un Objeto de Valor de Dominio (Enumeración) que representa posibles estados de una tarea.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer)
-/// - Represents core business concepts without external dependencies
-/// - Ensures type safety for task states throughout the system
-/// - Used by TaskItem entity to enforce valid state transitions
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación en la capa de dominio
+/// - Representa conceptos de negocio principales sin dependencias externas
+/// - Asegura seguridad de tipo para estados de tarea en todo el sistema
+/// - Utilizado por entidad <see cref="TaskItem"/> para aplicar transiciones de estado válidas
 ///
-/// Valid States:
-/// - Todo (0): Initial state for new tasks
-/// - InProgress (1): Task is currently being worked on
-/// - Completed (2): Task has been finished
+/// Estados Válidos:
+/// - Todo (0): Estado inicial para nuevas tareas
+/// - InProgress (1): La tarea se está trabajando actualmente
+/// - Completed (2): La tarea ha sido finalizada
 /// </summary>
 public enum TaskStatus
 {

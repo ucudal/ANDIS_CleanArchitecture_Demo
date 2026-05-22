@@ -6,38 +6,38 @@ using TaskManagement.Domain.Interfaces;
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
 /// <summary>
-/// TaskRepository is the write repository for TaskItem entities.
+/// <c>TaskRepository</c> es el repositorio de escritura para entidades <see cref="TaskItem"/>.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Infrastructure Layer
-/// - Implements ITaskRepository interface (defined in Domain Layer)
-/// - Data access implementation: Translates domain operations to database queries
-/// - Dependency inversion: Domain depends on interface, not this implementation
+/// Rol en Clean Architecture:
+/// - Parte de la capa de Infraestructura
+/// - Implementa interfaz <see cref="ITaskRepository"/> (definida en Capa de Dominio)
+/// - Implementación de acceso a datos: Traduce operaciones de dominio a consultas de base de datos
+/// - Inversión de dependencia: El dominio depende de interfaz, no de esta implementación
 ///
-/// Repository Pattern Benefits:
-/// - Abstracts Entity Framework details from domain and application layers
-/// - Provides domain-oriented API (not query-focused)
-/// - Enables unit testing through mock implementations
-/// - Allows swapping database technology without changing application code
+/// Beneficios del patrón Repository:
+/// - Abstrae detalles de Entity Framework de capas de dominio y aplicación
+/// - Proporciona API orientada al dominio (no enfocada en consultas)
+/// - Habilita pruebas unitarias a través de implementaciones simuladas
+/// - Permite intercambiar tecnología de base de datos sin cambiar código de aplicación
 ///
-/// Write Operations vs Read Operations:
-/// - This repository: Write operations (Add, Update, Delete)
-/// - TaskReadRepository: Read operations (optimized queries)
-/// - Separation follows CQRS: Different strategies for reads and writes
+/// Operaciones de Escritura vs Operaciones de Lectura:
+/// - Este repositorio: Operaciones de escritura (Add, Update, Delete)
+/// - <see cref="TaskReadRepository"/>: Operaciones de lectura (consultas optimizadas)
+/// - Separación sigue CQRS: Estrategias diferentes para lecturas y escrituras
 ///
-/// Implementation Details:
-/// - Uses Entity Framework Core for database access
-/// - AsNoTracking for read-only queries (GetByIdAsync, GetByAssigneeAsync, GetOverdueAsync)
-/// - Tracking enabled for write operations (AddAsync, Update, Delete)
-/// - Returns immutable collections (IReadOnlyList) to prevent client modifications
+/// Detalles de Implementación:
+/// - Utiliza Entity Framework Core para acceso a base de datos
+/// - Usa <c>AsNoTracking</c> para consultas de sólo lectura (GetByIdAsync, GetByAssigneeAsync, GetOverdueAsync)
+/// - Seguimiento habilitado para operaciones de escritura (AddAsync, Update, Delete)
+/// - Devuelve colecciones inmutables (IReadOnlyList) para prevenir modificaciones de cliente
 ///
-/// Methods:
-/// - GetByIdAsync: Find task by ID (read)
-/// - GetByAssigneeAsync: Find tasks assigned to user (read)
-/// - GetOverdueAsync: Find incomplete overdue tasks (read)
-/// - AddAsync: Persist new task entity (write)
-/// - Update: Mark existing task for update (write)
-/// - Delete: Mark existing task for deletion (write)
+/// Métodos:
+/// - GetByIdAsync: Encontrar tarea por ID (lectura)
+/// - GetByAssigneeAsync: Encontrar tareas asignadas a usuario (lectura)
+/// - GetOverdueAsync: Encontrar tareas incompletas vencidas (lectura)
+/// - AddAsync: Persistir nueva entidad de tarea (escritura)
+/// - Update: Marcar entidad existente para actualización (escritura)
+/// - Delete: Marcar entidad existente para eliminación (escritura)
 /// </summary>
 public sealed class TaskRepository : ITaskRepository
 {

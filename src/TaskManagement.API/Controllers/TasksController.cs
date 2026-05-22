@@ -11,39 +11,49 @@ using TaskManagement.Application.Queries.GetTaskById;
 namespace TaskManagement.API.Controllers;
 
 /// <summary>
-/// TasksController is the REST API endpoint for task management operations.
+/// TasksController es el punto final de la API REST para operaciones de gestión de tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the UI Layer (API presentation)
-/// - Entry point for HTTP requests
-/// - Translates HTTP requests to application commands/queries
-/// - Handles HTTP-specific concerns (status codes, content negotiation)
-/// - No business logic: delegates to application layer
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte de la capa de presentación (UI Layer)</item>
+/// <item>Punto de entrada para solicitudes HTTP</item>
+/// <item>Traduce solicitudes HTTP a comandos/consultas de aplicación</item>
+/// <item>Maneja preocupaciones específicas de HTTP (códigos de estado, negociación de contenido)</item>
+/// <item>Sin lógica de negocio: delega a la capa de aplicación</item>
+/// </list>
 ///
-/// Controller Responsibilities:
-/// - Map HTTP routes to business operations
-/// - Accept HTTP requests and convert to commands/queries
-/// - Handle authorization and authentication
-/// - Invoke application layer through MediatR
-/// - Transform results to appropriate HTTP responses
-/// - Handle exceptions and return error responses
+/// Responsabilidades del Controlador:
+/// <list type="bullet">
+/// <item>Mapear rutas HTTP a operaciones de negocio</item>
+/// <item>Aceptar solicitudes HTTP y convertirlas a comandos/consultas</item>
+/// <item>Manejar autorización y autenticación</item>
+/// <item>Invocar la capa de aplicación a través de <see cref="MediatR"/></item>
+/// <item>Transformar resultados en respuestas HTTP apropiadas</item>
+/// <item>Manejar excepciones y devolver respuestas de error</item>
+/// </list>
 ///
-/// Separation of Concerns:
-/// - Does NOT contain business logic (delegated to application)
-/// - Does NOT interact directly with database (delegated to infrastructure)
-/// - Does NOT validate business rules (delegated to domain/application)
-/// - Only translates HTTP semantics to application operations
+/// Separación de Responsabilidades:
+/// <list type="bullet">
+/// <item>NO contiene lógica de negocio (delegada a aplicación)</item>
+/// <item>NO interactúa directamente con la base de datos (delegada a infraestructura)</item>
+/// <item>NO valida reglas de negocio (delegadas a dominio/aplicación)</item>
+/// <item>Solo traduce semántica HTTP a operaciones de aplicación</item>
+/// </list>
 ///
-/// Dependencies:
-/// - IMediator: Send commands and queries to application layer
-/// - Authorization: Validate user permissions before operations
-/// - DTOs (CreateTaskRequest, TaskDto): Transfer data
+/// Dependencias:
+/// <list type="bullet">
+/// <item><see cref="IMediator"/>: Enviar comandos y consultas a la capa de aplicación</item>
+/// <item>Authorization: Validar permisos de usuario antes de operaciones</item>
+/// <item>DTOs (<see cref="CreateTaskRequest"/>, <see cref="TaskDto"/>): Transferencia de datos</item>
+/// </list>
 ///
-/// Design Patterns:
-/// - Command/Query pattern through MediatR
-/// - Result pattern for consistent error handling
-/// - REST conventions (POST for creation, DELETE for removal, etc.)
-/// - HTTP status codes: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.
+/// Patrones de Diseño:
+/// <list type="bullet">
+/// <item>Patrón Command/Query a través de <see cref="MediatR"/></item>
+/// <item>Patrón Result para manejo de errores consistente</item>
+/// <item>Convenciones REST (POST para creación, DELETE para eliminación, etc.)</item>
+/// <item>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.</item>
+/// </list>
 /// </summary>
 internal sealed class TasksController : ControllerBase
 {
@@ -89,7 +99,7 @@ internal sealed class TasksController : ControllerBase
             request.Description,
             request.Priority,
             request.DueDate,
-            User.GetUserId() // Extension method
+            User.GetUserId() // Método de extensión
         );
         var result = await _mediator.Send(command, cancellationToken).ConfigureAwait(false);
 

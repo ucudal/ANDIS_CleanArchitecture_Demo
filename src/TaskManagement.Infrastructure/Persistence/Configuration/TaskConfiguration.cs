@@ -6,40 +6,40 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.Infrastructure.Persistence.Configurations;
 
 /// <summary>
-/// TaskConfiguration is the Entity Framework Core configuration for TaskItem entity.
+/// <c>TaskConfiguration</c> es la configuración de Entity Framework Core para entidad <see cref="TaskItem"/>.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Infrastructure Layer
-/// - Translates domain entity to database schema
-/// - Encapsulates all Entity Framework mapping details
-/// - Applied by TaskDbContext during model creation
+/// Rol en Clean Architecture:
+/// - Parte de la capa de Infraestructura
+/// - Traduce entidad de dominio al esquema de base de datos
+/// - Encapsula todos los detalles de mapeo de Entity Framework
+/// - Aplicada por <see cref="TaskDbContext"/> durante creación de modelo
 ///
-/// Configuration Responsibilities:
-/// - Table name and schema mapping
-/// - Column names, types, and constraints
-/// - Primary key definition
-/// - Index creation for query optimization
-/// - Value object conversions (if needed)
-/// - Entity validation constraints
+/// Responsabilidades de Configuración:
+/// - Mapeo de nombre de tabla y esquema
+/// - Nombres de columna, tipos y restricciones
+/// - Definición de clave primaria
+/// - Creación de índice para optimización de consulta
+/// - Conversiones de objetos de valor (si es necesario)
+/// - Restricciones de validación de entidad
 ///
-/// Design Benefits:
-/// - Centralizes database mapping in one place
-/// - Domain model changes can affect mapping in isolation
-/// - Easy to understand database schema requirements
-/// - Supports complex mapping scenarios
-/// - Follows Entity Framework conventions
+/// Beneficios de Diseño:
+/// - Centraliza mapeo de base de datos en un lugar
+/// - Los cambios de modelo de dominio pueden afectar mapeo en aislamiento
+/// - Fácil de entender requisitos de esquema de base de datos
+/// - Soporta escenarios de mapeo complejos
+/// - Sigue convenciones de Entity Framework
 ///
-/// Separation of Concerns:
-/// - Domain layer: Defines business rules and behavior
-/// - Configuration layer: Defines how domain maps to database
-/// - Infrastructure layer: Implements actual database operations
-/// - Enables changing database schema without domain changes
+/// Separación de Responsabilidades:
+/// - Capa de dominio: Define reglas de negocio y comportamiento
+/// - Capa de configuración: Define cómo dominio se mapea a base de datos
+/// - Capa de infraestructura: Implementa operaciones reales de base de datos
+/// - Permite cambiar esquema de base de datos sin cambios de dominio
 ///
-/// Typical Configuration Items:
-/// - HasKey: Specify primary key (usually Id property)
-/// - Property: Configure individual columns (length, precision, etc.)
-/// - HasIndex: Create indexes for performance
-/// - ToTable: Set table name if different from class name
+/// Ítems de Configuración Típicos:
+/// - <c>HasKey</c>: Especificar clave primaria (usualmente propiedad Id)
+/// - <c>Property</c>: Configurar columnas individuales (longitud, precisión, etc.)
+/// - <c>HasIndex</c>: Crear índices para rendimiento
+/// - <c>ToTable</c>: Establecer nombre de tabla si difiere de nombre de clase
 /// </summary>
 
 public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
@@ -63,13 +63,13 @@ public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
             .HasConversion<string>()
             .HasMaxLength(50);
 
-        // Domain events are in-memory only and should not be persisted by EF.
+        // Los eventos de dominio están solo en memoria y no deben ser persistidos por EF.
         builder.Ignore(t => t.DomainEvents);
 
         builder.HasIndex(t => t.AssignedTo);
         builder.HasIndex(t => t.Status);
         builder.HasIndex(t => t.DueDate);
-        // Query filter for soft delete (if implemented)
+        // Filtro de consulta para eliminación suave (si está implementada)
         // builder.HasQueryFilter(t => !t.IsDeleted);
     }
 }

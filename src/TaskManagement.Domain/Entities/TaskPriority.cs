@@ -1,18 +1,18 @@
 namespace TaskManagement.Domain.Entities;
 
 /// <summary>
-/// TaskPriority is a Domain Value Object (Enum) representing task priority levels.
+/// <c>TaskPriority</c> es un Objeto de Valor de Dominio (Enumeración) que representa niveles de prioridad de tarea.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer)
-/// - Represents a core business concept without external dependencies
-/// - Ensures type safety for priority levels throughout the system
-/// - Used by TaskItem entity to categorize task urgency
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación en la capa de dominio
+/// - Representa un concepto de negocio principal sin dependencias externas
+/// - Asegura seguridad de tipo para niveles de prioridad en todo el sistema
+/// - Utilizado por entidad <see cref="TaskItem"/> para categorizar urgencia de tarea
 ///
-/// Priority Levels (in ascending order):
-/// - Low (0): Task has low urgency
-/// - Medium (1): Task has medium urgency
-/// - High (2): Task has high urgency and should be prioritized
+/// Niveles de Prioridad (en orden ascendente):
+/// - Low (0): Tarea tiene baja urgencia
+/// - Medium (1): Tarea tiene urgencia media
+/// - High (2): Tarea tiene alta urgencia y debe priorizarse
 /// </summary>
 public enum TaskPriority
 {

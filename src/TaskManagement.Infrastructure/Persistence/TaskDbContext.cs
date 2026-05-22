@@ -6,37 +6,37 @@ using TaskManagement.Infrastructure.Persistence.Configurations;
 namespace TaskManagement.Infrastructure.Persistence;
 
 /// <summary>
-/// TaskDbContext is the Entity Framework Core DbContext for task management.
+/// <c>TaskDbContext</c> es el <see cref="DbContext"/> de Entity Framework Core para gestión de tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Infrastructure Layer
-/// - Implements IUnitOfWork interface (defined in Application Core)
-/// - Data access abstraction: Encapsulates database access logic
-/// - Maps domain entities to database schema through OnModelCreating
+/// Rol en Clean Architecture:
+/// - Parte de la capa de Infraestructura
+/// - Implementa interfaz <see cref="IUnitOfWork"/> (definida en Núcleo de Aplicación)
+/// - Abstracción de acceso a datos: Encapsula lógica de acceso a base de datos
+/// - Mapea entidades de dominio al esquema de base de datos a través de OnModelCreating
 ///
-/// Dual Responsibility:
-/// - DbContext (from Entity Framework): Manages entity tracking and database operations
-/// - IUnitOfWork implementation: Coordinates transaction and persistence
+/// Responsabilidad Dual:
+/// - <see cref="DbContext"/> (desde Entity Framework): Gestiona seguimiento de entidades y operaciones de base de datos
+/// - Implementación de <see cref="IUnitOfWork"/>: Coordina transacción y persistencia
 ///
-/// Architecture Design:
-/// - Configured through dependency injection in Program.cs
-/// - Used by repositories and command handlers through IUnitOfWork interface
-/// - SaveChangesAsync implementation delegates to Entity Framework
-/// - Fluent configurations applied through TaskConfiguration
+/// Diseño de Arquitectura:
+/// - Configurado a través de inyección de dependencias en Program.cs
+/// - Utilizado por repositorios y manejadores de comando a través de interfaz <see cref="IUnitOfWork"/>
+/// - Implementación de <see cref="IUnitOfWork.SaveChangesAsync"/> delega a Entity Framework
+/// - Configuraciones fluidas aplicadas a través de TaskConfiguration
 ///
-/// Benefits of this approach:
-/// - Application/Domain layers depend only on IUnitOfWork interface
-/// - Infrastructure details (Entity Framework) isolated in this class
-/// - Easy to test: Mock IUnitOfWork without Entity Framework
-/// - Easy to replace: Swap Entity Framework with different ORM
+/// Beneficios de este enfoque:
+/// - Las capas de Aplicación/Dominio dependen solo de interfaz <see cref="IUnitOfWork"/>
+/// - Detalles de infraestructura (Entity Framework) aislados en esta clase
+/// - Fácil de probar: Simular <see cref="IUnitOfWork"/> sin Entity Framework
+/// - Fácil de reemplazar: Intercambiar Entity Framework por ORM diferente
 ///
-/// Key Entities:
-/// - Tasks: DbSet for TaskItem entities
+/// Entidades Clave:
+/// - Tasks: <see cref="DbSet{TEntity}"/> para entidades <see cref="TaskItem"/>
 ///
-/// Configuration:
-/// - Applied through ModelBuilder in OnModelCreating
-/// - Delegates to TaskConfiguration for entity mappings
-/// - Ensures type safety and database constraints match domain rules
+/// Configuración:
+/// - Aplicada a través de ModelBuilder en OnModelCreating
+/// - Delega a TaskConfiguration para mapeos de entidades
+/// - Asegura seguridad de tipo y restricciones de base de datos coincidan con reglas de dominio
 /// </summary>
 public sealed class TaskDbContext : DbContext, IUnitOfWork
 {

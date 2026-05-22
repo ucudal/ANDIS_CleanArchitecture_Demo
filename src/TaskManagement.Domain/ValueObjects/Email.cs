@@ -5,20 +5,24 @@ using TaskManagement.Domain.Common;
 namespace TaskManagement.Domain.ValueObjects;
 
 /// <summary>
-/// Email is a Domain Value Object encapsulating email address logic and validation.
+/// <c>Email</c> es un Objeto de Valor del Dominio que encapsula la lógica y validación de direcciones de correo electrónico.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer)
-/// - Represents an immutable domain concept with built-in validation
-/// - Encapsulates email-specific business rules and validation logic
-/// - Used for type-safe email handling throughout the domain
-/// - Prevents invalid email addresses from entering the system
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte del core de la aplicación en la capa de dominio</item>
+/// <item>Representa un concepto de dominio inmutable con validación integrada</item>
+/// <item>Encapsula reglas de negocio específicas de correo y lógica de validación</item>
+/// <item>Se utiliza para manejo de correo seguro de tipo en todo el dominio</item>
+/// <item>Previene que direcciones de correo inválidas entren en el sistema</item>
+/// </list>
 ///
-/// Value Object Characteristics:
-/// - Immutable: Email value cannot change after creation
-/// - Identity by Value: Two Email instances are equal if their addresses match
-/// - Self-validating: Ensures only valid email addresses are created
-/// - No direct persistence concerns: Infrastructure handles storage
+/// Características del Objeto de Valor:
+/// <list type="bullet">
+/// <item>Inmutable: El valor del correo no puede cambiar después de su creación</item>
+/// <item>Identidad por Valor: Dos instancias de <see cref="Email"/> son iguales si sus direcciones coinciden</item>
+/// <item>Auto-validado: Asegura que solo se creen direcciones de correo válidas</item>
+/// <item>Sin preocupaciones directas de persistencia: La infraestructura maneja el almacenamiento</item>
+/// </list>
 /// </summary>
 
 public sealed class Email : ValueObject

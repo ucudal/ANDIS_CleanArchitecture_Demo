@@ -3,44 +3,44 @@ using System.Security.Claims;
 namespace TaskManagement.API.Extensions;
 
 /// <summary>
-/// ClaimsPrincipalExtensions provides extension methods for extracting user information from claims.
+/// ClaimsPrincipalExtensions proporciona métodos de extensión para extraer información de usuario de reclamaciones.
 ///
-/// Role in Clean Architecture:
-/// - Part of the UI Layer (API layer)
-/// - Extension methods: Provides convenient helpers for claim extraction
-/// - Encapsulates claim navigation logic
-/// - Reduces repetition in controllers and services
+/// Rol en Clean Architecture:
+/// - Parte de la capa de presentación (Capa de API)
+/// - Métodos de extensión: Proporciona ayudantes convenientes para extracción de reclamaciones
+/// - Encapsula lógica de navegación de reclamaciones
+/// - Reduce repetición en controladores y servicios
 ///
-/// Claims-Based Authentication:
-/// - ClaimsPrincipal: Represents authenticated user with their claims
-/// - Claims: Individual pieces of information about the user
-/// - JWT tokens contain claims: user ID, email, roles, etc.
-/// - Extensions simplify extracting specific claims
+/// Autenticación Basada en Reclamaciones:
+/// - ClaimsPrincipal: Representa usuario autenticado con sus reclamaciones
+/// - Reclamaciones: Piezas individuales de información sobre el usuario
+/// - Los tokens JWT contienen reclamaciones: ID de usuario, correo, roles, etc.
+/// - Las extensiones simplifican la extracción de reclamaciones específicas
 ///
-/// Design Benefits:
-/// - Single source of truth for claim extraction logic
-/// - Consistent claim handling across application
-/// - Type-safe claim access
-/// - Easy to modify claim structure
-/// - Encapsulates security-related logic
+/// Beneficios de Diseño:
+/// - Fuente única de verdad para lógica de extracción de reclamaciones
+/// - Manejo consistente de reclamaciones en toda la aplicación
+/// - Acceso seguro de tipo a reclamaciones
+/// - Fácil modificar estructura de reclamaciones
+/// - Encapsula lógica relacionada con seguridad
 ///
-/// Common Extensions:
-/// - GetUserId(): Extract user ID from claims
-/// - GetEmail(): Extract email from claims
-/// - GetRoles(): Extract user roles from claims
+/// Extensiones Comunes:
+/// - GetUserId(): Extraer ID de usuario de reclamaciones
+/// - GetEmail(): Extraer correo de reclamaciones
+/// - GetRoles(): Extraer roles de usuario de reclamaciones
 ///
-/// Security Considerations:
-/// - Only extract claims already present in token
-/// - No modifications to claims (read-only)
-/// - Validate token on request entry (done by authentication middleware)
-/// - Extensions assume user is already authenticated
+/// Consideraciones de Seguridad:
+/// - Solo extraer reclamaciones ya presentes en token
+/// - Sin modificaciones de reclamaciones (solo lectura)
+/// - Validar token en entrada de solicitud (hecho por middleware de autenticación)
+/// - Las extensiones asumen que el usuario ya está autenticado
 /// </summary>
 
 internal static class ClaimsPrincipalExtensions
 {
     public static Guid GetUserId(this ClaimsPrincipal user)
     {
-        // Support common JWT/user-jwts claim names for user id.
+        // Soportar nombres comunes de reclamación JWT/user-jwts para ID de usuario.
         var candidateValues = user.Claims
             .Where(c =>
                 c.Type == ClaimTypes.NameIdentifier ||

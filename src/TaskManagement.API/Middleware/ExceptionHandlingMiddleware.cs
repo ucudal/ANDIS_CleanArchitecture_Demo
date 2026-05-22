@@ -6,42 +6,55 @@ using TaskManagement.Domain.Exceptions;
 namespace TaskManagement.API.Middleware;
 
 /// <summary>
-/// ExceptionHandlingMiddleware is ASP.NET Core middleware for centralized exception handling.
+/// ExceptionHandlingMiddleware es middleware de ASP.NET Core para manejo centralizado de excepciones.
 ///
-/// Role in Clean Architecture:
-/// - Part of the UI Layer (API presentation)
-/// - Cross-cutting concern: Handles exceptions from all layers
-/// - Middleware pipeline: Intercepts all requests and handles exceptions
-/// - Returns appropriate HTTP responses for different error types
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte de la capa de presentación (UI Layer)</item>
+/// <item>Preocupación transversal: Maneja excepciones de todas las capas</item>
+/// <item>Pipeline de middleware: Intercepta todas las solicitudes y maneja excepciones</item>
+/// <item>Devuelve respuestas HTTP apropiadas para diferentes tipos de error</item>
+/// </list>
 ///
-/// Middleware Pipeline in ASP.NET Core:
-/// - Middleware components form a pipeline (like a series of filters)
-/// - Each middleware can process request and response
-/// - Exception handlers are usually placed early to catch all exceptions
-/// - This middleware wraps other middleware to catch exceptions
+/// Pipeline de Middleware en ASP.NET Core:
+/// <list type="bullet">
+/// <item>Los componentes de middleware forman un pipeline (como una serie de filtros)</item>
+/// <item>Cada middleware puede procesar solicitud y respuesta</item>
+/// <item>Los manejadores de excepción generalmente se colocan primero para capturar todas las excepciones</item>
+/// <item>Este middleware envuelve otro middleware para capturar excepciones</item>
+/// </list>
 ///
-/// Exception Handling Responsibilities:
-/// - Catch exceptions from application layer and below
-/// - Distinguish between exception types:
-///   - ValidationException: 400 BadRequest
-///   - NotFoundException: 404 NotFound
-///   - DomainException: 400 BadRequest
-///   - Other exceptions: 500 InternalServerError
-/// - Return consistent error response format
-/// - Log exceptions for debugging
+/// Responsabilidades de Manejo de Excepciones:
+/// <list type="bullet">
+/// <item>Captura excepciones de capa de aplicación y debajo</item>
+/// <item>Distingue entre tipos de excepción:
+/// <list type="bullet">
+/// <item><see cref="ValidationException"/>: 400 BadRequest</item>
+/// <item><see cref="NotFoundException"/>: 404 NotFound</item>
+/// <item><see cref="DomainException"/>: 400 BadRequest</item>
+/// <item>Otras excepciones: 500 InternalServerError</item>
+/// </list>
+/// </item>
+/// <item>Devuelve formato de respuesta de error consistente</item>
+/// <item>Registra excepciones para depuración</item>
+/// </list>
 ///
-/// Benefits:
-/// - Centralized error handling (not scattered in controllers)
-/// - Consistent error response format across API
-/// - Prevents leaking sensitive error details to clients
-/// - Ensures all exceptions are handled appropriately
-/// - Simplifies controller code (no try-catch needed)
+/// Beneficios:
+/// <list type="bullet">
+/// <item>Manejo de errores centralizado (no disperso en controladores)</item>
+/// <item>Formato de respuesta de error consistente en toda la API</item>
+/// <item>Previene fuga de detalles de error sensibles a clientes</item>
+/// <item>Asegura que todas las excepciones se manejen apropiadamente</item>
+/// <item>Simplifica código de controlador (sin necesidad de try-catch)</item>
+/// </list>
 ///
-/// Error Response Format:
-/// - ProblemDetails: Standard error response format
-/// - Includes error title, detail, and status code
-/// - Follows RFC 7807 Problem Details specification
-/// - Helps API clients understand what went wrong
+/// Formato de Respuesta de Error:
+/// <list type="bullet">
+/// <item>ProblemDetails: Formato estándar de respuesta de error</item>
+/// <item>Incluye título de error, detalle y código de estado</item>
+/// <item>Sigue especificación RFC 7807 Problem Details</item>
+/// <item>Ayuda a clientes de API a entender qué salió mal</item>
+/// </list>
 /// </summary>
 
 internal sealed class ExceptionHandlingMiddleware

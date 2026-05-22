@@ -2,27 +2,27 @@
 namespace TaskManagement.Domain.Common;
 
 /// <summary>
-/// Result is a discriminated union type implementing the Result pattern for error handling.
+/// <c>Result</c> es un tipo de unión discriminada que implementa el patrón <c>Result</c> para manejo de errores.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer - Shared/Common)
-/// - Replaces exceptions with explicit success/failure returns
-/// - Enables functional error handling throughout the application
-/// - Prevents hidden errors from being thrown and caught unexpectedly
-/// - Provides a consistent way to handle operations that may fail
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Dominio - Shared/Common)
+/// - Reemplaza excepciones con retornos explícitos de éxito/fracaso
+/// - Habilita manejo de errores funcional en toda la aplicación
+/// - Previene que errores ocultos se lancen y capturen inesperadamente
+/// - Proporciona una forma consistente de manejar operaciones que pueden fallar
 ///
-/// Pattern Benefits:
-/// - Explicit error handling: Callers must check for success or failure
-/// - Type-safe: Generic Result&lt;T&gt; preserves both success value and error information
-/// - Functional: Supports composition and chaining of operations
-/// - Avoids null checks: Always returns a valid Result object
-/// - Performance: Avoids exception stack unwinding overhead
+/// Beneficios del Patrón:
+/// - Manejo de errores explícito: Los llamadores deben verificar éxito o fracaso
+/// - Seguridad de tipo: Generic <see cref="Result{T}"/> preserva tanto el valor de éxito como información de error
+/// - Funcional: Soporta composición y encadenamiento de operaciones
+/// - Evita verificaciones de nulo: Siempre devuelve un objeto Result válido
+/// - Rendimiento: Evita la sobrecarga de desenrollado de pila de excepciones
 ///
-/// Usage:
-/// - Use Result for operations that should not throw exceptions
-/// - Use Result&lt;T&gt; when operation returns a value on success
-/// - Pattern match with IsSuccess and Errors to handle both cases
-/// - Use Match method for functional-style error handling
+/// Uso:
+/// - Utilizar <see cref="Result"/> para operaciones que no deben lanzar excepciones
+/// - Utilizar <see cref="Result{T}"/> cuando la operación devuelve un valor en caso de éxito
+/// - Coincidencia de patrones con <see cref="Result.IsSuccess"/> y <see cref="Result.Errors"/> para manejar ambos casos
+/// - Utilizar método <see cref="Result{T}.Match"/> para manejo de errores de estilo funcional
 /// </summary>
 public class Result
 {
@@ -43,15 +43,15 @@ public class Result
     public static Result Success() => new(true);
     public static Result Failure(string error) => new(false, new[] { error });
     public static Result Failure(IEnumerable<string> errors) => new(false, errors);
-    public static Result<TValue> Success<TValue>(TValue value) => new(value);
-    public static Result<TValue> Failure<TValue>(string error) => new(new[] { error });
-    public static Result<TValue> Failure<TValue>(IEnumerable<string> errors) => new(errors);
+    public static Result<T> Success<T>(T value) => new(value);
+    public static Result<T> Failure<T>(string error) => new(new[] { error });
+    public static Result<T> Failure<T>(IEnumerable<string> errors) => new(errors);
 }
 
 /// <summary>
-/// Result&lt;T&gt; is a generic discriminated union type for operations that return a value on success.
+/// <c>Result</c>&lt;T&gt; es un tipo de unión discriminada genérico para operaciones que devuelven un valor en caso de éxito.
 ///
-/// Inherits from Result and adds a Value property for the success case.
+/// Hereda de <see cref="Result"/> y agrega una propiedad <see cref="Result{T}.Value"/> para el caso de éxito.
 /// </summary>
 public class Result<T> : Result
 {

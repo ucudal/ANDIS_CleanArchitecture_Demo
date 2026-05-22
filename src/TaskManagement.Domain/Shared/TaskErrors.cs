@@ -1,25 +1,25 @@
 namespace TaskManagement.Domain.Common;
 
 /// <summary>
-/// TaskErrors is a central repository for all task domain error messages.
+/// TaskErrors es un repositorio central para todos los mensajes de error del dominio de tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer - Shared/Common)
-/// - Centralizes error messages to avoid duplication and ensure consistency
-/// - Represents all possible business rule violations in task management
-/// - Used throughout domain and application layers for error reporting
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Dominio - Shared/Common)
+/// - Centraliza mensajes de error para evitar duplicación y asegurar consistencia
+/// - Representa todas las posibles violaciones de reglas de negocio en gestión de tareas
+/// - Utilizado en capas de dominio y aplicación para informe de errores
 ///
-/// Benefits:
-/// - Single source of truth for error messages
-/// - Easy to maintain and update error messages
-/// - Supports internationalization (i18n) if needed
-/// - Prevents string duplication and typos
-/// - Clear documentation of all possible task-related errors
+/// Beneficios:
+/// - Fuente única de verdad para mensajes de error
+/// - Fácil de mantener y actualizar mensajes de error
+/// - Soporta internacionalización (i18n) si es necesario
+/// - Previene duplicación de cadenas y errores tipográficos
+/// - Documentación clara de todos los posibles errores relacionados con tareas
 ///
-/// Error Categories:
-/// - Status transition errors (AlreadyCompleted, CannotModifyCompletedTask, etc.)
-/// - Assignment errors (CannotAssignCompletedTask)
-/// - Resource errors (NotFound)
+/// Categorías de Error:
+/// - Errores de transición de estado (AlreadyCompleted, CannotModifyCompletedTask, etc.)
+/// - Errores de asignación (CannotAssignCompletedTask)
+/// - Errores de recurso (NotFound)
 /// </summary>
 public static class TaskErrors
 {

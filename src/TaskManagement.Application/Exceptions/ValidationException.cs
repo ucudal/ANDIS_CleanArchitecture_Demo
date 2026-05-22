@@ -1,29 +1,29 @@
 namespace TaskManagement.Application.Exceptions;
 
 /// <summary>
-/// ValidationException is thrown when input validation fails in the application layer.
+/// <c>ValidationException</c> se lanza cuando la validación de entrada falla en la capa de aplicación.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Represents input validation failures (not domain business rule violations)
-/// - Distinct from DomainException (business rules) and technical exceptions
-/// - Allows handlers to catch and return appropriate HTTP status codes
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Representa fallos de validación de entrada (no violaciones de regla de negocio de dominio)
+/// - Distinta de <see cref="TaskManagement.Domain.Exceptions.DomainException"/> (reglas de negocio) y excepciones técnicas
+/// - Permite a manejadores capturar y devolver códigos de estado HTTP apropiados
 ///
-/// Usage:
-/// - Thrown by ValidationBehavior when FluentValidation fails
-/// - Caught by exception handling middleware
-/// - Returns HTTP 400 BadRequest status to client
+/// Uso:
+/// - Lanzada por <see cref="TaskManagement.Application.Behaviors.ValidationBehavior{TRequest, TResponse}"/> cuando falla FluentValidation
+/// - Capturada por middleware de manejo de excepciones
+/// - Devuelve estado HTTP 400 BadRequest a cliente
 ///
-/// Error Categories:
-/// - ValidationException: Input validation failures (this class)
-/// - DomainException: Business rule violations
-/// - Other exceptions: Infrastructure/technical failures
+/// Categorías de Error:
+/// - <see cref="ValidationException"/>: Fallos de validación de entrada (esta clase)
+/// - <see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio
+/// - Otras excepciones: Fallos de infraestructura/técnicos
 ///
-/// Benefits:
-/// - Clear distinction between different error types
-/// - Appropriate error responses per error category
-/// - Separated concerns: validation vs business rules
-/// - Easier debugging and logging of different error types
+/// Beneficios:
+/// - Distincción clara entre diferentes tipos de error
+/// - Respuestas de error apropiadas por categoría de error
+/// - Preocupaciones separadas: validación vs reglas de negocio
+/// - Depuración y registro más fáciles de diferentes tipos de error
 /// </summary>
 public sealed class ValidationException : Exception
 {

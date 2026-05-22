@@ -4,26 +4,32 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.Domain.Events;
 
 /// <summary>
-/// DomainEvent is an abstract base class for all domain events in the system.
+/// DomainEvent es una clase base abstracta para todos los eventos de dominio en el sistema.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Domain Layer)
-/// - Implements Domain-Driven Design (DDD) pattern for event-driven architecture
-/// - Enables loose coupling between domain aggregates and application services
-/// - Captures important business occurrences that happened in the domain
-/// - Supports eventual consistency and asynchronous processing
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte del core de la aplicación en la capa de dominio</item>
+/// <item>Implementa patrón <a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">Domain-Driven Design</a> para arquitectura dirigida por eventos</item>
+/// <item>Habilita acoplamiento suelto entre agregados de dominio y servicios de aplicación</item>
+/// <item>Captura ocurrencias de negocio importantes que sucedieron en el dominio</item>
+/// <item>Permite que múltiples servicios reaccionen a cambios de dominio sin acoplamiento directo</item>
+/// </list>
 ///
-/// Domain Events in this system:
-/// - TaskCreatedEvent: Fired when a new task is created
-/// - TaskCompletedEvent: Fired when a task is marked as complete
-/// - TaskAssignedEvent: Fired when a task is assigned to a user
-/// - TaskPriorityChangedEvent: Fired when task priority is changed
+/// Eventos de Dominio en este sistema:
+/// <list type="bullet">
+/// <item>TaskCreatedEvent: Se dispara cuando se crea una nueva tarea</item>
+/// <item>TaskCompletedEvent: Se dispara cuando una tarea se marca como completada</item>
+/// <item>TaskAssignedEvent: Se dispara cuando una tarea se asigna a un usuario</item>
+/// <item>TaskPriorityChangedEvent: Se dispara cuando se cambia prioridad de tarea</item>
+/// </list>
 ///
-/// Benefits:
-/// - Decouples domain logic from infrastructure concerns
-/// - Enables side effects (notifications, emails) without modifying domain entities
-/// - Provides audit trail of domain activities
-/// - Supports cross-aggregate communication
+/// Beneficios:
+/// <list type="bullet">
+/// <item>Desacopla lógica de dominio de preocupaciones de infraestructura</item>
+/// <item>Habilita efectos secundarios (notificaciones, correos) sin modificar entidades de dominio</item>
+/// <item>Proporciona pista de auditoría de actividades de dominio</item>
+/// <item>Soporta comunicación entre agregados</item>
+/// </list>
 /// </summary>
 public abstract class DomainEvent
 {
@@ -52,6 +58,7 @@ public class TaskCreatedEvent : DomainEvent
         CreatedBy = createdBy;
     }
 }
+
 public class TaskCompletedEvent : DomainEvent
 {
     public Guid TaskId

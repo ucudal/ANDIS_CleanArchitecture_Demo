@@ -1,31 +1,31 @@
 namespace TaskManagement.Application.Exceptions;
 
 /// <summary>
-/// NotFoundException is thrown when a requested entity cannot be found.
+/// <c>NotFoundException</c> se lanza cuando una entidad solicitada no puede ser encontrada.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Represents failure to find requested resource
-/// - Distinct from other exception types (validation, domain, technical)
-/// - Allows handlers to catch and return appropriate HTTP status codes
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Representa fallo en encontrar recurso solicitado
+/// - Distinta de otros tipos de excepción (validación, dominio, técnico)
+/// - Permite a manejadores capturar y devolver códigos de estado HTTP apropiados
 ///
-/// Usage:
-/// - Thrown by query handlers when entity is not found
-/// - Thrown by command handlers when required aggregate is missing
-/// - Caught by exception handling middleware
-/// - Returns HTTP 404 NotFound status to client
+/// Uso:
+/// - Lanzada por manejadores de consulta cuando entidad no se encuentra
+/// - Lanzada por manejadores de comando cuando agregado requerido falta
+/// - Capturada por middleware de manejo de excepciones
+/// - Devuelve estado HTTP 404 NotFound a cliente
 ///
-/// Error Categories:
-/// - NotFoundException: Requested entity doesn't exist (this class)
-/// - ValidationException: Input validation failures
-/// - DomainException: Business rule violations
-/// - Other exceptions: Infrastructure/technical failures
+/// Categorías de Error:
+/// - <c>NotFoundException</c>: Entidad solicitada no existe (esta clase)
+/// - <see cref="ValidationException"/>: Fallos de validación de entrada
+/// - <see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio
+/// - Otras excepciones: Fallos de infraestructura/técnicos
 ///
-/// Benefits:
-/// - Clear semantics: distinguishes missing resources from other errors
-/// - Appropriate HTTP responses: 404 instead of 400 or 500
-/// - Consistent error handling across handlers
-/// - Improves API usability and predictability
+/// Beneficios:
+/// - Semántica clara: Distingue recursos faltantes de otros errores
+/// - Respuestas HTTP apropiadas: 404 en lugar de 400 o 500
+/// - Manejo de errores consistente entre manejadores
+/// - Mejora usabilidad y predictibilidad de API
 /// </summary>
 public sealed class NotFoundException : Exception
 {

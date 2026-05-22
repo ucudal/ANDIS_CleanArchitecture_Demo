@@ -1,29 +1,28 @@
 namespace TaskManagement.Application.Interfaces;
 
 /// <summary>
-/// IUnitOfWork is the abstraction for coordinating persistence of entity changes.
+/// IUnitOfWork es la abstracción para coordinar la persistencia de cambios de entidades.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Defines contract for saving changes to persistence store
-/// - Implementation abstraction: Interface in Application Core, implementation in Infrastructure
-/// - Dependency inversion: Application depends on interface, not concrete persistence technology
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Define contrato para guardar cambios en almacén de persistencia
+/// - Abstracción de implementación: Interfaz en Núcleo de Aplicación, implementación en Infraestructura
+/// - Inversión de dependencia: La aplicación depende de interfaz, no de tecnología de persistencia concreta
 ///
-/// Unit of Work Pattern Benefits:
-/// - Coordinates multiple repository changes into single atomic transaction
-/// - Ensures all-or-nothing persistence: either all changes succeed or all rollback
-/// - Maintains consistency across multiple domain aggregates
-/// - Abstracts database transaction management from application code
+/// Beneficios del Patrón Unit of Work:
+/// - Coordina cambios de múltiples repositorios en una sola transacción atómica
+/// - Asegura persistencia de todo o nada: todos los cambios tienen éxito o todos se revierten
+/// - Mantiene consistencia en múltiples agregados de dominio
+/// - Abstrae gestión de transacción de base de datos del código de aplicación
 ///
-/// Typical Usage:
-/// - After modifying domain entities through repositories
-/// - Before executing domain events that depend on persistence success
-/// - Application services call SaveChangesAsync after coordinating domain operations
+/// Uso Típico:
+/// - Después de modificar entidades de dominio a través de repositorios
+/// - Antes de ejecutar eventos de dominio que dependen de persistencia exitosa
+/// - Los servicios de aplicación llaman a SaveChangesAsync después de coordinar operaciones de dominio
 ///
-/// In this implementation:
-/// - TaskDbContext implements both DbContext and IUnitOfWork
-/// - SaveChangesAsync wraps Entity Framework's SaveChangesAsync
-/// - Provides cancellation token support for long-running operations
+/// En esta implementación:
+/// - <c>TaskDbContext</c> implementa tanto <c>DbContext</c> como <see cref="IUnitOfWork"/>
+/// - <see cref="IUnitOfWork.SaveChangesAsync"/> envuelve Entity Framework.
 /// </summary>
 public interface IUnitOfWork
 {

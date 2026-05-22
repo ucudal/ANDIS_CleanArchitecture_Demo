@@ -7,38 +7,48 @@ using TaskManagement.Domain.Common;
 namespace TaskManagement.Application.Behaviors;
 
 /// <summary>
-/// ValidationBehavior is a MediatR pipeline behavior for validating commands and queries.
+/// ValidationBehavior es un comportamiento de pipeline de <see cref="MediatR"/> para validar comandos y consultas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Cross-cutting concern: Applies to all commands and queries
-/// - Pipeline behavior: Intercepts all MediatR requests before handlers execute
-/// - Validates inputs using FluentValidation framework
+/// Rol en Clean Architecture:
+/// <list type="bullet">
+/// <item>Parte del core de la aplicación (Capa de Aplicación)</item>
+/// <item>Preocupación transversal: Se aplica a todos los comandos y consultas</item>
+/// <item>Comportamiento de pipeline: Intercepta todas las solicitudes de <see cref="MediatR"/> antes de que se ejecuten los manejadores</item>
+/// <item>Valida entradas utilizando el marco de trabajo FluentValidation</item>
+/// </list>
 ///
-/// MediatR Pipeline Pattern:
-/// - Behaviors wrap request handling (like middleware in ASP.NET Core)
-/// - Order of registration determines execution order
-/// - Can handle validation, logging, performance monitoring, caching, etc.
-/// - Enables separation of cross-cutting concerns from business logic
+/// Patrón de pipeline de <see cref="MediatR"/>:
+/// <list type="bullet">
+/// <item>Los comportamientos envuelven el manejo de solicitudes (como middleware en ASP.NET Core)</item>
+/// <item>El orden de registro determina el orden de ejecución</item>
+/// <item>Puede manejar validación, registro, monitoreo de rendimiento, caché, etc.</item>
+/// <item>Permite separación de preocupaciones transversales de la lógica de negocio</item>
+/// </list>
 ///
-/// Validation Behavior Responsibilities:
-/// - Runs all registered validators for the specific command/query
-/// - Aggregates validation errors from all validators
-/// - Returns Result.Failure with collected errors if validation fails
-/// - Allows handler to execute if validation succeeds
+/// Responsabilidades del Comportamiento de Validación:
+/// <list type="bullet">
+/// <item>Ejecuta todos los validadores registrados para el comando/consulta específicos</item>
+/// <item>Agrega errores de validación de todos los validadores</item>
+/// <item>Devuelve <c>Failure</c> con errores recopilados si la validación falla</item>
+/// <item>Permite que el manejador se ejecute si la validación tiene éxito</item>
+/// </list>
 ///
-/// Design Pattern Benefits:
-/// - Centralized validation logic (not scattered in handlers)
-/// - Consistent validation approach across all commands
-/// - Validators are reusable and composable
-/// - Separation of validation rules from business logic
-/// - Easy to add or modify validation without touching handlers
+/// Beneficios del Patrón de Diseño:
+/// <list type="bullet">
+/// <item>Lógica de validación centralizada (no dispersa en manejadores)</item>
+/// <item>Enfoque de validación consistente en todos los comandos</item>
+/// <item>Los validadores son reutilizables y componibles</item>
+/// <item>Separación de reglas de validación de la lógica de negocio</item>
+/// <item>Fácil agregar o modificar validación sin tocar manejadores</item>
+/// </list>
 ///
-/// FluentValidation Integration:
-/// - Validators registered per command/query type
-/// - Fluent API for readable validation rules
-/// - Chaining validation rules for complex scenarios
-/// - Supports custom validation rules and async validators
+/// Integración con FluentValidation:
+/// <list type="bullet">
+/// <item>Validadores registrados por tipo de comando/consulta</item>
+/// <item>API fluida para reglas de validación legibles</item>
+/// <item>Encadenamiento de reglas de validación para escenarios complejos</item>
+/// <item>Soporta reglas de validación personalizadas y validadores asíncronos</item>
+/// </list>
 /// </summary>
 public sealed class ValidationBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
@@ -73,7 +83,7 @@ public sealed class ValidationBehavior<TRequest, TResponse>
 
         if (failures.Count > 0)
         {
-            // Use reflection to create failure result of correct generic type
+            // Utilizar reflexión para crear resultado de fracaso de tipo genérico correcto
             return CreateFailureResult(failures);
         }
 

@@ -3,40 +3,40 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.API.Requests;
 
 /// <summary>
-/// CreateTaskRequest is the input DTO for creating a new task via HTTP API.
+/// CreateTaskRequest es el DTO de entrada para crear una nueva tarea a través de API HTTP.
 ///
-/// Role in Clean Architecture:
-/// - Part of the UI Layer (API presentation)
-/// - Input DTO: Transfers data from HTTP request to application layer
-/// - Request binding: ASP.NET Core deserializes JSON to this type
-/// - Decouples API contract from application layer
+/// Rol en Clean Architecture:
+/// - Parte de la capa de presentación (UI Layer)
+/// - DTO de entrada: Transfiere datos de solicitud HTTP a capa de aplicación
+/// - Vinculación de solicitud: ASP.NET Core deserializa JSON a este tipo
+/// - Desacopla contrato de API de capa de aplicación
 ///
-/// Request DTOs vs Commands:
-/// - CreateTaskRequest: HTTP request format, API-specific structure
-/// - CreateTaskCommand: Application command, domain-aware structure
-/// - Controller transforms request to command
-/// - Separation allows independent evolution of API and application
+/// DTOs de Solicitud vs Comandos:
+/// - CreateTaskRequest: Formato de solicitud HTTP, estructura específíca de API
+/// - CreateTaskCommand: Comando de aplicación, estructura consciente del dominio
+/// - El controlador transforma solicitud a comando
+/// - Separación permite evolución independiente de API y aplicación
 ///
-/// Benefits of Input DTOs:
-/// - API contracts separate from application models
-/// - Can add API-specific validation (attribute-based)
-/// - Can include API documentation (DataAnnotations)
-/// - Can transform to different command structures
-/// - Backwards compatibility when changing internal models
+/// Beneficios de DTOs de Entrada:
+/// - Contratos de API separados de modelos de aplicación
+/// - Puede agregar validación específíca de API (basada en atributos)
+/// - Puede incluir documentación de API (DataAnnotations)
+/// - Puede transformar a diferentes estructuras de comando
+/// - Compatibilidad hacia atrás al cambiar modelos internos
 ///
-/// Data Flow:
-/// 1. HTTP client sends JSON in request body
-/// 2. ASP.NET Core deserializes JSON to CreateTaskRequest
-/// 3. Model validation applied (data annotations)
-/// 4. Controller transforms to CreateTaskCommand
-/// 5. Command sent to application layer via MediatR
-/// 6. Application layer validation (FluentValidation, domain rules)
-/// 7. Domain logic executed
+/// Flujo de Datos:
+/// 1. Cliente HTTP envía JSON en cuerpo de solicitud
+/// 2. ASP.NET Core deserializa JSON a <see cref="CreateTaskRequest"/>
+/// 3. Validación de modelo aplicada (anotaciones de datos)
+/// 4. Controlador transforma a <see cref="TaskManagement.Application.Commands.CreateTask.CreateTaskCommand"/>
+/// 5. Comando enviado a capa de aplicación a través de <see cref="MediatR"/>
+/// 6. Validación de capa de aplicación (FluentValidation, reglas de dominio)
+/// 7. Lógica de dominio ejecutada
 ///
-/// Notes:
-/// - Properties should match JSON field names (or use [JsonPropertyName])
-/// - Type safety ensures invalid data is rejected early
-/// - Data annotations document required fields and constraints
+/// Notas:
+/// - Las propiedades deben coincidir con nombres de campo JSON (o usar [JsonPropertyName])
+/// - Seguridad de tipo asegura que datos inválidos se rechacen temprano
+/// - Anotaciones de datos documentan campos requeridos y restricciones
 /// </summary>
 
 internal sealed record CreateTaskRequest(

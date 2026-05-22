@@ -6,46 +6,46 @@ using TaskManagement.Domain.Interfaces;
 namespace TaskManagement.Application.Commands.CompleteTask;
 
 /// <summary>
-/// CompleteTaskCommand encapsulates the request to mark a task as complete.
+/// <c>CompleteTaskCommand</c> encapsula la solicitud de marcar una tarea como completada.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - CQRS Command: Represents a request to perform a state-changing operation
-/// - Carries input parameters from API/UI layer to application logic
-/// - Input DTO for completing a task
-/// - Implements MediatR IRequest for dependency injection and middleware processing
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Comando CQRS: Representa una solicitud para realizar una operación que cambia estado
+/// - Transporta parámetros de entrada desde la capa de API/UI a la lógica de aplicación
+/// - DTO de entrada para completar una tarea
+/// - Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware
 ///
-/// Design Pattern:
-/// - Records in C# are immutable by default, preventing accidental modifications
-/// - Sealed prevents inheritance, ensuring tight coupling to specific type
-/// - Generic IRequest allows strongly-typed results with Result pattern
+/// Patrón de Diseño:
+/// - Los registros en C# son inmutables por defecto, previniendo modificaciones accidentales
+/// - Sellado previene herencia, asegurando acoplamiento fuerte a tipo específicos
+/// - <see cref="IRequest"/> genérico permite resultados fuertemente tipificados con patrón <see cref="Result"/>
 /// </summary>
 public sealed record CompleteTaskCommand(Guid TaskId) : IRequest<Result>;
 
 /// <summary>
-/// CompleteTaskCommandHandler is the application service for completing tasks.
+/// CompleteTaskCommandHandler es el servicio de aplicación para completar tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Application Service: Orchestrates domain and infrastructure layers
-/// - MediatR Handler: Processes commands through a pipeline
-/// - Implements business use case logic (not domain logic)
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Servicio de Aplicación: Orquesta las capas de dominio e infraestructura
+/// - Manejador de <see cref="MediatR"/>: Procesa comandos a través de un pipeline
+/// - Implementa lógica de caso de uso (no lógica de dominio)
 ///
-/// Responsibilities:
-/// - Retrieves task from repository
-/// - Delegates state transition to domain entity (Complete method)
-/// - Persists changes through unit of work
-/// - Dispatches domain events for post-completion actions
+/// Responsabilidades:
+/// - Recupera tarea del repositorio
+/// - Delega transición de estado a entidad de dominio (método Complete)
+/// - Persiste cambios a través de unidad de trabajo
+/// - Envía eventos de dominio para acciones posteriores a finalización
 ///
-/// Domain Layer Interaction:
-/// - Uses TaskItem.Complete method to enforce business rules
-/// - Returns domain-defined errors if business rules are violated
-/// - Depends on repository abstraction (no direct database access)
+/// Interacción de Capa de Dominio:
+/// - Utiliza método TaskItem.Complete para aplicar reglas de negocio
+/// - Devuelve errores definidos por dominio si se violan reglas de negocio
+/// - Depende de abstracción de repositorio (sin acceso directo a base de datos)
 ///
-/// Error Handling:
-/// - Returns Result.Failure if task not found
-/// - Returns domain errors if task cannot be completed (already completed, etc.)
-/// - Prevents invalid state transitions at domain level
+/// Manejo de Errores:
+/// - Devuelve Result.Failure si tarea no se encuentra
+/// - Devuelve errores de dominio si tarea no puede completarse (ya completada, etc.)
+/// - Previene transiciones de estado inválidas a nivel de dominio
 /// </summary>
 public sealed class CompleteTaskCommandHandler : IRequestHandler<CompleteTaskCommand, Result>
 {
@@ -75,7 +75,7 @@ public sealed class CompleteTaskCommandHandler : IRequestHandler<CompleteTaskCom
         if (result.IsFailure)
             return result;
 
-        // Task was loaded with AsNoTracking; attach it so state changes are persisted.
+        // La tarea fue cargada con AsNoTracking; adjuntarla para que los cambios de estado se persistan.
         _taskRepository.Update(task);
         await _unitOfWork.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken).ConfigureAwait(false);

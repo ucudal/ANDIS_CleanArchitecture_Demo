@@ -3,31 +3,31 @@ using TaskManagement.Application.Queries.GetTaskById;
 namespace TaskManagement.Application.Interfaces;
 
 /// <summary>
-/// ITaskReadRepository is the abstraction for read-only task queries.
+/// <c>ITaskReadRepository</c> es la abstracción para consultas de sólo lectura de tareas.
 ///
-/// Role in Clean Architecture:
-/// - Part of the Application Core (Application Layer)
-/// - Defines contract for efficient task data retrieval
-/// - Implementation abstraction: Interface in Application Core, implementation in Infrastructure
-/// - Enables CQRS (Command Query Responsibility Segregation) pattern
+/// Rol en Clean Architecture:
+/// - Parte del core de la aplicación (Capa de Aplicación)
+/// - Define contrato para recuperación eficiente de datos de tarea
+/// - Abstracción de implementación: Interfaz en Núcleo de Aplicación, implementación en Infraestructura
+/// - Habilita patrón CQRS —Command Query Responsibility Segregation—
 ///
-/// Read Repository Separation Benefits:
-/// - Optimized for read performance (can use Dapper, raw SQL, read models)
-/// - Independent from write repository (ITaskRepository)
-/// - Supports eventual consistency patterns
-/// - Can denormalize data for query efficiency
-/// - Enables different optimization strategies for reads vs writes
+/// Beneficios de Separación de Repositorio de Lectura:
+/// - Optimizado para rendimiento de lectura (puede usar Dapper, SQL sin procesar, modelos de lectura)
+/// - Independiente del repositorio de escritura <see cref="TaskManagement.Domain.Interfaces.ITaskRepository"/>
+/// - Habilita el patrón CQRS para separar lecturas de escrituras
+/// - Puede desnormalizar datos para eficiencia de consulta
+/// - Habilita diferentes estrategias de optimización para lecturas vs escrituras
 ///
-/// Contrast with ITaskRepository:
-/// - ITaskRepository: Write operations (Add, Update, Delete)
-/// - ITaskReadRepository: Read operations optimized for queries
-/// - Follows CQRS: Separates command (write) from query (read) responsibilities
+/// Contraste con <see cref="TaskManagement.Domain.Interfaces.ITaskRepository"/>:
+/// - <see cref="TaskManagement.Domain.Interfaces.ITaskRepository"/>: Operaciones de escritura (Add, Update, Delete)
+/// - <see cref="ITaskReadRepository"/>: Operaciones de lectura optimizadas para consultas
+/// - Sigue CQRS: Separa responsabilidad de comando (escritura) de consulta (lectura)
 ///
-/// Implementation Strategy:
-/// - Can implement using Entity Framework AsNoTracking for efficiency
-/// - Can implement using Dapper for fine-grained SQL control
-/// - Can query read-optimized denormalized tables or views
-/// - Returns DTOs optimized for specific query use cases
+/// Estrategia de Implementación:
+/// - Puede implementar utilizando Entity Framework <c>AsNoTracking</c> para eficiencia
+/// - Puede implementar utilizando Dapper para control SQL detallado
+/// - Puede consultar tablas o vistas desnormalizadas optimizadas para lectura
+/// - Devuelve DTOs optimizados para casos de uso de consulta específicos
 /// </summary>
 
 public interface ITaskReadRepository
