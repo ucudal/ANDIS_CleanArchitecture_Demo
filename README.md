@@ -7,7 +7,7 @@
 <!-- markdownlint-disable-next-line MD025 -->
 # Demo de Clean Architecture
 
-V1.1
+[![Deploy to Pages](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml/badge.svg)](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml)
 
 En [Clean
 Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
@@ -33,5 +33,5 @@ desarrollada usando Clean Architecture y es una versión extendida del ejemplo d
 > [!TIP]
 > Todas las clases en esta demo están documentadas para explicar su rol en la
 > arquitectura. Comienza consultando 📖 [esta
-> documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo/html/index.html)
+> documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo)
 > que te ayudará a entender la arquitectura navegando por el código.
