@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Behaviors.ValidationBehavior&lt; TRequest, TResponse &gt;" name="TaskManagement.Application.Behaviors.ValidationBehavior&lt; TRequest, TResponse &gt;">
-<area shape="rect" id="Node000001" title="ValidationBehavior es un comportamiento de pipeline de MediatR para validar comandos y consultas." alt="" coords="5,135,191,251"/>
-<area shape="rect" id="Node000002" href="$classIPipelineBehavior-2-g.html" title=" " alt="" coords="19,5,178,87"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,102,101,135,96,135,96,102"/>
-</map>

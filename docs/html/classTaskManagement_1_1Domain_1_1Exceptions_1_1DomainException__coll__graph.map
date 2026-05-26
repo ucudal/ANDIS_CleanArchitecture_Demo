@@ -1,5 +1,0 @@
-<map id="TaskManagement.Domain.Exceptions.DomainException" name="TaskManagement.Domain.Exceptions.DomainException">
-<area shape="rect" id="Node000001" title="DomainException es la clase de excepción base para todos los errores de capa de dominio." alt="" coords="5,120,241,242"/>
-<area shape="rect" id="Node000002" href="$classException.html" title=" " alt="" coords="89,5,158,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,87,126,120,120,120,120,87"/>
-</map>

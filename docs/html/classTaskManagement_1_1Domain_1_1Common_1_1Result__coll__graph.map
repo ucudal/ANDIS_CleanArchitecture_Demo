@@ -1,3 +1,0 @@
-<map id="TaskManagement.Domain.Common.Result" name="TaskManagement.Domain.Common.Result">
-<area shape="rect" id="Node000001" title="Result es un tipo de unión discriminada que implementa el patrón Result para manejo de errores." alt="" coords="5,5,229,249"/>
-</map>

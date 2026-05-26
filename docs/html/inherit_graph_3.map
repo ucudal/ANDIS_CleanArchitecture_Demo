@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classException.html" title=" " alt="" coords="5,78,85,104"/>
-<area shape="rect" id="Node000001" href="$classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html" title="NotFoundException se lanza cuando una entidad solicitada no puede ser encontrada." alt="" coords="153,5,358,46"/>
-<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="94,70,132,56,173,44,175,49,133,62,96,75"/>
-<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html" title="ValidationException se lanza cuando la validación de entrada falla en la capa de aplicación." alt="" coords="154,71,358,111"/>
-<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="100,88,153,88,153,94,100,94"/>
-<area shape="rect" id="Node000003" href="$classTaskManagement_1_1Domain_1_1Exceptions_1_1DomainException.html" title="DomainException es la clase de excepción base para todos los errores de capa de dominio." alt="" coords="133,136,379,177"/>
-<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="96,107,133,120,175,133,173,138,132,126,94,112"/>
-</map>

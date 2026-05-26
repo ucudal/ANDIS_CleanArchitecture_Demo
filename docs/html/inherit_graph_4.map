@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classIEntityTypeConfiguration-1-g.html" title=" " alt="" coords="5,13,170,38"/>
-<area shape="rect" id="Node000001" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html" title="TaskConfiguration es la configuración de Entity Framework Core para entidad TaskItem." alt="" coords="218,5,505,46"/>
-<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="185,23,217,23,217,28,185,28"/>
-</map>

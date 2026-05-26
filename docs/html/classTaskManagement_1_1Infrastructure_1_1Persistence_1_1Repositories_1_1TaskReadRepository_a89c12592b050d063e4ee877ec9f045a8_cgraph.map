@@ -1,5 +1,0 @@
-<map id="TaskManagement.Infrastructure.Persistence.Repositories.TaskReadRepository.SearchAsync" name="TaskManagement.Infrastructure.Persistence.Repositories.TaskReadRepository.SearchAsync">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,236,61"/>
-<area shape="rect" id="Node000002" href="$namespaceTaskManagement_1_1Application_1_1Queries_1_1SearchTasks.html#a3ac11b8caad0c386a169cfc826de80e8" title="TaskSearchRequest es el DTO de entrada para operaciones avanzadas de búsqueda de tareas." alt="" coords="284,13,552,54"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,30,268,30,268,36,236,36"/>
-</map>

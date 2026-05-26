@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Queries.GetTaskById.GetTaskByIdQueryHandler" name="TaskManagement.Application.Queries.GetTaskById.GetTaskByIdQueryHandler">
-<area shape="rect" id="Node000001" title="GetTaskByIdQuery encapsula una solicitud para recuperar una sola tarea por ID." alt="" coords="5,120,221,236"/>
-<area shape="rect" id="Node000002" href="$classIRequestHandler-2-g.html" title=" " alt="" coords="59,5,168,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,87,116,120,110,120,110,87"/>
-</map>

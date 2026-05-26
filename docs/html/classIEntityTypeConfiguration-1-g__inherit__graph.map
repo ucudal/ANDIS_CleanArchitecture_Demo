@@ -1,5 +1,0 @@
-<map id="IEntityTypeConfiguration" name="IEntityTypeConfiguration">
-<area shape="rect" id="Node000001" title=" " alt="" coords="67,5,220,72"/>
-<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html" title="TaskConfiguration es la configuración de Entity Framework Core para entidad TaskItem." alt="" coords="5,120,282,201"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,86,146,120,141,120,141,86"/>
-</map>
