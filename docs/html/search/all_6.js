@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['beneficios_20de_20clean_20architecture_0',['Beneficios de Clean Architecture',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md57',1,'']]],
-  ['block_1',['Code block',['../classMyLibrary_1_1Example.html#autotoc_md29',1,'']]],
-  ['bordered_20images_2',['Bordered Images',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2tricks.html#autotoc_md23',1,'']]],
-  ['browser_20support_3',['Browser support',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/doxygen-awesome-css/README.md#autotoc_md42',1,'']]],
-  ['bug_20list_4',['Bug List',['../bug.html',1,'']]],
-  ['button_5',['Fragment Copy Button',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2extensions.html#extension-copy-button',1,'']]],
-  ['buttons_6',['Buttons',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2tricks.html#autotoc_md22',1,'']]]
+  ['código_0',['código',['../index.html#autotoc_md15',1,'Cómo navegar el código'],['../index.html#autotoc_md4',1,'Diagrama C4 de código']]],
+  ['cómo_20navegar_20el_20código_1',['Cómo navegar el código',['../index.html#autotoc_md15',1,'']]],
+  ['c4_20de_20código_2',['Diagrama C4 de código',['../index.html#autotoc_md4',1,'']]],
+  ['c4_20de_20componentes_3',['Diagrama C4 de componentes',['../index.html#autotoc_md3',1,'']]],
+  ['c4_20de_20contenedores_4',['Diagrama C4 de contenedores',['../index.html#autotoc_md2',1,'']]],
+  ['c4_20de_20sistema_20de_20software_5',['Diagrama C4 de sistema de software',['../index.html#autotoc_md1',1,'']]],
+  ['cada_20capa_6',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
+  ['capa_7',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
+  ['capa_20de_20aplicación_8',['2. Capa de aplicación',['../index.html#autotoc_md12',1,'']]],
+  ['capa_20de_20dominio_9',['1. Capa de dominio',['../index.html#autotoc_md11',1,'']]],
+  ['capa_20de_20infraestructura_10',['3. Capa de infraestructura',['../index.html#autotoc_md13',1,'']]],
+  ['capa_20de_20interfaz_11',['4. Capa de interfaz',['../index.html#autotoc_md14',1,'']]],
+  ['católica_20del_20uruguay_12',['Universidad Católica del Uruguay',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md17',1,'']]],
+  ['clases_20e_20interfaces_20definidos_20en_20cada_20capa_13',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
+  ['clean_20architecture_14',['Clean Architecture',['../index.html#autotoc_md16',1,'Beneficios de Clean Architecture'],['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md20',1,'Demo de Clean Architecture']]],
+  ['completetaskcommandhandler_15',['CompleteTaskCommandHandler',['../classTaskManagement_1_1Application_1_1Commands_1_1CompleteTask_1_1CompleteTaskCommandHandler.html',1,'TaskManagement::Application::Commands::CompleteTask']]],
+  ['componentes_16',['Diagrama C4 de componentes',['../index.html#autotoc_md3',1,'']]],
+  ['contenedores_17',['Diagrama C4 de contenedores',['../index.html#autotoc_md2',1,'']]],
+  ['controllerbase_18',['ControllerBase',['../classControllerBase.html',1,'']]],
+  ['createtaskcommandhandler_19',['CreateTaskCommandHandler',['../classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html',1,'TaskManagement::Application::Commands::CreateTask']]],
+  ['createtaskcommandvalidator_20',['CreateTaskCommandValidator',['../classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator.html',1,'TaskManagement::Application::Behaviors']]]
 ];

@@ -22,11 +22,10 @@ var searchData=
   ['taskmanagement_3a_3adomain_3a_3aentities_19',['Entities',['../namespaceTaskManagement_1_1Domain_1_1Entities.html',1,'TaskManagement::Domain']]],
   ['taskmanagement_3a_3adomain_3a_3aevents_20',['Events',['../namespaceTaskManagement_1_1Domain_1_1Events.html',1,'TaskManagement::Domain']]],
   ['taskmanagement_3a_3adomain_3a_3aexceptions_21',['Exceptions',['../namespaceTaskManagement_1_1Domain_1_1Exceptions.html',1,'TaskManagement::Domain']]],
-  ['taskmanagement_3a_3adomain_3a_3ainterfaces_22',['Interfaces',['../namespaceTaskManagement_1_1Domain_1_1Interfaces.html',1,'TaskManagement::Domain']]],
-  ['taskmanagement_3a_3adomain_3a_3avalueobjects_23',['ValueObjects',['../namespaceTaskManagement_1_1Domain_1_1ValueObjects.html',1,'TaskManagement::Domain']]],
-  ['taskmanagement_3a_3ainfrastructure_24',['Infrastructure',['../namespaceTaskManagement_1_1Infrastructure.html',1,'TaskManagement']]],
-  ['taskmanagement_3a_3ainfrastructure_3a_3aeventdispatching_25',['EventDispatching',['../namespaceTaskManagement_1_1Infrastructure_1_1EventDispatching.html',1,'TaskManagement::Infrastructure']]],
-  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_26',['Persistence',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence.html',1,'TaskManagement::Infrastructure']]],
-  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_3a_3aconfigurations_27',['Configurations',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations.html',1,'TaskManagement::Infrastructure::Persistence']]],
-  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_3a_3arepositories_28',['Repositories',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories.html',1,'TaskManagement::Infrastructure::Persistence']]]
+  ['taskmanagement_3a_3adomain_3a_3avalueobjects_22',['ValueObjects',['../namespaceTaskManagement_1_1Domain_1_1ValueObjects.html',1,'TaskManagement::Domain']]],
+  ['taskmanagement_3a_3ainfrastructure_23',['Infrastructure',['../namespaceTaskManagement_1_1Infrastructure.html',1,'TaskManagement']]],
+  ['taskmanagement_3a_3ainfrastructure_3a_3aeventdispatching_24',['EventDispatching',['../namespaceTaskManagement_1_1Infrastructure_1_1EventDispatching.html',1,'TaskManagement::Infrastructure']]],
+  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_25',['Persistence',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence.html',1,'TaskManagement::Infrastructure']]],
+  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_3a_3aconfigurations_26',['Configurations',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations.html',1,'TaskManagement::Infrastructure::Persistence']]],
+  ['taskmanagement_3a_3ainfrastructure_3a_3apersistence_3a_3arepositories_27',['Repositories',['../namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories.html',1,'TaskManagement::Infrastructure::Persistence']]]
 ];

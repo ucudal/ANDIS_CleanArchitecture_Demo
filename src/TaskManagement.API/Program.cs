@@ -20,8 +20,8 @@
 // - Los manejadores de MediatR usan servicios registrados
 //
 // Registro de Capa de Arquitectura:
-// - Capa de Dominio: IUnitOfWork, ITaskRepository
-// - Capa de Aplicación: IDomainEventDispatcher, MediatR, FluentValidation, ValidationBehavior
+// - Capa de Dominio: IUnitOfWork
+// - Capa de Aplicación: ITaskRepository, IDomainEventDispatcher, MediatR, FluentValidation, ValidationBehavior
 // - Capa de Infraestructura: DbContext, Repositorios, Distribuidor de Eventos
 // - Capa de UI: Controladores, Middleware
 //
@@ -48,7 +48,6 @@ using Microsoft.IdentityModel.Tokens;
 using TaskManagement.API.Middleware;
 using TaskManagement.Application.Behaviors;
 using TaskManagement.Application.Interfaces;
-using TaskManagement.Domain.Interfaces;
 using TaskManagement.Infrastructure.EventDispatching;
 using TaskManagement.Infrastructure.Persistence;
 using TaskManagement.Infrastructure.Persistence.Repositories;

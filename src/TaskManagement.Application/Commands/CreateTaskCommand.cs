@@ -3,7 +3,6 @@ using MediatR;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Common;
 using TaskManagement.Domain.Entities;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Application.Commands.CreateTask;
 

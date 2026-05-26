@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['list_0',['List',['../bug.html',1,'Bug List'],['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]]
+  ['beneficios_20de_20clean_20architecture_0',['Beneficios de Clean Architecture',['../index.html#autotoc_md16',1,'']]]
 ];

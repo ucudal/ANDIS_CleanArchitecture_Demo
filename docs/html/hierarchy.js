@@ -13,9 +13,6 @@ var hierarchy =
       [ "TaskManagement.Domain.Events.TaskCreatedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html", null ],
       [ "TaskManagement.Domain.Events.TaskPriorityChangedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html", null ]
     ] ],
-    [ "MyLibrary::Example", "classMyLibrary_1_1Example.html", [
-      [ "MyLibrary::SubclassExample< TemplatedClass >", "classMyLibrary_1_1SubclassExample.html", null ]
-    ] ],
     [ "Exception", "classException.html", [
       [ "TaskManagement.Application.Exceptions.NotFoundException", "classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html", null ],
       [ "TaskManagement.Application.Exceptions.ValidationException", "classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html", null ],
@@ -45,17 +42,16 @@ var hierarchy =
     [ "TaskManagement.Application.Interfaces.ITaskReadRepository", "interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html", [
       [ "TaskManagement.Infrastructure.Persistence.Repositories.TaskReadRepository", "classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository.html", null ]
     ] ],
-    [ "TaskManagement.Domain.Interfaces.ITaskRepository", "interfaceTaskManagement_1_1Domain_1_1Interfaces_1_1ITaskRepository.html", [
+    [ "TaskManagement.Application.Interfaces.ITaskRepository", "interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html", [
       [ "TaskManagement.Infrastructure.Persistence.Repositories.TaskRepository", "classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html", null ]
     ] ],
     [ "TaskManagement.Application.Interfaces.IUnitOfWork", "interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html", [
       [ "TaskManagement.Infrastructure.Persistence.TaskDbContext", "classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html", null ]
     ] ],
-    [ "TaskManagement.Application.Common.PagedResult< T >", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html", null ],
+    [ "TaskManagement.Application.Common.PagedResult&lt; T &gt;", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html", null ],
     [ "TaskManagement.Domain.Common.Result", "classTaskManagement_1_1Domain_1_1Common_1_1Result.html", [
       [ "TaskManagement.Domain.Common.Result< T >", "classTaskManagement_1_1Domain_1_1Common_1_1Result-1-g.html", null ]
     ] ],
-    [ "MyLibrary::SecondExample", "classMyLibrary_1_1SecondExample.html", null ],
     [ "TaskManagement.Application.Queries.GetTaskById.TaskDto", "classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html", null ],
     [ "TaskManagement.Domain.Entities.TaskItem", "classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html", null ],
     [ "TaskManagement.Domain.Common.ValueObject", "classTaskManagement_1_1Domain_1_1Common_1_1ValueObject.html", [

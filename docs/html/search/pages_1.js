@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['customization_0',['Customization',['../md__2Users_2fmachado_2Repos_2ANDIS__CleanArchitecture__Demo_2doxygen-awesome-css_2docs_2customization.html',1,'']]]
+  ['2_20capa_20de_20aplicación_0',['2. Capa de aplicación',['../index.html#autotoc_md12',1,'']]]
 ];

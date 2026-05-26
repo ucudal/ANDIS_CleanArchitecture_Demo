@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]]
+  ['3_20capa_20de_20infraestructura_0',['3. Capa de infraestructura',['../index.html#autotoc_md13',1,'']]]
 ];

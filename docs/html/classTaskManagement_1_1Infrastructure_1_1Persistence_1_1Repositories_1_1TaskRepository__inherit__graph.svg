@@ -50,26 +50,26 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="interfaceTaskManagement_1_1Domain_1_1Interfaces_1_1ITaskRepository.html" target="_top" xlink:title="ITaskRepository es la interfaz del repositorio de escritura para agregado TaskItem.">
-<polygon fill="white" stroke="none" points="180.12,-325.75 8.62,-325.75 8.62,-188.5 180.12,-188.5 180.12,-325.75"/>
-<text xml:space="preserve" text-anchor="start" x="12.62" y="-312.25" font-family="Helvetica,sans-Serif" font-size="10.00">TaskManagement.Domain.Interfaces.</text>
-<text xml:space="preserve" text-anchor="start" x="58.75" y="-301" font-family="Helvetica,sans-Serif" font-size="10.00">ITaskRepository</text>
+<g id="a_Node000002"><a xlink:href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html" target="_top" xlink:title="ITaskRepository es la interfaz del repositorio de escritura para agregado TaskItem.">
+<polygon fill="white" stroke="none" points="164,-325.75 24.75,-325.75 24.75,-188.5 164,-188.5 164,-325.75"/>
+<text xml:space="preserve" text-anchor="start" x="28.75" y="-312.25" font-family="Helvetica,sans-Serif" font-size="10.00">TaskManagement.Application.</text>
+<text xml:space="preserve" text-anchor="start" x="35.5" y="-301" font-family="Helvetica,sans-Serif" font-size="10.00">Interfaces.ITaskRepository</text>
 <text xml:space="preserve" text-anchor="start" x="92.88" y="-285.75" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetByIdAsync()</text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-255.25" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-255.25" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-255.25" font-family="Helvetica,sans-Serif" font-size="10.00">GetByAssigneeAsync()</text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-240" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-240" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-240" font-family="Helvetica,sans-Serif" font-size="10.00">GetOverdueAsync()</text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-224.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-224.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-224.75" font-family="Helvetica,sans-Serif" font-size="10.00">AddAsync()</text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">Update()</text>
-<text xml:space="preserve" text-anchor="start" x="25.5" y="-194.25" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="33.56" y="-194.25" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="48.38" y="-194.25" font-family="Helvetica,sans-Serif" font-size="10.00">Delete()</text>
-<polygon fill="#666666" stroke="#666666" points="8.62,-297.25 8.62,-297.25 180.12,-297.25 180.12,-297.25 8.62,-297.25"/>
-<polygon fill="#666666" stroke="#666666" points="8.62,-282 8.62,-282 180.12,-282 180.12,-282 8.62,-282"/>
-<polygon fill="none" stroke="#666666" points="8.62,-188.5 8.62,-325.75 180.12,-325.75 180.12,-188.5 8.62,-188.5"/>
+<polygon fill="#666666" stroke="#666666" points="24.75,-297.25 24.75,-297.25 164,-297.25 164,-297.25 24.75,-297.25"/>
+<polygon fill="#666666" stroke="#666666" points="24.75,-282 24.75,-282 164,-282 164,-282 24.75,-282"/>
+<polygon fill="none" stroke="#666666" points="24.75,-188.5 24.75,-325.75 164,-325.75 164,-188.5 24.75,-188.5"/>
 </a>
 </g>
 </g>

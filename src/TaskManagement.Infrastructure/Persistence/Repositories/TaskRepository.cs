@@ -1,7 +1,7 @@
 // TaskManagement.Infrastructure/Persistence/Repositories/TaskRepository.cs
 using Microsoft.EntityFrameworkCore;
+using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Entities;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
