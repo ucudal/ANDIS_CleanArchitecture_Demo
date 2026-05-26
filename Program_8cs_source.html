@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Program_8cs_so
   <div class="headertitle"><div class="title">Program.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Este archivo es la raíz de composición y configuración de inicio de la aplicación.</span></div>
+<a href="Program_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Este archivo es la raíz de composición y configuración de inicio de la aplicación.</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Rol en Clean Architecture:</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// - Parte de la capa de presentación (Capa de API)</span></div>
@@ -190,31 +190,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Program_8cs_so
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">using </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Infrastructure_1_1Persistence.html">TaskManagement.Infrastructure.Persistence</a>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">using </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories.html">TaskManagement.Infrastructure.Persistence.Repositories</a>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>var builder = WebApplication.CreateBuilder(args);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">   55</a></span>var <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a> = WebApplication.CreateBuilder(args);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// Cargar secretos de usuario explícitamente para que los tokens dotnet user-jwts funcionen incluso cuando</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// el proceso se inicia sin ASPNETCORE_ENVIRONMENT=Development.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="Program_8cs.html#a9835e574b1c3216fb46f5df123e12c01">   59</a></span><a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">const</span> <span class="keywordtype">string</span> connectionString = <span class="stringliteral">&quot;Data Source=file:taskmanagement?mode=memory&amp;cache=shared&quot;</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>builder.Configuration.AddInMemoryCollection(<span class="keyword">new</span> Dictionary&lt;string, string?&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="Program_8cs.html#a434676f9548941c102687582c11a38af">   62</a></span><a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Configuration.AddInMemoryCollection(<span class="keyword">new</span> Dictionary&lt;string, string?&gt;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    [<span class="stringliteral">&quot;ConnectionStrings:DefaultConnection&quot;</span>] = connectionString</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>});</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>builder.Services.AddSingleton&lt;SqliteConnection&gt;(_ =&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="Program_8cs.html#adb1d295ed9da1ca0e33706fa2dfbf70b">   67</a></span><a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Services.AddSingleton&lt;SqliteConnection&gt;(_ =&gt;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    var connection = <span class="keyword">new</span> SqliteConnection(connectionString);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    connection.Open();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> connection;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>});</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>var bearerSection = builder.Configuration.GetSection(<span class="stringliteral">&quot;Authentication:Schemes:Bearer&quot;</span>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>var validIssuer = bearerSection[<span class="stringliteral">&quot;ValidIssuer&quot;</span>];</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>var validAudiences = bearerSection</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">   74</a></span>var <a class="code hl_variable" href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">bearerSection</a> = <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Configuration.GetSection(<span class="stringliteral">&quot;Authentication:Schemes:Bearer&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="Program_8cs.html#a0120290e0478f85c33b499c6973f0c80">   75</a></span>var <a class="code hl_variable" href="Program_8cs.html#a0120290e0478f85c33b499c6973f0c80">validIssuer</a> = <a class="code hl_variable" href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">bearerSection</a>[<span class="stringliteral">&quot;ValidIssuer&quot;</span>];</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="Program_8cs.html#a2400db23191f9345284ea704dcd51702">   76</a></span>var <a class="code hl_variable" href="Program_8cs.html#a2400db23191f9345284ea704dcd51702">validAudiences</a> = <a class="code hl_variable" href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">bearerSection</a></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    .GetSection(<span class="stringliteral">&quot;ValidAudiences&quot;</span>)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    .Get&lt;<span class="keywordtype">string</span>[]&gt;() ?? [];</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>var signingKeys = bearerSection</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="Program_8cs.html#add0f623c4eea31c38a9ffad7cc681194">   79</a></span>var <a class="code hl_variable" href="Program_8cs.html#add0f623c4eea31c38a9ffad7cc681194">signingKeys</a> = <a class="code hl_variable" href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">bearerSection</a></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    .GetSection(<span class="stringliteral">&quot;SigningKeys&quot;</span>)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    .GetChildren()</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    .Select(x =&gt; x[<span class="stringliteral">&quot;Value&quot;</span>])</div>
@@ -224,31 +224,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Program_8cs_so
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    .ToArray();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>builder.Services</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)</div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="Program_8cs.html#a7b2bc4c41ab1f801b53d7330af1fdf7e">   89</a></span>    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    .AddJwtBearer(options =&gt;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        options.TokenValidationParameters = <span class="keyword">new</span> TokenValidationParameters</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            ValidateIssuer = !<span class="keywordtype">string</span>.IsNullOrWhiteSpace(validIssuer),</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            ValidIssuer = validIssuer,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            ValidateIssuer = !<span class="keywordtype">string</span>.IsNullOrWhiteSpace(<a class="code hl_variable" href="Program_8cs.html#a0120290e0478f85c33b499c6973f0c80">validIssuer</a>),</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            ValidIssuer = <a class="code hl_variable" href="Program_8cs.html#a0120290e0478f85c33b499c6973f0c80">validIssuer</a>,</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            ValidateAudience = validAudiences.Length &gt; 0,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            ValidAudiences = validAudiences,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            ValidAudiences = <a class="code hl_variable" href="Program_8cs.html#a2400db23191f9345284ea704dcd51702">validAudiences</a>,</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            ValidateIssuerSigningKey = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            IssuerSigningKeys = signingKeys,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            IssuerSigningKeys = <a class="code hl_variable" href="Program_8cs.html#add0f623c4eea31c38a9ffad7cc681194">signingKeys</a>,</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            ValidateLifetime = <span class="keyword">true</span>,</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            TryAllIssuerSigningKeys = <span class="keyword">true</span>,</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            ClockSkew = TimeSpan.FromMinutes(1)</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        };</div>
+</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    });</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>builder.Services.AddAuthorization();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="Program_8cs.html#ae5ec6d7548eaed13afc397f42272d5a8">  105</a></span><a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Services.AddAuthorization();</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// Agregar servicios al contenedor</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>builder.Services</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    .AddMediatR(cfg =&gt; cfg.RegisterServicesFromAssembly(typeof(<a class="code hl_namespace" href="namespaceTaskManagement.html">TaskManagement</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application.html">Application</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands.html">Commands</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands_1_1CreateTask.html">CreateTask</a>.CreateTaskCommand).Assembly))</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    .AddValidatorsFromAssembly(typeof(<a class="code hl_namespace" href="namespaceTaskManagement.html">TaskManagement</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application.html">Application</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands.html">Commands</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands_1_1CreateTask.html">CreateTask</a>.CreateTaskCommand).Assembly)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    .AddTransient(typeof(IPipelineBehavior&lt;,&gt;), typeof(ValidationBehavior&lt;,&gt;))</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="Program_8cs.html#a93e07588756f0448d23ff93e06e4053c">  109</a></span>    .AddMediatR(cfg =&gt; cfg.RegisterServicesFromAssembly(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(<a class="code hl_namespace" href="namespaceTaskManagement.html">TaskManagement</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application.html">Application</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands.html">Commands</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands_1_1CreateTask.html">CreateTask</a>.CreateTaskCommand).Assembly))</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    .AddValidatorsFromAssembly(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(<a class="code hl_namespace" href="namespaceTaskManagement.html">TaskManagement</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application.html">Application</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands.html">Commands</a>.<a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Commands_1_1CreateTask.html">CreateTask</a>.CreateTaskCommand).Assembly)</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">  111</a></span>    .AddTransient(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(IPipelineBehavior&lt;,&gt;), <a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(ValidationBehavior&lt;,&gt;))</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    .AddDbContext&lt;<a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html">TaskDbContext</a>&gt;(options =&gt;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        options.UseSqlite(builder.Configuration.GetConnectionString(<span class="stringliteral">&quot;DefaultConnection&quot;</span>)))</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        options.UseSqlite(<a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Configuration.GetConnectionString(<span class="stringliteral">&quot;DefaultConnection&quot;</span>)))</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    .AddScoped&lt;<a class="code hl_interface" href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html">IUnitOfWork</a>&gt;(sp =&gt; sp.GetRequiredService&lt;<a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html">TaskDbContext</a>&gt;())</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    .AddScoped&lt;ITaskRepository, TaskRepository&gt;()</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    .AddScoped&lt;<a class="code hl_interface" href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html">ITaskReadRepository</a>, <a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository.html">TaskReadRepository</a>&gt;()</div>
@@ -257,26 +260,37 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Program_8cs_so
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    .AddJsonOptions(options =&gt;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        options.JsonSerializerOptions.Converters.Add(<span class="keyword">new</span> JsonStringEnumConverter());</div>
+</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    });</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>var app = builder.Build();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">  123</a></span>var <a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Build();</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">using</span> (var scope = app.Services.CreateScope())</div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="};">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="Program_8cs.html#aff66365900490f8310481e97366cff0f">  125</a></span><span class="keyword">using</span> (var <a class="code hl_typedef" href="Program_8cs.html#aff66365900490f8310481e97366cff0f">scope</a> = <a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.Services.CreateScope())</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    var dbContext = scope.ServiceProvider.GetRequiredService&lt;<a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html">TaskDbContext</a>&gt;();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    var dbContext = <a class="code hl_typedef" href="Program_8cs.html#aff66365900490f8310481e97366cff0f">scope</a>.ServiceProvider.GetRequiredService&lt;<a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html">TaskDbContext</a>&gt;();</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    dbContext.Database.EnsureCreated();</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">// Configurar pipeline de middleware</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>app.UseMiddleware&lt;ExceptionHandlingMiddleware&gt;();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.UseMiddleware&lt;ExceptionHandlingMiddleware&gt;();</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>app.UseHttpsRedirection();</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>app.UseAuthentication();</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>app.UseAuthorization();</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>app.MapControllers();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="Program_8cs.html#aa4d447fc3129a3aa301d736b8bd04ae9">  136</a></span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.UseHttpsRedirection();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="Program_8cs.html#a6435d8beeff4999dc0b0c6d60a86a4e2">  137</a></span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.UseAuthentication();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="Program_8cs.html#af6f72d752b2e73aa0292f74bd13237ab">  138</a></span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.UseAuthorization();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="Program_8cs.html#a9e2ee3170aa6279b68eefd1651f7d96c">  139</a></span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.MapControllers();</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>app.Run();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="Program_8cs.html#aaa3dbf02e269c3ef7e8546d290c6b3dd">  141</a></span><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.Run();</div>
+<div class="ttc" id="aProgram_8cs_html_a0120290e0478f85c33b499c6973f0c80"><div class="ttname"><a href="Program_8cs.html#a0120290e0478f85c33b499c6973f0c80">validIssuer</a></div><div class="ttdeci">var validIssuer</div><div class="ttdef"><b>Definition</b> <a href="#l00075">Program.cs:75</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_a2400db23191f9345284ea704dcd51702"><div class="ttname"><a href="Program_8cs.html#a2400db23191f9345284ea704dcd51702">validAudiences</a></div><div class="ttdeci">var validAudiences</div><div class="ttdef"><b>Definition</b> <a href="#l00076">Program.cs:76</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_a2f78352277081c620fd4cf92a5ce15e5"><div class="ttname"><a href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a></div><div class="ttdeci">var builder</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Program.cs:55</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_a7b225fcb720e4d5ed2bbf60e28a25e6d"><div class="ttname"><a href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a></div><div class="ttdeci">var app</div><div class="ttdef"><b>Definition</b> <a href="#l00123">Program.cs:123</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_aa8a3ec34a49e9187e3e92363e667e72e"><div class="ttname"><a href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a></div><div class="ttdeci">builder.Services. typeof(ValidationBehavior&lt;,&gt;)) .AddDbContext&lt; TaskDbContext &gt;(options</div><div class="ttdef"><b>Definition</b> <a href="#l00111">Program.cs:111</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_add0f623c4eea31c38a9ffad7cc681194"><div class="ttname"><a href="Program_8cs.html#add0f623c4eea31c38a9ffad7cc681194">signingKeys</a></div><div class="ttdeci">var signingKeys</div><div class="ttdef"><b>Definition</b> <a href="#l00079">Program.cs:79</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_ae3999b44135557adb9b9e27cb284663f"><div class="ttname"><a href="Program_8cs.html#ae3999b44135557adb9b9e27cb284663f">bearerSection</a></div><div class="ttdeci">var bearerSection</div><div class="ttdef"><b>Definition</b> <a href="#l00074">Program.cs:74</a></div></div>
+<div class="ttc" id="aProgram_8cs_html_aff66365900490f8310481e97366cff0f"><div class="ttname"><a href="Program_8cs.html#aff66365900490f8310481e97366cff0f">scope</a></div><div class="ttdeci">app.Services.CreateScope()) { var dbContext=scope.ServiceProvider.GetRequiredService&lt; TaskDbContext &gt;(); dbContext.Database.EnsureCreated();} app.UseMiddleware&lt; ExceptionHandlingMiddleware &gt;() scope</div><div class="ttdef"><b>Definition</b> <a href="#l00125">Program.cs:125</a></div></div>
 <div class="ttc" id="aclassTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository_html"><div class="ttname"><a href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository.html">TaskManagement.Infrastructure.Persistence.Repositories.TaskReadRepository</a></div><div class="ttdoc">TaskReadRepository es el repositorio de lectura para consultas de tarea optimizadas.</div><div class="ttdef"><b>Definition</b> <a href="TaskReadRepository_8cs_source.html#l00047">TaskReadRepository.cs:48</a></div></div>
 <div class="ttc" id="aclassTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext_html"><div class="ttname"><a href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html">TaskManagement.Infrastructure.Persistence.TaskDbContext</a></div><div class="ttdoc">TaskDbContext es el DbContext de Entity Framework Core para gestión de tareas.</div><div class="ttdef"><b>Definition</b> <a href="TaskDbContext_8cs_source.html#l00041">TaskDbContext.cs:42</a></div></div>
 <div class="ttc" id="ainterfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository_html"><div class="ttname"><a href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html">TaskManagement.Application.Interfaces.ITaskReadRepository</a></div><div class="ttdoc">ITaskReadRepository es la abstracción para consultas de sólo lectura de tareas.</div><div class="ttdef"><b>Definition</b> <a href="ITaskReadRepository_8cs_source.html#l00033">ITaskReadRepository.cs:34</a></div></div>
@@ -297,7 +311,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Program_8cs_so
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>TaskManagement.API</b></li><li class="navelem"><b>Program.cs</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e1b155cbcc663e464b30b1e0279830f5.html">TaskManagement.API</a></li><li class="navelem"><a href="Program_8cs.html">Program.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

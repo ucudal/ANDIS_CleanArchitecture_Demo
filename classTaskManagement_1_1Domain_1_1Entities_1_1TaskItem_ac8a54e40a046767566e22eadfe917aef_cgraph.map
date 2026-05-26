@@ -1,0 +1,10 @@
+<map id="TaskManagement.Domain.Entities.TaskItem.UpdatePriority" name="TaskManagement.Domain.Entities.TaskItem.UpdatePriority">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,231,79"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#abb0443b136478238351871e1c1621a33" title=" " alt="" coords="279,5,513,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,43,263,39,263,44,232,48"/>
+<area shape="rect" id="Node000004" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#aca3f1594f7b60690fbe65d1d6436d64d" title=" " alt="" coords="279,71,513,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,69,263,73,263,78,231,75"/>
+<area shape="rect" id="Node000003" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#ac72e19a32a39eff6e205a7ed743a20dd" title=" " alt="" coords="561,39,795,79"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="514,37,546,41,545,46,513,42"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="513,75,545,71,546,77,514,80"/>
+</map>

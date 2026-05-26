@@ -6,7 +6,7 @@
 <!-- Title: TaskManagement.Infrastructure.EventDispatching.TaskCompletedNotificationHandler Pages: 1 -->
 <svg width="214pt" height="215pt"
  viewBox="0.00 0.00 214.00 215.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 211)">
+<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 211)">
 <title>TaskManagement.Infrastructure.EventDispatching.TaskCompletedNotificationHandler</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
@@ -38,9 +38,9 @@
 <text xml:space="preserve" text-anchor="start" x="42.62" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; TaskCompletedEvent &gt; &gt;</text>
 <text xml:space="preserve" text-anchor="start" x="101.5" y="-155.75" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text xml:space="preserve" text-anchor="start" x="101.5" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="38.62,-167.25 38.62,-167.25 167.38,-167.25 167.38,-167.25 38.62,-167.25"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="38.62,-152 38.62,-152 167.38,-152 167.38,-152 38.62,-152"/>
-<polygon fill="none" stroke="#bfbfbf" points="38.62,-134.75 38.62,-207 167.38,-207 167.38,-134.75 38.62,-134.75"/>
+<polygon fill="#666666" stroke="#666666" points="38.62,-167.25 38.62,-167.25 167.38,-167.25 167.38,-167.25 38.62,-167.25"/>
+<polygon fill="#666666" stroke="#666666" points="38.62,-152 38.62,-152 167.38,-152 167.38,-152 38.62,-152"/>
+<polygon fill="none" stroke="#666666" points="38.62,-134.75 38.62,-207 167.38,-207 167.38,-134.75 38.62,-134.75"/>
 </a>
 </g>
 </g>

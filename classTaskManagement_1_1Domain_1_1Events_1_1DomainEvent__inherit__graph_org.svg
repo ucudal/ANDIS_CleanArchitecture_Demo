@@ -42,10 +42,10 @@
 <text xml:space="preserve" text-anchor="start" x="37.88" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">PreviousAssignee</text>
 <text xml:space="preserve" text-anchor="start" x="15.94" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="37.88" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">TaskAssignedEvent()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-63 0,-63 158.75,-63 158.75,-63 0,-63"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-17.25 0,-17.25 35.88,-17.25 35.88,-17.25 0,-17.25"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="35.88,-17.25 35.88,-17.25 158.75,-17.25 158.75,-17.25 35.88,-17.25"/>
-<polygon fill="none" stroke="#bfbfbf" points="0,0 0,-91.5 158.75,-91.5 158.75,0 0,0"/>
+<polygon fill="#666666" stroke="#666666" points="0,-63 0,-63 158.75,-63 158.75,-63 0,-63"/>
+<polygon fill="#666666" stroke="#666666" points="0,-17.25 0,-17.25 35.88,-17.25 35.88,-17.25 0,-17.25"/>
+<polygon fill="#666666" stroke="#666666" points="35.88,-17.25 35.88,-17.25 158.75,-17.25 158.75,-17.25 35.88,-17.25"/>
+<polygon fill="none" stroke="#666666" points="0,0 0,-91.5 158.75,-91.5 158.75,0 0,0"/>
 </a>
 </g>
 </g>
@@ -71,10 +71,10 @@
 <text xml:space="preserve" text-anchor="start" x="211.5" y="-28.62" font-family="Helvetica,sans-Serif" font-size="10.00">CompletedAt</text>
 <text xml:space="preserve" text-anchor="start" x="191.25" y="-13.38" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="211.5" y="-13.38" font-family="Helvetica,sans-Serif" font-size="10.00">TaskCompletedEvent()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="177,-55.38 177,-55.38 335.75,-55.38 335.75,-55.38 177,-55.38"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="177,-24.88 177,-24.88 209.5,-24.88 209.5,-24.88 177,-24.88"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="209.5,-24.88 209.5,-24.88 335.75,-24.88 335.75,-24.88 209.5,-24.88"/>
-<polygon fill="none" stroke="#bfbfbf" points="177,-7.62 177,-83.88 335.75,-83.88 335.75,-7.62 177,-7.62"/>
+<polygon fill="#666666" stroke="#666666" points="177,-55.38 177,-55.38 335.75,-55.38 335.75,-55.38 177,-55.38"/>
+<polygon fill="#666666" stroke="#666666" points="177,-24.88 177,-24.88 209.5,-24.88 209.5,-24.88 177,-24.88"/>
+<polygon fill="#666666" stroke="#666666" points="209.5,-24.88 209.5,-24.88 335.75,-24.88 335.75,-24.88 209.5,-24.88"/>
+<polygon fill="none" stroke="#666666" points="177,-7.62 177,-83.88 335.75,-83.88 335.75,-7.62 177,-7.62"/>
 </a>
 </g>
 </g>
@@ -102,10 +102,10 @@
 <text xml:space="preserve" text-anchor="start" x="394.88" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">CreatedBy</text>
 <text xml:space="preserve" text-anchor="start" x="371.44" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="394.88" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">TaskCreatedEvent()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="354,-63 354,-63 512.75,-63 512.75,-63 354,-63"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="354,-17.25 354,-17.25 392.88,-17.25 392.88,-17.25 354,-17.25"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="392.88,-17.25 392.88,-17.25 512.75,-17.25 512.75,-17.25 392.88,-17.25"/>
-<polygon fill="none" stroke="#bfbfbf" points="354,0 354,-91.5 512.75,-91.5 512.75,0 354,0"/>
+<polygon fill="#666666" stroke="#666666" points="354,-63 354,-63 512.75,-63 512.75,-63 354,-63"/>
+<polygon fill="#666666" stroke="#666666" points="354,-17.25 354,-17.25 392.88,-17.25 392.88,-17.25 354,-17.25"/>
+<polygon fill="#666666" stroke="#666666" points="392.88,-17.25 392.88,-17.25 512.75,-17.25 512.75,-17.25 392.88,-17.25"/>
+<polygon fill="none" stroke="#666666" points="354,0 354,-91.5 512.75,-91.5 512.75,0 354,0"/>
 </a>
 </g>
 </g>
@@ -133,10 +133,10 @@
 <text xml:space="preserve" text-anchor="start" x="554.25" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">NewPriority</text>
 <text xml:space="preserve" text-anchor="start" x="539.62" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="554.25" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">TaskPriorityChangedEvent()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="531,-63 531,-63 689.75,-63 689.75,-63 531,-63"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="531,-17.25 531,-17.25 552.25,-17.25 552.25,-17.25 531,-17.25"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="552.25,-17.25 552.25,-17.25 689.75,-17.25 689.75,-17.25 552.25,-17.25"/>
-<polygon fill="none" stroke="#bfbfbf" points="531,0 531,-91.5 689.75,-91.5 689.75,0 531,0"/>
+<polygon fill="#666666" stroke="#666666" points="531,-63 531,-63 689.75,-63 689.75,-63 531,-63"/>
+<polygon fill="#666666" stroke="#666666" points="531,-17.25 531,-17.25 552.25,-17.25 552.25,-17.25 531,-17.25"/>
+<polygon fill="#666666" stroke="#666666" points="552.25,-17.25 552.25,-17.25 689.75,-17.25 689.75,-17.25 552.25,-17.25"/>
+<polygon fill="none" stroke="#666666" points="531,0 531,-91.5 689.75,-91.5 689.75,0 531,0"/>
 </a>
 </g>
 </g>

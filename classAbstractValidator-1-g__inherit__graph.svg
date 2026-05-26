@@ -43,9 +43,9 @@
 <text xml:space="preserve" text-anchor="start" x="92.12" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text xml:space="preserve" text-anchor="start" x="11.62" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="29.25" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">CreateTaskCommandValidator()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-32.5 0,-32.5 187.25,-32.5 187.25,-32.5 0,-32.5"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-17.25 0,-17.25 187.25,-17.25 187.25,-17.25 0,-17.25"/>
-<polygon fill="none" stroke="#bfbfbf" points="0,0 0,-61 187.25,-61 187.25,0 0,0"/>
+<polygon fill="#666666" stroke="#666666" points="0,-32.5 0,-32.5 187.25,-32.5 187.25,-32.5 0,-32.5"/>
+<polygon fill="#666666" stroke="#666666" points="0,-17.25 0,-17.25 187.25,-17.25 187.25,-17.25 0,-17.25"/>
+<polygon fill="none" stroke="#666666" points="0,0 0,-61 187.25,-61 187.25,0 0,0"/>
 </a>
 </g>
 </g>

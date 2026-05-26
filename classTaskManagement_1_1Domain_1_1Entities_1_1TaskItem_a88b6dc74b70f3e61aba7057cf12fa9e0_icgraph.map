@@ -1,0 +1,5 @@
+<map id="TaskManagement.Domain.Entities.TaskItem.Create" name="TaskManagement.Domain.Entities.TaskItem.Create">
+<area shape="rect" id="Node000001" title=" " alt="" coords="344,13,569,54"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html#abc6681ba62c7b6315e31cd11fac19b70" title=" " alt="" coords="5,5,296,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,36,296,36,296,30,328,30"/>
+</map>

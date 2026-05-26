@@ -159,8 +159,7 @@ Collaboration diagram for TaskManagement.Infrastructure.Persistence.TaskDbContex
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5139513447c31d421fe7d93bc8446fae" id="r_a5139513447c31d421fe7d93bc8446fae"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5139513447c31d421fe7d93bc8446fae">TaskDbContext</a> (DbContextOptions&lt; TaskDbContext &gt; options)</td></tr>
 <tr class="inherit_header pub_methods_interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork"><td colspan="2">Public Member Functions inherited from <a class="el" href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html">TaskManagement.Application.Interfaces.IUnitOfWork</a></td></tr>
-<tr class="memitem:ac5419ca5405d69c7905dcfebed7ee756 pub_methods_interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork" id="r_ac5419ca5405d69c7905dcfebed7ee756"><td class="memItemLeft">
-Task&lt; int &gt;&#160;</td><td class="memItemRight"><b>SaveChangesAsync</b> (CancellationToken cancellationToken=default)</td></tr>
+<tr class="memitem:ac5419ca5405d69c7905dcfebed7ee756 pub_methods_interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork" id="r_ac5419ca5405d69c7905dcfebed7ee756"><td class="memItemLeft">Task&lt; int &gt;&#160;</td><td class="memItemRight"><a class="el" href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html#ac5419ca5405d69c7905dcfebed7ee756">SaveChangesAsync</a> (CancellationToken cancellationToken=default)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -183,7 +182,7 @@ Properties</h2></td></tr>
 <li>Implementación de IUnitOfWork: Coordina transacción y persistencia</li>
 </ul>
 <p>Diseño de Arquitectura:</p><ul>
-<li>Configurado a través de inyección de dependencias en <a class="el" href="Program_8cs_source.html">Program.cs</a></li>
+<li>Configurado a través de inyección de dependencias en <a class="el" href="Program_8cs.html">Program.cs</a></li>
 <li>Utilizado por repositorios y manejadores de comando a través de interfaz IUnitOfWork</li>
 <li>Implementación de IUnitOfWork.SaveChangesAsync delega a Entity Framework</li>
 <li>Configuraciones fluidas aplicadas a través de <a class="el" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html" title="TaskConfiguration es la configuración de Entity Framework Core para entidad TaskItem.">TaskConfiguration</a></li>

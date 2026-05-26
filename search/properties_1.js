@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['completedat_0',['CompletedAt',['../classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#a402895f0d3c5d30574a5c264bca07e49',1,'TaskManagement.Domain.Entities.TaskItem.CompletedAt'],['../classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a523295dd31d2d37e0a1855e7067f2c54',1,'TaskManagement.Domain.Events.TaskCompletedEvent.CompletedAt']]],
+  ['createdat_1',['CreatedAt',['../classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html#ac1129b521b615a9dbf6ec37cd1673527',1,'TaskManagement.Application.Queries.GetTaskById.TaskDto.CreatedAt'],['../classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#a975645f7c95cacb677143e819f7ef83a',1,'TaskManagement.Domain.Entities.TaskItem.CreatedAt']]],
+  ['createdby_2',['CreatedBy',['../classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html#a6671c1a0de66047ede3fdb400cd08b80',1,'TaskManagement.Application.Queries.GetTaskById.TaskDto.CreatedBy'],['../classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#a087f0e53530830fef172639d6d2b6289',1,'TaskManagement.Domain.Entities.TaskItem.CreatedBy'],['../classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a8febdafc2dec2dcf5a64a2f512d9618e',1,'TaskManagement.Domain.Events.TaskCreatedEvent.CreatedBy']]]
+];

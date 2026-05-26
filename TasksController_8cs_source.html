@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
   <div class="headertitle"><div class="title">TasksController.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.API/Controllers/TasksController.cs</span></div>
+<a href="TasksController_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.API/Controllers/TasksController.cs</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>MediatR;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Microsoft.AspNetCore.Authorization;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>Microsoft.AspNetCore.Mvc;</div>
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    [HttpGet(<span class="stringliteral">&quot;{id:guid}&quot;</span>)]</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    [ProducesResponseType(typeof(<a class="code hl_class" href="classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html">TaskDto</a>), StatusCodes.Status200OK)]</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    [ProducesResponseType(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(<a class="code hl_class" href="classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html">TaskDto</a>), StatusCodes.Status200OK)]</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    [ProducesResponseType(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(ProblemDetails), StatusCodes.Status404NotFound)]</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">public</span> async Task&lt;ActionResult&lt;TaskDto&gt;&gt; GetById(</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        Guid <span class="keywordtype">id</span>,</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        CancellationToken cancellationToken)</div>
@@ -180,8 +180,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    [HttpPost]</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    [Authorize]</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    [ProducesResponseType(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(Guid), StatusCodes.Status201Created)]</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    [ProducesResponseType(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(ValidationProblemDetails), StatusCodes.Status400BadRequest)]</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">public</span> async Task&lt;ActionResult&lt;Guid&gt;&gt; Create(</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        [FromBody] CreateTaskRequest request,</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        CancellationToken cancellationToken)</div>
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    [HttpPost(<span class="stringliteral">&quot;{id:guid}/complete&quot;</span>)]</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    [Authorize]</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    [ProducesResponseType(StatusCodes.Status204NoContent)]</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    [ProducesResponseType(<a class="code hl_function" href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a>(ProblemDetails), StatusCodes.Status400BadRequest)]</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">public</span> async Task&lt;ActionResult&gt; Complete(</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        Guid <span class="keywordtype">id</span>,</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        CancellationToken cancellationToken)</div>
@@ -255,6 +255,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
 </div>
+<div class="ttc" id="aProgram_8cs_html_aa8a3ec34a49e9187e3e92363e667e72e"><div class="ttname"><a href="Program_8cs.html#aa8a3ec34a49e9187e3e92363e667e72e">typeof</a></div><div class="ttdeci">builder.Services. typeof(ValidationBehavior&lt;,&gt;)) .AddDbContext&lt; TaskDbContext &gt;(options</div><div class="ttdef"><b>Definition</b> <a href="Program_8cs_source.html#l00111">Program.cs:111</a></div></div>
 <div class="ttc" id="aclassControllerBase_html"><div class="ttname"><a href="classControllerBase.html">ControllerBase</a></div></div>
 <div class="ttc" id="aclassTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto_html"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html">TaskManagement.Application.Queries.GetTaskById.TaskDto</a></div><div class="ttdef"><b>Definition</b> <a href="GetTaskByIdQuery_8cs_source.html#l00072">GetTaskByIdQuery.cs:73</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1API_1_1Controllers_html"><div class="ttname"><a href="namespaceTaskManagement_1_1API_1_1Controllers.html">TaskManagement.API.Controllers</a></div><div class="ttdef"><b>Definition</b> <a href="#l00011">TasksController.cs:11</a></div></div>
@@ -269,7 +270,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TasksControlle
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>TaskManagement.API</b></li><li class="navelem"><b>Controllers</b></li><li class="navelem"><b>TasksController.cs</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e1b155cbcc663e464b30b1e0279830f5.html">TaskManagement.API</a></li><li class="navelem"><a href="dir_74dceb3959a3b91896c101d0de053b77.html">Controllers</a></li><li class="navelem"><a href="TasksController_8cs.html">TasksController.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

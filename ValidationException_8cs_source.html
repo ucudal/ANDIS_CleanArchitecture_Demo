@@ -136,43 +136,58 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ValidationExce
   <div class="headertitle"><div class="title">ValidationException.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Exceptions.html">TaskManagement.Application.Exceptions</a>;</div>
+<a href="ValidationException_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Application_1_1Exceptions.html">TaskManagement.Application.Exceptions</a>;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html">   28</a></span><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span>ValidationException : <a class="code hl_class" href="classException.html">Exception</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html">   28</a></span><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_function" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ad48983d66f575c786fad09d17e04f0c0">ValidationException</a> : <a class="code hl_class" href="classException.html">Exception</a></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> <span class="keyword">static</span> readonly IDictionary&lt;string, string[]&gt; EmptyErrors =</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">new</span> Dictionary&lt;string, string[]&gt;();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span> IDictionary&lt;string, string[]&gt; Errors</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">   33</a></span>    <span class="keyword">public</span> IDictionary&lt;string, string[]&gt; <a class="code hl_property" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">Errors</a></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span> ValidationException(IDictionary&lt;<span class="keywordtype">string</span>, <span class="keywordtype">string</span>[]&gt; errors)</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ad48983d66f575c786fad09d17e04f0c0">   38</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ad48983d66f575c786fad09d17e04f0c0">ValidationException</a>(IDictionary&lt;<span class="keywordtype">string</span>, <span class="keywordtype">string</span>[]&gt; errors)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        : base(<span class="stringliteral">&quot;One or more validation errors occurred.&quot;</span>)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Errors = <span class="keyword">new</span> Dictionary&lt;string, string[]&gt;(errors);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_property" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">Errors</a> = <span class="keyword">new</span> Dictionary&lt;string, string[]&gt;(errors);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">public</span> ValidationException()</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a5649dbaf274385746b946dd55d4b0d04">   44</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a5649dbaf274385746b946dd55d4b0d04">ValidationException</a>()</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        Errors = EmptyErrors;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_property" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">Errors</a> = EmptyErrors;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">public</span> ValidationException(<span class="keywordtype">string</span> message) : base(message)</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a2e8e9745b66acb9217fb4f38a66ef77d">   49</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a2e8e9745b66acb9217fb4f38a66ef77d">ValidationException</a>(<span class="keywordtype">string</span> message) : base(message)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Errors = EmptyErrors;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_property" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">Errors</a> = EmptyErrors;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">public</span> ValidationException(<span class="keywordtype">string</span> message, <a class="code hl_class" href="classException.html">Exception</a> innerException)</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#af14a95e1260db01423186b70893af941">   54</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#af14a95e1260db01423186b70893af941">ValidationException</a>(<span class="keywordtype">string</span> message, <a class="code hl_class" href="classException.html">Exception</a> innerException)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        : base(message, innerException)</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        Errors = EmptyErrors;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_property" href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">Errors</a> = EmptyErrors;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 </div>
 <div class="ttc" id="aclassException_html"><div class="ttname"><a href="classException.html">Exception</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException_html_a2e8e9745b66acb9217fb4f38a66ef77d"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a2e8e9745b66acb9217fb4f38a66ef77d">TaskManagement.Application.Exceptions.ValidationException.ValidationException</a></div><div class="ttdeci">ValidationException(string message)</div><div class="ttdef"><b>Definition</b> <a href="#l00049">ValidationException.cs:49</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException_html_a5649dbaf274385746b946dd55d4b0d04"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#a5649dbaf274385746b946dd55d4b0d04">TaskManagement.Application.Exceptions.ValidationException.ValidationException</a></div><div class="ttdeci">ValidationException()</div><div class="ttdef"><b>Definition</b> <a href="#l00044">ValidationException.cs:44</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException_html_ab140821c0b61d99f311e16af65f15915"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915">TaskManagement.Application.Exceptions.ValidationException.Errors</a></div><div class="ttdeci">IDictionary&lt; string, string[]&gt; Errors</div><div class="ttdef"><b>Definition</b> <a href="#l00033">ValidationException.cs:34</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException_html_ad48983d66f575c786fad09d17e04f0c0"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ad48983d66f575c786fad09d17e04f0c0">TaskManagement.Application.Exceptions.ValidationException.ValidationException</a></div><div class="ttdeci">ValidationException(IDictionary&lt; string, string[]&gt; errors)</div><div class="ttdef"><b>Definition</b> <a href="#l00038">ValidationException.cs:38</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException_html_af14a95e1260db01423186b70893af941"><div class="ttname"><a href="classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#af14a95e1260db01423186b70893af941">TaskManagement.Application.Exceptions.ValidationException.ValidationException</a></div><div class="ttdeci">ValidationException(string message, Exception innerException)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">ValidationException.cs:54</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Application_1_1Exceptions_html"><div class="ttname"><a href="namespaceTaskManagement_1_1Application_1_1Exceptions.html">TaskManagement.Application.Exceptions</a></div><div class="ttdef"><b>Definition</b> <a href="NotFoundException_8cs_source.html#l00001">NotFoundException.cs:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -180,7 +195,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ValidationExce
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>TaskManagement.Application</b></li><li class="navelem"><b>Exceptions</b></li><li class="navelem"><b>ValidationException.cs</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_f498819fc1a36bf0fc5e46a4e786112a.html">TaskManagement.Application</a></li><li class="navelem"><a href="dir_95c14298dad189bb301bd5fa3cc382c8.html">Exceptions</a></li><li class="navelem"><a href="ValidationException_8cs.html">ValidationException.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

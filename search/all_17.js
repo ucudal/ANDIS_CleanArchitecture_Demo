@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wide_0',['System-wide',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/doxygen-awesome-css/README.md#autotoc_md8',1,'']]],
-  ['with_20fetchcontent_1',['CMake with FetchContent',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/doxygen-awesome-css/README.md#autotoc_md6',1,'']]]
+  ['y_20diseño_20de_20aplicaciones_20ii_0',['Análisis y diseño de aplicaciones II',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md19',1,'']]],
+  ['y_20tecnologías_1',['Facultad de Ingeniería y Tecnologías',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md18',1,'']]]
 ];

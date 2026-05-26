@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('DomainEvent_8c
   <div class="headertitle"><div class="title">DomainEvent.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.Domain/Events/DomainEvent.cs</span></div>
+<a href="DomainEvent_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.Domain/Events/DomainEvent.cs</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Domain_1_1Entities.html">TaskManagement.Domain.Entities</a>;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
@@ -145,103 +145,150 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('DomainEvent_8c
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">   34</a></span><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span> Guid Id { <span class="keyword">get</span>; } = Guid.NewGuid();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">public</span> DateTime OccurredOn { <span class="keyword">get</span>; } = DateTime.UtcNow;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#ab3518119684c7bac4a11bad1edfabd23">   36</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#ab3518119684c7bac4a11bad1edfabd23">Id</a> { <span class="keyword">get</span>; } = Guid.NewGuid();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#a30f57386964c0151d725ea410ba630f2">   37</a></span>    <span class="keyword">public</span> DateTime <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#a30f57386964c0151d725ea410ba630f2">OccurredOn</a> { <span class="keyword">get</span>; } = DateTime.UtcNow;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html">   40</a></span><span class="keyword">public</span> <span class="keyword">class </span>TaskCreatedEvent : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html">   40</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a7dc0a24c7c843934396d1227731c4f51">TaskCreatedEvent</a> : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">public</span> Guid TaskId</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#aa1485479ff4d4ced22a56237738e450e">   42</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#aa1485479ff4d4ced22a56237738e450e">TaskId</a></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">public</span> <span class="keywordtype">string</span> Title</div>
+</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a22660411872c66d66bf3065aa9eab489">   46</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a22660411872c66d66bf3065aa9eab489">Title</a></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">public</span> Guid CreatedBy</div>
+</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a8febdafc2dec2dcf5a64a2f512d9618e">   50</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a8febdafc2dec2dcf5a64a2f512d9618e">CreatedBy</a></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">public</span> TaskCreatedEvent(Guid taskId, <span class="keywordtype">string</span> title, Guid createdBy)</div>
+</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a7dc0a24c7c843934396d1227731c4f51">   54</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a7dc0a24c7c843934396d1227731c4f51">TaskCreatedEvent</a>(Guid taskId, <span class="keywordtype">string</span> title, Guid createdBy)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        TaskId = taskId;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        Title = title;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        CreatedBy = createdBy;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#aa1485479ff4d4ced22a56237738e450e">TaskId</a> = taskId;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a22660411872c66d66bf3065aa9eab489">Title</a> = title;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a8febdafc2dec2dcf5a64a2f512d9618e">CreatedBy</a> = createdBy;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
 </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html">   62</a></span><span class="keyword">public</span> <span class="keyword">class </span>TaskCompletedEvent : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html">   62</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a723de88a8e1e36d544a03d8f3bbb4feb">TaskCompletedEvent</a> : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">public</span> Guid TaskId</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a5bbd438b0694263e88e0fb9a5e40ee53">   64</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a5bbd438b0694263e88e0fb9a5e40ee53">TaskId</a></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">public</span> DateTime CompletedAt</div>
+</div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a523295dd31d2d37e0a1855e7067f2c54">   68</a></span>    <span class="keyword">public</span> DateTime <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a523295dd31d2d37e0a1855e7067f2c54">CompletedAt</a></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">public</span> TaskCompletedEvent(Guid taskId, DateTime completedAt)</div>
+</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a723de88a8e1e36d544a03d8f3bbb4feb">   72</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a723de88a8e1e36d544a03d8f3bbb4feb">TaskCompletedEvent</a>(Guid taskId, DateTime completedAt)</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        TaskId = taskId;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        CompletedAt = completedAt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a5bbd438b0694263e88e0fb9a5e40ee53">TaskId</a> = taskId;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a523295dd31d2d37e0a1855e7067f2c54">CompletedAt</a> = completedAt;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
 </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html">   79</a></span><span class="keyword">public</span> <span class="keyword">class </span>TaskAssignedEvent : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html">   79</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a7eac21263f29e240e8743f71fe64ea84">TaskAssignedEvent</a> : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">public</span> Guid TaskId</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aa654fcad867f9c19c60f53db607287ec">   81</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aa654fcad867f9c19c60f53db607287ec">TaskId</a></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">public</span> Guid AssignedTo</div>
+</div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aca03545b7371cf81ef4329be38bd8b84">   85</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aca03545b7371cf81ef4329be38bd8b84">AssignedTo</a></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">public</span> Guid? PreviousAssignee</div>
+</div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a0cd3192e941825bb1e20749111075648">   89</a></span>    <span class="keyword">public</span> Guid? <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a0cd3192e941825bb1e20749111075648">PreviousAssignee</a></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">public</span> TaskAssignedEvent(Guid taskId, Guid assignedTo, Guid? previousAssignee)</div>
+</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a7eac21263f29e240e8743f71fe64ea84">   93</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a7eac21263f29e240e8743f71fe64ea84">TaskAssignedEvent</a>(Guid taskId, Guid assignedTo, Guid? previousAssignee)</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        TaskId = taskId;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        AssignedTo = assignedTo;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        PreviousAssignee = previousAssignee;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aa654fcad867f9c19c60f53db607287ec">TaskId</a> = taskId;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aca03545b7371cf81ef4329be38bd8b84">AssignedTo</a> = assignedTo;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a0cd3192e941825bb1e20749111075648">PreviousAssignee</a> = previousAssignee;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
 </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html">  101</a></span><span class="keyword">public</span> <span class="keyword">class </span>TaskPriorityChangedEvent : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html">  101</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aee353c0174eb00ca16e19692beed2bee">TaskPriorityChangedEvent</a> : <a class="code hl_class" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">public</span> Guid TaskId</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aa379de343bfe5a173abf0b670d7296d2">  103</a></span>    <span class="keyword">public</span> Guid <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aa379de343bfe5a173abf0b670d7296d2">TaskId</a></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> OldPriority</div>
+</div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="};">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aae7db96d1dcf6dd1603e8da19266ec7b">  107</a></span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aae7db96d1dcf6dd1603e8da19266ec7b">OldPriority</a></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> NewPriority</div>
+</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="};">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#a8ad1ea3091c68d253e3d96ba3bcfc4ee">  111</a></span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#a8ad1ea3091c68d253e3d96ba3bcfc4ee">NewPriority</a></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    {</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">get</span>;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">public</span> TaskPriorityChangedEvent(Guid taskId, <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> oldPriority, <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> newPriority)</div>
+</div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aee353c0174eb00ca16e19692beed2bee">  115</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aee353c0174eb00ca16e19692beed2bee">TaskPriorityChangedEvent</a>(Guid taskId, <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> oldPriority, <a class="code hl_enumeration" href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskPriority</a> newPriority)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        TaskId = taskId;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        OldPriority = oldPriority;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        NewPriority = newPriority;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aa379de343bfe5a173abf0b670d7296d2">TaskId</a> = taskId;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aae7db96d1dcf6dd1603e8da19266ec7b">OldPriority</a> = oldPriority;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_property" href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#a8ad1ea3091c68d253e3d96ba3bcfc4ee">NewPriority</a> = newPriority;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
 </div>
 <div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1DomainEvent_html"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">TaskManagement.Domain.Events.DomainEvent</a></div><div class="ttdoc">DomainEvent es una clase base abstracta para todos los eventos de dominio en el sistema.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">DomainEvent.cs:35</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1DomainEvent_html_a30f57386964c0151d725ea410ba630f2"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#a30f57386964c0151d725ea410ba630f2">TaskManagement.Domain.Events.DomainEvent.OccurredOn</a></div><div class="ttdeci">DateTime OccurredOn</div><div class="ttdef"><b>Definition</b> <a href="#l00037">DomainEvent.cs:37</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1DomainEvent_html_ab3518119684c7bac4a11bad1edfabd23"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html#ab3518119684c7bac4a11bad1edfabd23">TaskManagement.Domain.Events.DomainEvent.Id</a></div><div class="ttdeci">Guid Id</div><div class="ttdef"><b>Definition</b> <a href="#l00036">DomainEvent.cs:36</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent_html_a0cd3192e941825bb1e20749111075648"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a0cd3192e941825bb1e20749111075648">TaskManagement.Domain.Events.TaskAssignedEvent.PreviousAssignee</a></div><div class="ttdeci">Guid? PreviousAssignee</div><div class="ttdef"><b>Definition</b> <a href="#l00089">DomainEvent.cs:90</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent_html_a7eac21263f29e240e8743f71fe64ea84"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a7eac21263f29e240e8743f71fe64ea84">TaskManagement.Domain.Events.TaskAssignedEvent.TaskAssignedEvent</a></div><div class="ttdeci">TaskAssignedEvent(Guid taskId, Guid assignedTo, Guid? previousAssignee)</div><div class="ttdef"><b>Definition</b> <a href="#l00093">DomainEvent.cs:93</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent_html_aa654fcad867f9c19c60f53db607287ec"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aa654fcad867f9c19c60f53db607287ec">TaskManagement.Domain.Events.TaskAssignedEvent.TaskId</a></div><div class="ttdeci">Guid TaskId</div><div class="ttdef"><b>Definition</b> <a href="#l00081">DomainEvent.cs:82</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent_html_aca03545b7371cf81ef4329be38bd8b84"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#aca03545b7371cf81ef4329be38bd8b84">TaskManagement.Domain.Events.TaskAssignedEvent.AssignedTo</a></div><div class="ttdeci">Guid AssignedTo</div><div class="ttdef"><b>Definition</b> <a href="#l00085">DomainEvent.cs:86</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent_html_a523295dd31d2d37e0a1855e7067f2c54"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a523295dd31d2d37e0a1855e7067f2c54">TaskManagement.Domain.Events.TaskCompletedEvent.CompletedAt</a></div><div class="ttdeci">DateTime CompletedAt</div><div class="ttdef"><b>Definition</b> <a href="#l00068">DomainEvent.cs:69</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent_html_a5bbd438b0694263e88e0fb9a5e40ee53"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a5bbd438b0694263e88e0fb9a5e40ee53">TaskManagement.Domain.Events.TaskCompletedEvent.TaskId</a></div><div class="ttdeci">Guid TaskId</div><div class="ttdef"><b>Definition</b> <a href="#l00064">DomainEvent.cs:65</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent_html_a723de88a8e1e36d544a03d8f3bbb4feb"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html#a723de88a8e1e36d544a03d8f3bbb4feb">TaskManagement.Domain.Events.TaskCompletedEvent.TaskCompletedEvent</a></div><div class="ttdeci">TaskCompletedEvent(Guid taskId, DateTime completedAt)</div><div class="ttdef"><b>Definition</b> <a href="#l00072">DomainEvent.cs:72</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent_html_a22660411872c66d66bf3065aa9eab489"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a22660411872c66d66bf3065aa9eab489">TaskManagement.Domain.Events.TaskCreatedEvent.Title</a></div><div class="ttdeci">string Title</div><div class="ttdef"><b>Definition</b> <a href="#l00046">DomainEvent.cs:47</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent_html_a7dc0a24c7c843934396d1227731c4f51"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a7dc0a24c7c843934396d1227731c4f51">TaskManagement.Domain.Events.TaskCreatedEvent.TaskCreatedEvent</a></div><div class="ttdeci">TaskCreatedEvent(Guid taskId, string title, Guid createdBy)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">DomainEvent.cs:54</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent_html_a8febdafc2dec2dcf5a64a2f512d9618e"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#a8febdafc2dec2dcf5a64a2f512d9618e">TaskManagement.Domain.Events.TaskCreatedEvent.CreatedBy</a></div><div class="ttdeci">Guid CreatedBy</div><div class="ttdef"><b>Definition</b> <a href="#l00050">DomainEvent.cs:51</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent_html_aa1485479ff4d4ced22a56237738e450e"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html#aa1485479ff4d4ced22a56237738e450e">TaskManagement.Domain.Events.TaskCreatedEvent.TaskId</a></div><div class="ttdeci">Guid TaskId</div><div class="ttdef"><b>Definition</b> <a href="#l00042">DomainEvent.cs:43</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent_html_a8ad1ea3091c68d253e3d96ba3bcfc4ee"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#a8ad1ea3091c68d253e3d96ba3bcfc4ee">TaskManagement.Domain.Events.TaskPriorityChangedEvent.NewPriority</a></div><div class="ttdeci">TaskPriority NewPriority</div><div class="ttdef"><b>Definition</b> <a href="#l00111">DomainEvent.cs:112</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent_html_aa379de343bfe5a173abf0b670d7296d2"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aa379de343bfe5a173abf0b670d7296d2">TaskManagement.Domain.Events.TaskPriorityChangedEvent.TaskId</a></div><div class="ttdeci">Guid TaskId</div><div class="ttdef"><b>Definition</b> <a href="#l00103">DomainEvent.cs:104</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent_html_aae7db96d1dcf6dd1603e8da19266ec7b"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aae7db96d1dcf6dd1603e8da19266ec7b">TaskManagement.Domain.Events.TaskPriorityChangedEvent.OldPriority</a></div><div class="ttdeci">TaskPriority OldPriority</div><div class="ttdef"><b>Definition</b> <a href="#l00107">DomainEvent.cs:108</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent_html_aee353c0174eb00ca16e19692beed2bee"><div class="ttname"><a href="classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#aee353c0174eb00ca16e19692beed2bee">TaskManagement.Domain.Events.TaskPriorityChangedEvent.TaskPriorityChangedEvent</a></div><div class="ttdeci">TaskPriorityChangedEvent(Guid taskId, TaskPriority oldPriority, TaskPriority newPriority)</div><div class="ttdef"><b>Definition</b> <a href="#l00115">DomainEvent.cs:115</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Domain_1_1Entities_html"><div class="ttname"><a href="namespaceTaskManagement_1_1Domain_1_1Entities.html">TaskManagement.Domain.Entities</a></div><div class="ttdef"><b>Definition</b> <a href="TaskItem_8cs_source.html#l00004">TaskItem.cs:4</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Domain_1_1Entities_html_aaa412777c6e94edc46abd089f6b636ae"><div class="ttname"><a href="namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636ae">TaskManagement.Domain.Entities.TaskPriority</a></div><div class="ttdeci">TaskPriority</div><div class="ttdoc">TaskPriority es un Objeto de Valor de Dominio (Enumeración) que representa niveles de prioridad de ta...</div><div class="ttdef"><b>Definition</b> <a href="TaskPriority_8cs_source.html#l00017">TaskPriority.cs:18</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Domain_1_1Events_html"><div class="ttname"><a href="namespaceTaskManagement_1_1Domain_1_1Events.html">TaskManagement.Domain.Events</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">DomainEvent.cs:4</a></div></div>
@@ -251,7 +298,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('DomainEvent_8c
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>TaskManagement.Domain</b></li><li class="navelem"><b>Events</b></li><li class="navelem"><b>DomainEvent.cs</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_ae09c2975db280a1b4d3d56b5fe48cdb.html">TaskManagement.Domain</a></li><li class="navelem"><a href="dir_80801bd4f35c4031730df7a2b66e92ee.html">Events</a></li><li class="navelem"><a href="DomainEvent_8cs.html">DomainEvent.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

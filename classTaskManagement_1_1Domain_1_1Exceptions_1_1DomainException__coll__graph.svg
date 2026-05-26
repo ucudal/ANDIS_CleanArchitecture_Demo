@@ -47,9 +47,9 @@
 <text xml:space="preserve" text-anchor="start" x="66.62" y="-163.75" font-family="Helvetica,sans-Serif" font-size="10.00">Exception</text>
 <text xml:space="preserve" text-anchor="start" x="86.88" y="-148.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text xml:space="preserve" text-anchor="start" x="86.88" y="-133.25" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="62.62,-160 62.62,-160 114.12,-160 114.12,-160 62.62,-160"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="62.62,-144.75 62.62,-144.75 114.12,-144.75 114.12,-144.75 62.62,-144.75"/>
-<polygon fill="none" stroke="#bfbfbf" points="62.62,-127.5 62.62,-177.25 114.12,-177.25 114.12,-127.5 62.62,-127.5"/>
+<polygon fill="#666666" stroke="#666666" points="62.62,-160 62.62,-160 114.12,-160 114.12,-160 62.62,-160"/>
+<polygon fill="#666666" stroke="#666666" points="62.62,-144.75 62.62,-144.75 114.12,-144.75 114.12,-144.75 62.62,-144.75"/>
+<polygon fill="none" stroke="#666666" points="62.62,-127.5 62.62,-177.25 114.12,-177.25 114.12,-127.5 62.62,-127.5"/>
 </a>
 </g>
 </g>
