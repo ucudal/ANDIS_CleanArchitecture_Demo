@@ -22,6 +22,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y doxygen
       - name: Generate Documentation
         run: cd docs && doxygen Doxyfile
+      - name: Copy doxygen-awesome files
+        run: cp -r doxygen-awesome-css/doxygen-awesome*.{css,js} docs/html/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
