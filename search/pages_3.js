@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['4_20capa_20de_20interfaz_0',['4. Capa de interfaz',['../index.html#autotoc_md14',1,'']]]
+  ['universidad_20católica_20del_20uruguay_0',['Universidad Católica del Uruguay',['../md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html',1,'']]],
+  ['uruguay_1',['Universidad Católica del Uruguay',['../md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html',1,'']]]
 ];

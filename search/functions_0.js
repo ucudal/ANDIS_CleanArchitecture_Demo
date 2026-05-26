@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['addasync_0',['AddAsync',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html#a8c9fd35fcf3749458afc8a91901de7f7',1,'TaskManagement.Application.Interfaces.ITaskRepository.AddAsync()'],['../classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html#adea1422b00f99eec18f2b3dbe980ef2b',1,'TaskManagement.Infrastructure.Persistence.Repositories.TaskRepository.AddAsync()']]],
+  ['addasync_0',['addasync',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html#a8c9fd35fcf3749458afc8a91901de7f7',1,'TaskManagement.Application.Interfaces.ITaskRepository.AddAsync()'],['../classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html#adea1422b00f99eec18f2b3dbe980ef2b',1,'TaskManagement.Infrastructure.Persistence.Repositories.TaskRepository.AddAsync()']]],
   ['addauthentication_1',['AddAuthentication',['../Program_8cs.html#a7b2bc4c41ab1f801b53d7330af1fdf7e',1,'Program.cs']]],
   ['addauthorization_2',['AddAuthorization',['../Program_8cs.html#ae5ec6d7548eaed13afc397f42272d5a8',1,'Program.cs']]],
   ['addinmemorycollection_3',['AddInMemoryCollection',['../Program_8cs.html#a434676f9548941c102687582c11a38af',1,'Program.cs']]],

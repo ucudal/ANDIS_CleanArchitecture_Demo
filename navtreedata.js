@@ -26,6 +26,12 @@ var NAVTREE =
 [
   [ "Clean Architecture Demo", "index.html", [
     [ "Introducción", "index.html", "index" ],
+    [ "Universidad Católica del Uruguay", "md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html", [
+      [ "Facultad de Ingeniería y Tecnologías", "md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html#autotoc_md18", [
+        [ "Análisis y diseño de aplicaciones II", "md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html#autotoc_md19", null ]
+      ] ],
+      [ "Demo de Clean Architecture", "md__2home_2runner_2work_2ANDIS__CleanArchitecture__Demo_2ANDIS__CleanArchitecture__Demo_2README.html#autotoc_md20", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespaces List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -54,9 +60,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ClaimsPrincipalExtensions_8cs.html",
-"classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html#a7eac21263f29e240e8743f71fe64ea84"
+"classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html"
 ];
 
-const SYNCONMSG = 'click to disable panel synchronization';
-const SYNCOFFMSG = 'click to enable panel synchronization';
-const LISTOFALLMEMBERS = 'List of all members';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

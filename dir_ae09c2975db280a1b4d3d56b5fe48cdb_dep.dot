@@ -1,0 +1,21 @@
+digraph "/home/runner/work/ANDIS_CleanArchitecture_Demo/ANDIS_CleanArchitecture_Demo/src/TaskManagement.Domain"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="src", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html",tooltip=""]
+  subgraph clusterdir_ae09c2975db280a1b4d3d56b5fe48cdb {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_ae09c2975db280a1b4d3d56b5fe48cdb.html",tooltip=""]
+    dir_ae09c2975db280a1b4d3d56b5fe48cdb [shape=plaintext, label="TaskManagement.Domain"];
+  dir_c1012492ccd4000d3fd212141e903156 [label="Entities", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c1012492ccd4000d3fd212141e903156.html",tooltip=""];
+  dir_80801bd4f35c4031730df7a2b66e92ee [label="Events", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_80801bd4f35c4031730df7a2b66e92ee.html",tooltip=""];
+  dir_1aa53f0991ca6096c3bcb7e159734aad [label="Exceptions", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_1aa53f0991ca6096c3bcb7e159734aad.html",tooltip=""];
+  dir_62faa9f66449bd0198c1ae73786dd24c [label="Shared", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_62faa9f66449bd0198c1ae73786dd24c.html",tooltip=""];
+  dir_bbc7794ae95c73958010145639b8da9d [label="ValueObjects", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_bbc7794ae95c73958010145639b8da9d.html",tooltip=""];
+  }
+  }
+}

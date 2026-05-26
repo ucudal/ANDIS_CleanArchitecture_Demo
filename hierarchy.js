@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "AbstractValidator", "classAbstractValidator-1-g.html", [
+    [ "AbstractValidator", "classAbstractValidator.html", [
       [ "TaskManagement.Application.Behaviors.CreateTaskCommandValidator", "classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator.html", null ]
     ] ],
     [ "ControllerBase", "classControllerBase.html", null ],
@@ -22,19 +22,19 @@ var hierarchy =
       [ "TaskManagement.Infrastructure.EventDispatching.MediatRDomainEventDispatcher", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html", null ]
     ] ],
     [ "TaskManagement.Application.Interfaces.IEmailService", "interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IEmailService.html", null ],
-    [ "IEntityTypeConfiguration", "classIEntityTypeConfiguration-1-g.html", [
+    [ "IEntityTypeConfiguration", "classIEntityTypeConfiguration.html", [
       [ "TaskManagement.Infrastructure.Persistence.Configurations.TaskConfiguration", "classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html", null ]
     ] ],
     [ "INotification", "classINotification.html", [
-      [ "TaskManagement.Infrastructure.EventDispatching.DomainEventWrapper< T >", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper-1-g.html", null ]
+      [ "TaskManagement.Infrastructure.EventDispatching.DomainEventWrapper< T >", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper.html", null ]
     ] ],
-    [ "INotificationHandler", "classINotificationHandler-1-g.html", [
+    [ "INotificationHandler", "classINotificationHandler.html", [
       [ "TaskManagement.Infrastructure.EventDispatching.TaskCompletedNotificationHandler", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1TaskCompletedNotificationHandler.html", null ]
     ] ],
-    [ "IPipelineBehavior", "classIPipelineBehavior-2-g.html", [
-      [ "TaskManagement.Application.Behaviors.ValidationBehavior< TRequest, TResponse >", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html", null ]
+    [ "IPipelineBehavior", "classIPipelineBehavior.html", [
+      [ "TaskManagement.Application.Behaviors.ValidationBehavior< TRequest, TResponse >", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior.html", null ]
     ] ],
-    [ "IRequestHandler", "classIRequestHandler-2-g.html", [
+    [ "IRequestHandler", "classIRequestHandler.html", [
       [ "TaskManagement.Application.Commands.CompleteTask.CompleteTaskCommandHandler", "classTaskManagement_1_1Application_1_1Commands_1_1CompleteTask_1_1CompleteTaskCommandHandler.html", null ],
       [ "TaskManagement.Application.Commands.CreateTask.CreateTaskCommandHandler", "classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html", null ],
       [ "TaskManagement.Application.Queries.GetTaskById.GetTaskByIdQueryHandler", "classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html", null ]
@@ -48,9 +48,9 @@ var hierarchy =
     [ "TaskManagement.Application.Interfaces.IUnitOfWork", "interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html", [
       [ "TaskManagement.Infrastructure.Persistence.TaskDbContext", "classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html", null ]
     ] ],
-    [ "TaskManagement.Application.Common.PagedResult&lt; T &gt;", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html", null ],
-    [ "TaskManagement.Domain.Common.Result", "classTaskManagement_1_1Domain_1_1Common_1_1Result.html", [
-      [ "TaskManagement.Domain.Common.Result< T >", "classTaskManagement_1_1Domain_1_1Common_1_1Result-1-g.html", null ]
+    [ "TaskManagement.Application.Common.PagedResult< T >", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult.html", null ],
+    [ "Result", "classResult.html", [
+      [ "TaskManagement.Domain.Common.Result< T >", "classTaskManagement_1_1Domain_1_1Common_1_1Result.html", null ]
     ] ],
     [ "TaskManagement.Application.Queries.GetTaskById.TaskDto", "classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1TaskDto.html", null ],
     [ "TaskManagement.Domain.Entities.TaskItem", "classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html", null ],

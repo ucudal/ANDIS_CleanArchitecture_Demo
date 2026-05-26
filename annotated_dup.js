@@ -3,8 +3,8 @@ var annotated_dup =
     [ "TaskManagement", "namespaceTaskManagement.html", [
       [ "Application", "namespaceTaskManagement_1_1Application.html", [
         [ "Behaviors", "namespaceTaskManagement_1_1Application_1_1Behaviors.html", [
-          [ "ValidationBehavior&lt; TRequest, TResponse &gt;", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g" ],
-          [ "CreateTaskCommandValidator", "classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator.html", "classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator" ]
+          [ "CreateTaskCommandValidator", "classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator.html", "classTaskManagement_1_1Application_1_1Behaviors_1_1CreateTaskCommandValidator" ],
+          [ "ValidationBehavior", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior.html", "classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior" ]
         ] ],
         [ "Commands", "namespaceTaskManagement_1_1Application_1_1Commands.html", [
           [ "CompleteTask", "namespaceTaskManagement_1_1Application_1_1Commands_1_1CompleteTask.html", [
@@ -15,7 +15,7 @@ var annotated_dup =
           ] ]
         ] ],
         [ "Common", "namespaceTaskManagement_1_1Application_1_1Common.html", [
-          [ "PagedResult&lt; T &gt;", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g" ]
+          [ "PagedResult", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult.html", "classTaskManagement_1_1Application_1_1Common_1_1PagedResult" ]
         ] ],
         [ "Exceptions", "namespaceTaskManagement_1_1Application_1_1Exceptions.html", [
           [ "NotFoundException", "classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html", "classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException" ],
@@ -38,7 +38,6 @@ var annotated_dup =
       [ "Domain", "namespaceTaskManagement_1_1Domain.html", [
         [ "Common", "namespaceTaskManagement_1_1Domain_1_1Common.html", [
           [ "Result", "classTaskManagement_1_1Domain_1_1Common_1_1Result.html", "classTaskManagement_1_1Domain_1_1Common_1_1Result" ],
-          [ "Result&lt; T &gt;", "classTaskManagement_1_1Domain_1_1Common_1_1Result-1-g.html", "classTaskManagement_1_1Domain_1_1Common_1_1Result-1-g" ],
           [ "ValueObject", "classTaskManagement_1_1Domain_1_1Common_1_1ValueObject.html", "classTaskManagement_1_1Domain_1_1Common_1_1ValueObject" ]
         ] ],
         [ "Entities", "namespaceTaskManagement_1_1Domain_1_1Entities.html", [
@@ -46,9 +45,9 @@ var annotated_dup =
         ] ],
         [ "Events", "namespaceTaskManagement_1_1Domain_1_1Events.html", [
           [ "DomainEvent", "classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent" ],
-          [ "TaskCreatedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent" ],
-          [ "TaskCompletedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent" ],
           [ "TaskAssignedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskAssignedEvent" ],
+          [ "TaskCompletedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCompletedEvent" ],
+          [ "TaskCreatedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskCreatedEvent" ],
           [ "TaskPriorityChangedEvent", "classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html", "classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent" ]
         ] ],
         [ "Exceptions", "namespaceTaskManagement_1_1Domain_1_1Exceptions.html", [
@@ -60,8 +59,8 @@ var annotated_dup =
       ] ],
       [ "Infrastructure", "namespaceTaskManagement_1_1Infrastructure.html", [
         [ "EventDispatching", "namespaceTaskManagement_1_1Infrastructure_1_1EventDispatching.html", [
+          [ "DomainEventWrapper", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper.html", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper" ],
           [ "MediatRDomainEventDispatcher", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher" ],
-          [ "DomainEventWrapper&lt; T &gt;", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper-1-g.html", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper-1-g" ],
           [ "TaskCompletedNotificationHandler", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1TaskCompletedNotificationHandler.html", "classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1TaskCompletedNotificationHandler" ]
         ] ],
         [ "Persistence", "namespaceTaskManagement_1_1Infrastructure_1_1Persistence.html", [
@@ -76,13 +75,14 @@ var annotated_dup =
         ] ]
       ] ]
     ] ],
-    [ "AbstractValidator", "classAbstractValidator-1-g.html", null ],
+    [ "AbstractValidator", "classAbstractValidator.html", null ],
     [ "ControllerBase", "classControllerBase.html", null ],
     [ "DbContext", "classDbContext.html", null ],
     [ "Exception", "classException.html", null ],
-    [ "IEntityTypeConfiguration", "classIEntityTypeConfiguration-1-g.html", null ],
+    [ "IEntityTypeConfiguration", "classIEntityTypeConfiguration.html", null ],
     [ "INotification", "classINotification.html", null ],
-    [ "INotificationHandler", "classINotificationHandler-1-g.html", null ],
-    [ "IPipelineBehavior", "classIPipelineBehavior-2-g.html", null ],
-    [ "IRequestHandler", "classIRequestHandler-2-g.html", null ]
+    [ "INotificationHandler", "classINotificationHandler.html", null ],
+    [ "IPipelineBehavior", "classIPipelineBehavior.html", null ],
+    [ "IRequestHandler", "classIRequestHandler.html", null ],
+    [ "Result", "classResult.html", null ]
 ];
