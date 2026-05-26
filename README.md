@@ -7,6 +7,8 @@
 <!-- markdownlint-disable-next-line MD025 -->
 # Demo de Clean Architecture
 
+V1.1
+
 En [Clean
 Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
 el código se organiza en círculos concéntricos, donde cada círculo representa

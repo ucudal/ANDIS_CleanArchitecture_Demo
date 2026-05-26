@@ -1,5 +1,7 @@
 # Introducción
 
+v 1.1
+
 A continuación describimos la arquitectura de esta demo de [Clean
 Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 utilizando [modelos
