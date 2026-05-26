@@ -1,0 +1,5 @@
+<map id="TaskManagement.Application.Exceptions.ValidationException" name="TaskManagement.Application.Exceptions.ValidationException">
+<area shape="rect" id="Node000001" title="ValidationException se lanza cuando la validación de entrada falla en la capa de aplicación." alt="" coords="5,120,199,262"/>
+<area shape="rect" id="Node000002" href="$classException.html" title=" " alt="" coords="68,5,136,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,87,105,120,100,120,100,87"/>
+</map>

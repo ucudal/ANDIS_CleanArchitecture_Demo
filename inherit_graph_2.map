@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classDbContext.html" title=" " alt="" coords="61,5,146,31"/>
+<area shape="rect" id="Node000001" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html" title="TaskDbContext es el DbContext de Entity Framework Core para gestión de tareas." alt="" coords="250,27,459,68"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="161,22,250,33,249,38,161,27"/>
+<area shape="rect" id="Node000002" href="$interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html" title="IUnitOfWork es la abstracción para coordinar la persistencia de cambios de entidades." alt="" coords="5,55,202,96"/>
+<area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="217,60,249,57,250,62,218,65"/>
+</map>

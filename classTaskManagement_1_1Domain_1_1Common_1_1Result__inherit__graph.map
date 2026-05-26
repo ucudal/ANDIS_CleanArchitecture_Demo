@@ -1,0 +1,5 @@
+<map id="TaskManagement.Domain.Common.Result" name="TaskManagement.Domain.Common.Result">
+<area shape="rect" id="Node000001" title="Result es un tipo de unión discriminada que implementa el patrón Result para manejo de errores." alt="" coords="5,5,229,249"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result-1-g.html" title="Result&lt;T&gt; es un tipo de unión discriminada genérico para operaciones que devuelven un valor en caso d..." alt="" coords="5,297,229,379"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,264,120,297,114,297,114,264"/>
+</map>

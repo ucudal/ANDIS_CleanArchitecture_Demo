@@ -1,0 +1,3 @@
+<map id="TaskManagement.Application.Interfaces.IEmailService" name="TaskManagement.Application.Interfaces.IEmailService">
+<area shape="rect" id="Node000001" title="IEmailService es la abstracción para envío de notificaciones por correo electrónico." alt="" coords="5,5,216,102"/>
+</map>

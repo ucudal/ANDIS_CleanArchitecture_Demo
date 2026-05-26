@@ -1,0 +1,5 @@
+<map id="TaskManagement.Domain.Interfaces.ITaskRepository" name="TaskManagement.Domain.Interfaces.ITaskRepository">
+<area shape="rect" id="Node000001" title="ITaskRepository es la interfaz del repositorio de escritura para agregado TaskItem." alt="" coords="17,5,246,188"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html" title="TaskRepository es el repositorio de escritura para entidades TaskItem." alt="" coords="5,236,257,440"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,204,134,236,128,236,128,204"/>
+</map>

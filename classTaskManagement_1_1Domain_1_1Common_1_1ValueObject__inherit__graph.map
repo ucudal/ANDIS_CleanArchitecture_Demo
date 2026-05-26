@@ -1,0 +1,5 @@
+<map id="TaskManagement.Domain.Common.ValueObject" name="TaskManagement.Domain.Common.ValueObject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,229,168"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Domain_1_1ValueObjects_1_1Email.html" title="Email es un Objeto de Valor del Dominio que encapsula la lógica y validación de direcciones de correo..." alt="" coords="18,216,216,338"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,183,120,216,114,216,114,183"/>
+</map>
