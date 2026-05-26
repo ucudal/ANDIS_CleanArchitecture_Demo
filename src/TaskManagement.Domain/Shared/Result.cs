@@ -49,7 +49,7 @@ public class Result
 }
 
 /// <summary>
-/// <c>Result</c>&lt;T&gt; es un tipo de unión discriminada genérico para operaciones que devuelven un valor en caso de éxito.
+/// <c>Result{T}</c> es un tipo de unión discriminada genérico para operaciones que devuelven un valor en caso de éxito.
 ///
 /// Hereda de <see cref="Result"/> y agrega una propiedad <see cref="Result{T}.Value"/> para el caso de éxito.
 /// </summary>
