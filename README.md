@@ -28,7 +28,8 @@ desarrollada usando Clean Architecture y es una versión extendida del ejemplo d
     production-ready guide.
     [Medium](https://medium.com/@michaelmaurice410/clean-architecture-in-net-a-complete-production-ready-guide-49dcbdb22166).
 
-Todas las clases en esta demo están documentadas para explicar su rol en la
-arquitectura. Comienza consultando [esta
-documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo/)
-que te ayudará a entender la arquitectura navegando por el código.
+> [!TIP]
+> Todas las clases en esta demo están documentadas para explicar su rol en la
+> arquitectura. Comienza consultando 📖 [esta
+> documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo/html/index.html)
+> que te ayudará a entender la arquitectura navegando por el código.
