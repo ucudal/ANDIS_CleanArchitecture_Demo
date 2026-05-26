@@ -96,7 +96,7 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
     son los círculos `Entities` y `Use Cases`. A pesar de ser una demo en .NET,
     usamos la terminología original.
 
-1. [TaskManagement.Domain](./html/namespaceTaskManagement_1_1Domain.html)
+1. [TaskManagement.Domain](./namespaceTaskManagement_1_1Domain.html)
   es una librería de C# en la que se define el
   [dominio](https://github.com/ucudal/ANDIS_Conceptos/blob/main/4_Conceptos/4_Dominio.md)
   de la aplicación:
@@ -119,7 +119,7 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
   [`TaskManagement.Domain`](../src/TaskManagement.Domain/TaskManagement.Domain.csproj)
   no referencia ningún otro proyecto, es el centro de los círculos concéntricos.
 
-2. [TaskManagement.Application](./html/namespaceTaskManagement_1_1Application.html)
+2. [TaskManagement.Application](./namespaceTaskManagement_1_1Application.html)
   es otra librería de C# en la que se definen las funcionalidades de la
   aplicación —comandos y consultas—, o dicho de otra forma, donde se implementa
   la lógica de los casos de uso. Esta aplicación usa el patrón
@@ -163,7 +163,7 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
   la dependencia es de un círculo externo al centro de los círculos
   concéntricos.
 
-3. [TaskManagement.Infrastructure](./html/namespaceTaskManagement_1_1Infrastructure.html)
+3. [TaskManagement.Infrastructure](./namespaceTaskManagement_1_1Infrastructure.html)
   es otra librería de C# en la que se definen cómo se implementa la
   infraestructura para las abstracciones definidas en la capa de aplicación de
   —repositorios, despacho de eventos y persistencia—. Las abstracciones
@@ -195,7 +195,7 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
   infraestructura tiene también la configuración de los frameworks de acceso a
   datos.
 
-4. [TaskManagement.API](./html/namespaceTaskManagement_1_1API.html) es
+4. [TaskManagement.API](./namespaceTaskManagement_1_1API.html) es
   una aplicación web en .NET en la que se define la interfaz, en esta demo, una
   API REST. El proyecto referencia tanto al proyecto
   [`TaskManagement.Application`](../src/TaskManagement.Application/TaskManagement.Application.csproj)
