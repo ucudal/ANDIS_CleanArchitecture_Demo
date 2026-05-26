@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Exceptions.NotFoundException" name="TaskManagement.Application.Exceptions.NotFoundException">
-<area shape="rect" id="Node000001" title="NotFoundException se lanza cuando una entidad solicitada no puede ser encontrada." alt="" coords="5,120,200,262"/>
-<area shape="rect" id="Node000002" href="$classException.html" title=" " alt="" coords="68,5,137,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,87,105,120,100,120,100,87"/>
-</map>

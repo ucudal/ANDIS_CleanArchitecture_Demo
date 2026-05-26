@@ -1,5 +1,0 @@
-<map id="DbContext" name="DbContext">
-<area shape="rect" id="Node000001" title=" " alt="" coords="68,5,142,72"/>
-<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html" title="TaskDbContext es el DbContext de Entity Framework Core para gestión de tareas." alt="" coords="5,120,204,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,86,107,120,102,120,102,86"/>
-</map>

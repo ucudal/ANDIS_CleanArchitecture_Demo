@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Commands.CompleteTask.CompleteTaskCommandHandler" name="TaskManagement.Application.Commands.CompleteTask.CompleteTaskCommandHandler">
-<area shape="rect" id="Node000001" title="CompleteTaskCommand encapsula la solicitud de marcar una tarea como completada." alt="" coords="5,135,259,251"/>
-<area shape="rect" id="Node000002" href="$classIRequestHandler-2-g.html" title=" " alt="" coords="44,5,220,87"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,102,135,135,130,135,130,102"/>
-</map>

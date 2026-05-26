@@ -1,0 +1,14 @@
+digraph "TaskManagement.Domain.Common.ValueObject.GetEqualityComponents"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="TaskManagement.Domain.Common.\lValueObject.GetEqualityComponents",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="TaskManagement.Domain.Common.\lValueObject.Equals",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTaskManagement_1_1Domain_1_1Common_1_1ValueObject.html#a86d42b8fb4b0fba9a62c1becdf46c004",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TaskManagement.Domain.Common.\lValueObject.GetHashCode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTaskManagement_1_1Domain_1_1Common_1_1ValueObject.html#a35330dfaa37bebc57cc3f229e2e39e10",tooltip=" "];
+}

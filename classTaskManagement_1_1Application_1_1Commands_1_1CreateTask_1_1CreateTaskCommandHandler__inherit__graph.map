@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Commands.CreateTask.CreateTaskCommandHandler" name="TaskManagement.Application.Commands.CreateTask.CreateTaskCommandHandler">
-<area shape="rect" id="Node000001" title="CreateTaskCommand encapsula la solicitud de creación de una nueva tarea." alt="" coords="5,120,285,236"/>
-<area shape="rect" id="Node000002" href="$classIRequestHandler-2-g.html" title=" " alt="" coords="91,5,200,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,87,148,120,142,120,142,87"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="Exception" name="Exception">
-<area shape="rect" id="Node000001" title=" " alt="" coords="287,5,356,72"/>
-<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html" title="NotFoundException se lanza cuando una entidad solicitada no puede ser encontrada." alt="" coords="5,120,200,262"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,74,201,125,198,121,273,69"/>
-<area shape="rect" id="Node000003" href="$classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html" title="ValidationException se lanza cuando la validación de entrada falla en la capa de aplicación." alt="" coords="224,120,418,262"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="324,87,324,120,319,120,319,87"/>
-<area shape="rect" id="Node000004" href="$classTaskManagement_1_1Domain_1_1Exceptions_1_1DomainException.html" title="DomainException es la clase de excepción base para todos los errores de capa de dominio." alt="" coords="442,130,678,252"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="370,67,466,128,464,132,367,72"/>
-</map>

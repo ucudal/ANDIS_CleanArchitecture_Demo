@@ -1,5 +1,0 @@
-<map id="TaskManagement.Application.Interfaces.IUnitOfWork" name="TaskManagement.Application.Interfaces.IUnitOfWork">
-<area shape="rect" id="Node000001" title="IUnitOfWork es la abstracción para coordinar la persistencia de cambios de entidades." alt="" coords="12,5,198,87"/>
-<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html" title="TaskDbContext es el DbContext de Entity Framework Core para gestión de tareas." alt="" coords="5,135,204,236"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,102,107,135,102,135,102,102"/>
-</map>
