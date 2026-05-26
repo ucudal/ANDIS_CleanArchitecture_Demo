@@ -1,0 +1,43 @@
+<map id="TaskManagement.Domain.Common.Result.Result" name="TaskManagement.Domain.Common.Result.Result">
+<area shape="rect" id="Node000001" title=" " alt="" coords="938,365,1173,406"/>
+<area shape="rect" id="Node000002" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#acf5b62282fb4268c569d70b955c06b27" title=" " alt="" coords="656,201,890,242"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1021,356,962,306,927,280,889,257,860,245,862,240,892,253,930,275,966,301,1025,352"/>
+<area shape="rect" id="Node000003" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#abb0443b136478238351871e1c1621a33" title=" " alt="" coords="656,332,890,373"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="923,373,890,369,891,364,923,367"/>
+<area shape="rect" id="Node000013" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#a4761f7f42bf7d43283f5f8b4ceef67a6" title=" " alt="" coords="656,397,890,438"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="923,403,891,407,890,402,923,398"/>
+<area shape="rect" id="Node000014" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#a45a9c68e204252787c1982871a745e10" title=" " alt="" coords="656,463,890,503"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="991,415,891,452,852,465,850,460,889,447,989,410"/>
+<area shape="rect" id="Node000015" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#aca3f1594f7b60690fbe65d1d6436d64d" title=" " alt="" coords="656,267,890,307"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="991,362,889,323,851,311,852,305,891,318,993,357"/>
+<area shape="rect" id="Node000016" href="$classTaskManagement_1_1Domain_1_1Common_1_1Result.html#aa814d96d3e5f8714cd4a3d6a5978c160" title=" " alt="" coords="656,528,890,569"/>
+<area shape="poly" id="edge25_Node000001_Node000016" title=" " alt="" coords="1024,419,965,469,929,495,892,517,862,530,860,525,889,513,926,491,962,465,1021,415"/>
+<area shape="rect" id="Node000004" href="$classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#ac77b8faed959308cdf95aa3c3eafc25a" title=" " alt="" coords="363,267,588,307"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="662,331,571,311,572,305,663,325"/>
+<area shape="rect" id="Node000005" href="$classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#ac904582fc66da4bbfcdef69681e1b8fa" title=" " alt="" coords="363,332,588,373"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="640,355,589,355,589,350,640,350"/>
+<area shape="rect" id="Node000006" href="$classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#a073865f352e456e4f1719b31986d1947" title=" " alt="" coords="363,397,588,438"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="663,379,572,399,571,394,662,374"/>
+<area shape="rect" id="Node000007" href="$classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#a88b6dc74b70f3e61aba7057cf12fa9e0" title=" " alt="" coords="363,136,588,177"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="659,325,654,321,641,305,633,288,630,254,626,222,619,207,606,192,587,179,590,174,610,188,624,204,631,221,635,254,639,286,645,302,658,317,663,321"/>
+<area shape="rect" id="Node000008" href="$classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html#abc6681ba62c7b6315e31cd11fac19b70" title=" " alt="" coords="5,128,296,184"/>
+<area shape="poly" id="edge10_Node000003_Node000008" title=" " alt="" coords="661,384,658,387,641,413,634,440,634,466,638,494,641,521,640,547,631,573,610,597,576,621,543,637,510,647,478,649,446,645,413,635,378,619,342,597,292,555,251,503,219,446,195,385,176,325,164,270,151,185,157,184,169,269,182,324,200,383,224,443,256,500,296,551,345,593,381,614,414,630,447,640,478,644,509,642,541,632,573,616,606,593,627,570,635,546,636,521,633,494,629,467,629,439,636,411,654,384,658,380"/>
+<area shape="rect" id="Node000009" href="$classTaskManagement_1_1Domain_1_1ValueObjects_1_1Email.html#a7ae645d5958e6189215dfe71a5fe2e5f" title=" " alt="" coords="371,463,580,503"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="666,382,658,388,642,403,634,419,626,436,610,452,582,466,580,461,606,448,622,433,630,417,638,400,654,384,663,378"/>
+<area shape="rect" id="Node000010" href="$classTaskManagement_1_1Application_1_1Commands_1_1CompleteTask_1_1CompleteTaskCommandHandler.html#ab173c3e7e5ec5db4d2083d62da2dfa49" title=" " alt="" coords="344,527,608,583"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="663,383,658,388,645,403,638,418,635,451,631,484,623,500,610,517,594,529,591,525,606,513,619,498,625,482,629,450,633,417,641,400,654,384,659,379"/>
+<area shape="rect" id="Node000011" href="$classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html#aea20e3bbe19e9b94160a4557ccb06224" title=" " alt="" coords="363,56,589,112"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="658,324,654,321,636,296,628,271,627,246,629,222,631,197,630,173,623,150,606,126,587,111,591,107,610,123,628,147,635,173,636,197,634,222,632,246,634,270,641,294,658,317,661,321"/>
+<area shape="rect" id="Node000012" href="$classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html#ac8a54e40a046767566e22eadfe917aef" title=" " alt="" coords="363,201,588,242"/>
+<area shape="poly" id="edge12_Node000003_Node000012" title=" " alt="" coords="663,327,654,321,638,305,630,288,622,272,606,257,583,245,586,240,610,253,626,269,634,286,642,302,658,317,666,322"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="347,159,296,159,296,154,347,154"/>
+<area shape="poly" id="edge16_Node000015_Node000004" title=" " alt="" coords="640,290,589,290,589,284,640,284"/>
+<area shape="poly" id="edge17_Node000015_Node000005" title=" " alt="" coords="663,314,572,334,571,329,662,309"/>
+<area shape="poly" id="edge18_Node000015_Node000006" title=" " alt="" coords="666,317,658,322,642,338,634,354,626,370,610,386,586,399,583,394,606,382,622,367,630,351,638,335,654,318,663,313"/>
+<area shape="poly" id="edge19_Node000015_Node000007" title=" " alt="" coords="663,261,654,256,638,239,630,223,622,207,606,192,583,180,586,175,610,188,626,204,634,220,642,236,658,252,666,257"/>
+<area shape="poly" id="edge22_Node000015_Node000008" title=" " alt="" coords="658,259,654,255,636,228,629,200,629,172,633,145,636,118,635,93,627,69,606,46,582,30,556,19,529,12,501,9,442,13,383,28,326,51,274,78,191,130,188,126,271,73,324,46,382,23,441,8,501,3,530,7,558,14,584,26,610,42,631,66,640,92,641,119,638,146,634,173,634,200,641,226,658,252,661,255"/>
+<area shape="poly" id="edge20_Node000015_Node000009" title=" " alt="" coords="663,318,658,322,645,338,639,353,635,386,631,419,624,435,610,452,582,469,579,465,606,448,619,433,626,417,630,385,633,352,641,335,654,318,659,314"/>
+<area shape="poly" id="edge21_Node000015_Node000010" title=" " alt="" coords="661,319,658,322,641,346,634,369,632,393,634,417,636,442,635,467,628,492,610,517,596,529,593,525,606,513,623,490,630,466,631,442,629,418,627,393,628,368,636,343,654,319,658,315"/>
+<area shape="poly" id="edge23_Node000015_Node000011" title=" " alt="" coords="659,260,654,256,641,239,633,222,629,189,625,157,619,142,606,126,587,112,591,108,610,122,623,139,631,156,635,189,638,221,645,236,658,252,663,256"/>
+<area shape="poly" id="edge24_Node000015_Node000012" title=" " alt="" coords="662,265,571,245,572,240,663,260"/>
+</map>

@@ -46,9 +46,9 @@
 <text xml:space="preserve" text-anchor="start" x="68.12" y="-159.75" font-family="Helvetica,sans-Serif" font-size="10.00">IRequestHandler</text>
 <text xml:space="preserve" text-anchor="start" x="103.38" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text xml:space="preserve" text-anchor="start" x="103.38" y="-129.25" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="64.12,-156 64.12,-156 145.62,-156 145.62,-156 64.12,-156"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="64.12,-140.75 64.12,-140.75 145.62,-140.75 145.62,-140.75 64.12,-140.75"/>
-<polygon fill="none" stroke="#bfbfbf" points="64.12,-123.5 64.12,-173.25 145.62,-173.25 145.62,-123.5 64.12,-123.5"/>
+<polygon fill="#666666" stroke="#666666" points="64.12,-156 64.12,-156 145.62,-156 145.62,-156 64.12,-156"/>
+<polygon fill="#666666" stroke="#666666" points="64.12,-140.75 64.12,-140.75 145.62,-140.75 145.62,-140.75 64.12,-140.75"/>
+<polygon fill="none" stroke="#666666" points="64.12,-123.5 64.12,-173.25 145.62,-173.25 145.62,-123.5 64.12,-123.5"/>
 </a>
 </g>
 </g>

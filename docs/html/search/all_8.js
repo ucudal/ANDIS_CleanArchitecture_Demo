@@ -3,6 +3,11 @@ var searchData=
   ['e_20interfaces_20definidos_20en_20cada_20capa_0',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
   ['el_20código_1',['Cómo navegar el código',['../index.html#autotoc_md15',1,'']]],
   ['email_2',['Email',['../classTaskManagement_1_1Domain_1_1ValueObjects_1_1Email.html',1,'TaskManagement::Domain::ValueObjects']]],
-  ['en_20cada_20capa_3',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
-  ['exception_4',['Exception',['../classException.html',1,'']]]
+  ['email_2ecs_3',['Email.cs',['../Email_8cs.html',1,'']]],
+  ['en_20cada_20capa_4',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
+  ['equals_5',['Equals',['../classTaskManagement_1_1Domain_1_1Common_1_1ValueObject.html#a86d42b8fb4b0fba9a62c1becdf46c004',1,'TaskManagement::Domain::Common::ValueObject']]],
+  ['errors_6',['Errors',['../classTaskManagement_1_1Application_1_1Exceptions_1_1ValidationException.html#ab140821c0b61d99f311e16af65f15915',1,'TaskManagement.Application.Exceptions.ValidationException.Errors'],['../classTaskManagement_1_1Domain_1_1Common_1_1Result.html#a2f49b5a6810129c0c182625599397476',1,'TaskManagement.Domain.Common.Result.Errors']]],
+  ['event_7',['Event',['../classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1DomainEventWrapper-1-g.html#aa8c10b321c476091e90fa58bdc95df20',1,'TaskManagement::Infrastructure::EventDispatching::DomainEventWrapper-1-g']]],
+  ['exception_8',['Exception',['../classException.html',1,'']]],
+  ['exceptionhandlingmiddleware_2ecs_9',['ExceptionHandlingMiddleware.cs',['../ExceptionHandlingMiddleware_8cs.html',1,'']]]
 ];

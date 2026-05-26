@@ -59,9 +59,9 @@
 <text xml:space="preserve" text-anchor="start" x="32.62" y="-148.5" font-family="Helvetica,sans-Serif" font-size="10.00">operator!=()</text>
 <text xml:space="preserve" text-anchor="start" x="13.69" y="-133.25" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text xml:space="preserve" text-anchor="start" x="32.62" y="-133.25" font-family="Helvetica,sans-Serif" font-size="10.00">GetEqualityComponents()</text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-221 0,-221 167.75,-221 167.75,-221 0,-221"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-205.75 0,-205.75 167.75,-205.75 167.75,-205.75 0,-205.75"/>
-<polygon fill="none" stroke="#bfbfbf" points="0,-127.5 0,-249.5 167.75,-249.5 167.75,-127.5 0,-127.5"/>
+<polygon fill="#666666" stroke="#666666" points="0,-221 0,-221 167.75,-221 167.75,-221 0,-221"/>
+<polygon fill="#666666" stroke="#666666" points="0,-205.75 0,-205.75 167.75,-205.75 167.75,-205.75 0,-205.75"/>
+<polygon fill="none" stroke="#666666" points="0,-127.5 0,-249.5 167.75,-249.5 167.75,-127.5 0,-127.5"/>
 </a>
 </g>
 </g>

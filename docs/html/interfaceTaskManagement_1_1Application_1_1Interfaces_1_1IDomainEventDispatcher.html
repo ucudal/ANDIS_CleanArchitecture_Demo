@@ -155,8 +155,7 @@ Collaboration diagram for TaskManagement.Application.Interfaces.IDomainEventDisp
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a186eefecc8877c71266270a13ee96f29" id="r_a186eefecc8877c71266270a13ee96f29"><td class="memItemLeft"><a id="a186eefecc8877c71266270a13ee96f29" name="a186eefecc8877c71266270a13ee96f29"></a>
-Task&#160;</td><td class="memItemRight"><b>DispatchAsync</b> (IReadOnlyCollection&lt; <a class="el" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a> &gt; events, CancellationToken cancellationToken=default)</td></tr>
+<tr class="memitem:a186eefecc8877c71266270a13ee96f29" id="r_a186eefecc8877c71266270a13ee96f29"><td class="memItemLeft">Task&#160;</td><td class="memItemRight"><a class="el" href="#a186eefecc8877c71266270a13ee96f29">DispatchAsync</a> (IReadOnlyCollection&lt; <a class="el" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a> &gt; events, CancellationToken cancellationToken=default)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><code><a class="el" href="interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html" title="IDomainEventDispatcher es la interfaz para publicación de eventos de dominio.">IDomainEventDispatcher</a></code> es la interfaz para publicación de eventos de dominio. </p>
@@ -182,7 +181,31 @@ Task&#160;</td><td class="memItemRight"><b>DispatchAsync</b> (IReadOnlyCollectio
 <p>Nota: Los eventos de dominio representan hechos del pasado que no pueden cambiar. Habilitan a la aplicación a reaccionar a ocurrencias importantes del dominio. </p>
 
 <p class="definition">Definition at line <a class="el" href="IDomainEventDispatcher_8cs_source.html#l00031">31</a> of file <a class="el" href="IDomainEventDispatcher_8cs_source.html">IDomainEventDispatcher.cs</a>.</p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a186eefecc8877c71266270a13ee96f29" name="a186eefecc8877c71266270a13ee96f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186eefecc8877c71266270a13ee96f29">&#9670;&#160;</a></span>DispatchAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task TaskManagement.Application.Interfaces.IDomainEventDispatcher.DispatchAsync </td>
+          <td>(</td>
+          <td class="paramtype">IReadOnlyCollection&lt; <a class="el" href="classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html">DomainEvent</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>events</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CancellationToken</td>          <td class="paramname"><span class="paramname"><em>cancellationToken</em></span><span class="paramdefsep"> = </span><span class="paramdefval">default</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html#a90e018c56fd412a9ea188ca1b092a68a">TaskManagement.Infrastructure.EventDispatching.MediatRDomainEventDispatcher</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/src/TaskManagement.Application/Interfaces/<a class="el" href="IDomainEventDispatcher_8cs_source.html">IDomainEventDispatcher.cs</a></li>
 </ul>
 </div><!-- contents -->

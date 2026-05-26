@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['idomaineventdispatcher_0',['IDomainEventDispatcher',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html',1,'TaskManagement::Application::Interfaces']]],
-  ['iemailservice_1',['IEmailService',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IEmailService.html',1,'TaskManagement::Application::Interfaces']]],
-  ['ientitytypeconfiguration_2d1_2dg_2',['IEntityTypeConfiguration-1-g',['../classIEntityTypeConfiguration-1-g.html',1,'']]],
-  ['ii_3',['Análisis y diseño de aplicaciones II',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md19',1,'']]],
-  ['implementación_20de_20la_20arquitectura_4',['Implementación de la arquitectura',['../index.html#autotoc_md5',1,'']]],
-  ['infraestructura_5',['3. Capa de infraestructura',['../index.html#autotoc_md13',1,'']]],
-  ['ingeniería_20y_20tecnologías_6',['Facultad de Ingeniería y Tecnologías',['..//Users/fmachado/Repos/ANDIS_CleanArchitecture_Demo/README.md#autotoc_md18',1,'']]],
-  ['inotification_7',['INotification',['../classINotification.html',1,'']]],
-  ['inotificationhandler_2d1_2dg_8',['INotificationHandler-1-g',['../classINotificationHandler-1-g.html',1,'']]],
-  ['interfaces_20definidos_20en_20cada_20capa_9',['Resumen de clases e interfaces definidos en cada capa',['../index.html#autotoc_md10',1,'']]],
-  ['interfaz_10',['4. Capa de interfaz',['../index.html#autotoc_md14',1,'']]],
-  ['introducción_11',['Introducción',['../index.html',1,'']]],
-  ['ipipelinebehavior_2d2_2dg_12',['IPipelineBehavior-2-g',['../classIPipelineBehavior-2-g.html',1,'']]],
-  ['irequesthandler_2d2_2dg_13',['IRequestHandler-2-g',['../classIRequestHandler-2-g.html',1,'']]],
-  ['itaskreadrepository_14',['ITaskReadRepository',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html',1,'TaskManagement::Application::Interfaces']]],
-  ['itaskrepository_15',['ITaskRepository',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html',1,'TaskManagement::Application::Interfaces']]],
-  ['iunitofwork_16',['IUnitOfWork',['../interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html',1,'TaskManagement::Application::Interfaces']]]
+  ['handle_0',['Handle',['../classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html#a495b60bfaf668c981a842781a8bf9b5c',1,'TaskManagement.Application.Behaviors.ValidationBehavior-2-g.Handle()'],['../classTaskManagement_1_1Application_1_1Commands_1_1CompleteTask_1_1CompleteTaskCommandHandler.html#ab173c3e7e5ec5db4d2083d62da2dfa49',1,'TaskManagement.Application.Commands.CompleteTask.CompleteTaskCommandHandler.Handle()'],['../classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html#abc6681ba62c7b6315e31cd11fac19b70',1,'TaskManagement.Application.Commands.CreateTask.CreateTaskCommandHandler.Handle()'],['../classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html#aea20e3bbe19e9b94160a4557ccb06224',1,'TaskManagement.Application.Queries.GetTaskById.GetTaskByIdQueryHandler.Handle()'],['../classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1TaskCompletedNotificationHandler.html#a553aa9d7cb5be8d13e7e24bbaa58fea0',1,'TaskManagement.Infrastructure.EventDispatching.TaskCompletedNotificationHandler.Handle()']]],
+  ['hasnextpage_1',['HasNextPage',['../classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html#a185a31b1517679fcca3d0aa4f3a884d6',1,'TaskManagement::Application::Common::PagedResult-1-g']]],
+  ['haspreviouspage_2',['HasPreviousPage',['../classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html#ac8d2bca4bd92264a24f64e0ef65e7e0e',1,'TaskManagement::Application::Common::PagedResult-1-g']]],
+  ['high_3',['High',['../namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636aea655d20c1ca69519ca647684edbb2db35',1,'TaskManagement::Domain::Entities']]]
 ];

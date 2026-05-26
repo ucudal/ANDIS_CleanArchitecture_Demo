@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mediatr_0',['MediatR',['../index.html#autotoc_md8',1,'']]],
-  ['mediatrdomaineventdispatcher_1',['MediatRDomainEventDispatcher',['../classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html',1,'TaskManagement::Infrastructure::EventDispatching']]]
+  ['la_20arquitectura_0',['Implementación de la arquitectura',['../index.html#autotoc_md5',1,'']]],
+  ['low_1',['Low',['../namespaceTaskManagement_1_1Domain_1_1Entities.html#aaa412777c6e94edc46abd089f6b636aea28d0edd045e05cf5af64e35ae0c4c6ef',1,'TaskManagement::Domain::Entities']]]
 ];

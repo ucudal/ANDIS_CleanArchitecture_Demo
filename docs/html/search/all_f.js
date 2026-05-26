@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['pagedresult_2d1_2dg_0',['PagedResult-1-g',['../classTaskManagement_1_1Application_1_1Common_1_1PagedResult-1-g.html',1,'TaskManagement::Application::Common']]]
+  ['navegar_20el_20código_0',['Cómo navegar el código',['../index.html#autotoc_md15',1,'']]],
+  ['newpriority_1',['NewPriority',['../classTaskManagement_1_1Domain_1_1Events_1_1TaskPriorityChangedEvent.html#a8ad1ea3091c68d253e3d96ba3bcfc4ee',1,'TaskManagement::Domain::Events::TaskPriorityChangedEvent']]],
+  ['notfoundexception_2',['NotFoundException',['../classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html',1,'TaskManagement.Application.Exceptions.NotFoundException'],['../classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html#af77c8764ccd5e2f33b110c4729221ee9',1,'TaskManagement.Application.Exceptions.NotFoundException.NotFoundException(string entityName, object key)'],['../classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html#ad9ab112f5ee1f9d391f29213fd9b11c3',1,'TaskManagement.Application.Exceptions.NotFoundException.NotFoundException()'],['../classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html#a4f4e543d63ffbd1b0059cdf537acad30',1,'TaskManagement.Application.Exceptions.NotFoundException.NotFoundException(string message)'],['../classTaskManagement_1_1Application_1_1Exceptions_1_1NotFoundException.html#a8c6e8978187455471d172de5f6a984d4',1,'TaskManagement.Application.Exceptions.NotFoundException.NotFoundException(string message, Exception innerException)']]],
+  ['notfoundexception_2ecs_3',['NotFoundException.cs',['../NotFoundException_8cs.html',1,'']]]
 ];

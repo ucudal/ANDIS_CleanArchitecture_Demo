@@ -33,9 +33,9 @@
 <text xml:space="preserve" text-anchor="start" x="40" y="-133.25" font-family="Helvetica,sans-Serif" font-size="10.00"> CreateTaskCommand &gt;</text>
 <text xml:space="preserve" text-anchor="start" x="92.12" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text xml:space="preserve" text-anchor="start" x="92.12" y="-102.75" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="36,-129.5 36,-129.5 151.25,-129.5 151.25,-129.5 36,-129.5"/>
-<polygon fill="#bfbfbf" stroke="#bfbfbf" points="36,-114.25 36,-114.25 151.25,-114.25 151.25,-114.25 36,-114.25"/>
-<polygon fill="none" stroke="#bfbfbf" points="36,-97 36,-158 151.25,-158 151.25,-97 36,-97"/>
+<polygon fill="#666666" stroke="#666666" points="36,-129.5 36,-129.5 151.25,-129.5 151.25,-129.5 36,-129.5"/>
+<polygon fill="#666666" stroke="#666666" points="36,-114.25 36,-114.25 151.25,-114.25 151.25,-114.25 36,-114.25"/>
+<polygon fill="none" stroke="#666666" points="36,-97 36,-158 151.25,-158 151.25,-97 36,-97"/>
 </a>
 </g>
 </g>

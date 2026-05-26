@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TaskConfigurat
   <div class="headertitle"><div class="title">TaskConfiguration.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.Infrastructure/Persistence/Configurations/TaskConfiguration.cs</span></div>
+<a href="TaskConfiguration_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManagement.Infrastructure/Persistence/Configurations/TaskConfiguration.cs</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Microsoft.EntityFrameworkCore;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Microsoft.EntityFrameworkCore.Metadata.Builders;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespaceTaskManagement_1_1Domain_1_1Entities.html">TaskManagement.Domain.Entities</a>;</div>
@@ -148,38 +148,42 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TaskConfigurat
 <div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html">   45</a></span><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class </span><a class="code hl_class" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html">TaskConfiguration</a> : IEntityTypeConfiguration&lt;TaskItem&gt;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> Configure(EntityTypeBuilder&lt;TaskItem&gt; builder)</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html#a458911fe399ca9fbbbfd77442aa85e82">   47</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html#a458911fe399ca9fbbbfd77442aa85e82">Configure</a>(EntityTypeBuilder&lt;TaskItem&gt; <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ArgumentNullException.ThrowIfNull(builder);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ArgumentNullException.ThrowIfNull(<a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        builder.ToTable(<span class="stringliteral">&quot;Tasks&quot;</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        builder.HasKey(t =&gt; t.Id);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        builder.Property(t =&gt; t.Title)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.ToTable(<span class="stringliteral">&quot;Tasks&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.HasKey(t =&gt; t.Id);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Property(t =&gt; t.Title)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            .IsRequired()</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            .HasMaxLength(200);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        builder.Property(t =&gt; t.Description)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Property(t =&gt; t.Description)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            .IsRequired()</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            .HasMaxLength(2000);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        builder.Property(t =&gt; t.Status)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Property(t =&gt; t.Status)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            .HasConversion&lt;<span class="keywordtype">string</span>&gt;()</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            .HasMaxLength(50);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        builder.Property(t =&gt; t.Priority)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Property(t =&gt; t.Priority)</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            .HasConversion&lt;<span class="keywordtype">string</span>&gt;()</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            .HasMaxLength(50);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="comment">// Los eventos de dominio están solo en memoria y no deben ser persistidos por EF.</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        builder.Ignore(t =&gt; t.DomainEvents);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.Ignore(t =&gt; t.DomainEvents);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        builder.HasIndex(t =&gt; t.AssignedTo);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        builder.HasIndex(t =&gt; t.Status);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        builder.HasIndex(t =&gt; t.DueDate);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.HasIndex(t =&gt; t.AssignedTo);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.HasIndex(t =&gt; t.Status);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a>.HasIndex(t =&gt; t.DueDate);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// Filtro de consulta para eliminación suave (si está implementada)</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// builder.HasQueryFilter(t =&gt; !t.IsDeleted);</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
 </div>
+<div class="ttc" id="aProgram_8cs_html_a2f78352277081c620fd4cf92a5ce15e5"><div class="ttname"><a href="Program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5">builder</a></div><div class="ttdeci">var builder</div><div class="ttdef"><b>Definition</b> <a href="Program_8cs_source.html#l00055">Program.cs:55</a></div></div>
 <div class="ttc" id="aclassTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration_html"><div class="ttname"><a href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html">TaskManagement.Infrastructure.Persistence.Configurations.TaskConfiguration</a></div><div class="ttdoc">TaskConfiguration es la configuración de Entity Framework Core para entidad TaskItem.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">TaskConfiguration.cs:46</a></div></div>
+<div class="ttc" id="aclassTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration_html_a458911fe399ca9fbbbfd77442aa85e82"><div class="ttname"><a href="classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_1_1TaskConfiguration.html#a458911fe399ca9fbbbfd77442aa85e82">TaskManagement.Infrastructure.Persistence.Configurations.TaskConfiguration.Configure</a></div><div class="ttdeci">void Configure(EntityTypeBuilder&lt; TaskItem &gt; builder)</div><div class="ttdef"><b>Definition</b> <a href="#l00047">TaskConfiguration.cs:47</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Domain_1_1Entities_html"><div class="ttname"><a href="namespaceTaskManagement_1_1Domain_1_1Entities.html">TaskManagement.Domain.Entities</a></div><div class="ttdef"><b>Definition</b> <a href="TaskItem_8cs_source.html#l00004">TaskItem.cs:4</a></div></div>
 <div class="ttc" id="anamespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations_html"><div class="ttname"><a href="namespaceTaskManagement_1_1Infrastructure_1_1Persistence_1_1Configurations.html">TaskManagement.Infrastructure.Persistence.Configurations</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">TaskConfiguration.cs:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -188,7 +192,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('TaskConfigurat
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>TaskManagement.Infrastructure</b></li><li class="navelem"><b>Persistence</b></li><li class="navelem"><b>Configuration</b></li><li class="navelem"><b>TaskConfiguration.cs</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_d2661903692312de5e5b4e6937d34d4f.html">TaskManagement.Infrastructure</a></li><li class="navelem"><a href="dir_7c8b38c2602950f99147f104484ab1a7.html">Persistence</a></li><li class="navelem"><a href="dir_f367bd2057723550c1b4b38c06ac35f7.html">Configuration</a></li><li class="navelem"><a href="TaskConfiguration_8cs.html">TaskConfiguration.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
