@@ -96,28 +96,28 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
     son los círculos `Entities` y `Use Cases`. A pesar de ser una demo en .NET,
     usamos la terminología original.
 
-1. [TaskManagement.Domain](./namespaceTaskManagement_1_1Domain.html)
-  es una librería de C# en la que se define el
+1. [TaskManagement.Domain](./namespaceTaskManagement_1_1Domain.html) es una
+  librería de C# en la que se define el
   [dominio](https://github.com/ucudal/ANDIS_Conceptos/blob/main/4_Conceptos/4_Dominio.md)
   de la aplicación:
   [entidades](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Entity.md)
   y [objetos
   valor](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Value_Object.md),
   eventos y excepciones. El domino utiliza
-  [eventos](../src/TaskManagement.Domain/Events/DomainEvent.cs) para informar
-  cuando se crea, se completa, o se asigna una tarea, o cuando cambia su
-  prioridad —ver por ejemplo la propiedad `TaskItem.DomainEvents` y el método
-  `TaskItem.Create` en
-  [TaskItem.cs](../src/TaskManagement.Domain/Entities/TaskItem.cs)—; por esto,
-  esta aplicación también utiliza una [arquitectura dirigida por
+  [eventos](./classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html)
+  para informar cuando se crea, se completa, o se asigna una tarea, o cuando
+  cambia su prioridad —ver por ejemplo la propiedad `TaskItem.DomainEvents` y el
+  método `TaskItem.Create` en
+  [TaskItem](./classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html)—;
+  por esto, esta aplicación también utiliza una [arquitectura dirigida por
   eventos](https://github.com/ucudal/ANDIS_Conceptos/blob/main/3_Plantillas/3_13_Event_Driven_Architecture.md).
   La capa de dominio tiene la responsabilidad de generar eventos, pero es la
   capa de aplicación la que tienen la responsabilidad de procesarlos —ver por
   ejemplo `CreateTaskCommand.Handle` en
-  [CreateTaskCommand.cs](../src/TaskManagement.Application/Commands/CreateTaskCommand.cs)—.
+  [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)—.
   El proyecto
-  [`TaskManagement.Domain`](../src/TaskManagement.Domain/TaskManagement.Domain.csproj)
-  no referencia ningún otro proyecto, es el centro de los círculos concéntricos.
+  [`TaskManagement.Domain`](./namespaceTaskManagement_1_1Domain.html) no
+  referencia ningún otro proyecto, es el centro de los círculos concéntricos.
 
 2. [TaskManagement.Application](./namespaceTaskManagement_1_1Application.html)
   es otra librería de C# en la que se definen las funcionalidades de la
@@ -125,86 +125,83 @@ independientes[^2], donde cada proyecto corresponde a un círculo:
   la lógica de los casos de uso. Esta aplicación usa el patrón
   [CQRS](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_09_.Patrones_de_arquitectura/2_09_CQRS.md)
   donde los comandos están separados de las consultas —ver por ejemplo la clase
-  `CreateTaskCommand` en
-  [CreateTaskCommand.cs](../src/TaskManagement.Application/Commands/CreateTaskCommand.cs)
-  y la clase `GetTaskBuyIdQuery` en
-  [GetTaskByIdQuery.cs](../src/TaskManagement.Application/Queries/GetTaskByIdQuery.cs)—.
+  [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)
+  y la clase
+  [GetTaskByIdQuery](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html)—.
   La capa de aplicación define —y utiliza— abstracciones que emplean el patrón
   de [inyección de
   dependencias](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/overview)
-  —ver por ejemplo las interfaces `IEmailService` en
-  [IEmailService.cs](../src/TaskManagement.Application/Interfaces/IEmailService.cs),
-  `ITaskRepository` en
-  [ITaskRepository.cs](../src/TaskManagement.Application/Interfaces/ITaskRepository.cs),
-  `ITaskReadRepository` en
-  [ITaskReadRepository.cs](../src/TaskManagement.Application/Interfaces/ITaskReadRepository.cs)
-  o `IUnitOfWork` en
-  [IUnitOfWork.cs](../src/TaskManagement.Application/Interfaces/IUnitOfWork.cs)—[^3].
+  —ver por ejemplo las interfaces
+  [IEmailService](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IEmailService.html),
+  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html),
+  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html)
+  o
+  [IUnitOfWork](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html)—[^3].
   Las clases concretas que implementan estas abstracciones están definidas en la
-  capa de infraestructura —ver por ejemplo las clases `TaskRepository` y
-  `TaskReadRepository` en
-  [TaskRepository.cs](../src/TaskManagement.Infrastructure/Persistence/Repositories/TaskRepository.cs)[TaskReadRepository.cs](../src/TaskManagement.Infrastructure/Persistence/Repositories/TaskReadRepository.cs),
+  capa de infraestructura —ver por ejemplo las clases
+  [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
+  y
+  [TaskReadRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository.html),
   respectivamente— y también son creadas en tiempo de ejecución en la capa de
   interfaz API —ver las llamadas a `builder.services…
   .AddScoped<IUnitOfWork>(…), .AddScoped<ITaskReadRepository,
   TaskReadRepository>(), y .AddScoped<IDomainEventDispatcher,
   MediatRDomainEventDispatcher>()` en
-  [Program.cs](../src/TaskManagement.API/Program.cs)—. Los eventos creados en la
-  capa de dominio son procesados en la capa de aplicación usando una abstracción
-  —ver la interfaz `IDomainEventDispatcher` en
-  [IDomainEventDispatcher.cs](../src/TaskManagement.Application/Interfaces/IDomainEventDispatcher.cs)—;
+  [Program](./classProgram.html)—. Los eventos
+  creados en la capa de dominio son procesados en la capa de aplicación usando
+  una abstracción —ver la interfaz
+  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html)—;
   y esa abstracción también está implementada en una clase definida en la capa
-  de infraestructura —ver la clase `MediatRDomainEventDispatcher` en
-  [MediatRDomainEventDispatcher.cs](../src/TaskManagement.Infrastructure/EventDispatching/MediatRDomainEventDispatcher.cs)—.
+  de infraestructura —ver la clase
+  [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)—.
   El proyecto
-  [`TaskManagement.Application`](../src/TaskManagement.Application/TaskManagement.Application.csproj)
+  [`TaskManagement.Application`](./namespaceTaskManagement_1_1Application.html)
   referencia solamente el proyecto
-  [`TaskManagement.Domain`](../src/TaskManagement.Domain/TaskManagement.Domain.csproj),
-  la dependencia es de un círculo externo al centro de los círculos
-  concéntricos.
+  [`TaskManagement.Domain`](./namespaceTaskManagement_1_1Domain.html), la
+  dependencia es de un círculo externo al centro de los círculos concéntricos.
 
 3. [TaskManagement.Infrastructure](./namespaceTaskManagement_1_1Infrastructure.html)
   es otra librería de C# en la que se definen cómo se implementa la
   infraestructura para las abstracciones definidas en la capa de aplicación de
   —repositorios, despacho de eventos y persistencia—. Las abstracciones
-  [`ITaskRepository`](../src/TaskManagement.Application/Interfaces/ITaskRepository.cs)
+  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html)
   y
-  [`ITaskReadRepository`](../src/TaskManagement.Application/Interfaces/ITaskReadRepository.cs)
+  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html)
   de la capa de aplicación se implementan con las clases
-  [`TaskRepository`](../src/TaskManagement.Infrastructure/Persistence/Repositories/TaskRepository.cs)
+  [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
   y
-  [`TaskReadRepository`](../src/TaskManagement.Infrastructure/Persistence/Repositories/TaskReadRepository.cs),
+  [TaskReadRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskReadRepository.html),
   respectivamente, de esta capa de infraestructura. También en este caso se usa
   injección de dependencias en la capa de interfaz API —ver por ejemplo en
-  [`Program`](../src/TaskManagement.API/Program.cs) las llamadas a
+  [Program](./classProgram.html) las llamadas a
   `builder.services...AddScoped<ITaskRepository, TaskRepository>()` y
   `builder.services...AddScoped<ITaskReadRepository, TaskReadRepository>()`—.
   Como ya fue mencionado antes, la abstracción
-  [`IDomainEventDispatcher`](../src/TaskManagement.Application/Interfaces/IDomainEventDispatcher.cs)
+  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html)
   definida en la capa de aplicación se implementa con la clase
-  [`MediatRDomainEventDispatcher`](../src/TaskManagement.Infrastructure/EventDispatching/MediatRDomainEventDispatcher.cs)
+  [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)
   de esta capa de infraestructura y la instancia se crea en tiempo de ejecución
   también con injección de dependencias en la capa de interfaz API en
-  [`Program`](../src/TaskManagement.API/Program.cs) —ver
+  [Program](./classProgram.html) —ver
   `builder.services...AddScoped<IDomainEventDispatcher,
   MediatRDomainEventDispatcher>()`—. El proyecto
-  [`TaskManagement.Infrastructure`](../src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj)
+  [`TaskManagement.Infrastructure`](./namespaceTaskManagement_1_1Infrastructure.html)
   referencia solamente el proyecto
-  [`TaskManagement.Application`](../src/TaskManagement.Application/TaskManagement.Application.csproj),
+  [`TaskManagement.Application`](./namespaceTaskManagement_1_1Application.html),
   la dependencia es de un círculo externo a un círculo interno. Esta capa de
   infraestructura tiene también la configuración de los frameworks de acceso a
   datos.
 
-4. [TaskManagement.API](./namespaceTaskManagement_1_1API.html) es
-  una aplicación web en .NET en la que se define la interfaz, en esta demo, una
-  API REST. El proyecto referencia tanto al proyecto
-  [`TaskManagement.Application`](../src/TaskManagement.Application/TaskManagement.Application.csproj)
+4. [TaskManagement.API](./namespaceTaskManagement_1_1API.html) es una
+  aplicación web en .NET en la que se define la interfaz, en esta demo, una API
+  REST. El proyecto referencia tanto al proyecto
+  [`TaskManagement.Application`](./namespaceTaskManagement_1_1Application.html)
   como al proyecto
-  [`TaskManagement.Infrastructure`](../src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj),
+  [`TaskManagement.Infrastructure`](./namespaceTaskManagement_1_1Infrastructure.html),
   ambos en círculos internos. Como toda aplicación web en .NET la carpeta
-  [`Controllers`](../src/TaskManagement.API/Controllers/) contiene los
-  controladores que implementan los *endpoint* de la API REST —ver por ejemplo
-  [`TasksController.CreateTaskRequest`](../src/TaskManagement.API/Controllers/TasksController.cs)—.
+  contiene los controladores que implementan los *endpoint* de la API REST —ver
+  por ejemplo
+  [TasksController](./classTaskManagement_1_1API_1_1Controllers_1_1TasksController.html)—.
   El archivo [`TaskManagement.http`](../TaskManagement.http) tiene ejemplos para
   invocar la API REST.
 
@@ -244,7 +241,8 @@ necesidad de escribir código complejo.
 
 ## 1. Capa de dominio
 
-La capa de dominio está definida [aquí](../src/TaskManagement.Domain/).
+La capa de dominio está definida
+[aquí](./namespaceTaskManagement_1_1Domain.html).
 
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
@@ -293,11 +291,11 @@ public class TaskItem
 
 La capa de dominio utiliza el patrón
 [Result](https://dev.to/adrianbailador/result-pattern-in-c-fal) para el
-resultado de las operaciones. La clase `Result` en
-[Result.cs](../src/TaskManagement.Domain/Shared/Result.cs) representa tanto
-resultados exitosos —en cuyo caso incluye también el valor del resultado— como
-errores —en cuyo caso incluye la lista de errores—. Esto permite que un método
-pueda retornar tanto un resultado como un error.
+resultado de las operaciones. La clase
+[Result](./classTaskManagement_1_1Domain_1_1Common_1_1Result.html)
+representa tanto resultados exitosos —en cuyo caso incluye también el valor del
+resultado— como errores —en cuyo caso incluye la lista de errores—. Esto permite
+que un método pueda retornar tanto un resultado como un error.
 
 ```csharp
 public class Result
@@ -317,7 +315,8 @@ else
 
 ## 2. Capa de aplicación
 
-La capa de aplicación está definida [aquí](../src/TaskManagement.Application/).
+La capa de aplicación está definida
+[aquí](./namespaceTaskManagement_1_1Application.html).
 
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
@@ -389,7 +388,7 @@ implementadas en la capa de infraestructura.
 ## 3. Capa de infraestructura
 
 La capa de infraestructura está definida
-[aquí](../src/TaskManagement.Infrastructure/).
+[aquí](./namespaceTaskManagement_1_1Infrastructure.html).
 
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
@@ -487,8 +486,9 @@ public sealed class TasksController : ControllerBase
 }
 ```
 
-En el programa principal en [Program.cs](../src/TaskManagement.API/Program.cs)
-se realiza la inyección de dependencias.
+En el programa principal en
+[Program](./classProgram.html) se realiza la
+inyección de dependencias.
 
 ```csharp
 // Registra servicios para las abstracciones de la capa de dominio
@@ -513,36 +513,50 @@ builder.Services
 # Cómo navegar el código
 
 1. Comienza con la capa de dominio
-   [`TaskManagement.Domain/`](../src/TaskManagement.Domain/)
-   * Lee `Entities/TaskItem.cs` para entender el modelo de dominio
-   * Lee `Shared/Result.cs` para entender el manejo de errores
-   * Lee `Events/DomainEvent.cs` para entender la arquitectura dirigida por
-     eventos
+   [TaskManagement.Domain](./namespaceTaskManagement_1_1Domain.html)
+   * Lee
+     [TaskItem](./classTaskManagement_1_1Domain_1_1Entities_1_1TaskItem.html)
+     para entender el modelo de dominio
+   * Lee [Result](./classTaskManagement_1_1Domain_1_1Common_1_1Result.html)
+     para entender el manejo de errores
+   * Lee
+     [DomainEvent](./classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html)
+     para entender la arquitectura dirigida por eventos
 
-2. Muévete a la capa de aplicación**
-   [`TaskManagement.Application/`](../src/TaskManagement.Application/)
-   * Lee `Commands/CreateTaskCommand.cs` para ver cómo se implementa un caso
-     de uso
-   * Lee `Behaviors/ValidationBehavior.cs` para entender preocupaciones
-     transversales
-   * Lee `Queries/GetTaskByIdQuery.cs` para ver otro caso de uso pero usando el
-     patrón CQRS
+2. Muévete a la capa de aplicación
+   [TaskManagement.Application](./namespaceTaskManagement_1_1Application.html)
+   * Lee
+     [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)
+     para ver cómo se implementa un caso de uso
+   * Lee
+     [ValidationBehavior](./classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html)
+     para entender preocupaciones transversales
+   * Lee
+     [GetTaskByIdQuery](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html)
+     para ver otro caso de uso pero usando el patrón CQRS
 
-3. Explora la capa de infraestructura**
-   [`TaskManagement.Infrastructure/`](../src/TaskManagement.Infrastructure/)
-   * Lee `Persistence/Repositories/TaskRepository.cs` para ver cómo se
-     implementan interfaces de dominio
-   * Lee `Persistence/TaskDbContext.cs` para ver la configuración de base de
-     datos
-   * Lee `EventDispatching/MediatRDomainEventDispatcher.cs` para ver el manejo
-     de eventos
+3. Explora la capa de infraestructura
+   [TaskManagement.Infrastructure](./namespaceTaskManagement_1_1Infrastructure.html)
+   * Lee
+     [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
+     para ver cómo se implementan interfaces de dominio
+   * Lee
+     [TaskDbContext](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html)
+     para ver la configuración de base de datos
+   * Lee
+     [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)
+     para ver el manejo de eventos
 
 4. Revisa la capa de interfaz API
-   [`TaskManagement.API/`](../src/TaskManagement.API/)
-   * Lee `Controllers/TasksController.cs` para ver endpoints HTTP
-   * Lee `Program.cs` para ver la configuración de inyección de dependencias
-   * Lee `Middleware/ExceptionHandlingMiddleware.cs` para ver el manejo de
-     errores
+   [TaskManagement.API](./namespaceTaskManagement_1_1API.html)
+   * Lee
+     [TasksController](./classTaskManagement_1_1API_1_1Controllers_1_1TasksController.html)
+     para ver endpoints HTTP
+   * Lee [Program](./classProgram.html) para ver
+     la configuración de inyección de dependencias
+   * Lee
+     [ExceptionHandlingMiddleware](./ExceptionHandlingMiddleware_8cs.html)
+     para ver el manejo de errores
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Beneficios de Clean Architecture
