@@ -2,31 +2,39 @@ namespace TaskManagement.Application.Interfaces;
 
 /// <summary>
 /// <c>IEmailService</c> es la abstracción para envío de notificaciones por correo electrónico.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Abstracción de infraestructura: Interfaz en Núcleo de Aplicación, implementación en Infraestructura
-/// - Inversión de dependencia: El código de aplicación no sabe detalles del proveedor de correo
-/// - Habilita acoplamiento suelto a servicios de correo externos
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Abstracción de infraestructura: Interfaz en Núcleo de Aplicación, implementación en Infraestructura</li>
+/// <li>Inversión de dependencia: El código de aplicación no sabe detalles del proveedor de correo</li>
+/// <li>Habilita acoplamiento suelto a servicios de correo externos</li>
+/// </ul>
 ///
 /// Responsabilidades:
-/// - Enviar correos para eventos de dominio (tarea creada, completada, asignada, etc.)
-/// - Soportar futuras notificaciones de eventos de dominio sin cambios de capa de dominio
-/// - Manejar entrega de correo de forma asíncróna
+/// <ul>
+/// <li>Enviar correos para eventos de dominio (tarea creada, completada, asignada, etc.)</li>
+/// <li>Soportar futuras notificaciones de eventos de dominio sin cambios de capa de dominio</li>
+/// <li>Manejar entrega de correo de forma asíncróna</li>
+/// </ul>
 ///
 /// Beneficios de Abstracción de Implementación:
-/// - Puede intercambiar proveedores de correo (SMTP, SendGrid, AWS SES, etc.)
-/// - Puede implementar patrones de reintentos y resiliencia
-/// - Puede agregar plantillas y formateo de correo
-/// - Puede registrar resultados de entrega de correo
-/// - Las pruebas unitarias pueden simular sin envío real de correo
+/// <ul>
+/// <li>Puede intercambiar proveedores de correo (SMTP, SendGrid, AWS SES, etc.)</li>
+/// <li>Puede implementar patrones de reintentos y resiliencia</li>
+/// <li>Puede agregar plantillas y formateo de correo</li>
+/// <li>Puede registrar resultados de entrega de correo</li>
+/// <li>Las pruebas unitarias pueden simular sin envío real de correo</li>
+/// </ul>
 ///
 /// Preocupación Transversal:
-/// - Las notificaciones por correo son efectos secundarios de eventos de dominio
-/// - Se manejan a través de manejadores de eventos que dependen de IEmailService
-/// - Desacopla la lógica de negocio de la infraestructura de envío de correos
-/// </summary>
-
+/// <ul>
+/// <li>Las notificaciones por correo son efectos secundarios de eventos de dominio</li>
+/// <li>Se manejan a través de manejadores de eventos que dependen de IEmailService</li>
+/// <li>Desacopla la lógica de negocio de la infraestructura de envío de correos</li>
+/// </ul>
+/// </remarks>
 public interface IEmailService
 {
     Task SendTaskCompletedNotificationAsync(Guid taskId, CancellationToken cancellationToken = default);

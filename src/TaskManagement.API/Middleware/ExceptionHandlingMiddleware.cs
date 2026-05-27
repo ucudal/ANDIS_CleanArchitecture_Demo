@@ -6,57 +6,57 @@ using TaskManagement.Domain.Exceptions;
 namespace TaskManagement.API.Middleware;
 
 /// <summary>
-/// ExceptionHandlingMiddleware es middleware de ASP.NET Core para manejo centralizado de excepciones.
-///
+/// <c>ExceptionHandlingMiddleware</c> es middleware de ASP.NET Core para manejo centralizado de excepciones.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte de la capa de presentación (UI Layer)</item>
-/// <item>Preocupación transversal: Maneja excepciones de todas las capas</item>
-/// <item>Pipeline de middleware: Intercepta todas las solicitudes y maneja excepciones</item>
-/// <item>Devuelve respuestas HTTP apropiadas para diferentes tipos de error</item>
-/// </list>
+/// <ul>
+/// <li>Parte de la capa de presentación, en este caso, API Layer</li>
+/// <li>Preocupación transversal: maneja excepciones de todas las capas</li>
+/// <li>Pipeline de middleware: intercepta todas las solicitudes y maneja excepciones</li>
+/// <li>Devuelve respuestas HTTP apropiadas para diferentes tipos de error</li>
+/// </ul>
 ///
-/// Pipeline de Middleware en ASP.NET Core:
-/// <list type="bullet">
-/// <item>Los componentes de middleware forman un pipeline (como una serie de filtros)</item>
-/// <item>Cada middleware puede procesar solicitud y respuesta</item>
-/// <item>Los manejadores de excepción generalmente se colocan primero para capturar todas las excepciones</item>
-/// <item>Este middleware envuelve otro middleware para capturar excepciones</item>
-/// </list>
+/// Pipeline de middleware en ASP.NET Core:
+/// <ul>
+/// <li>Los componentes de middleware forman un pipeline</li>
+/// <li>Cada middleware puede procesar solicitud y respuesta</li>
+/// <li>Los manejadores de excepción generalmente se colocan primero para capturar todas las excepciones</li>
+/// <li>Este middleware envuelve otro middleware para capturar excepciones</li>
+/// </ul>
 ///
-/// Responsabilidades de Manejo de Excepciones:
-/// <list type="bullet">
-/// <item>Captura excepciones de capa de aplicación y debajo</item>
-/// <item>Distingue entre tipos de excepción:
-/// <list type="bullet">
-/// <item><see cref="ValidationException"/>: 400 BadRequest</item>
-/// <item><see cref="NotFoundException"/>: 404 NotFound</item>
-/// <item><see cref="DomainException"/>: 400 BadRequest</item>
-/// <item>Otras excepciones: 500 InternalServerError</item>
-/// </list>
-/// </item>
-/// <item>Devuelve formato de respuesta de error consistente</item>
-/// <item>Registra excepciones para depuración</item>
-/// </list>
+/// Responsabilidades de manejo de excepciones:
+/// <ul>
+/// <li>Captura excepciones de capa de aplicación y dominio</li>
+/// <li>Distingue entre tipos de excepción:
+/// <ul>
+/// <li><see cref="ValidationException"/>: 400 BadRequest</li>
+/// <li><see cref="NotFoundException"/>: 404 NotFound</li>
+/// <li><see cref="DomainException"/>: 400 BadRequest</li>
+/// <li>Otras excepciones: 500 InternalServerError</li>
+/// </ul>
+/// </li>
+/// <li>Devuelve formato de respuesta de error consistente</li>
+/// <li>Registra excepciones para depuración</li>
+/// </ul>
 ///
 /// Beneficios:
-/// <list type="bullet">
-/// <item>Manejo de errores centralizado (no disperso en controladores)</item>
-/// <item>Formato de respuesta de error consistente en toda la API</item>
-/// <item>Previene fuga de detalles de error sensibles a clientes</item>
-/// <item>Asegura que todas las excepciones se manejen apropiadamente</item>
-/// <item>Simplifica código de controlador (sin necesidad de try-catch)</item>
-/// </list>
+/// <ul>
+/// <li>Manejo de errores centralizado, no queda disperso en controladores</li>
+/// <li>Formato de respuesta de error consistente en toda la API</li>
+/// <li>Previene fuga de detalles de error sensibles a clientes</li>
+/// <li>Asegura que todas las excepciones se manejen apropiadamente</li>
+/// <li>Simplifica código de controlador pues no hay necesidad de try-catch</li>
+/// </ul>
 ///
-/// Formato de Respuesta de Error:
-/// <list type="bullet">
-/// <item>ProblemDetails: Formato estándar de respuesta de error</item>
-/// <item>Incluye título de error, detalle y código de estado</item>
-/// <item>Sigue especificación RFC 7807 Problem Details</item>
-/// <item>Ayuda a clientes de API a entender qué salió mal</item>
-/// </list>
-/// </summary>
-
+/// Formato de respuesta de error:
+/// <ul>
+/// <li>ProblemDetails: formato estándar de respuesta de error</li>
+/// <li>Incluye título de error, detalle y código de estado</li>
+/// <li>Sigue especificación RFC 7807 Problem Details</li>
+/// <li>Ayuda a clientes de API a entender qué salió mal</li>
+/// </ul>
+/// </remarks>
 internal sealed class ExceptionHandlingMiddleware
 {
     private static readonly Action<ILogger, string, Exception?> LogRequestFailure =

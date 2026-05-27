@@ -2,30 +2,31 @@ namespace TaskManagement.Domain.Exceptions;
 
 /// <summary>
 /// <c>DomainException</c> es la clase de excepción base para todos los errores de capa de dominio.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte del core de la aplicación en la capa de dominio</item>
-/// <item>Representa violaciones de reglas de negocio e incumplimientos de invariantes de dominio</item>
-/// <item>Distingue errores de dominio de errores técnicos de infraestructura</item>
-/// <item>Permite a capas de aplicación manejar fallos de lógica de negocio apropiadamente</item>
-/// </list>
+/// <ul>
+/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Representa violaciones de reglas de negocio e incumplimientos de invariantes de dominio</li>
+/// <li>Distingue errores de dominio de errores técnicos de infraestructura</li>
+/// <li>Permite a capas de aplicación manejar fallos de lógica de negocio apropiadamente</li>
+/// </ul>
 ///
 /// Uso:
-/// <list type="bullet">
-/// <item>Se lanza cuando los invariantes de dominio se violan</item>
-/// <item>Se lanza cuando las reglas de negocio no se satisfacen</item>
-/// <item>Capturada y manejada por capa de servicio de aplicación</item>
-/// <item>Nunca debe ser lanzada por problemas técnicos/infraestructura</item>
-/// </list>
+/// <ul>
+/// <li>Se lanza cuando los invariantes de dominio se violan</li>
+/// <li>Se lanza cuando las reglas de negocio no se satisfacen</li>
+/// <li>Capturada y manejada por capa de servicio de aplicación</li>
+/// <li>Nunca debe ser lanzada por problemas técnicos/infraestructura</li>
+/// </ul>
 ///
 /// Beneficios:
-/// <list type="bullet">
-/// <item>Separación clara entre errores de negocio y técnicos</item>
-/// <item>Contratos explícitos sobre qué puede salir mal en lógica de dominio</item>
-/// <item>Habilita manejo de errores adecuado en nivel de aplicación</item>
-/// </list>
-/// </summary>
+/// <ul>
+/// <li>Separación clara entre errores de negocio y técnicos</li>
+/// <li>Contratos explícitos sobre qué puede salir mal en lógica de dominio</li>
+/// <li>Habilita manejo de errores adecuado en nivel de aplicación</li>
+/// </ul>
+/// </remarks>
 public class DomainException : Exception
 {
     public DomainException(string message) : base(message) { }

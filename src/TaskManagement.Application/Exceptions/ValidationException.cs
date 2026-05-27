@@ -2,29 +2,38 @@ namespace TaskManagement.Application.Exceptions;
 
 /// <summary>
 /// <c>ValidationException</c> se lanza cuando la validación de entrada falla en la capa de aplicación.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Representa fallos de validación de entrada (no violaciones de regla de negocio de dominio)
-/// - Distinta de <see cref="TaskManagement.Domain.Exceptions.DomainException"/> (reglas de negocio) y excepciones técnicas
-/// - Permite a manejadores capturar y devolver códigos de estado HTTP apropiados
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Representa fallos de validación de entrada (no violaciones de regla de negocio de dominio)</li>
+/// <li>Distinta de <see cref="TaskManagement.Domain.Exceptions.DomainException"/> (reglas de negocio) y excepciones técnicas</li>
+/// <li>Permite a manejadores capturar y devolver códigos de estado HTTP apropiados</li>
+/// </ul>
 ///
 /// Uso:
-/// - Lanzada por <see cref="TaskManagement.Application.Behaviors.ValidationBehavior{TRequest, TResponse}"/> cuando falla FluentValidation
-/// - Capturada por middleware de manejo de excepciones
-/// - Devuelve estado HTTP 400 BadRequest a cliente
+/// <ul>
+/// <li>Lanzada por <see cref="TaskManagement.Application.Behaviors.ValidationBehavior{TRequest, TResponse}"/> cuando falla FluentValidation</li>
+/// <li>Capturada por middleware de manejo de excepciones</li>
+/// <li>Devuelve estado HTTP 400 BadRequest a cliente</li>
+/// </ul>
 ///
 /// Categorías de Error:
-/// - <see cref="ValidationException"/>: Fallos de validación de entrada (esta clase)
-/// - <see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio
-/// - Otras excepciones: Fallos de infraestructura/técnicos
+/// <ul>
+/// <li><see cref="ValidationException"/>: Fallos de validación de entrada (esta clase)</li>
+/// <li><see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio</li>
+/// <li>Otras excepciones: Fallos de infraestructura/técnicos</li>
+/// </ul>
 ///
 /// Beneficios:
-/// - Distincción clara entre diferentes tipos de error
-/// - Respuestas de error apropiadas por categoría de error
-/// - Preocupaciones separadas: validación vs reglas de negocio
-/// - Depuración y registro más fáciles de diferentes tipos de error
-/// </summary>
+/// <ul>
+/// <li>Distincción clara entre diferentes tipos de error</li>
+/// <li>Respuestas de error apropiadas por categoría de error</li>
+/// <li>Preocupaciones separadas: validación vs reglas de negocio</li>
+/// <li>Depuración y registro más fáciles de diferentes tipos de error</li>
+/// </ul>
+/// </remarks>
 public sealed class ValidationException : Exception
 {
     private static readonly IDictionary<string, string[]> EmptyErrors =

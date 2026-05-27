@@ -2,52 +2,66 @@ using MediatR;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Common;
 
-namespace TaskManagement.Application.Queries.GetTaskById;
+namespace TaskManagement.Application.Queries;
 
 /// <summary>
-/// GetTaskByIdQuery encapsula una solicitud para recuperar una sola tarea por ID.
-///
+/// <c>GetTaskByIdQuery</c> encapsula una solicitud para recuperar una sola tarea por ID.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Consulta CQRS: Representa una solicitud de lectura de datos sin efectos secundarios
-/// - Transporta parámetros de entrada desde la capa de API/UI a la lógica de consulta
-/// - DTO de entrada para recuperación de detalles de tarea
-/// - Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Consulta CQRS: Representa una solicitud de lectura de datos sin efectos secundarios</li>
+/// <li>Transporta parámetros de entrada desde la capa de API/UI a la lógica de consulta</li>
+/// <li>DTO de entrada para recuperación de detalles de tarea</li>
+/// <li>Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware</li>
+/// </ul>
 ///
 /// Patrón CQRS - Lado de Consulta:
-/// - Las consultas no modifican el estado del sistema
-/// - Las consultas devuelven datos a través de DTOs (<see cref="TaskDto"/>)
-/// - Las consultas pueden utilizar modelos de lectura optimizados (ej. Dapper en lugar de Entity Framework)
-/// - Separación de comandos habilita escalado y optimización independientes
-/// </summary>
+/// <ul>
+/// <li>Las consultas no modifican el estado del sistema</li>
+/// <li>Las consultas devuelven datos a través de DTOs (<see cref="TaskDto"/>)</li>
+/// <li>Las consultas pueden utilizar modelos de lectura optimizados (ej. Dapper en lugar de Entity Framework)</li>
+/// <li>Separación de comandos habilita escalado y optimización independientes</li>
+/// </ul>
+/// </remarks>
 public sealed record GetTaskByIdQuery(Guid TaskId) : IRequest<Result<TaskDto>>;
 
 /// <summary>
 /// GetTaskByIdQueryHandler es el servicio de aplicación para recuperar detalles de tarea.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Servicio de Aplicación: Recupera datos de repositorios de lectura
-/// - Manejador de <see cref="MediatR"/>: Procesa consultas a través de un pipeline
-/// - Implementa lógica de caso de uso de consulta
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Servicio de Aplicación: Recupera datos de repositorios de lectura</li>
+/// <li>Manejador de <see cref="MediatR"/>: Procesa consultas a través de un pipeline</li>
+/// <li>Implementa lógica de caso de uso de consulta</li>
+/// </ul>
 ///
 /// Responsabilidades:
-/// - Delega a <see cref="ITaskReadRepository"/> para lectura optimizada
-/// - Mapea resultados de base de datos a DTO para consumo de API
-/// - Devuelve resultado de fracaso si tarea no se encuentra
-/// - Maneja errores adecuadamente
+/// <ul>
+/// <li>Delega a <see cref="ITaskReadRepository"/> para lectura optimizada</li>
+/// <li>Mapea resultados de base de datos a DTO para consumo de API</li>
+/// <li>Devuelve resultado de fracaso si tarea no se encuentra</li>
+/// <li>Maneja errores adecuadamente</li>
+/// </ul>
 ///
 /// Interacción de Infraestructura:
-/// - Utiliza ITaskReadRepository (separada del repositorio de escritura)
-/// - Desacopla de tecnología de persistencia (podría usar Dapper, SQL, etc.)
-/// - Implementa patrón CQRS para optimización de lecturas independiente
+/// <ul>
+/// <li>Utiliza ITaskReadRepository (separada del repositorio de escritura)</li>
+/// <li>Desacopla de tecnología de persistencia (podría usar Dapper, SQL, etc.)</li>
+/// <li>Implementa patrón CQRS para optimización de lecturas independiente</li>
+/// </ul>
 ///
 /// Patrón DTO:
-/// - Devuelve TaskDto (modelo de vista) no entidad de dominio
-/// - Desacopla contratos de API de cambios de modelo de dominio
-/// - Incluye solo datos necesarios para el caso de uso específfico
-/// - Optimizado para operaciones de lectura y serialización
-/// </summary>
+/// <ul>
+/// <li>Devuelve TaskDto (modelo de vista) no entidad de dominio</li>
+/// <li>Desacopla contratos de API de cambios de modelo de dominio</li>
+/// <li>Incluye solo datos necesarios para el caso de uso específfico</li>
+/// <li>Optimizado para operaciones de lectura y serialización</li>
+/// </ul>
+/// </remarks>
 public sealed class GetTaskByIdQueryHandler : IRequestHandler<GetTaskByIdQuery, Result<TaskDto>>
 {
     private readonly ITaskReadRepository _readRepository;

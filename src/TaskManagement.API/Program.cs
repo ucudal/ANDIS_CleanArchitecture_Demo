@@ -1,7 +1,7 @@
 // Este archivo es la raíz de composición y configuración de inicio de la aplicación.
 //
 // Rol en Clean Architecture:
-// - Parte de la capa de presentación (Capa de API)
+// - Parte de la capa de presentación, en este caso, API REST
 // - Raíz de Composición: Conecta todas las dependencias a través de Inyección de Dependencias
 // - Configuración: Configura pipeline de middleware, autenticación y servicios
 // - Punto de entrada: ASP.NET Core ejecuta este archivo en el inicio de la aplicación
@@ -106,8 +106,8 @@ builder.Services.AddAuthorization();
 
 // Agregar servicios al contenedor
 builder.Services
-    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(TaskManagement.Application.Commands.CreateTask.CreateTaskCommand).Assembly))
-    .AddValidatorsFromAssembly(typeof(TaskManagement.Application.Commands.CreateTask.CreateTaskCommand).Assembly)
+    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly))
+    .AddValidatorsFromAssembly(typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly)
     .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
     .AddDbContext<TaskDbContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")))
@@ -139,3 +139,12 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+/// <summary>
+/// Partial Program class made public for testing purposes.
+/// Allows WebApplicationFactory to access the Program configuration in integration tests.
+/// </summary>
+public partial class Program
+{
+    // Intencionalmente en blanco.
+}

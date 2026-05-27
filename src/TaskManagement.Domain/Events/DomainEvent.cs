@@ -4,33 +4,34 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.Domain.Events;
 
 /// <summary>
-/// DomainEvent es una clase base abstracta para todos los eventos de dominio en el sistema.
-///
+/// <c>DomainEvent</c> es una clase base abstracta para todos los eventos de dominio en el sistema.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte del core de la aplicación en la capa de dominio</item>
-/// <item>Implementa patrón <a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">Domain-Driven Design</a> para arquitectura dirigida por eventos</item>
-/// <item>Habilita acoplamiento suelto entre agregados de dominio y servicios de aplicación</item>
-/// <item>Captura ocurrencias de negocio importantes que sucedieron en el dominio</item>
-/// <item>Permite que múltiples servicios reaccionen a cambios de dominio sin acoplamiento directo</item>
-/// </list>
+/// <ul>
+/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Implementa patrón <a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">Domain-Driven Design</a> para arquitectura dirigida por eventos</li>
+/// <li>Habilita acoplamiento suelto entre agregados de dominio y servicios de aplicación</li>
+/// <li>Captura ocurrencias de negocio importantes que sucedieron en el dominio</li>
+/// <li>Permite que múltiples servicios reaccionen a cambios de dominio sin acoplamiento directo</li>
+/// </ul>
 ///
 /// Eventos de Dominio en este sistema:
-/// <list type="bullet">
-/// <item>TaskCreatedEvent: Se dispara cuando se crea una nueva tarea</item>
-/// <item>TaskCompletedEvent: Se dispara cuando una tarea se marca como completada</item>
-/// <item>TaskAssignedEvent: Se dispara cuando una tarea se asigna a un usuario</item>
-/// <item>TaskPriorityChangedEvent: Se dispara cuando se cambia prioridad de tarea</item>
-/// </list>
+/// <ul>
+/// <li>TaskCreatedEvent: Se dispara cuando se crea una nueva tarea</li>
+/// <li>TaskCompletedEvent: Se dispara cuando una tarea se marca como completada</li>
+/// <li>TaskAssignedEvent: Se dispara cuando una tarea se asigna a un usuario</li>
+/// <li>TaskPriorityChangedEvent: Se dispara cuando se cambia prioridad de tarea</li>
+/// </ul>
 ///
 /// Beneficios:
-/// <list type="bullet">
-/// <item>Desacopla lógica de dominio de preocupaciones de infraestructura</item>
-/// <item>Habilita efectos secundarios (notificaciones, correos) sin modificar entidades de dominio</item>
-/// <item>Proporciona pista de auditoría de actividades de dominio</item>
-/// <item>Soporta comunicación entre agregados</item>
-/// </list>
-/// </summary>
+/// <ul>
+/// <li>Desacopla lógica de dominio de preocupaciones de infraestructura</li>
+/// <li>Habilita efectos secundarios (notificaciones, correos) sin modificar entidades de dominio</li>
+/// <li>Proporciona pista de auditoría de actividades de dominio</li>
+/// <li>Soporta comunicación entre agregados</li>
+/// </ul>
+/// </remarks>
 public abstract class DomainEvent
 {
     public Guid Id { get; } = Guid.NewGuid();

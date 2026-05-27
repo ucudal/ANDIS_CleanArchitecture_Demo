@@ -4,46 +4,56 @@ using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using TaskManagement.Application.Common;
 using TaskManagement.Application.Interfaces;
-using TaskManagement.Application.Queries.GetTaskById;
+using TaskManagement.Application.Queries;
 using TaskManagement.Application.Queries.SearchTasks;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
 /// <summary>
 /// <c>TaskReadRepository</c> es el repositorio de lectura para consultas de tarea optimizadas.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte de la capa de Infraestructura
-/// - Implementa interfaz <see cref="ITaskReadRepository"/> (definida en Capa de Aplicación)
-/// - Acceso a datos optimizado: Proporciona consultas eficientes de solo lectura
-/// - Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación
+/// <ul>
+/// <li>Parte de la capa de Infraestructura</li>
+/// <li>Implementa interfaz <see cref="ITaskReadRepository"/> (definida en Capa de Aplicación)</li>
+/// <li>Acceso a datos optimizado: Proporciona consultas eficientes de solo lectura</li>
+/// <li>Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación</li>
+/// </ul>
 ///
 /// Patrón CQRS - Lado de Lectura:
-/// - Separado del repositorio de escritura (<see cref="TaskRepository"/>)
-/// - Optimizado para rendimiento y escalabilidad de consultas
-/// - Puede usar diferentes tecnologías (<see cref="Dapper"/>, SQL sin procesar, modelos de lectura)
-/// - Devuelve DTOs en lugar de entidades de dominio
+/// <ul>
+/// <li>Separado del repositorio de escritura (<see cref="TaskRepository"/>)</li>
+/// <li>Optimizado para rendimiento y escalabilidad de consultas</li>
+/// <li>Puede usar diferentes tecnologías (<see cref="Dapper"/>, SQL sin procesar, modelos de lectura)</li>
+/// <li>Devuelve DTOs en lugar de entidades de dominio</li>
+/// </ul>
 ///
 /// Beneficios del Repositorio de Lectura:
-/// - Optimización independiente del modelo de escritura
-/// - Puede usar SQL sin procesar o herramientas de consulta especializadas
-/// - Puede consultar vistas desnormalizadas o modelos de lectura materializados
-/// - Devuelve solo campos requeridos (proyección)
-/// - Soporta estrategias de caché optimizadas para lecturas
+/// <ul>
+/// <li>Optimización independiente del modelo de escritura</li>
+/// <li>Puede usar SQL sin procesar o herramientas de consulta especializadas</li>
+/// <li>Puede consultar vistas desnormalizadas o modelos de lectura materializados</li>
+/// <li>Devuelve solo campos requeridos (proyección)</li>
+/// <li>Soporta estrategias de caché optimizadas para lecturas</li>
+/// </ul>
 ///
 /// Beneficios de Separación:
-/// - El lado de escritura optimiza para consistencia y reglas de negocio
-/// - El lado de lectura optimiza para rendimiento de consulta y forma de datos
-/// - Puede escalar independientemente basado en patrones de lectura/escritura
-/// - Separa la optimización de lecturas del lado de escritura (patrón CQRS)
+/// <ul>
+/// <li>El lado de escritura optimiza para consistencia y reglas de negocio</li>
+/// <li>El lado de lectura optimiza para rendimiento de consulta y forma de datos</li>
+/// <li>Puede escalar independientemente basado en patrones de lectura/escritura</li>
+/// <li>Separa la optimización de lecturas del lado de escritura (patrón CQRS)</li>
+/// </ul>
 ///
 /// Implementación:
-/// - Utiliza interfaz <see cref="ITaskReadRepository"/> de Capa de Aplicación
-/// - Típicamente utiliza <see cref="Dapper"/> o Entity Framework con <c>AsNoTracking</c>
-/// - Devuelve <see cref="IReadOnlyList{T}"/> para operaciones de lectura
-/// - Maneja paginación para conjuntos de resultados grandes
-/// </summary>
-
+/// <ul>
+/// <li>Utiliza interfaz <see cref="ITaskReadRepository"/> de Capa de Aplicación</li>
+/// <li>Típicamente utiliza <see cref="Dapper"/> o Entity Framework con <c>AsNoTracking</c></li>
+/// <li>Devuelve <see cref="IReadOnlyList{T}"/> para operaciones de lectura</li>
+/// <li>Maneja paginación para conjuntos de resultados grandes</li>
+/// </ul>
+/// </remarks>
 public sealed class TaskReadRepository : ITaskReadRepository
 {
     private readonly string _connectionString;

@@ -2,31 +2,40 @@ namespace TaskManagement.Application.Exceptions;
 
 /// <summary>
 /// <c>NotFoundException</c> se lanza cuando una entidad solicitada no puede ser encontrada.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Representa fallo en encontrar recurso solicitado
-/// - Distinta de otros tipos de excepción (validación, dominio, técnico)
-/// - Permite a manejadores capturar y devolver códigos de estado HTTP apropiados
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Representa fallo en encontrar recurso solicitado</li>
+/// <li>Distinta de otros tipos de excepción (validación, dominio, técnico)</li>
+/// <li>Permite a manejadores capturar y devolver códigos de estado HTTP apropiados</li>
+/// </ul>
 ///
 /// Uso:
-/// - Lanzada por manejadores de consulta cuando entidad no se encuentra
-/// - Lanzada por manejadores de comando cuando agregado requerido falta
-/// - Capturada por middleware de manejo de excepciones
-/// - Devuelve estado HTTP 404 NotFound a cliente
+/// <ul>
+/// <li>Lanzada por manejadores de consulta cuando entidad no se encuentra</li>
+/// <li>Lanzada por manejadores de comando cuando agregado requerido falta</li>
+/// <li>Capturada por middleware de manejo de excepciones</li>
+/// <li>Devuelve estado HTTP 404 NotFound a cliente</li>
+/// </ul>
 ///
 /// Categorías de Error:
-/// - <c>NotFoundException</c>: Entidad solicitada no existe (esta clase)
-/// - <see cref="ValidationException"/>: Fallos de validación de entrada
-/// - <see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio
-/// - Otras excepciones: Fallos de infraestructura/técnicos
+/// <ul>
+/// <li><c>NotFoundException</c>: Entidad solicitada no existe (esta clase)</li>
+/// <li><see cref="ValidationException"/>: Fallos de validación de entrada</li>
+/// <li><see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio</li>
+/// <li>Otras excepciones: Fallos de infraestructura/técnicos</li>
+/// </ul>
 ///
 /// Beneficios:
-/// - Semántica clara: Distingue recursos faltantes de otros errores
-/// - Respuestas HTTP apropiadas: 404 en lugar de 400 o 500
-/// - Manejo de errores consistente entre manejadores
-/// - Mejora usabilidad y predictibilidad de API
-/// </summary>
+/// <ul>
+/// <li>Semántica clara: Distingue recursos faltantes de otros errores</li>
+/// <li>Respuestas HTTP apropiadas: 404 en lugar de 400 o 500</li>
+/// <li>Manejo de errores consistente entre manejadores</li>
+/// <li>Mejora usabilidad y predictibilidad de API</li>
+/// </ul>
+/// </remarks>
 public sealed class NotFoundException : Exception
 {
     public NotFoundException(string entityName, object key)

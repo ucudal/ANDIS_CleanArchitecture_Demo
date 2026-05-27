@@ -7,44 +7,45 @@ namespace TaskManagement.Domain.Entities;
 /// <c>TaskItem</c> es una <a
 /// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Entity.md">entidad</a>
 /// de dominio que representa una tarea en el sistema.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte del core de la aplicación en la capa de dominio</item>
-/// <item>Encapsula lógica de negocio y reglas relacionadas con la gestión de
-/// tareas</item>
-/// <item>Contiene principios de Domain Driven Design con el patrón <a
+/// <ul>
+/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Encapsula lógica de negocio y reglas relacionadas con la gestión de
+/// tareas</li>
+/// <li>Contiene principios de Domain Driven Design con el patrón <a
 /// href="https://martinfowler.com/bliki/DDD_Aggregate.html">Aggregate
-/// Root</a></item>
-/// <item>Gestiona transiciones de estado a través de métodos de dominio: <see
+/// Root</a></li>
+/// <li>Gestiona transiciones de estado a través de métodos de dominio: <see
 /// cref="TaskItem.Complete"/>, <see cref="TaskItem.AssignTo"/>, <see
-/// cref="TaskItem.UpdatePriority"/></item>
-/// <item>Mantiene invariantes y reglas de negocio tales como validación y
-/// restricciones</item>
-/// <item>Emite eventos de dominio para comunicar ocurrencias importantes del
-/// dominio</item>
-/// </list>
+/// cref="TaskItem.UpdatePriority"/></li>
+/// <li>Mantiene invariantes y reglas de negocio tales como validación y
+/// restricciones</li>
+/// <li>Emite eventos de dominio para comunicar ocurrencias importantes del
+/// dominio</li>
+/// </ul>
 ///
 /// Características clave:
-/// <list type="bullet">
-/// <item>Contiene todos los datos necesarios para representar una tarea</item>
-/// <item>Valida reglas de negocio internamente -longitud de título, fecha de
-/// vencimiento, transiciones de estado-</item>
-/// <item>Gestiona la colección de eventos de dominio para desacoplamiento de la
-/// infraestructura y facilidad del testing</item>
-/// <item>Utiliza patrón <a
+/// <ul>
+/// <li>Contiene todos los datos necesarios para representar una tarea</li>
+/// <li>Valida reglas de negocio internamente -longitud de título, fecha de
+/// vencimiento, transiciones de estado-</li>
+/// <li>Gestiona la colección de eventos de dominio para desacoplamiento de la
+/// infraestructura y facilidad del testing</li>
+/// <li>Utiliza patrón <a
 /// href="https://refactoring.guru/design-patterns/factory-method">Factory</a>
 /// <see cref="TaskItem.Create(string, string, TaskPriority, DateTime?, Guid)"/>
-/// para creación consistente de entidades</item>
-/// <item>Aplica restricciones de negocio: no se puede modificar tareas
-/// completadas, etc.</item>
-/// </list>
+/// para creación consistente de entidades</li>
+/// <li>Aplica restricciones de negocio: no se puede modificar tareas
+/// completadas, etc.</li>
+/// </ul>
 ///
 /// Dependencias: Solo depende de otros tipos de la capa de Dominio —<see
 /// cref="DomainEvent"/>, <see cref="Result"/>, <see cref="TaskErrors"/>) Sin
 /// dependencias en capas de Infraestructura o Aplicación - mantiene
 /// independencia para testabilidad.
-/// </summary>
+/// </remarks>
 public class TaskItem
 {
     public Guid Id

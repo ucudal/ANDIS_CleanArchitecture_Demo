@@ -5,31 +5,38 @@ namespace TaskManagement.Application.Interfaces;
 
 /// <summary>
 /// <c>ITaskRepository</c> es la interfaz del repositorio de escritura para agregado <see cref="TaskItem"/>.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación en la capa de aplicación
-/// - Define el contrato para persistencia de entidades de tarea
-/// - Abstracción de implementación: La interfaz pertenece a Aplicación, implementación en Infraestructura
-/// - Inversión de dependencia: La aplicación define qué abstracción de persistencia necesita
+/// <ul>
+/// <li>Parte del core de la aplicación en la capa de aplicación</li>
+/// <li>Define el contrato para persistencia de entidades de tarea</li>
+/// <li>Abstracción de implementación: La interfaz pertenece a Aplicación, implementación en Infraestructura</li>
+/// <li>Inversión de dependencia: La aplicación define qué abstracción de persistencia necesita</li>
+/// </ul>
 ///
 /// Beneficios del patrón Repository:
-/// - Abstrae lógica de acceso a datos de capas de dominio y aplicación
-/// - Habilita intercambio de implementación de base de datos sin cambiar código de aplicación
-/// - Simplifica pruebas unitarias al permitir implementaciones simuladas
-/// - Proporciona una API familiar orientada al dominio (no enfocada en consultas)
+/// <ul>
+/// <li>Abstrae lógica de acceso a datos de capas de dominio y aplicación</li>
+/// <li>Habilita intercambio de implementación de base de datos sin cambiar código de aplicación</li>
+/// <li>Simplifica pruebas unitarias al permitir implementaciones simuladas</li>
+/// <li>Proporciona una API familiar orientada al dominio (no enfocada en consultas)</li>
+/// </ul>
 ///
 /// Operaciones:
-/// - GetByIdAsync: Recuperar una sola tarea por su ID
-/// - GetByAssigneeAsync: Encontrar todas las tareas asignadas a un usuario
-/// - GetOverdueAsync: Encontrar tareas que han vencido y no están completadas
-/// - AddAsync: Guardar una nueva tarea en persistencia
-/// - Update: Modificar una tarea existente
-/// - Delete: Eliminar una tarea de persistencia
+/// <ul>
+/// <li>GetByIdAsync: Recuperar una sola tarea por su ID</li>
+/// <li>GetByAssigneeAsync: Encontrar todas las tareas asignadas a un usuario</li>
+/// <li>GetOverdueAsync: Encontrar tareas que han vencido y no están completadas</li>
+/// <li>AddAsync: Guardar una nueva tarea en persistencia</li>
+/// <li>Update: Modificar una tarea existente</li>
+/// <li>Delete: Eliminar una tarea de persistencia</li>
+/// </ul>
 ///
 /// Nota: Este es el repositorio de escritura. Para operaciones de lectura, ver
 /// <c>ITaskReadRepository</c> en la capa de aplicación.
 /// Esta separación sigue el patrón CQRS —Command Query Responsibility Segregation—.
-/// </summary>
+/// </remarks>
 public interface ITaskRepository
 {
     Task<TaskItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);

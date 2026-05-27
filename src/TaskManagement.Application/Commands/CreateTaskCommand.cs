@@ -4,24 +4,29 @@ using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Common;
 using TaskManagement.Domain.Entities;
 
-namespace TaskManagement.Application.Commands.CreateTask;
+namespace TaskManagement.Application.Commands;
 
 /// <summary>
 /// <c>CreateTaskCommand</c> encapsula la solicitud de creación de una nueva tarea.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Comando CQRS: Representa una solicitud para realizar una operación que cambia estado
-/// - Transporta parámetros de entrada desde la capa de API/UI a la lógica de aplicación
-/// - Objeto de Transferencia de Datos (DTO) de entrada para crear una tarea
-/// - Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Comando CQRS: Representa una solicitud para realizar una operación que cambia estado</li>
+/// <li>Transporta parámetros de entrada desde la capa de API/UI a la lógica de aplicación</li>
+/// <li>Objeto de Transferencia de Datos (DTO) de entrada para crear una tarea</li>
+/// <li>Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware</li>
+/// </ul>
 ///
 /// Patrón CQRS —Command Query Responsibility Segregation—:
-/// - Comando: Muta el estado del sistema (CreateTaskCommand)
-/// - Consulta: Lee datos sin efectos secundarios (separada de comandos)
-/// - Separación: Permite optimización independiente de operaciones de lectura y escritura
-/// - Este comando específíco representa la intención del usuario de crear una tarea
-/// </summary>
+/// <ul>
+/// <li>Comando: Muta el estado del sistema (CreateTaskCommand)</li>
+/// <li>Consulta: Lee datos sin efectos secundarios (separada de comandos)</li>
+/// <li>Separación: Permite optimización independiente de operaciones de lectura y escritura</li>
+/// <li>Este comando específíco representa la intención del usuario de crear una tarea</li>
+/// </ul>
+/// </remarks>
 public sealed record CreateTaskCommand(
     string Title,
     string Description,
@@ -32,30 +37,39 @@ public sealed record CreateTaskCommand(
 
 /// <summary>
 /// CreateTaskCommandHandler es el servicio de aplicación para manejar la creación de tareas.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte del core de la aplicación (Capa de Aplicación)
-/// - Servicio de Aplicación: Orquesta las capas de dominio e infraestructura
-/// - Manejador de <see cref="MediatR"/>: Procesa comandos a través de un pipeline
-/// - Implementa lógica de caso de uso (no lógica de dominio)
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Servicio de Aplicación: Orquesta las capas de dominio e infraestructura</li>
+/// <li>Manejador de <see cref="MediatR"/>: Procesa comandos a través de un pipeline</li>
+/// <li>Implementa lógica de caso de uso (no lógica de dominio)</li>
+/// </ul>
 ///
 /// Responsabilidades:
-/// - Valida entrada a través de creación de entidad de dominio
-/// - Orquesta llamadas de repositorio y unidad de trabajo
-/// - Envía eventos de dominio después de persistencia
-/// - Devuelve resultados de éxito/fracaso a la capa de API
+/// <ul>
+/// <li>Valida entrada a través de creación de entidad de dominio</li>
+/// <li>Orquesta llamadas de repositorio y unidad de trabajo</li>
+/// <li>Envía eventos de dominio después de persistencia</li>
+/// <li>Devuelve resultados de éxito/fracaso a la capa de API</li>
+/// </ul>
 ///
 /// Interacción de Capa de Dominio:
-/// - Utiliza TaskItem.Create (fábrica de dominio) para validación de regla de negocio
-/// - Depende de abstracciones ITaskRepository e IUnitOfWork
-/// - Aprovecha eventos de dominio para desacoplamiento de la infraestructura y facilidad del testing.
+/// <ul>
+/// <li>Utiliza TaskItem.Create (fábrica de dominio) para validación de regla de negocio</li>
+/// <li>Depende de abstracciones ITaskRepository e IUnitOfWork</li>
+/// <li>Aprovecha eventos de dominio para desacoplamiento de la infraestructura y facilidad del testing.</li>
+/// </ul>
 ///
-/// Separación de Responsabilidades:
-/// - NO contiene lógica de negocio (delegada a dominio)
-/// - NO interactúa directamente con base de datos (utiliza repositorios)
-/// - NO maneja preocupaciones HTTP (delegadas a controlador)
-/// - Coordina entre capas para cumplir el caso de uso
-/// </summary>
+/// Separación de responsabilidades:
+/// <ul>
+/// <li>NO contiene lógica de negocio (delegada a dominio)</li>
+/// <li>NO interactúa directamente con base de datos (utiliza repositorios)</li>
+/// <li>NO Maneja cuestiones HTTP (delegadas a controlador)</li>
+/// <li>Coordina entre capas para cumplir el caso de uso</li>
+/// </ul>
+/// </remarks>
 public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand, Result<Guid>>
 {
     private readonly ITaskRepository _taskRepository;

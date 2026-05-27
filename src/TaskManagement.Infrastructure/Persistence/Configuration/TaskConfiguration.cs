@@ -7,41 +7,51 @@ namespace TaskManagement.Infrastructure.Persistence.Configurations;
 
 /// <summary>
 /// <c>TaskConfiguration</c> es la configuración de Entity Framework Core para entidad <see cref="TaskItem"/>.
-///
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// - Parte de la capa de Infraestructura
-/// - Traduce entidad de dominio al esquema de base de datos
-/// - Encapsula todos los detalles de mapeo de Entity Framework
-/// - Aplicada por <see cref="TaskDbContext"/> durante creación de modelo
+/// <ul>
+/// <li>Parte de la capa de Infraestructura</li>
+/// <li>Traduce entidad de dominio al esquema de base de datos</li>
+/// <li>Encapsula todos los detalles de mapeo de Entity Framework</li>
+/// <li>Aplicada por <see cref="TaskDbContext"/> durante creación de modelo</li>
+/// </ul>
 ///
 /// Responsabilidades de Configuración:
-/// - Mapeo de nombre de tabla y esquema
-/// - Nombres de columna, tipos y restricciones
-/// - Definición de clave primaria
-/// - Creación de índice para optimización de consulta
-/// - Conversiones de objetos de valor (si es necesario)
-/// - Restricciones de validación de entidad
+/// <ul>
+/// <li>Mapeo de nombre de tabla y esquema</li>
+/// <li>Nombres de columna, tipos y restricciones</li>
+/// <li>Definición de clave primaria</li>
+/// <li>Creación de índice para optimización de consulta</li>
+/// <li>Conversiones de objetos de valor (si es necesario)</li>
+/// <li>Restricciones de validación de entidad</li>
+/// </ul>
 ///
 /// Beneficios de Diseño:
-/// - Centraliza mapeo de base de datos en un lugar
-/// - Los cambios de modelo de dominio pueden afectar mapeo en aislamiento
-/// - Fácil de entender requisitos de esquema de base de datos
-/// - Soporta escenarios de mapeo complejos
-/// - Sigue convenciones de Entity Framework
+/// <ul>
+/// <li>Centraliza mapeo de base de datos en un lugar</li>
+/// <li>Los cambios de modelo de dominio pueden afectar mapeo en aislamiento</li>
+/// <li>Fácil de entender requisitos de esquema de base de datos</li>
+/// <li>Soporta escenarios de mapeo complejos</li>
+/// <li>Sigue convenciones de Entity Framework</li>
+/// </ul>
 ///
-/// Separación de Responsabilidades:
-/// - Capa de dominio: Define reglas de negocio y comportamiento
-/// - Capa de configuración: Define cómo dominio se mapea a base de datos
-/// - Capa de infraestructura: Implementa operaciones reales de base de datos
-/// - Permite cambiar esquema de base de datos sin cambios de dominio
+/// Separación de responsabilidades:
+/// <ul>
+/// <li>Capa de dominio: Define reglas de negocio y comportamiento</li>
+/// <li>Capa de configuración: Define cómo dominio se mapea a base de datos</li>
+/// <li>Capa de infraestructura: Implementa operaciones reales de base de datos</li>
+/// <li>Permite cambiar esquema de base de datos sin cambios de dominio</li>
+/// </ul>
 ///
 /// Ítems de Configuración Típicos:
-/// - <c>HasKey</c>: Especificar clave primaria (usualmente propiedad Id)
-/// - <c>Property</c>: Configurar columnas individuales (longitud, precisión, etc.)
-/// - <c>HasIndex</c>: Crear índices para rendimiento
-/// - <c>ToTable</c>: Establecer nombre de tabla si difiere de nombre de clase
-/// </summary>
-
+/// <ul>
+/// <li><c>HasKey</c>: Especificar clave primaria (usualmente propiedad Id)</li>
+/// <li><c>Property</c>: Configurar columnas individuales (longitud, precisión, etc.)</li>
+/// <li><c>HasIndex</c>: Crear índices para rendimiento</li>
+/// <li><c>ToTable</c>: Establecer nombre de tabla si difiere de nombre de clase</li>
+/// </ul>
+/// </remarks>
 public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
 {
     public void Configure(EntityTypeBuilder<TaskItem> builder)

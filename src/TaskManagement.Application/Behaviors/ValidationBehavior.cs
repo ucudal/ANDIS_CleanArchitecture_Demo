@@ -1,55 +1,56 @@
 // TaskManagement.Application/Behaviors/ValidationBehavior.cs
 using FluentValidation;
 using MediatR;
-using TaskManagement.Application.Commands.CreateTask;
+using TaskManagement.Application.Commands;
 using TaskManagement.Domain.Common;
 
 namespace TaskManagement.Application.Behaviors;
 
 /// <summary>
-/// ValidationBehavior es un comportamiento de pipeline de <see cref="MediatR"/> para validar comandos y consultas.
-///
+/// <c>ValidationBehavior</c> es un comportamiento de pipeline de <see cref="MediatR"/> para validar comandos y consultas.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte del core de la aplicación (Capa de Aplicación)</item>
-/// <item>Preocupación transversal: Se aplica a todos los comandos y consultas</item>
-/// <item>Comportamiento de pipeline: Intercepta todas las solicitudes de <see cref="MediatR"/> antes de que se ejecuten los manejadores</item>
-/// <item>Valida entradas utilizando el marco de trabajo FluentValidation</item>
-/// </list>
+/// <ul>
+/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Preocupación transversal: Se aplica a todos los comandos y consultas</li>
+/// <li>Comportamiento de pipeline: Intercepta todas las solicitudes de <see cref="MediatR"/> antes de que se ejecuten los manejadores</li>
+/// <li>Valida entradas utilizando el marco de trabajo FluentValidation</li>
+/// </ul>
 ///
 /// Patrón de pipeline de <see cref="MediatR"/>:
-/// <list type="bullet">
-/// <item>Los comportamientos envuelven el manejo de solicitudes (como middleware en ASP.NET Core)</item>
-/// <item>El orden de registro determina el orden de ejecución</item>
-/// <item>Puede manejar validación, registro, monitoreo de rendimiento, caché, etc.</item>
-/// <item>Permite separación de preocupaciones transversales de la lógica de negocio</item>
-/// </list>
+/// <ul>
+/// <li>Los comportamientos envuelven el manejo de solicitudes (como middleware en ASP.NET Core)</li>
+/// <li>El orden de registro determina el orden de ejecución</li>
+/// <li>Puede manejar validación, registro, monitoreo de rendimiento, caché, etc.</li>
+/// <li>Permite separación de preocupaciones transversales de la lógica de negocio</li>
+/// </ul>
 ///
 /// Responsabilidades del Comportamiento de Validación:
-/// <list type="bullet">
-/// <item>Ejecuta todos los validadores registrados para el comando/consulta específicos</item>
-/// <item>Agrega errores de validación de todos los validadores</item>
-/// <item>Devuelve <c>Failure</c> con errores recopilados si la validación falla</item>
-/// <item>Permite que el manejador se ejecute si la validación tiene éxito</item>
-/// </list>
+/// <ul>
+/// <li>Ejecuta todos los validadores registrados para el comando/consulta específicos</li>
+/// <li>Agrega errores de validación de todos los validadores</li>
+/// <li>Devuelve <c>Failure</c> con errores recopilados si la validación falla</li>
+/// <li>Permite que el manejador se ejecute si la validación tiene éxito</li>
+/// </ul>
 ///
 /// Beneficios del Patrón de Diseño:
-/// <list type="bullet">
-/// <item>Lógica de validación centralizada (no dispersa en manejadores)</item>
-/// <item>Enfoque de validación consistente en todos los comandos</item>
-/// <item>Los validadores son reutilizables y componibles</item>
-/// <item>Separación de reglas de validación de la lógica de negocio</item>
-/// <item>Fácil agregar o modificar validación sin tocar manejadores</item>
-/// </list>
+/// <ul>
+/// <li>Lógica de validación centralizada (no dispersa en manejadores)</li>
+/// <li>Enfoque de validación consistente en todos los comandos</li>
+/// <li>Los validadores son reutilizables y componibles</li>
+/// <li>Separación de reglas de validación de la lógica de negocio</li>
+/// <li>Fácil agregar o modificar validación sin tocar manejadores</li>
+/// </ul>
 ///
 /// Integración con FluentValidation:
-/// <list type="bullet">
-/// <item>Validadores registrados por tipo de comando/consulta</item>
-/// <item>API fluida para reglas de validación legibles</item>
-/// <item>Encadenamiento de reglas de validación para escenarios complejos</item>
-/// <item>Soporta reglas de validación personalizadas y validadores asíncronos</item>
-/// </list>
-/// </summary>
+/// <ul>
+/// <li>Validadores registrados por tipo de comando/consulta</li>
+/// <li>API fluida para reglas de validación legibles</li>
+/// <li>Encadenamiento de reglas de validación para escenarios complejos</li>
+/// <li>Soporta reglas de validación personalizadas y validadores asíncronos</li>
+/// </ul>
+/// </remarks>
 public sealed class ValidationBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

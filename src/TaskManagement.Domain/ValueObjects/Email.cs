@@ -5,25 +5,26 @@ using TaskManagement.Domain.Common;
 namespace TaskManagement.Domain.ValueObjects;
 
 /// <summary>
-/// <c>Email</c> es un Objeto de Valor del Dominio que encapsula la lógica y validación de direcciones de correo electrónico.
-///
+/// <c>Email</c> es un <a href="https://github.com/ucudal/ANDIS_Conceptos/blob/2e0fbbe729ea47ee6029405a8435c918c9e7c4e6/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Value_Object.md">objeto de valor</a> del dominio que encapsula la lógica y validación de direcciones de correo electrónico.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte del core de la aplicación en la capa de dominio</item>
-/// <item>Representa un concepto de dominio inmutable con validación integrada</item>
-/// <item>Encapsula reglas de negocio específicas de correo y lógica de validación</item>
-/// <item>Se utiliza para manejo de correo seguro de tipo en todo el dominio</item>
-/// <item>Previene que direcciones de correo inválidas entren en el sistema</item>
-/// </list>
+/// <ul>
+/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Representa un concepto de dominio inmutable con validación integrada</li>
+/// <li>Encapsula reglas de negocio específicas de correo y lógica de validación</li>
+/// <li>Se utiliza para manejo de correo seguro de tipo en todo el dominio</li>
+/// <li>Previene que direcciones de correo inválidas entren en el sistema</li>
+/// </ul>
 ///
 /// Características del Objeto de Valor:
-/// <list type="bullet">
-/// <item>Inmutable: El valor del correo no puede cambiar después de su creación</item>
-/// <item>Identidad por Valor: Dos instancias de <see cref="Email"/> son iguales si sus direcciones coinciden</item>
-/// <item>Auto-validado: Asegura que solo se creen direcciones de correo válidas</item>
-/// <item>Sin preocupaciones directas de persistencia: La infraestructura maneja el almacenamiento</item>
-/// </list>
-/// </summary>
+/// <ul>
+/// <li>Inmutable: El valor del correo no puede cambiar después de su creación</li>
+/// <li>Identidad por Valor: Dos instancias de <see cref="Email"/> son iguales si sus direcciones coinciden</li>
+/// <li>Auto-validado: Asegura que solo se creen direcciones de correo válidas</li>
+/// <li>Sin preocupaciones directas de persistencia: La infraestructura maneja el almacenamiento</li>
+/// </ul>
+/// </remarks>
 
 public sealed class Email : ValueObject
 {

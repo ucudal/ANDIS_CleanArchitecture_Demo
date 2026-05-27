@@ -2,60 +2,61 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TaskManagement.API.Extensions;
+using System.Security.Claims;
 using TaskManagement.API.Requests;
-using TaskManagement.Application.Commands.CompleteTask;
-using TaskManagement.Application.Commands.CreateTask;
-using TaskManagement.Application.Queries.GetTaskById;
+using TaskManagement.Application.Commands;
+using TaskManagement.Application.Queries;
 
 namespace TaskManagement.API.Controllers;
 
 /// <summary>
-/// TasksController es el punto final de la API REST para operaciones de gestión de tareas.
-///
+/// <c>TasksController</c> es el endpoint de la API REST para operaciones de gestión de tareas.
+/// </summary>
+/// <remarks>
 /// Rol en Clean Architecture:
-/// <list type="bullet">
-/// <item>Parte de la capa de presentación (UI Layer)</item>
-/// <item>Punto de entrada para solicitudes HTTP</item>
-/// <item>Traduce solicitudes HTTP a comandos/consultas de aplicación</item>
-/// <item>Maneja preocupaciones específicas de HTTP (códigos de estado, negociación de contenido)</item>
-/// <item>Sin lógica de negocio: delega a la capa de aplicación</item>
-/// </list>
+/// <ul>
+/// <li>Parte de la capa de presentación, en este caso, API REST</li>
+/// <li>Punto de entrada para solicitudes HTTP</li>
+/// <li>Traduce solicitudes HTTP a comandos/consultas de aplicación</li>
+/// <li>Maneja cuestiones específicas de HTTP: códigos de estado, negociación de contenido</li>
+/// <li>Sin lógica de negocio: delega a la capa de aplicación</li>
+/// </ul>
 ///
-/// Responsabilidades del Controlador:
-/// <list type="bullet">
-/// <item>Mapear rutas HTTP a operaciones de negocio</item>
-/// <item>Aceptar solicitudes HTTP y convertirlas a comandos/consultas</item>
-/// <item>Manejar autorización y autenticación</item>
-/// <item>Invocar la capa de aplicación a través de <see cref="MediatR"/></item>
-/// <item>Transformar resultados en respuestas HTTP apropiadas</item>
-/// <item>Manejar excepciones y devolver respuestas de error</item>
-/// </list>
+/// Responsabilidades del controlador:
+/// <ul>
+/// <li>Aceptar solicitudes HTTP y convertirlas a comandos/consultas</li>
+/// <li>Manejar autorización y autenticación</li>
+/// <li>Invocar la capa de aplicación a través de <see cref="MediatR"/></li>
+/// <li>Transformar resultados en respuestas HTTP apropiadas</li>
+/// <li>Manejar excepciones y devolver respuestas de error</li>
+/// </ul>
 ///
-/// Separación de Responsabilidades:
-/// <list type="bullet">
-/// <item>NO contiene lógica de negocio (delegada a aplicación)</item>
-/// <item>NO interactúa directamente con la base de datos (delegada a infraestructura)</item>
-/// <item>NO valida reglas de negocio (delegadas a dominio/aplicación)</item>
-/// <item>Solo traduce semántica HTTP a operaciones de aplicación</item>
-/// </list>
+/// Separación de responsabilidades:
+/// <ul>
+/// <li>NO contiene lógica de negocio, se delega a aplicación</li>
+/// <li>NO interactúa directamente con la base de datos, se delega a infraestructura)</li>
+/// <li>NO valida reglas de negocio, se delegadan a dominio o aplicación</li>
+/// <li>Solo traduce semántica HTTP a casos de uso</li>
+/// </ul>
 ///
 /// Dependencias:
-/// <list type="bullet">
-/// <item><see cref="IMediator"/>: Enviar comandos y consultas a la capa de aplicación</item>
-/// <item>Authorization: Validar permisos de usuario antes de operaciones</item>
-/// <item>DTOs (<see cref="CreateTaskRequest"/>, <see cref="TaskDto"/>): Transferencia de datos</item>
-/// </list>
+/// <ul>
+/// <li><see cref="IMediator"/>: Enviar comandos y consultas a la capa de aplicación</li>
+/// <li>Authorization: Validar permisos de usuario antes de operaciones</li>
+/// <li>DTOs <see cref="CreateTaskRequest"/>, <see cref="TaskDto"/>: Transferencia de datos</li>
+/// </ul>
 ///
-/// Patrones de Diseño:
-/// <list type="bullet">
-/// <item>Patrón Command/Query a través de <see cref="MediatR"/></item>
-/// <item>Patrón Result para manejo de errores consistente</item>
-/// <item>Convenciones REST (POST para creación, DELETE para eliminación, etc.)</item>
-/// <item>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.</item>
-/// </list>
-/// </summary>
-internal sealed class TasksController : ControllerBase
+/// Patrones de diseño y convenciones:
+/// <ul>
+/// <li>Patrón Command/Query a través de <see cref="MediatR"/></li>
+/// <li>Patrón Result para manejo de errores consistente</li>
+/// <li>Convenciones REST (POST para creación, DELETE para eliminación, etc.)</li>
+/// <li>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.</li>
+/// </ul>
+/// </remarks>
+[ApiController]
+[Route("api/[controller]")]
+public sealed class TasksController : ControllerBase
 {
     private readonly IMediator _mediator;
     public TasksController(IMediator mediator)
@@ -99,7 +100,7 @@ internal sealed class TasksController : ControllerBase
             request.Description,
             request.Priority,
             request.DueDate,
-            User.GetUserId() // Método de extensión
+            GetUserId(User)
         );
         var result = await _mediator.Send(command, cancellationToken).ConfigureAwait(false);
 
@@ -158,5 +159,29 @@ internal sealed class TasksController : ControllerBase
             Title = "Validation failed",
             Status = StatusCodes.Status400BadRequest
         };
+    }
+
+    private static Guid GetUserId(ClaimsPrincipal user)
+    {
+        // Soportar nombres comunes de reclamación JWT/user-jwts para ID de usuario.
+        var candidateValues = user.Claims
+            .Where(c =>
+                c.Type == ClaimTypes.NameIdentifier ||
+                c.Type == "sub" ||
+                c.Type == "nameid" ||
+                c.Type == "oid" ||
+                c.Type == "uid" ||
+                c.Type == "userId")
+            .Select(c => c.Value);
+
+        foreach (var candidate in candidateValues)
+        {
+            if (Guid.TryParse(candidate, out var parsedUserId))
+            {
+                return parsedUserId;
+            }
+        }
+
+        throw new InvalidOperationException("The current user does not have a valid GUID user id claim.");
     }
 }

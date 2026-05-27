@@ -35,3 +35,14 @@ desarrollada usando Clean Architecture y es una versión extendida del ejemplo d
 > arquitectura. Comienza consultando 📖 [esta
 > documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo)
 > que te ayudará a entender la arquitectura navegando por el código.
+
+Puedes probar la demo ejecutando los *request* del archivo
+[`TaskManagement.http`](./TaskManagement.http). Esas pruebas están automatizadas
+en el archivo [`./test/TaskManagment.Tests/TasksControllerTests.cs`].
+
+> [!IMPORTANT]
+> Esta demo tiene también [pruebas de
+> arquitectura](https://mareks-082.medium.com/architectural-tests-in-net-1bd5d19b0ba8)
+> usando
+> [ArchUnitNET](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://archunitnet.readthedocs.io/&ved=2ahUKEwjsoOGN8teUAxVJkZUCHYnuLqEQFnoECB4QAQ&usg=AOvVaw0Y0UC5cvTBUk-CvSEIotmP).
+> Esas pruebas están automatizadas en el archivo [`./test/TaskManagment.Tests/ArchitectureTests.cs`].
