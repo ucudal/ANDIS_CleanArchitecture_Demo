@@ -2933,6 +2933,7 @@ MSCGEN_TOOL            =
 
 MSCFILE_DIRS           =
 
+# Específicos de este proyecto
+
 PAGE_OUTLINE_PANEL     = NO
-# USE_MDFILE_AS_MAINPAGE = YES
 DOT_TRANSPARENT        = YES
