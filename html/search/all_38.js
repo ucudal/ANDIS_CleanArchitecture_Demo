@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['как_20использовать_0',['Как использовать',['../md_Proyecto-Totem-Games_2node__modules_2svgo_2README_8ru.html#autotoc_md141688',1,'Как использовать'],['../md_Proyecto-Totem-Games_2src_2renderer_2node__modules_2svgo_2README_8ru.html#autotoc_md169254',1,'Как использовать']]],
+  ['командная_20строка_1',['Командная строка',['../md_Proyecto-Totem-Games_2node__modules_2svgo_2README_8ru.html#autotoc_md141690',1,'Командная строка'],['../md_Proyecto-Totem-Games_2src_2renderer_2node__modules_2svgo_2README_8ru.html#autotoc_md169256',1,'Командная строка']]],
+  ['кириллица_2',['кириллица',['../classpip_1_1__vendor_1_1pyparsing_1_1unicode_1_1pyparsing__unicode.html#ac7eda7145e4eff83a3884aba76cf13e9',1,'pip._vendor.pyparsing.unicode.pyparsing_unicode.кириллица'],['../classpipenv_1_1patched_1_1pip_1_1__vendor_1_1pyparsing_1_1unicode_1_1pyparsing__unicode.html#a7001b01a3ad478310ebfe92f53ffffa5',1,'pipenv.patched.pip._vendor.pyparsing.unicode.pyparsing_unicode.кириллица'],['../classpipenv_1_1vendor_1_1pyparsing_1_1unicode_1_1pyparsing__unicode.html#a758f2045e922ccb74d9de8ba616fafc9',1,'pipenv.vendor.pyparsing.unicode.pyparsing_unicode.кириллица']]],
+  ['копирайты_3',['копирайты',['../md_Proyecto-Totem-Games_2node__modules_2svgo_2README_8ru.html#autotoc_md141692',1,'Лицензия и копирайты'],['../md_Proyecto-Totem-Games_2src_2renderer_2node__modules_2svgo_2README_8ru.html#autotoc_md169258',1,'Лицензия и копирайты']]]
+];
