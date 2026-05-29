@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['💥_0',['💥',['../md_angular-my-app_2node__modules_2log4js_2CHANGELOG.html#autotoc_md23964',1,'&lt;a href=&quot;https://github.com/log4js-node/log4js-node/milestone/76&quot;&gt;6.4.0&lt;/a&gt; - BREAKING CHANGE 💥'],['../md_angular-tour-of-heroes_2node__modules_2log4js_2CHANGELOG.html#autotoc_md44852',1,'&lt;a href=&quot;https://github.com/log4js-node/log4js-node/milestone/76&quot;&gt;6.4.0&lt;/a&gt; - BREAKING CHANGE 💥'],['../md_angular-tour-of-heroes1_2node__modules_2log4js_2CHANGELOG.html#autotoc_md65690',1,'&lt;a href=&quot;https://github.com/log4js-node/log4js-node/milestone/76&quot;&gt;6.4.0&lt;/a&gt; - BREAKING CHANGE 💥'],['../md_angular-tour-of-heroes2_2node__modules_2log4js_2CHANGELOG.html#autotoc_md86528',1,'&lt;a href=&quot;https://github.com/log4js-node/log4js-node/milestone/76&quot;&gt;6.4.0&lt;/a&gt; - BREAKING CHANGE 💥']]]
-];
