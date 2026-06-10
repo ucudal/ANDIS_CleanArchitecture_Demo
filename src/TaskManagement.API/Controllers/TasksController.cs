@@ -10,48 +10,47 @@ using TaskManagement.Application.Queries;
 namespace TaskManagement.API.Controllers;
 
 /// <summary>
-/// <c>TasksController</c> es el endpoint de la API REST para operaciones de gestión de tareas.
+/// <c>TasksController</c> es el endpoint de la %API REST para operaciones de
+/// gestión de tareas.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte de la capa de presentación, en este caso, API REST</li>
+/// <li>Parte de la capa de presentación, en este caso, una %API REST</li>
 /// <li>Punto de entrada para solicitudes HTTP</li>
-/// <li>Traduce solicitudes HTTP a comandos/consultas de aplicación</li>
-/// <li>Maneja cuestiones específicas de HTTP: códigos de estado, negociación de contenido</li>
-/// <li>Sin lógica de negocio: delega a la capa de aplicación</li>
+/// <li>Traduce solicitudes HTTP a comandos y consultas de la capa de
+/// aplicación</li>
+/// <li>Maneja cuestiones específicas de HTTP: códigos de estado, negociación de
+/// contenido</li> <li>Sin lógica de negocio: delega a la capa de aplicación</li>
 /// </ul>
 ///
 /// Responsabilidades del controlador:
 /// <ul>
-/// <li>Aceptar solicitudes HTTP y convertirlas a comandos/consultas</li>
+/// <li>Aceptar solicitudes HTTP y convertirlas a comandos y consultas</li>
 /// <li>Manejar autorización y autenticación</li>
-/// <li>Invocar la capa de aplicación a través de <see cref="MediatR"/></li>
+/// <li>Invocar la capa de aplicación a través de <a href="https://mediatr.io">MediatR</a></li>
 /// <li>Transformar resultados en respuestas HTTP apropiadas</li>
 /// <li>Manejar excepciones y devolver respuestas de error</li>
 /// </ul>
 ///
 /// Separación de responsabilidades:
 /// <ul>
-/// <li>NO contiene lógica de negocio, se delega a aplicación</li>
-/// <li>NO interactúa directamente con la base de datos, se delega a infraestructura)</li>
-/// <li>NO valida reglas de negocio, se delegadan a dominio o aplicación</li>
+/// <li>NO contiene lógica de negocio, se delega a la capa de aplicación</li>
+/// <li>NO interactúa directamente con la base de datos, se delega a la capa de
+/// infraestructura</li>
+/// <li>NO valida reglas de negocio, se delegadan a la capa del dominio o de aplicación</li>
 /// <li>Solo traduce semántica HTTP a casos de uso</li>
-/// </ul>
-///
-/// Dependencias:
-/// <ul>
-/// <li><see cref="IMediator"/>: Enviar comandos y consultas a la capa de aplicación</li>
-/// <li>Authorization: Validar permisos de usuario antes de operaciones</li>
-/// <li>DTOs <see cref="CreateTaskRequest"/>, <see cref="TaskDto"/>: Transferencia de datos</li>
 /// </ul>
 ///
 /// Patrones de diseño y convenciones:
 /// <ul>
-/// <li>Patrón Command/Query a través de <see cref="MediatR"/></li>
+/// <li>Patrón <a
+/// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_09_.Patrones_de_arquitectura/2_09_CQRS.md">CQRS</a>
+/// a través de <a href="https://mediatr.io">MediatR</a></li>
 /// <li>Patrón Result para manejo de errores consistente</li>
-/// <li>Convenciones REST (POST para creación, DELETE para eliminación, etc.)</li>
-/// <li>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404 NotFound, etc.</li>
+/// <li>Convenciones REST: POST para creación, DELETE para eliminación, etc.</li>
+/// <li>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404
+/// NotFound, etc.</li>
 /// </ul>
 /// </remarks>
 [ApiController]
@@ -93,8 +92,6 @@ public sealed class TasksController : ControllerBase
         [FromBody] CreateTaskRequest request,
         CancellationToken cancellationToken)
     {
-        ArgumentNullException.ThrowIfNull(request);
-
         var command = new CreateTaskCommand(
             request.Title,
             request.Description,
@@ -108,8 +105,7 @@ public sealed class TasksController : ControllerBase
         {
             return CreatedAtAction(
                 nameof(GetById),
-                new
-                {
+                new {
                     id = result.Value
                 },
                 result.Value);
@@ -140,8 +136,7 @@ public sealed class TasksController : ControllerBase
 
     private static ProblemDetails CreateProblemDetails(IReadOnlyList<string> errors)
     {
-        return new ProblemDetails
-        {
+        return new ProblemDetails {
             Title = "Request failed",
             Detail = string.Join("; ", errors),
             Status = StatusCodes.Status400BadRequest
@@ -154,8 +149,7 @@ public sealed class TasksController : ControllerBase
         return new ValidationProblemDetails(
             errors.ToDictionary(
                 _ => "General",
-                e => new[] { e }))
-        {
+                e => new[] { e })) {
             Title = "Validation failed",
             Status = StatusCodes.Status400BadRequest
         };

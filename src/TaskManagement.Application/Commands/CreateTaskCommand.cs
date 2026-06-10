@@ -12,28 +12,50 @@ namespace TaskManagement.Application.Commands;
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
-/// <li>Comando CQRS: Representa una solicitud para realizar una operación que cambia estado</li>
-/// <li>Transporta parámetros de entrada desde la capa de API/UI a la lógica de aplicación</li>
-/// <li>Objeto de Transferencia de Datos (DTO) de entrada para crear una tarea</li>
-/// <li>Implementa <see cref="MediatR"/> <see cref="IRequest"/> para inyección de dependencias y procesamiento de middleware</li>
+/// <li>Parte de la capa de aplicación</li>
+/// <li>Un comando en <a
+/// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_09_.Patrones_de_arquitectura/2_09_CQRS.md">CQRS</a>
+/// representa una solicitud para realizar una operación que cambia estado</li>
+/// <li>Transporta parámetros de entrada desde la capa de API a la lógica de
+/// aplicación</li>
+/// <li>Es un DTO de entrada para crear una tarea</li>
+/// <li>Implementa <a href="https://mediatr.io">MediatR</a> IRequest para
+/// inyección de dependencias y procesamiento de middleware</li>
 /// </ul>
 ///
-/// Patrón CQRS —Command Query Responsibility Segregation—:
+/// Patrón CQRS -CommandQueryResponsibilitySeparation-:
 /// <ul>
-/// <li>Comando: Muta el estado del sistema (CreateTaskCommand)</li>
-/// <li>Consulta: Lee datos sin efectos secundarios (separada de comandos)</li>
-/// <li>Separación: Permite optimización independiente de operaciones de lectura y escritura</li>
-/// <li>Este comando específíco representa la intención del usuario de crear una tarea</li>
+/// <li>Comando: Muta el estado del sistema, como <c>CreateTaskCommand</c></li>
+/// <li>Consulta: Lee datos sin efectos secundarios -separada de comandos- como
+/// <c>TaskManagement.Application.Queries.GetTaskByIdQuery</c></li>
+/// <li>Separación: Permite optimización independiente de operaciones de lectura
+/// y escritura</li>
+/// <li>Este comando específíco representa la intención del usuario de crear una
+/// tarea</li>
 /// </ul>
 /// </remarks>
-public sealed record CreateTaskCommand(
-    string Title,
-    string Description,
-    TaskPriority Priority,
-    DateTime? DueDate,
-    Guid CreatedBy
-) : IRequest<Result<Guid>>;
+public sealed class CreateTaskCommand : IRequest<Result<Guid>>
+{
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public TaskPriority Priority { get; set; }
+    public DateTime? DueDate { get; set; }
+    public Guid CreatedBy { get; set; }
+
+    public CreateTaskCommand(
+        string title,
+        string description,
+        TaskPriority priority,
+        DateTime? dueDate,
+        Guid createdBy)
+    {
+        Title = title;
+        Description = description;
+        Priority = priority;
+        DueDate = dueDate;
+        CreatedBy = createdBy;
+    }
+}
 
 /// <summary>
 /// CreateTaskCommandHandler es el servicio de aplicación para manejar la creación de tareas.
@@ -41,32 +63,32 @@ public sealed record CreateTaskCommand(
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
-/// <li>Servicio de Aplicación: Orquesta las capas de dominio e infraestructura</li>
-/// <li>Manejador de <see cref="MediatR"/>: Procesa comandos a través de un pipeline</li>
-/// <li>Implementa lógica de caso de uso (no lógica de dominio)</li>
+/// <li>Parte de la capa de aplicación</li>
+/// <li>Servicio de Aplicación: Orquesta las capas del dominio e infraestructura</li>
+/// <li>Manejador de <a href="https://mediatr.io">MediatR</a>: Procesa comandos a través de un pipeline</li>
+/// <li>Implementa lógica de caso de uso -no lógica del dominio-</li>
 /// </ul>
 ///
 /// Responsabilidades:
 /// <ul>
-/// <li>Valida entrada a través de creación de entidad de dominio</li>
+/// <li>Valida entrada a través de creación de entidad del dominio</li>
 /// <li>Orquesta llamadas de repositorio y unidad de trabajo</li>
-/// <li>Envía eventos de dominio después de persistencia</li>
-/// <li>Devuelve resultados de éxito/fracaso a la capa de API</li>
+/// <li>Envía eventos del dominio después de persistencia</li>
+/// <li>Devuelve resultados de éxito o fracaso a la capa de API</li>
 /// </ul>
 ///
-/// Interacción de Capa de Dominio:
+/// Interacción de Capa del dominio:
 /// <ul>
-/// <li>Utiliza TaskItem.Create (fábrica de dominio) para validación de regla de negocio</li>
+/// <li>Utiliza TaskItem.Create -fábrica del dominio- para validación de regla de negocio</li>
 /// <li>Depende de abstracciones ITaskRepository e IUnitOfWork</li>
-/// <li>Aprovecha eventos de dominio para desacoplamiento de la infraestructura y facilidad del testing.</li>
+/// <li>Aprovecha eventos del dominio para desacoplamiento de la infraestructura y facilidad del testing.</li>
 /// </ul>
 ///
 /// Separación de responsabilidades:
 /// <ul>
-/// <li>NO contiene lógica de negocio (delegada a dominio)</li>
-/// <li>NO interactúa directamente con base de datos (utiliza repositorios)</li>
-/// <li>NO Maneja cuestiones HTTP (delegadas a controlador)</li>
+/// <li>NO contiene lógica de negocio -delegada a dominio-</li>
+/// <li>NO interactúa directamente con base de datos -utiliza repositorios-</li>
+/// <li>NO Maneja cuestiones HTTP -delegadas a controlador-</li>
 /// <li>Coordina entre capas para cumplir el caso de uso</li>
 /// </ul>
 /// </remarks>
@@ -103,7 +125,7 @@ public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand
         var task = createResult.Value!;
         await _taskRepository.AddAsync(task, cancellationToken).ConfigureAwait(false);
         await _unitOfWork.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-        // Enviar eventos de dominio después de persistencia exitosa
+        // Enviar eventos del dominio después de persistencia exitosa
         await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken).ConfigureAwait(false);
         task.ClearDomainEvents();
         return Result.Success(task.Id);

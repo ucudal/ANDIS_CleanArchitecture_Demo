@@ -9,6 +9,7 @@ using TaskManagement.Application.Queries.SearchTasks;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
+#pragma warning disable CS1570 // XML comment has badly formed XML
 /// <summary>
 /// <c>TaskReadRepository</c> es el repositorio de lectura para consultas de tarea optimizadas.
 /// </summary>
@@ -16,17 +17,17 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de Infraestructura</li>
-/// <li>Implementa interfaz <see cref="ITaskReadRepository"/> (definida en Capa de Aplicación)</li>
+/// <li>Implementa interfaz ITaskReadRepository -definida en Capa de Aplicación-</li>
 /// <li>Acceso a datos optimizado: Proporciona consultas eficientes de solo lectura</li>
 /// <li>Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación</li>
 /// </ul>
 ///
-/// Patrón CQRS - Lado de Lectura:
+/// Patrón CQRS -Lado de Lectura-:
 /// <ul>
-/// <li>Separado del repositorio de escritura (<see cref="TaskRepository"/>)</li>
+/// <li>Separado del repositorio de escritura -TaskRepository-</li>
 /// <li>Optimizado para rendimiento y escalabilidad de consultas</li>
-/// <li>Puede usar diferentes tecnologías (<see cref="Dapper"/>, SQL sin procesar, modelos de lectura)</li>
-/// <li>Devuelve DTOs en lugar de entidades de dominio</li>
+/// <li>Puede usar diferentes tecnologías -Dapper, SQL sin procesar, modelos de lectura-</li>
+/// <li>Devuelve DTOs en lugar de entidades del dominio</li>
 /// </ul>
 ///
 /// Beneficios del Repositorio de Lectura:
@@ -34,7 +35,7 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// <li>Optimización independiente del modelo de escritura</li>
 /// <li>Puede usar SQL sin procesar o herramientas de consulta especializadas</li>
 /// <li>Puede consultar vistas desnormalizadas o modelos de lectura materializados</li>
-/// <li>Devuelve solo campos requeridos (proyección)</li>
+/// <li>Devuelve solo campos requeridos -proyección-</li>
 /// <li>Soporta estrategias de caché optimizadas para lecturas</li>
 /// </ul>
 ///
@@ -43,17 +44,18 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// <li>El lado de escritura optimiza para consistencia y reglas de negocio</li>
 /// <li>El lado de lectura optimiza para rendimiento de consulta y forma de datos</li>
 /// <li>Puede escalar independientemente basado en patrones de lectura/escritura</li>
-/// <li>Separa la optimización de lecturas del lado de escritura (patrón CQRS)</li>
+/// <li>Separa la optimización de lecturas del lado de escritura -patrón CQRS-</li>
 /// </ul>
 ///
 /// Implementación:
 /// <ul>
-/// <li>Utiliza interfaz <see cref="ITaskReadRepository"/> de Capa de Aplicación</li>
-/// <li>Típicamente utiliza <see cref="Dapper"/> o Entity Framework con <c>AsNoTracking</c></li>
-/// <li>Devuelve <see cref="IReadOnlyList{T}"/> para operaciones de lectura</li>
+/// <li>Utiliza interfaz ITaskReadRepository de Capa de Aplicación</li>
+/// <li>Típicamente utiliza Dapper o Entity Framework con <c>AsNoTracking</c></li>
+/// <li>Devuelve IReadOnlyList< T > para operaciones de lectura</li>
 /// <li>Maneja paginación para conjuntos de resultados grandes</li>
 /// </ul>
 /// </remarks>
+#pragma warning restore CS1570 // XML comment has badly formed XML
 public sealed class TaskReadRepository : ITaskReadRepository
 {
     private readonly string _connectionString;
@@ -85,8 +87,7 @@ public sealed class TaskReadRepository : ITaskReadRepository
         using var connection = CreateConnection();
         var command = new CommandDefinition(
             sql,
-            new
-            {
+            new {
                 Id = id
             },
             cancellationToken: cancellationToken);

@@ -7,46 +7,52 @@ using TaskManagement.Domain.Common;
 namespace TaskManagement.Application.Behaviors;
 
 /// <summary>
-/// <c>ValidationBehavior</c> es un comportamiento de pipeline de <see cref="MediatR"/> para validar comandos y consultas.
+/// <c>ValidationBehavior</c> es un comportamiento de pipeline de <a
+/// href="https://mediatr.io">MediatR</a> para validar comandos y consultas.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
-/// <li>Preocupación transversal: Se aplica a todos los comandos y consultas</li>
-/// <li>Comportamiento de pipeline: Intercepta todas las solicitudes de <see cref="MediatR"/> antes de que se ejecuten los manejadores</li>
-/// <li>Valida entradas utilizando el marco de trabajo FluentValidation</li>
+/// <li>Parte de la capa de aplicación</li>
+/// <li>Comportamiento de pipeline: Intercepta todas las solicitudes de <a
+/// href="https://mediatr.io">MediatR</a> antes de que se ejecuten los
+/// manejadores</li>
+/// <li>Valida entradas utilizando el <a
+/// href="https://github.com/FluentValidation/FluentValidation">FluentValidation</a></li>
 /// </ul>
 ///
-/// Patrón de pipeline de <see cref="MediatR"/>:
+/// Patrón de pipeline de <a href="https://mediatr.io">MediatR</a>:
 /// <ul>
-/// <li>Los comportamientos envuelven el manejo de solicitudes (como middleware en ASP.NET Core)</li>
+/// <li>Los comportamientos envuelven el manejo de solicitudes como middleware en ASP.NET Core</li>
 /// <li>El orden de registro determina el orden de ejecución</li>
 /// <li>Puede manejar validación, registro, monitoreo de rendimiento, caché, etc.</li>
 /// <li>Permite separación de preocupaciones transversales de la lógica de negocio</li>
 /// </ul>
 ///
-/// Responsabilidades del Comportamiento de Validación:
+/// Responsabilidades del comportamiento de validación:
 /// <ul>
-/// <li>Ejecuta todos los validadores registrados para el comando/consulta específicos</li>
+/// <li>Ejecuta todos los validadores registrados para el comando/consulta
+/// específicos</li>
 /// <li>Agrega errores de validación de todos los validadores</li>
-/// <li>Devuelve <c>Failure</c> con errores recopilados si la validación falla</li>
+/// <li>Devuelve <c>Failure</c> con errores recopilados si la validación
+/// falla</li>
 /// <li>Permite que el manejador se ejecute si la validación tiene éxito</li>
 /// </ul>
 ///
-/// Beneficios del Patrón de Diseño:
+/// Beneficios:
 /// <ul>
-/// <li>Lógica de validación centralizada (no dispersa en manejadores)</li>
+/// <li>Lógica de validación centralizada -no dispersa en manejadores-</li>
 /// <li>Enfoque de validación consistente en todos los comandos</li>
 /// <li>Los validadores son reutilizables y componibles</li>
 /// <li>Separación de reglas de validación de la lógica de negocio</li>
 /// <li>Fácil agregar o modificar validación sin tocar manejadores</li>
 /// </ul>
 ///
-/// Integración con FluentValidation:
+/// Integración con <a
+/// href="https://github.com/FluentValidation/FluentValidation">FluentValidation</a>:
 /// <ul>
 /// <li>Validadores registrados por tipo de comando/consulta</li>
-/// <li>API fluida para reglas de validación legibles</li>
+/// <li>%API fluida para reglas de validación legibles</li>
 /// <li>Encadenamiento de reglas de validación para escenarios complejos</li>
 /// <li>Soporta reglas de validación personalizadas y validadores asíncronos</li>
 /// </ul>

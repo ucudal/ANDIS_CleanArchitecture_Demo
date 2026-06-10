@@ -6,23 +6,22 @@ namespace TaskManagement.Domain.Entities;
 /// <summary>
 /// <c>TaskItem</c> es una <a
 /// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Entity.md">entidad</a>
-/// de dominio que representa una tarea en el sistema.
+/// del dominio que representa una tarea en el sistema.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Parte del core de la aplicación en la capa del dominio</li>
 /// <li>Encapsula lógica de negocio y reglas relacionadas con la gestión de
 /// tareas</li>
-/// <li>Contiene principios de Domain Driven Design con el patrón <a
+/// <li>Contiene principios de %Domain Driven Design con el patrón <a
 /// href="https://martinfowler.com/bliki/DDD_Aggregate.html">Aggregate
 /// Root</a></li>
-/// <li>Gestiona transiciones de estado a través de métodos de dominio: <see
-/// cref="TaskItem.Complete"/>, <see cref="TaskItem.AssignTo"/>, <see
-/// cref="TaskItem.UpdatePriority"/></li>
+/// <li>Gestiona transiciones de estado a través de métodos del dominio:
+/// TaskItem.Complete, TaskItem.AssignTo, TaskItem.UpdatePriority</li>
 /// <li>Mantiene invariantes y reglas de negocio tales como validación y
 /// restricciones</li>
-/// <li>Emite eventos de dominio para comunicar ocurrencias importantes del
+/// <li>Emite eventos del dominio para comunicar ocurrencias importantes del
 /// dominio</li>
 /// </ul>
 ///
@@ -31,25 +30,26 @@ namespace TaskManagement.Domain.Entities;
 /// <li>Contiene todos los datos necesarios para representar una tarea</li>
 /// <li>Valida reglas de negocio internamente -longitud de título, fecha de
 /// vencimiento, transiciones de estado-</li>
-/// <li>Gestiona la colección de eventos de dominio para desacoplamiento de la
+/// <li>Gestiona la colección de eventos del dominio para desacoplamiento de la
 /// infraestructura y facilidad del testing</li>
-/// <li>Utiliza patrón <a
+/// <li>Utiliza el patrón <a
 /// href="https://refactoring.guru/design-patterns/factory-method">Factory</a>
-/// <see cref="TaskItem.Create(string, string, TaskPriority, DateTime?, Guid)"/>
-/// para creación consistente de entidades</li>
+/// -verTaskItem.Create- para creación consistente de entidades</li>
 /// <li>Aplica restricciones de negocio: no se puede modificar tareas
 /// completadas, etc.</li>
 /// </ul>
 ///
-/// Dependencias: Solo depende de otros tipos de la capa de Dominio —<see
-/// cref="DomainEvent"/>, <see cref="Result"/>, <see cref="TaskErrors"/>) Sin
-/// dependencias en capas de Infraestructura o Aplicación - mantiene
-/// independencia para testabilidad.
+/// Dependencias:
+/// <ul>
+/// <li>Solo depende de otros tipos de la capa del dominio -verDomainEvent,
+/// Result, TaskErrors, etc.-</li>
+/// <li>Sin dependencias en capas de infraestructura o aplicación -respetala
+/// dirección de las dependencias en Clean Architecture-</li>
+/// </ul>
 /// </remarks>
 public class TaskItem
 {
-    public Guid Id
-    {
+    public Guid Id {
         get; private set;
     }
 
@@ -57,42 +57,35 @@ public class TaskItem
 
     public string Description { get; private set; } = string.Empty;
 
-    public TaskStatus Status
-    {
+    public TaskStatus Status {
         get; private set;
     }
 
-    public TaskPriority Priority
-    {
+    public TaskPriority Priority {
         get; private set;
     }
 
-    public DateTime? DueDate
-    {
+    public DateTime? DueDate {
         get; private set;
     }
 
-    public DateTime CreatedAt
-    {
+    public DateTime CreatedAt {
         get; private set;
     }
 
-    public DateTime? CompletedAt
-    {
+    public DateTime? CompletedAt {
         get; private set;
     }
 
-    public Guid CreatedBy
-    {
+    public Guid CreatedBy {
         get; private set;
     }
 
-    public Guid? AssignedTo
-    {
+    public Guid? AssignedTo {
         get; private set;
     }
 
-    // Eventos de dominio para desacoplamiento de la infraestructura y facilidad del testing.
+    // Eventos del dominio para desacoplamiento de la infraestructura y facilidad del testing.
     private readonly List<DomainEvent> _domainEvents = [];
 
     public IReadOnlyCollection<DomainEvent> DomainEvents => _domainEvents.AsReadOnly();
@@ -114,8 +107,7 @@ public class TaskItem
         var validation = Validate(title, description, dueDate);
         if (validation.IsFailure)
             return Result.Failure<TaskItem>(validation.Errors);
-        var task = new TaskItem
-        {
+        var task = new TaskItem {
             Id = Guid.NewGuid(),
             Title = title.Trim(),
             Description = description.Trim(),

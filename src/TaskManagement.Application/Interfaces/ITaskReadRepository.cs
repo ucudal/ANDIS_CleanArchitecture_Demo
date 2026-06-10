@@ -8,15 +8,15 @@ namespace TaskManagement.Application.Interfaces;
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Parte de la capa de aplicación</li>
 /// <li>Define contrato para recuperación eficiente de datos de tarea</li>
 /// <li>Abstracción de implementación: Interfaz en Núcleo de Aplicación, implementación en Infraestructura</li>
-/// <li>Habilita patrón CQRS —Command Query Responsibility Segregation—</li>
+/// <li>Habilita patrón CQRS -CommandQueryResponsibilitySeparation-</li>
 /// </ul>
 ///
 /// Beneficios de Separación de Repositorio de Lectura:
 /// <ul>
-/// <li>Optimizado para rendimiento de lectura (puede usar Dapper, SQL sin procesar, modelos de lectura)</li>
+/// <li>Optimizado para rendimiento de lectura -puede usar Dapper, SQL sin procesar, modelos de lectura-</li>
 /// <li>Independiente del repositorio de escritura <see
 /// cref="TaskManagement.Application.Interfaces.ITaskRepository"/></li>
 /// <li>Habilita el patrón CQRS para separar lecturas de escrituras</li>
@@ -24,11 +24,11 @@ namespace TaskManagement.Application.Interfaces;
 /// <li>Habilita diferentes estrategias de optimización para lecturas vs escrituras</li>
 /// </ul>
 ///
-/// Contraste con <see cref="TaskManagement.Application.Interfaces.ITaskRepository"/>:
+/// Contraste con TaskManagement.Application.Interfaces.ITaskRepository:
 /// <ul>
-/// <li><see cref="TaskManagement.Application.Interfaces.ITaskRepository"/>: Operaciones de escritura (Add, Update, Delete)</li>
-/// <li><see cref="ITaskReadRepository"/>: Operaciones de lectura optimizadas para consultas</li>
-/// <li>Sigue CQRS: Separa responsabilidad de comando (escritura) de consulta (lectura)</li>
+/// <li>TaskManagement.Application.Interfaces.ITaskRepository: Operaciones de escritura -Add, Update, Delete-</li>
+/// <li>ITaskReadRepository: Operaciones de lectura optimizadas para consultas</li>
+/// <li>Sigue CQRS: Separa responsabilidad de comando -escritura- de consulta -lectura-</li>
 /// </ul>
 ///
 /// Estrategia de Implementación:

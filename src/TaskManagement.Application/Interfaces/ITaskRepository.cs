@@ -4,7 +4,7 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.Application.Interfaces;
 
 /// <summary>
-/// <c>ITaskRepository</c> es la interfaz del repositorio de escritura para agregado <see cref="TaskItem"/>.
+/// <c>ITaskRepository</c> es la interfaz del repositorio de escritura para agregado TaskItem.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
@@ -17,10 +17,10 @@ namespace TaskManagement.Application.Interfaces;
 ///
 /// Beneficios del patrón Repository:
 /// <ul>
-/// <li>Abstrae lógica de acceso a datos de capas de dominio y aplicación</li>
+/// <li>Abstrae lógica de acceso a datos de capas del dominio y aplicación</li>
 /// <li>Habilita intercambio de implementación de base de datos sin cambiar código de aplicación</li>
 /// <li>Simplifica pruebas unitarias al permitir implementaciones simuladas</li>
-/// <li>Proporciona una API familiar orientada al dominio (no enfocada en consultas)</li>
+/// <li>Proporciona una API familiar orientada al dominio -no enfocada en consultas-</li>
 /// </ul>
 ///
 /// Operaciones:
@@ -35,7 +35,7 @@ namespace TaskManagement.Application.Interfaces;
 ///
 /// Nota: Este es el repositorio de escritura. Para operaciones de lectura, ver
 /// <c>ITaskReadRepository</c> en la capa de aplicación.
-/// Esta separación sigue el patrón CQRS —Command Query Responsibility Segregation—.
+/// Esta separación sigue el patrón CQRS -CommandQueryResponsibilitySeparation-.
 /// </remarks>
 public interface ITaskRepository
 {

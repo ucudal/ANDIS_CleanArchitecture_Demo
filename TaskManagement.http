@@ -5,7 +5,7 @@
 
 # Actualizar esta variable con el ID de la tarea creada en el endpoint "Create
 # Task". Este ID se usará en los endpoints "Get Task By Id" y "Complete Task".
-@taskId = 9c290d5b-49d9-4334-b2fd-ecaa09da5f33
+@taskId = 09c78d87-48ec-4395-ac20-024d6d7273e1
 
 # El endpoint para generar una tarea requiere autenticación. Generar el token
 # requerido con el siguiente comando, ejecutado en la raíz del proyecto y
@@ -13,7 +13,7 @@
 #
 #   dotnet user-jwts create --project ./src/TaskManagement.API/TaskManagement.API.csproj --audience https://localhost:5001 --audience http://localhost:5000 --claim nameid=11111111-1111-1111-1111-111111111111 --claim name=dev-user --output token
 #
-@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiIzNDlkMGE0ZSIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc3OTgyNTgwMCwiZXhwIjoxNzg3Nzc0NjAwLCJpYXQiOjE3Nzk4MjU4MDAsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ._nxUZlzDMQkpYzvJ6Tsa5wka8XQ6H_bD-Twg04bY7qM
+@bearerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiI4MWNkMzEwNCIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc4MDA4NjcxMCwiZXhwIjoxNzg4MDM1NTEwLCJpYXQiOjE3ODAwODY3MTEsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.ZXlu4gmJoKnvujL8LEjneE5Bnbsk3zsTOmHOSzl3MYY
 
 # Create Task: crea una tarea nueva; copiar el ID de la tarea creada y
 # actualizar la variable taskId para usarla en los endpoints Get Task By Id y

@@ -26,8 +26,8 @@ public class ArchitectureTests
     // Domain Layer Rules
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de ninguna otra capa
-    /// —aplicación, infraestructura o API—.
+    /// Verifica que la capa del dominio no dependa de ninguna otra capa
+    /// -aplicación, infraestructura o API-.
     /// </summary>
     [Test]
     public void DomainLayer_ShouldNotDependOnAnyOtherLayer()
@@ -97,8 +97,8 @@ public class ArchitectureTests
     // API Layer Rules
 
     /// <summary>
-    /// Verifica que ninguna capa interna —dominio, aplicación e
-    /// infraestructura— dependa de la capa API.
+    /// Verifica que ninguna capa interna -dominio, aplicación e
+    /// infraestructura- dependa de la capa API.
     /// </summary>
     [Test]
     public void ApiLayer_ShouldNotHaveDependenciesFromOtherLayers()
@@ -181,10 +181,10 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de frameworks de mapeo de
-    /// objetos relacionales —ORM— como Entity Framework o Dapper —que son los
+    /// Verifica que la capa del dominio no dependa de frameworks de mapeo de
+    /// objetos relacionales -ORM- como Entity Framework o Dapper -que son los
     /// que se usan en este proyecto; podrían incluirse otros como NHibernate
-    /// por ejemplo—.
+    /// por ejemplo-.
     /// </summary>
     [Test]
     public void DomainLayer_ShouldNotDependOnOrmFrameworks()
@@ -205,9 +205,9 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de frameworks de mensajería
-    /// como MediatR —que es el que se usa en este proyecto; podrían incluirse
-    /// otros como MassTransit o NServiceBus—.
+    /// Verifica que la capa del dominio no dependa de frameworks de mensajería
+    /// como MediatR -que es el que se usa en este proyecto; podrían incluirse
+    /// otros como MassTransit o NServiceBus-.
     /// </summary>
     [Test]
     public void DomainLayer_ShouldNotDependOnMessagingFrameworks()
@@ -227,7 +227,7 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de frameworks web como
+    /// Verifica que la capa del dominio no dependa de frameworks web como
     /// ASP.NET Core o System.Web.
     /// </summary>
     [Test]
@@ -249,10 +249,10 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de proveedores específicos de
-    /// bases de datos como Microsoft.Data (SQL Server) o Sqlite —que son los
+    /// Verifica que la capa del dominio no dependa de proveedores específicos de
+    /// bases de datos como Microsoft.Data (SQL Server) o Sqlite -que son los
     /// que se usan en este proyecto, podrían incluirse otros como MySQL o
-    /// PostgreSQL—.
+    /// PostgreSQL-.
     /// </summary>
     [Test]
     public void DomainLayer_ShouldNotDependOnDataProviders()
@@ -274,7 +274,7 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de servicios de
+    /// Verifica que la capa del dominio no dependa de servicios de
     /// Microsoft.Extensions como Logging, Configuration, DependencyInjection o
     /// Caching.
     /// </summary>
@@ -301,7 +301,7 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que la capa de dominio no dependa de frameworks de
+    /// Verifica que la capa del dominio no dependa de frameworks de
     /// autenticación e identidad como Microsoft.IdentityModel,
     /// System.Security.Principal o IdentityModel.
     /// </summary>
@@ -327,7 +327,7 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que todas las clases de repositorio —y no las interfaces—
+    /// Verifica que todas las clases de repositorio -y no las interfaces-
     /// residan en el namespace
     /// <c>TaskManagement.Infrastructure.Persistence.Repositories</c>.
     /// </summary>
@@ -345,7 +345,7 @@ public class ArchitectureTests
 
     /// <summary>
     /// Verifica que la capa de aplicación no dependa directamente de Entity
-    /// Framework Core —donde se define <c>DbContext</c>—. La comunicación con
+    /// Framework Core -donde se define <c>DbContext</c>-. La comunicación con
     /// la base de datos debe realizarse a través de repositorios o
     /// abstracciones, nunca directamente desde la capa de aplicación.
     /// </summary>

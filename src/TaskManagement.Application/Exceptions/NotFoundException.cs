@@ -6,9 +6,9 @@ namespace TaskManagement.Application.Exceptions;
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación (Capa de Aplicación)</li>
+/// <li>Parte de la capa de aplicación</li>
 /// <li>Representa fallo en encontrar recurso solicitado</li>
-/// <li>Distinta de otros tipos de excepción (validación, dominio, técnico)</li>
+/// <li>Distinta de otros tipos de excepción -validación, dominio, técnico-</li>
 /// <li>Permite a manejadores capturar y devolver códigos de estado HTTP apropiados</li>
 /// </ul>
 ///
@@ -20,11 +20,11 @@ namespace TaskManagement.Application.Exceptions;
 /// <li>Devuelve estado HTTP 404 NotFound a cliente</li>
 /// </ul>
 ///
-/// Categorías de Error:
+/// Categorías de error:
 /// <ul>
-/// <li><c>NotFoundException</c>: Entidad solicitada no existe (esta clase)</li>
-/// <li><see cref="ValidationException"/>: Fallos de validación de entrada</li>
-/// <li><see cref="TaskManagement.Domain.Exceptions.DomainException"/>: Violaciones de reglas de negocio</li>
+/// <li><c>NotFoundException</c>: Entidad solicitada no existe -esta clase-</li>
+/// <li>ValidationException: Fallos de validación de entrada</li>
+/// <li>TaskManagement.Domain.Exceptions.DomainException: Violaciones de reglas de negocio</li>
 /// <li>Otras excepciones: Fallos de infraestructura/técnicos</li>
 /// </ul>
 ///

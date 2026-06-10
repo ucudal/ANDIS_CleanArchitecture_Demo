@@ -20,7 +20,7 @@
 // - Los manejadores de MediatR usan servicios registrados
 //
 // Registro de Capa de Arquitectura:
-// - Capa de Dominio: IUnitOfWork
+// - Capa del dominio: IUnitOfWork
 // - Capa de Aplicación: ITaskRepository, IDomainEventDispatcher, MediatR, FluentValidation, ValidationBehavior
 // - Capa de Infraestructura: DbContext, Repositorios, Distribuidor de Eventos
 // - Capa de UI: Controladores, Middleware
@@ -28,7 +28,7 @@
 // Directrices de Raíz de Composición:
 // - La capa de UI puede hacer referencia a Infraestructura para registro de DI
 // - Infraestructura implementa interfaces de otras capas
-// - Las capas de Dominio y Aplicación permanecen independientes
+// - Las capas del dominio y Aplicación permanecen independientes
 // - Este archivo es el único lugar donde se hace referencia directa a Infraestructura
 //
 // pipeline de Middleware:
@@ -59,13 +59,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: true);
 
 const string connectionString = "Data Source=file:taskmanagement?mode=memory&cache=shared";
-builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
-{
+builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?> {
     ["ConnectionStrings:DefaultConnection"] = connectionString
 });
 
-builder.Services.AddSingleton<SqliteConnection>(_ =>
-{
+builder.Services.AddSingleton<SqliteConnection>(_ => {
     var connection = new SqliteConnection(connectionString);
     connection.Open();
     return connection;
@@ -87,10 +85,8 @@ var signingKeys = bearerSection
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
+    .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters {
             ValidateIssuer = !string.IsNullOrWhiteSpace(validIssuer),
             ValidIssuer = validIssuer,
             ValidateAudience = validAudiences.Length > 0,
@@ -116,8 +112,7 @@ builder.Services
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>()
     .AddControllers()
-    .AddJsonOptions(options =>
-    {
+    .AddJsonOptions(options => {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 var app = builder.Build();
@@ -129,8 +124,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configurar pipeline de middleware
-
-
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();

@@ -10,7 +10,7 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-csharp_new_line_before_open_brace = all
+csharp_new_line_before_open_brace = methods, types, control_blocks, lambda_expression_body, anonymous_method_expression_body
 csharp_new_line_before_else = true
 csharp_new_line_before_catch = true
 csharp_new_line_before_finally = true
@@ -30,9 +30,16 @@ csharp_space_between_parentheses = false
 csharp_space_before_colon_in_inheritance_clause = true
 csharp_space_after_colon_in_inheritance_clause = true
 csharp_space_around_binary_operators = before_and_after
+csharp_space_before_open_brace = false
 
-csharp_preserve_single_line_blocks = false
-csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+csharp_preserve_single_line_statements = true
+
+# Auto properties - fuerza una sola línea
+csharp_space_between_square_brackets = false
+csharp_style_expression_bodied_properties = true:warning
+csharp_style_expression_bodied_indexers = true:warning
+csharp_style_expression_bodied_accessors = true:warning
 
 dotnet_style_qualification_for_field = false:suggestion
 dotnet_style_qualification_for_property = false:suggestion
@@ -58,7 +65,7 @@ dotnet_diagnostic.IDE0017.severity = warning
 dotnet_diagnostic.IDE0028.severity = warning
 dotnet_diagnostic.IDE0032.severity = warning
 dotnet_diagnostic.IDE0044.severity = warning
-dotnet_diagnostic.IDE0055.severity = warning
+dotnet_diagnostic.IDE0055.severity = suggestion
 dotnet_diagnostic.IDE0060.severity = warning
 dotnet_diagnostic.IDE0160.severity = warning
 dotnet_diagnostic.IDE0161.severity = warning

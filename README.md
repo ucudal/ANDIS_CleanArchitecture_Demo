@@ -7,7 +7,14 @@
 <!-- markdownlint-disable-next-line MD025 -->
 # Demo de Clean Architecture
 
-[![Deploy to Pages](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml/badge.svg)](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml)
+[![Deploy to
+Pages](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml/badge.svg)](https://github.com/ucudal/ANDIS_CleanArchitecture_Demo/actions/workflows/pages.yaml)
+
+> [!IMPORTANT]
+> Comienza consultando 📖 [esta
+> documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo) que te
+> ayudará a entender la arquitectura navegando por el código. Todas las clases en
+> esta demo están documentadas para explicar su rol en la arquitectura.
 
 En [Clean
 Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
@@ -30,19 +37,14 @@ desarrollada usando Clean Architecture y es una versión extendida del ejemplo d
     production-ready guide.
     [Medium](https://medium.com/@michaelmaurice410/clean-architecture-in-net-a-complete-production-ready-guide-49dcbdb22166).
 
-> [!TIP]
-> Todas las clases en esta demo están documentadas para explicar su rol en la
-> arquitectura. Comienza consultando 📖 [esta
-> documentación](https://ucudal.github.io/ANDIS_CleanArchitecture_Demo)
-> que te ayudará a entender la arquitectura navegando por el código.
-
 Puedes probar la demo ejecutando los *request* del archivo
 [`TaskManagement.http`](./TaskManagement.http). Esas pruebas están automatizadas
-en el archivo [`./test/TaskManagment.Tests/TasksControllerTests.cs`].
+en el archivo
+[`./test/TaskManagment.Tests/TasksControllerTests.cs`](./test/TaskManagment.Tests/TasksControllerTests.cs).
 
-> [!IMPORTANT]
-> Esta demo tiene también [pruebas de
-> arquitectura](https://mareks-082.medium.com/architectural-tests-in-net-1bd5d19b0ba8)
-> usando
-> [ArchUnitNET](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://archunitnet.readthedocs.io/&ved=2ahUKEwjsoOGN8teUAxVJkZUCHYnuLqEQFnoECB4QAQ&usg=AOvVaw0Y0UC5cvTBUk-CvSEIotmP).
-> Esas pruebas están automatizadas en el archivo [`./test/TaskManagment.Tests/ArchitectureTests.cs`].
+Esta demo tiene también [pruebas de
+arquitectura](https://mareks-082.medium.com/architectural-tests-in-net-1bd5d19b0ba8)
+usando
+[ArchUnitNET](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://archunitnet.readthedocs.io/&ved=2ahUKEwjsoOGN8teUAxVJkZUCHYnuLqEQFnoECB4QAQ&usg=AOvVaw0Y0UC5cvTBUk-CvSEIotmP).
+Esas pruebas están automatizadas en el archivo
+[`./test/TaskManagment.Tests/ArchitectureTests.cs`](./test/TaskManagment.Tests/ArchitectureTests.cs).

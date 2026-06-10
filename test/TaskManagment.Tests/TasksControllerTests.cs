@@ -53,10 +53,10 @@ public class TasksControllerTests
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
-            Title: "Finish Clean Architecture demo",
-            Description: "Wire up in-memory SQLite and verify endpoint tests",
-            Priority: TaskPriority.High,
-            DueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
+            title: "Finish Clean Architecture demo",
+            description: "Wire up in-memory SQLite and verify endpoint tests",
+            priority: TaskPriority.High,
+            dueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
         );
 
         var request = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -95,10 +95,10 @@ public class TasksControllerTests
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
-            Title: "Test Task",
-            Description: "Test Description",
-            Priority: TaskPriority.Medium,
-            DueDate: DateTime.UtcNow.AddDays(7)
+            title: "Test Task",
+            description: "Test Description",
+            priority: TaskPriority.Medium,
+            dueDate: DateTime.UtcNow.AddDays(7)
         );
 
         var request = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -124,10 +124,10 @@ public class TasksControllerTests
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
-            Title: "",
-            Description: "Valid Description",
-            Priority: TaskPriority.High,
-            DueDate: DateTime.UtcNow.AddDays(7)
+            title: "",
+            description: "Valid Description",
+            priority: TaskPriority.High,
+            dueDate: DateTime.UtcNow.AddDays(7)
         );
 
         var request = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -157,10 +157,10 @@ public class TasksControllerTests
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
-            Title: $"Task with {priority} priority",
-            Description: "Test task for priority validation",
-            Priority: priority,
-            DueDate: DateTime.UtcNow.AddDays(7)
+            title: $"Task with {priority} priority",
+            description: "Test task for priority validation",
+            priority: priority,
+            dueDate: DateTime.UtcNow.AddDays(7)
         );
 
         var request = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -197,10 +197,10 @@ public class TasksControllerTests
     {
         // Arrange - Create a task first
         var createRequest = new CreateTaskRequest(
-            Title: "Task to Retrieve",
-            Description: "This task will be retrieved",
-            Priority: TaskPriority.Medium,
-            DueDate: new DateTime(2027, 6, 15, 10, 0, 0, DateTimeKind.Utc)
+            title: "Task to Retrieve",
+            description: "This task will be retrieved",
+            priority: TaskPriority.Medium,
+            dueDate: new DateTime(2027, 6, 15, 10, 0, 0, DateTimeKind.Utc)
         );
 
         var createHttpRequest = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -281,10 +281,10 @@ public class TasksControllerTests
     {
         // Arrange - Create a task first
         var createRequest = new CreateTaskRequest(
-            Title: "Task to Complete",
-            Description: "This task will be completed",
-            Priority: TaskPriority.High,
-            DueDate: DateTime.UtcNow.AddDays(3)
+            title: "Task to Complete",
+            description: "This task will be completed",
+            priority: TaskPriority.High,
+            dueDate: DateTime.UtcNow.AddDays(3)
         );
 
         var createHttpRequest = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -370,10 +370,10 @@ public class TasksControllerTests
     {
         // Arrange - Create and complete a task
         var createRequest = new CreateTaskRequest(
-            Title: "Already Completed Task",
-            Description: "This task is already completed",
-            Priority: TaskPriority.Low,
-            DueDate: DateTime.UtcNow.AddDays(1)
+            title: "Already Completed Task",
+            description: "This task is already completed",
+            priority: TaskPriority.Low,
+            dueDate: DateTime.UtcNow.AddDays(1)
         );
 
         var createHttpRequest = new HttpRequestMessage(HttpMethod.Post, "/api/tasks")
@@ -430,10 +430,10 @@ public class TasksControllerTests
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
-            Title: "Finish Clean Architecture demo",
-            Description: "Wire up in-memory SQLite and verify endpoint tests",
-            Priority: TaskPriority.High,
-            DueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
+            title: "Finish Clean Architecture demo",
+            description: "Wire up in-memory SQLite and verify endpoint tests",
+            priority: TaskPriority.High,
+            dueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
         );
 
         // Act 1 - Create Task
