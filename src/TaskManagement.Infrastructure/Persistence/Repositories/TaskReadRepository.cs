@@ -17,7 +17,7 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de Infraestructura</li>
-/// <li>Implementa interfaz ITaskReadRepository -definida en Capa de Aplicación-</li>
+/// <li>Implementa interfaz ITaskReadRepository -definida en capa de aplicación-</li>
 /// <li>Acceso a datos optimizado: Proporciona consultas eficientes de solo lectura</li>
 /// <li>Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación</li>
 /// </ul>
@@ -49,7 +49,7 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 ///
 /// Implementación:
 /// <ul>
-/// <li>Utiliza interfaz ITaskReadRepository de Capa de Aplicación</li>
+/// <li>Utiliza interfaz ITaskReadRepository de capa de aplicación</li>
 /// <li>Típicamente utiliza Dapper o Entity Framework con <c>AsNoTracking</c></li>
 /// <li>Devuelve IReadOnlyList< T > para operaciones de lectura</li>
 /// <li>Maneja paginación para conjuntos de resultados grandes</li>

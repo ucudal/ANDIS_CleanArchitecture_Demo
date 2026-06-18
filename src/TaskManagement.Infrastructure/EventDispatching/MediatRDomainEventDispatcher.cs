@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Events;
+using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.EventDispatching;
 
@@ -14,7 +15,7 @@ namespace TaskManagement.Infrastructure.EventDispatching;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de Infraestructura</li>
-/// <li>Implementa interfaz IDomainEventDispatcher -definida en Capa de Aplicación-</li>
+/// <li>Implementa interfaz IDomainEventDispatcher -definida en Capa de Dominio-</li>
 /// <li>Preocupación de infraestructura: Detalles de cómo se envían los eventos</li>
 /// <li>Desacopla lógica del dominio de mecanismos de manejo de eventos</li>
 /// </ul>

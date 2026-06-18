@@ -18,7 +18,7 @@ namespace TaskManagement.Application.Interfaces;
 /// <ul>
 /// <li>Optimizado para rendimiento de lectura -puede usar Dapper, SQL sin procesar, modelos de lectura-</li>
 /// <li>Independiente del repositorio de escritura <see
-/// cref="TaskManagement.Application.Interfaces.ITaskRepository"/></li>
+/// cref="TaskManagement.Domain.Interfaces.ITaskRepository"/></li>
 /// <li>Habilita el patrón CQRS para separar lecturas de escrituras</li>
 /// <li>Puede desnormalizar datos para eficiencia de consulta</li>
 /// <li>Habilita diferentes estrategias de optimización para lecturas vs escrituras</li>

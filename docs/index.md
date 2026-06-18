@@ -579,3 +579,167 @@ Esta demo permite entender los siguientes beneficios de Clean Architecture:
 
 * **Independencia**: La lógica de negocio está aislada de los
    [frameworks](#frameworks-utilizados).
+
+<!-- markdownlint-disable-next-line MD025 -->
+# Acerca de las pruebas de estabilidad
+
+## Principio de dependencias establas o SDP
+
+El concepto de estabilidad fue introducido por Robert C. Martin en el principio
+de dependencias estables o
+[**SDP**](https://objectmentor.com/resources/articles/stability.pdf) por *stable
+dependencies principle* en inglés.
+
+El principio dice:
+
+\note Las dependencias entre componentes en un diseño deben dirigirse en el
+sentido de la estabilidad de los paquetes. Un componente solo debe depender de
+componentes que sean más estables que él.
+
+En esta definición, ≪componente≫ significa ≪unidad de despliegue≫, por ejemplo,
+una DLL, un JAR, etc.
+
+En otras palabras, si un componente cambia con frecuencia -es decir, si es
+inestable- puede depender de otro que cambia poco -es decir, que es más
+estable-, pero no al revés. De lo contrario, cambios en un componente inestable
+podrían obligar a modificar componentes que deberían permanecer estables.
+
+Vean el siguiente diagrama. El componente `X` es un componente estable. Los
+componentes `A`, `B` y `C` dependen de `X`, por lo que `X` tiene tres razones
+para no cambiar, decimos que `X` es ≪responsable≫ por `A`, `B` y `C`. Por otro
+lado, `X` no depende de ningún otro componente que pueda obligarlo a cambiar,
+decimos que es ≪independiente≫.
+
+![](https://www.plantuml.com/plantuml/png/TP2n3i8W48Ptdk9Izzh9gMaAn4vEng4hQOanKguvw62Cxow2RHYKuVBVztDtkMkTL-INoJ1ME_ymkc4GtXdHmpFAb2vsb4XM4rGR5MguNobP1WakfAoR5Mdhjp_Qw2daMI-03grF5RkgEXnvbta2QTJqpptThFxjlLYAzVwx1Hjmcj5-PXUy0EM0vqX4978a8v8vwYFg6OUoR9eWn2haAbYhxHZkzmO0)
+
+\note En este contexto, que un componente sea **estable**, significa que es
+resistente a los cambios -o que tiene razones para no cambiar- debido a las
+dependencias que otros componentes tienen sobre él.
+
+Vean ahora este otro diagrama a continuación. El componente `Y` es un componente
+muy inestable. Como ningún otro componente depende de `Y`, decimos que es
+≪irresponsable≫. Pero `Y` depende de los componentes `D`, `E` y `F`, por lo que
+`Y` tiene tres posibles orígenes externos de cambios: cambios en cualquiera de
+estos componetes podrían hacer que `Y` cambie. Decimos que `Y` es ≪dependiente≫.
+
+![](https://www.plantuml.com/plantuml/png/TP0n3u8m48Nt_eeBxiZaH0WKON8o3ZWsS356k99h6OpnlrifaYPgXykxxxrhSysDLModeHSYDVRUOoR0dQFM5XwpzEr4NQcPa25PgLJjxSBUwZN3YHMPKJ6INJFOu-3wu2w0MfFr4viasLL57NXISuVypprS2NzxJ-5hkbss4AqUHatljwDp1Cf04wBzZ8eGLJEItwbID137MURYYv0VKGgH8tNk_ru0)
+
+\note En este contexto, que un componente sea **inestable**, quiere decir que es
+libre para cambiar -o que no hay razones para impedir cambios- porque ningún
+otro componente depende de él.
+
+Una forma de medir la estabilidad de un componente es contar las referencias que
+entran y que salen del componente:
+
+* **Fan-in**: dependencias entrantes. Es el número de tipos -clases, interfaces,
+  etc.- fuera del componente que dependen de tipos dentro del componente.
+
+* **Fan-out**: dependencias salientes. Es el número de tipos dentro del
+  componente que dependen del tipos fuera del componente.
+
+* **Instability**: $I = \frac{\text{Fan-out}}{\text{Fan-in} + \text{Fan-out}}$.
+  Varía entre 0 y 1. La inestabilidad es mínima -$I = 0$-, es decir, el
+  componente tiene muchos motivos para no cambiar, cuando otros componentes
+  dependen de él -$Fan-in > 0$-, pero él no depende de ningún otro -$Fan-out =
+  0$-; en ese caso componente es independiente. La inestabilidad es máxima —$I =
+  1$—, es decir, el componente no tiene razones para que no pueda cambiar,
+  cuando ningún otro componente depende de él -$Fan-in = 0$-, pero él depende de
+  otros componentes -$Fan-out > 0$-; en este caso el componente es irresponsable
+  y dependiente.
+
+El principio de dependencias estables dice que la métrica $I$ de un componente
+debe ser mayor que la de los componentes de los que depende; dicho de otra
+forma, la métrica $I$ decrece en la dirección de la dependencia.
+
+![](https://www.plantuml.com/plantuml/png/XP0z3u9038Rt-nKDxdWkJaZW32GaJiR1mUM4nXYF7Yd7O8p_tHCK6JHsQDxswKVQf7MQNLSR8QBMNGt60hnjhNLmw-KGTbIjBHCoo36hT7avyO2CPTYnfhRHZEJ66ZHO-tWo2o2tv8QEcPJBBCqdJ5cka7_HpPdmExkBmKVprnMYj7LZwRaxA0ZzcKU31ofMYm1q2-aVhgOy-r3PqxqGAOHX77kbta8aI9N_v0C0)
+
+El diagrama anterior muestra una situación ideal: los componentes inestables
+dependen de un componente estable. Ahora bien, supongan que un nuevo componente
+`Flexible` ha sido diseñado para ser fácil de modificar, es decir, para que sea
+inestable. Por alguna razón, en el componente `Estable` se agrega una referencia
+a `Flexible`. Esto viola el principio de dependencias estables porque
+necesariamente la métrica de inestabilidad de `Flexible` es mayor que la de
+`Estable` que es cero; como consecuencia, `Flexible` ya no sería tan fácil de
+modificar.
+
+![](https://www.plantuml.com/plantuml/png/XT2z2i8m403WFKznsBtMnKcBhHWeE8c3e0xH7YAcbt99GH7VtTZuqq4nGxZBTvTmcLYds3ML5c9atKLZAi2lXJ4EhcqOqeRAgM52XkHzcglzwS21j65OiY9RAqPoxnhKMFcySnU0DEH2HvGamracEvORBf5_wVn8-Drk8koZ_dCAiJTLRUZnTgyWz6FkD6we60zwe2naVppl-koZIQkhhagDvwFdLgGG6SHnclgQ_1Mi85v7ZENsaVgA2LBfl_mE)
+
+Para resolver el problema, se utiliza el principio de inversión de dependencias.
+Supongan que la dependencia de `Estable` a `Flexible` se genera por una
+dependencia entre una clase `Consumer` en `Estable` y una clase `Provider` en
+`Flexible`, tal como se muestra en el diagrama a continuación.
+
+![](https://www.plantuml.com/plantuml/png/TP71IWCn48RlynJ3zgvxybINsgKBWWSH2u9wIBD33IOpooIhBT9tDpQbhA0vXCp_vvlCJ1On6KrZy03pcFQU6i2y7aGIVXsF9HovRqMP5EkpkZJsVQl5ygBug8RZO9GudU-Gfv3ZIIx4JZWLObRNLwkRRk8jHNlI_zmxn_ItTu2opozFNO3nNZw3spdUmflh2IaCQO-1meOq5iawjPu0h8H1-AVEQfK7il7qmhVNTOKcujEfTkjDZ5Yrmd4Cf4Tl3OSfstdQkG8t1Uv-m_Sg7_dT0hSPXZLUFC-K-jUcoG8iYFly6Ty0)
+
+El principio de inversión de depdencias dice que `Consumer` -que es concreta- no
+puede depender de `Provider` que también es concreta; debe depender de una
+abstracción. Definimos entonces una interfaz `IProvider` que tenga todos los
+atributos y métodos que `Consumer` necesita en un nuevo componente
+`Abstractions`. Luego la clase `Consumer` referencia esa interfaz y la clase
+`Provider` la implementa.
+
+![](https://www.plantuml.com/plantuml/png/TL7DIyCm5B_dhtZK--p9KotxO8M2Xo8E5BoawNC6avVoakc6xdytNSfOnUKGydvV_9BCVP0STjO8KVXmC5WAYElHkG3VfsCQTzIj71Cov6TqATN7bXDb7CCJI_AzPAHmrg116-UBB83AKKYEcpo_Mo-g2sxfk4E-nZveml-veqXxSJlUGaXZt9VLUqrRyQux1BHzE815soBx12dDog0GojdUqT0pMyS7QGs-KdsVPo0zF8_TbP7UGxPov7SM-SHjn75YNhG-i5H1Hr5AYAANCK1JG7wJ2Y6h6tQViK1AgPi_CPN1lKubobIYcfQOs5U3UmEpiXoIwWQAdzaiecAErCMV_GK0)
+
+Ahora, con ese cambio, tanto `Consumer` como `Flexible` dependen de
+`Abstractions` que es estable -$I=0$-. Noten que luego de este cambio la
+inestabilidad decrece desde `Flexible` -$I=1$- hacia `Abstractions` -$I=0$-,
+cumpliendo el principio de dependencias estables.
+
+## El principio de abstracciones estables
+
+Algunas piezas del software no van a variar frecuentemente; estas piezas
+representan decisiones de alto nivel sobre arquitectura y políticas. No es
+deseable que estas decisiones de arquitectura y del negocio sean volátiles, por
+lo que deberían estar en [componentes estables](link a SDP) -con $I = 0$-. Los
+componentes inestables -con $I = 1$- deberían contener piezas de software que
+sean volátiles, es decir, que se puedan cambiar fácil y rápidamente.
+
+Pero si estas piezas de alto nivel estan en componentes estables, van a ser
+difíciles de cambiar. Esto puede resultar en una arquitectura inflexible.
+
+¿Cómo puede un componente que es máximamente estable -con $I = 0$- ser lo
+suficientemente flexible como para soportar cambios? La respuesta está en el
+[principio
+abierto-cerrado](https://github.com/ucudal/PII_Guias/blob/main/OCP.md). Este
+principio dice que es posible y deseable que las clases sean lo suficientemente
+flexibles como para ser extendidas sin que tengan que ser modificadas. Las
+clases abstractas -o las interfaces, e incluso los tipos genéricos- cumplen con
+este principio.
+
+El principio de abstracciones estables, o
+[**SAP**](https://objectmentor.com/resources/articles/stability.pdf) por *stable
+abstractions principle* en inglés, fue introducido por Robert C. Martin. El
+principio dice:
+
+> Los componentes que sean máximamente estables deben ser máximamente
+> abstractos. Los componentes inestables deben ser concretos. La abstracción de
+> un componente debe ser proporcional a su estabilidad.
+
+El principio establece una relación entre la estabilidad y el nivel de
+abstracción de un componente. Por un lado, plantea que un componente estable
+debería ser también abstracto, de modo que su estabilidad no se convierta en un
+obstáculo para su extensión. Por otro lado, sostiene que un componente inestable
+debería ser concreto, ya que precisamente su inestabilidad facilita la
+modificación del código específico que contiene.
+
+Combinando el *SAP* y el [*SDP*](link to sdp) llegamos al
+[*DIP*](https://github.com/ucudal/PII_Guias/blob/main/DIP.md) para componentes.
+El *SDP* nos dice que las dependencias deben ir en dirección de la estabilidad y
+el *SAP* nos dice que la estabilidad implica abstracción, por lo que las
+dependencias deben ir en dirección de la abtracción.
+
+El *DIP* aplica a tipos que bien son abstractos o bien son concretos
+-en este contexto, son tipos abstractos las clases abstractas, las
+interfaces y los tipos genéricos-. En cambio, tanto el *SDP* como el *SAP*
+aplican a componentes, que pueden ser parcialmente abstractos o parcialmente
+concretos.
+
+¿Cómo medimos la abstracción? La métrica $A$ de abstracción de un componente se
+define como $A = N_a / N_c$, donde $N_a$ es el número de tipos abstractos y
+$N_c$ es el total de tipos.
+
+```mermaid
+xychart-beta
+    x-axis "I" [0, 0.5, 1]
+    y-axis "A" 0 --> 1
+```
