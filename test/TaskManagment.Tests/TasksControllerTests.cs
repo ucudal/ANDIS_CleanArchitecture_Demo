@@ -19,7 +19,7 @@ public class TasksControllerTests
 {
     private WebApplicationFactory<Program> _factory = null!;
     private HttpClient _httpClient = null!;
-    private readonly string _bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZtYWNoYWRvIiwic3ViIjoiZm1hY2hhZG8iLCJqdGkiOiIzNDlkMGE0ZSIsIm5hbWVpZCI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsIm5hbWUiOiJkZXYtdXNlciIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiaHR0cDovL2xvY2FsaG9zdDo1MDAwIl0sIm5iZiI6MTc3OTgyNTgwMCwiZXhwIjoxNzg3Nzc0NjAwLCJpYXQiOjE3Nzk4MjU4MDAsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ._nxUZlzDMQkpYzvJ6Tsa5wka8XQ6H_bD-Twg04bY7qM";
+    private static string _bearerToken => BearerToken.Value;
 
     [SetUp]
     public void Setup()
@@ -29,6 +29,9 @@ public class TasksControllerTests
             {
                 // Disable HTTPS redirect for testing
                 builder.UseSetting("https_port", "");
+                // Mostrar los mensajes de los manejadores de eventos del dominio; se ven con
+                // dotnet test --logger "console;verbosity=detailed"
+                builder.UseSetting("Logging:LogLevel:Default", "Information");
             });
         _httpClient = _factory.CreateClient();
     }

@@ -41,7 +41,7 @@ namespace TaskManagement.Domain.Entities;
 ///
 /// Dependencias:
 /// <ul>
-/// <li>Solo depende de otros tipos de la capa del dominio -verDomainEvent,
+/// <li>Solo depende de otros tipos de la capa del dominio -ver DomainEvent,
 /// Result, TaskErrors, etc.-</li>
 /// <li>Sin dependencias en capas de infraestructura o aplicación -respetala
 /// dirección de las dependencias en Clean Architecture-</li>

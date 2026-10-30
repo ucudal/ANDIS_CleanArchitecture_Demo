@@ -1,8 +1,6 @@
 # Universidad Católica del Uruguay
 
-## Facultad de Ingeniería y Tecnologías
-
-### Análisis y diseño de aplicaciones II
+## Análisis y diseño de aplicaciones II
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Demo de Clean Architecture

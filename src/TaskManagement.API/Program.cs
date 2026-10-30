@@ -49,6 +49,7 @@ using TaskManagement.API.Middleware;
 using TaskManagement.Application.Behaviors;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Interfaces;
+using TaskManagement.Infrastructure.Email;
 using TaskManagement.Infrastructure.EventDispatching;
 using TaskManagement.Infrastructure.Persistence;
 using TaskManagement.Infrastructure.Persistence.Repositories;
@@ -103,7 +104,9 @@ builder.Services.AddAuthorization();
 
 // Agregar servicios al contenedor
 builder.Services
-    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly))
+    .AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
+        typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly,
+        typeof(MediatRDomainEventDispatcher).Assembly))
     .AddValidatorsFromAssembly(typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly)
     .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
     .AddDbContext<TaskDbContext>(options =>
@@ -112,6 +115,7 @@ builder.Services
     .AddScoped<ITaskRepository, TaskRepository>()
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>()
+    .AddScoped<IEmailService, LoggingEmailService>()
     .AddControllers()
     .AddJsonOptions(options => {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
