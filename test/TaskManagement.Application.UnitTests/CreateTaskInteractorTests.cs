@@ -52,4 +52,17 @@ public class CreateTaskInteractorTests
         Assert.That(_unitOfWork.SaveCount, Is.Zero);
         Assert.That(_dispatcher.Events, Is.Empty);
     }
+
+    [Test]
+    public async Task ExecuteAsync_WithUndefinedPriority_PresentsErrorAndSavesNothing()
+    {
+        var input = new CreateTaskInput("Title", "Description", (TaskPriorityLevel)99, null, Guid.NewGuid());
+
+        await _interactor.ExecuteAsync(input);
+
+        Assert.That(_presenter.Errors, Does.Contain("Priority is not valid."));
+        Assert.That(_presenter.Output, Is.Null);
+        Assert.That(_repository.Tasks, Is.Empty);
+        Assert.That(_unitOfWork.SaveCount, Is.Zero);
+    }
 }

@@ -21,7 +21,7 @@
 // - Los presenters son Scoped: el interactor escribe en la misma instancia que lee el controlador
 //
 // Registro de Capa de Arquitectura:
-// - Capa de aplicación: interactores, decoradores y los puertos IUnitOfWork, ITaskRepository,
+// - Capa de aplicación: interactores y los puertos IUnitOfWork, ITaskRepository,
 //   IDomainEventDispatcher
 // - Capa de infraestructura: DbContext, Repositorios, Distribuidor de Eventos
 // - Capa de UI: Controladores, Presenters, Middleware
@@ -116,13 +116,10 @@ builder.Services
     .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
     .AddScoped<IDomainEventSubscriber<TaskCompletedEvent>, TaskCompletedNotificationHandler>()
     .AddScoped<IEmailService, LoggingEmailService>()
-    // Crear tarea: el puerto de entrada es el decorador que valida y luego llama al interactor.
+    // Crear tarea
     .AddScoped<CreateTaskPresenter>()
     .AddScoped<ICreateTaskOutputBoundary>(sp => sp.GetRequiredService<CreateTaskPresenter>())
-    .AddScoped<CreateTaskInteractor>()
-    .AddScoped<ICreateTaskInputBoundary>(sp => new ValidatingCreateTaskInteractor(
-        sp.GetRequiredService<CreateTaskInteractor>(),
-        sp.GetRequiredService<ICreateTaskOutputBoundary>()))
+    .AddScoped<ICreateTaskInputBoundary, CreateTaskInteractor>()
     // Completar tarea
     .AddScoped<CompleteTaskPresenter>()
     .AddScoped<ICompleteTaskOutputBoundary>(sp => sp.GetRequiredService<CompleteTaskPresenter>())

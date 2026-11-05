@@ -1,13 +1,12 @@
-using ArchUnitNET.Domain;
 using ArchUnitNET.Loader;
 using Ucu.Andis.ArchitectureMetrics;
 
-namespace TaskManagment.Tests;
+namespace TaskManagement.Architecture.Tests;
 
 [TestFixture]
 public class StabilityMetricsTests
 {
-    private static readonly Architecture Architecture = new ArchLoader()
+    private static readonly ArchUnitNET.Domain.Architecture Architecture = new ArchLoader()
         .LoadAssemblies(
             typeof(TaskManagement.Domain.Entities.TaskItem).Assembly,
             typeof(TaskManagement.Application.Commands.CreateTaskInteractor).Assembly,

@@ -18,7 +18,8 @@ namespace TaskManagement.Application.Commands;
 ///
 /// Flujo:
 /// <ol>
-/// <li>Crea la entidad, que valida sus invariantes</li>
+/// <li>Traduce la prioridad del DTO a la del dominio; si no es válida, presenta el error y termina</li>
+/// <li>Crea la entidad, que valida sus invariantes: es la única dueña de esas reglas</li>
 /// <li>Si alguna regla no se cumple, presenta los errores y termina</li>
 /// <li>Persiste la tarea y confirma la unidad de trabajo</li>
 /// <li>Publica los eventos del dominio, después de persistir</li>
@@ -48,10 +49,16 @@ public sealed class CreateTaskInteractor : ICreateTaskInputBoundary
     {
         ArgumentNullException.ThrowIfNull(input);
 
+        if (!TryToDomainPriority(input.Priority, out var priority))
+        {
+            _output.PresentValidationErrors(["Priority is not valid."]);
+            return;
+        }
+
         var createResult = TaskItem.Create(
             input.Title,
             input.Description,
-            ToDomainPriority(input.Priority),
+            priority,
             input.DueDate,
             input.CreatedBy);
         if (createResult.IsFailure)
@@ -70,11 +77,15 @@ public sealed class CreateTaskInteractor : ICreateTaskInputBoundary
         _output.PresentSuccess(new CreateTaskOutput(task.Id));
     }
 
-    private static TaskPriority ToDomainPriority(TaskPriorityLevel priority) => priority switch
+    private static bool TryToDomainPriority(TaskPriorityLevel level, out TaskPriority priority)
     {
-        TaskPriorityLevel.Low => TaskPriority.Low,
-        TaskPriorityLevel.Medium => TaskPriority.Medium,
-        TaskPriorityLevel.High => TaskPriority.High,
-        _ => throw new ArgumentOutOfRangeException(nameof(priority), priority, "Unknown priority.")
-    };
+        priority = level switch
+        {
+            TaskPriorityLevel.Low => TaskPriority.Low,
+            TaskPriorityLevel.Medium => TaskPriority.Medium,
+            TaskPriorityLevel.High => TaskPriority.High,
+            _ => default
+        };
+        return Enum.IsDefined(level);
+    }
 }

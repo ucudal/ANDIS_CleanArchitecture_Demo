@@ -24,8 +24,8 @@ namespace TaskManagement.API.Requests;
 /// anotaciones de datos</a></li>
 /// <li>Controlador transforma a <c>CreateTaskInput</c></li>
 /// <li>Controlador llama a ICreateTaskInputBoundary</li>
-/// <li>ValidatingCreateTaskInteractor valida la entrada</li>
-/// <li>CreateTaskInteractor ejecuta el caso de uso y la lógica del dominio</li>
+/// <li>CreateTaskInteractor ejecuta el caso de uso</li>
+/// <li>La entidad TaskItem valida las reglas del dominio</li>
 /// </ol>
 ///
 /// Beneficios de DTO de Entrada:

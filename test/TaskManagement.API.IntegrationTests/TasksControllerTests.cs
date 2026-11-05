@@ -7,7 +7,7 @@ using TaskManagement.API.Requests;
 using TaskManagement.API.ViewModels;
 using TaskManagement.Application.Common;
 
-namespace TaskManagment.Tests;
+namespace TaskManagement.API.IntegrationTests;
 
 /// <summary>
 /// <c>TasksControllerTests</c> contiene pruebas de integración para los

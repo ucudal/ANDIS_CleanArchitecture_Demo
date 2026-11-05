@@ -1,4 +1,4 @@
-namespace TaskManagment.Tests;
+namespace TaskManagement.API.IntegrationTests;
 
 /// <summary>
 /// <c>BearerToken</c> obtiene el token JWT usado por las pruebas de

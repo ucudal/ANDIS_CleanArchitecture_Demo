@@ -1,5 +1,5 @@
 # Estas pruebas manuales están automatizadas en
-# ./test/TaskManagment.Tests/TasksControllerTests.cs.
+# ./test/TaskManagement.API.IntegrationTests/TasksControllerTests.cs.
 
 @host = https://localhost:5001
 

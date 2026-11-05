@@ -38,15 +38,19 @@ desarrollada usando Clean Architecture y es una versión extendida del ejemplo d
 Puedes probar la demo ejecutando los *request* del archivo
 [`TaskManagement.http`](./TaskManagement.http). Esas pruebas están automatizadas
 en el archivo
-[`./test/TaskManagment.Tests/TasksControllerTests.cs`](./test/TaskManagment.Tests/TasksControllerTests.cs).
+[`./test/TaskManagement.API.IntegrationTests/TasksControllerTests.cs`](./test/TaskManagement.API.IntegrationTests/TasksControllerTests.cs).
 
 Esta demo tiene también [pruebas de
 arquitectura](https://mareks-082.medium.com/architectural-tests-in-net-1bd5d19b0ba8)
 usando
 [ArchUnitNET](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://archunitnet.readthedocs.io/&ved=2ahUKEwjsoOGN8teUAxVJkZUCHYnuLqEQFnoECB4QAQ&usg=AOvVaw0Y0UC5cvTBUk-CvSEIotmP).
 Esas pruebas están automatizadas en el archivo
-[`./test/TaskManagment.Tests/ArchitectureTests.cs`](./test/TaskManagment.Tests/ArchitectureTests.cs).
+[`./test/TaskManagement.Architecture.Tests/ArchitectureTests.cs`](./test/TaskManagement.Architecture.Tests/ArchitectureTests.cs).
 
 Las reglas de negocio y los casos de uso tienen pruebas unitarias que no usan
 base de datos ni servidor web, en
-[`./test/TaskManagement.Application.UnitTests`](./test/TaskManagement.Application.UnitTests).
+[`./test/TaskManagement.Domain.UnitTests`](./test/TaskManagement.Domain.UnitTests)
+y
+[`./test/TaskManagement.Application.UnitTests`](./test/TaskManagement.Application.UnitTests),
+respectivamente. Hay un proyecto de pruebas por capa y las referencias de cada
+uno impiden que una prueba use algo de un círculo exterior.

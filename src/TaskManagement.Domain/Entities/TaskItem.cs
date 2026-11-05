@@ -103,7 +103,7 @@ public class TaskItem
     {
         ArgumentNullException.ThrowIfNull(description);
 
-        var validation = Validate(title, description, dueDate);
+        var validation = Validate(title, description, dueDate, createdBy);
         if (validation.IsFailure)
             return Result.Failure<TaskItem>(validation.Errors);
         var task = new TaskItem {
@@ -184,7 +184,7 @@ public class TaskItem
 
     private void AddDomainEvent(DomainEvent eventItem) => _domainEvents.Add(eventItem);
 
-    private static Result Validate(string title, string description, DateTime? dueDate)
+    private static Result Validate(string title, string description, DateTime? dueDate, Guid createdBy)
     {
         var errors = new List<string>();
         if (string.IsNullOrWhiteSpace(title))
@@ -195,6 +195,8 @@ public class TaskItem
             errors.Add("Description cannot exceed 2000 characters.");
         if (dueDate.HasValue && dueDate.Value < DateTime.UtcNow.Date)
             errors.Add("Due date cannot be in the past.");
+        if (createdBy == Guid.Empty)
+            errors.Add("CreatedBy is required.");
         return errors.Count > 0
             ? Result.Failure(errors)
             : Result.Success();

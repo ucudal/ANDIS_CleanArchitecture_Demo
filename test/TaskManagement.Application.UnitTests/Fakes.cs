@@ -100,14 +100,3 @@ internal sealed class FakeGetTaskByIdPresenter : IGetTaskByIdOutputBoundary
 
     public void PresentNotFound(string message) => NotFoundMessage = message;
 }
-
-internal sealed class SpyCreateTaskInputBoundary : ICreateTaskInputBoundary
-{
-    public bool WasCalled { get; private set; }
-
-    public Task ExecuteAsync(CreateTaskInput input, CancellationToken cancellationToken = default)
-    {
-        WasCalled = true;
-        return Task.CompletedTask;
-    }
-}

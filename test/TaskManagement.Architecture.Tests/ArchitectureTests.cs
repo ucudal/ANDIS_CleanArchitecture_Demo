@@ -1,9 +1,8 @@
-using ArchUnitNET.Domain;
 using ArchUnitNET.Loader;
 using ArchUnitNET.NUnit;
 using static ArchUnitNET.Fluent.ArchRuleDefinition;
 
-namespace TaskManagment.Tests;
+namespace TaskManagement.Architecture.Tests;
 
 /// <summary>
 /// Tests de arquitectura para asegurar la aplicación de los principios de Clean
@@ -14,7 +13,7 @@ namespace TaskManagment.Tests;
 [TestFixture]
 public class ArchitectureTests
 {
-    private static readonly Architecture Architecture = new ArchLoader()
+    private static readonly ArchUnitNET.Domain.Architecture Architecture = new ArchLoader()
         .LoadAssemblies(
             typeof(TaskManagement.Domain.Entities.TaskItem).Assembly,
             typeof(TaskManagement.Application.Commands.CreateTaskInteractor).Assembly,

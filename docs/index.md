@@ -66,7 +66,7 @@ Traduciendo la terminología de C4 a .NET, los componentes son las clases -las
 clases definen tipos-.
 
 ![Task Management
-Components](https://www.plantuml.com/plantuml/png/ZHRBRXityEwlcEgK08QQGtffYoAsfJO2ubZn8pqQezsHmeHBRackRA7eL-KJycET8VUfNRKnO8dpVi_eZG_eGbLek7hzU6MBqXeouN6XSEUmEFj1cKnNES6lLwz_x7FCIvRvxUpAce3Aa7kyj9N9qHrUOAdEONQF_iir6jnH8TmNwzNi9Vnz1lpNwdXHg3pNz8IEM6Bvd54Pb3Nm5askbTd1TKkVCSF5tNh-VddFyewEIEp6Nf4B15lK6ZsmIxuaXpc_oK1bW9op3dvwzMhsyiYBZ6DmLcjojTyUhbhKoF2Gj7mM9MmYBwqomSFjykuUIdG8E_91VVjgWBF7EIRq8ykb8y_Vv3ohMhU0ABwfGba5QB8A5pcM3OrTyC5L1mwCPSgA3N6OR-_lrt00piCJ53OdBVR-cQvGEL6XijGgGod0HAKsILQHU7hP0kBDshgG7XLNm7g9bqKaz-mE0nwruZU_Ci5bwAq0bRSJfIWABhwFGQQdQ5v9MZ0BjewVanb8_Ey8vr6BfcFyoCHVx6KAuqDwJHZuWu9ekJoiyl_Gj8znIS9Ov6CBY885PTQX2FL8PZVb-4WjxVapZa3gYwN0q21YFtQbWhNbvs5MrxF9GVxU1hMjUMhHSVT9uVe5h7kkXLUYyfPAwnKxUZY7rODHuMRxftLV65WMgFGTkRtAU7xdy_cfViijSvfnooqYVgBR-5-5LAHb_OnPZVnmdPgxrhSAL02FCEXlNtSSiRIMePtDb9sgM4Ktcy-KnS0_2WWrF6c0WqzJYKPio8AA3QvFceZLyvskMBseAzLnNMsqyf-u6TgQnQR88_aS1bMCk5DPLMRhS9pKbQ1bFMIXukKuJgvh2feIVDi3Omum85na6VdK0-9AaJ9mr0z03GRp3ZlAY9DPo9Ef-8gjTdlTJtnI8zIVGIElomr_fbMyLxpTW7iLEEiiDjAVRoGvz1p4-URTs61mgtQLQoSpzjC1VkVZHa_Snt6f_mAg3RFVvDFLNIXVOiW-nNlHBpDqbAxW3QwkEDjtj4FGt4TH6tyZ-Ce3RplwZ3cxCpuKD1YrMPmygE5qXdYT61pWLhsG-gCwxAV5XXF8t7SVtYa-drBz3Vge8A7Ymj45PcHujh1UyEr1koKzEEE3Oxeq-uhqdcg-FcrmK1uyLtXqFIQa1WVp7P4qIti2Q_u-py1ABo4zO-awrRBzbJwGJGjTVaSaqIatczDrokY1Jrx3tLwXxs7kLFSMuyC4kTde3sCxOzBHdVbVXdQpyRndlFgu7LhErgsMQLb8xoJoSECqXhfWQxRU89_a6GtWQSx1o7o_mkFpkp9xc-5a9Drcwtv_fhKbHsbIfB-ikapti74OrsoQrvwq67EyuL-N_6Fxx5y)
+Components](https://www.plantuml.com/plantuml/png/ZLRDRXit4BxxAQOw9O2Xvf1UsgA8BMyR0N6io79xD4RSaSA4Isv9hcmXw5Fb4V9Y7PBxgrsrCM2970xdz-CtUkCyMbyL2XQl7nUcA8qcxHzl9Euj5XS_I2rKbHFykdZzOrzZNlATtouMHdkKckpZjQbqZlRu0ajv2RCDki-tg75FHT2-MYrdB-7B1V1VQ-D58VDSqHDQuXlPiw3IIwFXBUfSIRs7s_PynWfNzwlv-sp3zosT774O1qdM4-nGANJ08RcIBEQy9WsL1hBMMFZfrQlPovCe1ETWZL9awxWTB5hHoF7mA7iEHjX5NXgflODrTh-14Yt2dfoNtxvguEfnZGdTo7DfoV4tMSUcLkqc6BwhV5bvQAeALpcMpHc7uBojZfmOtoahTiHfljriLd04hiCJ52Od5VpzCzsXSg93PQcamD20YKvjqrr98TBhTXEYMHdhqwBY3XWNykKheVOS3cySAibhNeaW4-XCs5JEJBIYABZvBYQPbi7oCfG5XJTr_bnCJo7-xk0oMb5qAX-v-9kZJ6byIAi91t-G3rQkZylyFopHWJyZLbC3ix27HX21qzKKLeQNnrbT-2RO_BtnSbVhr5V7C0aLxbUw1aUxNmQJQogDanpeyHAM3rhwkzrVndxcJLQWLFTa3rBmGvlFv-U0aHlMr6Dit4Jv12puN_fKpQnUXdYIFjmc5DRsbfuAuBS6wjlNFMSSCA1fRuGSu-20ggAxxISICV4_mnRg_QG3JZuz7zJ1Hs2IY4HrraNidkjinUv5MwcFgsghfFl8DDJsBC8kZyUNCEXYb9shgjGxY-EYBeCul6FXAsQnSN5jqz1Ku7Ll6sk07k5A27890o6K8bNW10z0ZGJpJZggY2LXR9vSnLM4slgsN_Xa9fp-30gPrxRycJZp89c6WB4AN7M-DhAVRqDnwDc7u9jruuEtExclR2AW1az7-9sd43qnZYFx_WAoJRCFykdktaXNeXSV8x7tsmpTITVmHbPtdFrRsYCenb6qnjy8hdB0j4IVCETmnenEWwSsYoyFwdsQ5qmd6WUoPI-b_bCTukbcomLaxViFxoJFkT3zBRfe88aYuQW21Mb-MrWpSJjvrgG6ytOmzJ9zg4WTgDRhdmsO_y5nXqSqFt5hCDdU4GMmjBEgrk_h3Bpq2j9pbiP8wwiP5ETk7dd0DDejvt-FScUwnsuF4ySDBJ-C_OoFJeR5_ogqzCIFLZ1_SKzRpJQiLYah0W3IyP0s6aTTihLQxpMUrHczelEQ0zn_ly7J6RhK1oDmCfEEdhfVUubxmcIPlD9ddAxIFMbyKIjspTmLuCmQR_Yt7F-qlVWN)
 
 Puedes ver claramente como las clases en los contenedores mantienen las
 referencias del diagrama de contenedores, es decir, "de arriba hacia abajo".
@@ -80,7 +80,7 @@ En este caso usamos un diagrama de clases -parcial- mostrando algunas de las
 clases involucradas en la creación de una tarea.
 
 ![Task Management
-Components](https://www.plantuml.com/plantuml/png/nLVRSjem47ttLsZoKj86Fg33a12W6S-aXI6qVLRa3L4naYl9D4oIVwyk5iZ6DccQJfyOhSxkdhsmArz8XONArsaKPPYiy1BGoPYlCMNe6cz1d20iKI5uZ10YAPOIdIomNCKArYUetmUcgDeE1lOUeGyeJj17T9NJf3Wlg4f1YwGIb2qBuHWa4JHJbBFgrKnGBhH9BJT-_D4hvZ36ojWpFmkwXlFYPYH0IvAX2kxALvVRCZCNs6IZGv3w9fu3JgOitOvucW8ntFe1P51eFUgSAKgU2wiTPU8xGya-eZEK5QIrsF4zGyHpEDMkvY3pLFLz7htfKGfOXAmw1hpXbl5pj2z0WB4riFnS2KAOiL_4NekrvJ4SNbAocYHQNrKdgFiq25CRFGVDDSoob19iwxxli50Qj9cpQWcoBBVinujfoFrjMkjQvoHzQNyTn7z0TfghUhQLJ5jjoXI8EqnqRk9Al9SyPmaMMsE96W7Ak0XBDta0aYiOoYqZ7OlGROOPWJIrkLpm5R3J8jXsXuvpw95RITNbJ83KDRt92G4fEmuKD6c0-OPJcbWU4o6ua1smFmqT7SQk2MAYk721-zFV1buuyhJOiibb0eGB_0OUmrGR-HmoBgast9BWOP8u9qehjFimy2jGbzkuKA59Yy9ks9mFwlW5VzWnbHbMv1v4CqsFSOxjJ95_c96lZAhftNSkLirkRl06HlUOBK4wJytXKJUXdqlZ9cPt0kiHa1EL2mWcJkMYijlAXLhgBlc5j_-fI2LQkZ4JGsaw_upuxG-zf09MkyNqIV3rnAvbIz0RT-f-6F42uM-DrngVuziHrqLxKFMPU4s1zWvYDXFS39B6xZlq-9hEAssWMHnk7dsg55-QW8Lv0bW6P7SAI1IhNy3F7AJootrXko5pumz4MvtZeNrVk7V0e74MphmjmsHdE23Y39Z7IsZmtmnhJV4Tca-kXuju-kKcgkGAzNe3rBJ2j9bSubgLYeP6ccGUWUxoek4fGDIuoL3_gTThKAJhB8MrFk4eQYHUqTzlYhA1TltsdLEsT0JRxRPcsUskAAhLjHKgpxUYCCtm_PG-2gtz4n_LQgpS4SMgdc-SHWK_v3mmggR2bkeWFM6HWsJimBi1MS7MPyEgjO-zifqA7n-8c-Kc5Cus58I2ADe5-BxR3H_WvYqRV5D4qGMmn7pp_GO)
+Components](https://www.plantuml.com/plantuml/png/nLTVRzem47_Ffx1u6TrQFi24M2cmAb8t46NRi-jSgKUmCzjXHItVVROJ1ySaq5MTzeHylZ-_-ztvBbnAXONArsaKPPYiy19GPypNc39qWxSWEWXBL0gU8eH8YgL4dGMMgrZ1keFwVM2AgkrWOEyH-e3Y17r4rpbDolE2gXIqI2f1sR8KZa4IGJD5EGklPe9oeLrgkOdZZiumXp5Mnf_vMT0rV2flHWAq91agxwv-TRMj8oiIcsnq2bBVn7F0oPIbsn5FKo06MzzJ6PHMJvepHSckzDfL9hzpbEmpEaTP2LgB2xpdY3WCPphK76IUghxZqRaUfO25Zwfhb3VS8jv5-m9uEhO65bzH0b_D-2zpRzIrvJ4ONbAo1X9jh308kdWU-DH6Ew-vXbcMKe9jtVSTvakzDYkyMe0iootwyMBgOt-RrhhHdAGlxQ-3_0_0JdFLZ3PWsbfJfa3SOwAvYODyhtZE4YosnXCr0fHnuPTkyWWaLp2KMqQwLaEt6MO4qjHokU0hO6TbiiS35fZzYDnAmf0p0LBNz3Od1AJi5afUatewtt5A4ujZ8WGNiWlsfwMZ_TmrG4mK5qNYxlIMYHlv738kgNPy9DrXaXH1b3Ou7iEeNuEwsiQb2KsE65HF_zEW2P_tVCPKPbYH1n3jC9rE4TY-SFcNZ7nZL4tlVt2nQWzpYpSmUi1i2RA8r9uUBURbhlRuOtOli7wGEL6v0E_z1nV1fgaNQgdRv3VU_gSYrM0HBX83QJh_WlZTJxqoF5JLclWi-7fYbwG5w9mNvcuqy5B3tPge3J77ToEkY_QecfbuJO7s0M8s4zmywzRkEupuciwhxODPxEy1VGgABqt2mYnaYu1K9mz4kOW5_Cf1AhTg5xORic8OWJXMvtXejtsnbGUjasdcV1aabMCFIE70V4hu3l_DwDGGtw7vv6QuYATVRwE0AzJh3L3RGj5kSeaRJG8BhMd8FA5QyQBLKu2eTQ-W_dElrs98rraAQtt2KTGAFB3Vhuh0GQEAfQG-K4ecsjNtO_6aQkEhEMdLIjK9mz3ELQhLm4qLfnY5L5Xk3-ZnMFN9g9IhYHJeDhDXpOxFcRgV08zBf1YU9XNEDXI4WYYg4dn_SU5_VvfFEU-JEeekWINcByyV)
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Implementación de la arquitectura
@@ -250,10 +250,13 @@ Los cuatro proyectos no coinciden exactamente con los cuatro círculos:
 de interfaz como código que depende de los frameworks.
 
 La regla de dependencias se verifica con pruebas de arquitectura en
-[`ArchitectureTests.cs`](../test/TaskManagment.Tests/ArchitectureTests.cs), que se
+[`ArchitectureTests.cs`](../test/TaskManagement.Architecture.Tests/ArchitectureTests.cs), que se
 ejecutan en el *pipeline* de CI. Las reglas de negocio y los casos de uso se
 prueban sin base de datos ni servidor web en
-[`TaskManagement.Application.UnitTests`](../test/TaskManagement.Application.UnitTests).
+[`TaskManagement.Domain.UnitTests`](../test/TaskManagement.Domain.UnitTests) y
+[`TaskManagement.Application.UnitTests`](../test/TaskManagement.Application.UnitTests),
+respectivamente. Hay un proyecto de pruebas por capa, y las pruebas de
+integración de la API y las de arquitectura están en proyectos propios.
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Frameworks utilizados
@@ -284,10 +287,10 @@ La capa del dominio está definida
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
 | **Entidades** | `Entities/TaskItem.cs`, `Entities/TaskStatus.cs`, `Entities/TaskPriority.cs` | Clases de modelo de negocio representando conceptos del dominio |
-| **Objetos valor** | `ValueObjects/Email.cs`, `Shared/ValueObject.cs` | Objetos inmutables representando valores del dominio |
+| **Objetos valor** | `ValueObjects/Email.cs`, `Common/ValueObject.cs` | Objetos inmutables representando valores del dominio |
 | **Eventos del dominio** | `Events/DomainEvent.cs` | Eventos representando ocurrencias importantes del dominio |
 | **Interfaces** | Ver nota [^3] | Ver nota [^3] |
-| **Tipos compartidos** | `Shared/Result.cs`, `Shared/TaskErrors.cs` | Tipos comunes compartidos internamente en el dominio |
+| **Tipos compartidos** | `Common/Result.cs`, `Common/TaskErrors.cs` | Tipos comunes compartidos internamente en el dominio |
 
 **Principio clave:** La capa del dominio **nunca depende** de las capas de
 aplicación o infraestructura y contiene solo datos y reglas del negocio.
@@ -303,7 +306,7 @@ public class TaskItem
     public static Result<TaskItem> Create(string title, string description, ...)
     {
         // La validación sucede en el dominio
-        var validation = Validate(title, description, dueDate);
+        var validation = Validate(title, description, dueDate, createdBy);
         if (validation.IsFailure)
             return Result.Failure<TaskItem>(validation.Errors);
 
@@ -360,7 +363,6 @@ La capa de aplicación está definida
 | **Consultas** | `Queries/GetTaskByIdInteractor.cs` | *Interactors* de casos de uso de lecturas de datos (CQRS) |
 | **Puertos de entrada y salida** | `Commands/ICreateTaskInputBoundary.cs`, `Commands/ICreateTaskOutputBoundary.cs`, etc. | Contratos de cada caso de uso con los controladores y los presenters |
 | **DTO** | `Commands/CreateTaskInput.cs`, `Commands/CreateTaskOutput.cs`, `Queries/TaskDto.cs`, etc. | Objetos de transferencia de datos para entrada/salida |
-| **Decoradores** | `Commands/ValidatingCreateTaskInteractor.cs` | Validación de la entrada antes de ejecutar el caso de uso |
 | **Puertos** | `Ports/IUnitOfWork.cs`, `Ports/ITaskRepository.cs`, `Ports/ITaskReadRepository.cs`, `Ports/IEmailService.cs`, `Ports/IDomainEventDispatcher.cs` | Abstracciones para servicios de infraestructura y despacho de eventos |
 | **Manejadores de eventos** | `Events/IDomainEventSubscriber.cs`, `Events/TaskCompletedNotificationHandler.cs` | Reacciones de la aplicación a los eventos del dominio |
 | **Compartido** | `Shared/PagedResult.cs`, `Shared/TaskPriorityLevel.cs` | DTOs y tipos comunes |
@@ -373,7 +375,7 @@ El siguiente diagrama muestra una versión simplificada de un comando de la capa
 de aplicación y su interacción con la capa del dominio.
 
 ![Diagrama de
-secuencia](https://www.plantuml.com/plantuml/png/bLLDRnen4BtxLupI2qWfeLNL0q8eX10LgL8Ge9ouEEj9OiNOrFQYe2Z_lMFluZKRegOv4C-7dz-yiMSldUVMbni5A-wU9nQvbqOlyK-9ka0sT7wlSCI0_XR6U7YDoyeijPWOgz52FtclUF7yQAkGCXPMbcktvHQrJpceS4DsXWLmOxIlTdpfztzEnpTPxCfOWVQZw6-fyNJiZLM_mukw2lOa1S83rN5lNXZZXQTTPxzMgpbCb2HAPy1TlMH4sij2RZanFGlYk0bnj4Ofj5LUCezpxxYIWcJKZr5E37jdsgEDvwrrPvRxjwM_2d9nk-z6s7gxQQ6UmehvZVcUyipZ9YOTZ8ymvnOT1g1ZUhUbVySlfJ9MAGLVHwDCZ07CRvShkE1RUU63R6lzwgLNU0u2NM7bDjomSzXQQQpqUtANU4q7liMEo1qjSssRPJmeoJE0wGiMfSUns-kYqzAqcu4rYdBbIQzTi466j7X3KZmUaEeR79Q7XXezjTPOry7uhyjGkHhzGxIcE__a6pOdpbbNWxyn8-gXdOEqwbLudLwlruPAlG_UWz62gKaZt9UEtfDpO4k5haOYrHPamauQHKaYlR06hLth0bsfVE-6IrLQ71uIHsbhgwB_KBqQ8QHyuEJ0KOvxa2TP7TKu5WAkpOPBFTqHFjtqDF9GH5VtyuKjow8WcKuK9l2qyYUApd7dQ9rq7iAJ0Qx5MWj9WzCNJo0YQS10qNrUm9fYf_sSQmLr9LX6Dxjp8Pf5cXVKVexPiPKoB7agxVB1C1iNePzrOeuKC-Cq6S3t_ZUekm9XNlxez-cp8XRXc-HyJYkR4koIADDdZFq5)
+secuencia](https://www.plantuml.com/plantuml/png/dLLTQs8n47tFhnZS5uLMtMNP1n6fMcM5XOfAdtn9RwRRq9YuIQvKIl_xJdAlCLhBbXMgCvFvE7CoazuupwqlDmfMt3sFBN8lZLxYdn9rWQpl_5xXW05z5iPuU8rYfPPQZ8tLQA6Rh2DUFF-srP4o5bQMQxVb5hLFFgXmGtgM2s1gjAyYldIxFoR3QNOsCbQW_UZqbzHu-UoDLT_zJjq5Uv82uP7wU30lZF72KrJZvserXx6I1Aa1tDKY8z1U5dBB2MaZaEF6XD4QfT1MVaazzOqaOeYOQOysLbdhvYotRqi_2YHnks_5P4VNzuLd7ZVHwQ1yL6zkqM58T5hkhlJlwYLNngf-uNemo5hgmVnkkO8EtygE3yslzQkNNk4L27I5bTim9rUmjT9OwVTaBl6M2hv5NkMEn9oXenWB7TljmUG5YzBZqErrqJmZgPLbooZYofEwuqgAX21Uzj4dbabTzWxYVOY9CpwnrbZNnFZJOgWSmlq_Cnwke9UaTWMvsMwt2Mq8IOZJVGNhGJbBKmD2U2WTJR9pO4k5hiv4VIv8XPqqYfn4ckrZjdCw5-XAvTjJBbLfiNzm7AJG_-UeMbxYAM1ouCZ7FSgBg4vw70e1jsR3fPxiA3zDPtfiK4HJw_EDBSkY89ekD2RmClCNcixppj4wwJo4CGUknLeBIK-MBvv0HD200QBxF84rnERv2jOCQi72NmOt6-tpJScoLmImPAaeodTsDYp2jTMEUQRe6HUz1z-wNw4c7yBJzBtRfNTRBCAZxtoEArjWTaEOwVy4-mi)
 
 La clase `CreateTaskInteractor` implementa el caso de uso. El resultado no se
 devuelve al controlador: sale por el puerto de salida
@@ -394,11 +396,18 @@ public sealed class CreateTaskInteractor : ICreateTaskInputBoundary
     {
         …
 
+        // Traduce la prioridad del DTO a la del dominio
+        if (!TryToDomainPriority(input.Priority, out var priority))
+        {
+            _output.PresentValidationErrors(["Priority is not valid."]);
+            return;
+        }
+
         // Delega a la capa del dominio la lógica de negocio
         var createResult = TaskItem.Create(
             input.Title,
             input.Description,
-            ToDomainPriority(input.Priority),
+            priority,
             input.DueDate,
             input.CreatedBy);
         if (createResult.IsFailure)
@@ -442,6 +451,7 @@ La capa de infraestructura está definida
 | **Repositorios** | `Persistence/Repositories/TaskRepository.cs`, `TaskReadRepository.cs` | Implementaciones de acceso a datos con [Entity Framework](https://learn.microsoft.com/en-us/ef/) y [Dapper](https://github.com/DapperLib/Dapper)  respectivamente |
 | **Configuraciones** | `Persistence/Configuration/TaskConfiguration.cs` | Configuraciones de [Entity Framework](https://learn.microsoft.com/en-us/ef/) |
 | **Objetos del ORM** | `Persistence/Records/TaskRecord.cs` | Representación de una fila para [Entity Framework](https://learn.microsoft.com/en-us/ef/); no sale de esta capa |
+| **Servicios externos** | `Email/LoggingEmailService.cs` | Implementación de `IEmailService`; en esta demo solo registra el envío en el log |
 | **Despacho de eventos** | `EventDispatching/InProcessDomainEventDispatcher.cs` | Entrega los eventos del dominio a sus manejadores, en el mismo proceso |
 
 **Principio clave:** La capa de infraestructura implementa interfaces definidas
@@ -498,8 +508,8 @@ En esta demo la interfaz es una API web. La capa de interfaz está definida
 de uso, y sus resultados a respuestas HTTP. **No tiene lógica de negocio** y
 delega todo a la capa de aplicación.
 
-A continuación un fragmento de la clase `TaskController` con la implementación
-del POST de HTTP para crear un cliente -hay ejemplos para probar todos los
+A continuación un fragmento de la clase `TasksController` con la implementación
+del POST de HTTP para crear una tarea -hay ejemplos para probar todos los
 endpoints [aquí](../TaskManagement.http)-.
 
 ```csharp
@@ -570,14 +580,11 @@ builder.Services
     .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
     .AddScoped<IEmailService, LoggingEmailService>();
 
-// Registra el presenter, el caso de uso y su decorador de validación
+// Registra el presenter y el caso de uso
 builder.Services
     .AddScoped<CreateTaskPresenter>()
     .AddScoped<ICreateTaskOutputBoundary>(sp => sp.GetRequiredService<CreateTaskPresenter>())
-    .AddScoped<CreateTaskInteractor>()
-    .AddScoped<ICreateTaskInputBoundary>(sp => new ValidatingCreateTaskInteractor(
-        sp.GetRequiredService<CreateTaskInteractor>(),
-        sp.GetRequiredService<ICreateTaskOutputBoundary>()));
+    .AddScoped<ICreateTaskInputBoundary, CreateTaskInteractor>();
 ```
 
 <!-- markdownlint-disable-next-line MD025 -->
@@ -599,9 +606,6 @@ builder.Services
    * Lee
      [CreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTaskInteractor.html)
      para ver cómo se implementa un caso de uso
-   * Lee
-     [ValidatingCreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1ValidatingCreateTaskInteractor.html)
-     para ver cómo se agrega validación sin cambiar el caso de uso
    * Lee
      [GetTaskByIdInteractor](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskByIdInteractor.html)
      para ver otro caso de uso pero usando el patrón CQRS
@@ -653,11 +657,3 @@ Esta demo permite entender los siguientes beneficios de Clean Architecture:
 
 * **Independencia**: La lógica de negocio está aislada de los
    [frameworks](#frameworks-utilizados).
-
-<!-- markdownlint-disable-next-line MD025 -->
-# Acerca de las pruebas de estabilidad
-
-
-
-## El principio de abstracciones estables
-

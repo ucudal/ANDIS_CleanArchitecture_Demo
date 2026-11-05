@@ -3,7 +3,7 @@ using TaskManagement.Application.Events;
 using TaskManagement.Domain.Events;
 using TaskManagement.Infrastructure.EventDispatching;
 
-namespace TaskManagment.Tests;
+namespace TaskManagement.Infrastructure.Tests;
 
 /// <summary>
 /// <c>DomainEventDispatcherTests</c> verifica que InProcessDomainEventDispatcher entregue cada
