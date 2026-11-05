@@ -1,7 +1,7 @@
-// TaskManagement.Domain/Interfaces/ITaskRepository.cs
+// TaskManagement.Application/Ports/ITaskRepository.cs
 using TaskManagement.Domain.Entities;
 
-namespace TaskManagement.Domain.Interfaces;
+namespace TaskManagement.Application.Ports;
 
 /// <summary>
 /// <c>ITaskRepository</c> es la interfaz del repositorio de escritura para
@@ -10,11 +10,11 @@ namespace TaskManagement.Domain.Interfaces;
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte del core de la aplicación en la capa de dominio</li>
+/// <li>Puerto de salida: parte de la capa de aplicación</li>
 /// <li>Define el contrato para persistencia de entidades de tarea</li>
-/// <li>Abstracción de implementación: La interfaz pertenece al dominio,
+/// <li>Abstracción de implementación: La interfaz pertenece a la aplicación,
 /// la implementación a la infraestructura</li>
-/// <li>Inversión de dependencia: El dominio define qué abstracción de
+/// <li>Inversión de dependencia: La aplicación define qué abstracción de
 /// persistencia necesita</li>
 /// </ul>
 ///

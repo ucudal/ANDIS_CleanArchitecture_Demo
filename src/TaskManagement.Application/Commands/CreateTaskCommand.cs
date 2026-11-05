@@ -1,9 +1,8 @@
 // TaskManagement.Application/Commands/CreateTask/CreateTaskCommand.cs
 using MediatR;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Domain.Common;
 using TaskManagement.Domain.Entities;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Application.Commands;
 

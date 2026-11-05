@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 
 namespace TaskManagement.Infrastructure.Email;
 

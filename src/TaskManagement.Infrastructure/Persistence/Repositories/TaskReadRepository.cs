@@ -2,7 +2,7 @@
 using System.Data.Common;
 using Dapper;
 using TaskManagement.Application.Common;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Application.Queries;
 using TaskManagement.Application.Queries.SearchTasks;
 

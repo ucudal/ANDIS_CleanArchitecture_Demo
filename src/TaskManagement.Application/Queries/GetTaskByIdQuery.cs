@@ -1,5 +1,5 @@
 using MediatR;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Domain.Common;
 
 namespace TaskManagement.Application.Queries;

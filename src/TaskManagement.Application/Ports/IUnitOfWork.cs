@@ -1,4 +1,4 @@
-namespace TaskManagement.Application.Interfaces;
+namespace TaskManagement.Application.Ports;
 
 /// <summary>
 /// <c>IUnitOfWork</c> es la abstracción para coordinar la persistencia de cambios de entidades.

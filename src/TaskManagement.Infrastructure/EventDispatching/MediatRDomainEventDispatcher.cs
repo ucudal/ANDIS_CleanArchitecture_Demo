@@ -1,8 +1,7 @@
 // TaskManagement.Infrastructure/EventDispatching/MediatRDomainEventDispatcher.cs
 using MediatR;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Domain.Events;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Infrastructure.EventDispatching;
 

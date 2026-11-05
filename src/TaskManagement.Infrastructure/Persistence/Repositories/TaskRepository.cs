@@ -1,7 +1,7 @@
 // TaskManagement.Infrastructure/Persistence/Repositories/TaskRepository.cs
 using Microsoft.EntityFrameworkCore;
+using TaskManagement.Application.Ports;
 using TaskManagement.Domain.Entities;
-using TaskManagement.Domain.Interfaces;
 using TaskManagement.Infrastructure.Persistence.Records;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
@@ -13,9 +13,9 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de Infraestructura</li>
-/// <li>Implementa interfaz ITaskRepository -definida en Capa del dominio-</li>
+/// <li>Implementa interfaz ITaskRepository -definida en la capa de aplicación-</li>
 /// <li>Implementación de acceso a datos: Traduce operaciones del dominio a consultas de base de datos</li>
-/// <li>Inversión de dependencia: El dominio depende de interfaz, no de esta implementación</li>
+/// <li>Inversión de dependencia: La aplicación depende de interfaz, no de esta implementación</li>
 /// </ul>
 ///
 /// Beneficios del patrón Repository:

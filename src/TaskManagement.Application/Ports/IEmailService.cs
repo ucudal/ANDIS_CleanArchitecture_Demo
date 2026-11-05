@@ -1,4 +1,4 @@
-namespace TaskManagement.Application.Interfaces;
+namespace TaskManagement.Application.Ports;
 
 /// <summary>
 /// <c>IEmailService</c> es la abstracción para envío de notificaciones por correo electrónico.

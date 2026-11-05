@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Infrastructure.Persistence.Configurations;
 using TaskManagement.Infrastructure.Persistence.Records;
 

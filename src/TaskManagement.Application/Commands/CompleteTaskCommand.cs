@@ -1,7 +1,6 @@
 using MediatR;
-using TaskManagement.Application.Interfaces;
+using TaskManagement.Application.Ports;
 using TaskManagement.Domain.Common;
-using TaskManagement.Domain.Interfaces;
 
 namespace TaskManagement.Application.Commands;
 

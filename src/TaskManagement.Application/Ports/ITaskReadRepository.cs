@@ -1,6 +1,6 @@
 using TaskManagement.Application.Queries;
 
-namespace TaskManagement.Application.Interfaces;
+namespace TaskManagement.Application.Ports;
 
 /// <summary>
 /// <c>ITaskReadRepository</c> es la abstracción para consultas de sólo lectura de tareas.
@@ -18,15 +18,15 @@ namespace TaskManagement.Application.Interfaces;
 /// <ul>
 /// <li>Optimizado para rendimiento de lectura -puede usar Dapper, SQL sin procesar, modelos de lectura-</li>
 /// <li>Independiente del repositorio de escritura <see
-/// cref="TaskManagement.Domain.Interfaces.ITaskRepository"/></li>
+/// cref="TaskManagement.Application.Ports.ITaskRepository"/></li>
 /// <li>Habilita el patrón CQRS para separar lecturas de escrituras</li>
 /// <li>Puede desnormalizar datos para eficiencia de consulta</li>
 /// <li>Habilita diferentes estrategias de optimización para lecturas vs escrituras</li>
 /// </ul>
 ///
-/// Contraste con TaskManagement.Application.Interfaces.ITaskRepository:
+/// Contraste con TaskManagement.Application.Ports.ITaskRepository:
 /// <ul>
-/// <li>TaskManagement.Application.Interfaces.ITaskRepository: Operaciones de escritura -Add, Update, Delete-</li>
+/// <li>TaskManagement.Application.Ports.ITaskRepository: Operaciones de escritura -Add, Update, Delete-</li>
 /// <li>ITaskReadRepository: Operaciones de lectura optimizadas para consultas</li>
 /// <li>Sigue CQRS: Separa responsabilidad de comando -escritura- de consulta -lectura-</li>
 /// </ul>

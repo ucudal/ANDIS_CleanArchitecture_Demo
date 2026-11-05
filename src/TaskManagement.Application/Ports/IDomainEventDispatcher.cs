@@ -1,6 +1,6 @@
 using TaskManagement.Domain.Events;
 
-namespace TaskManagement.Domain.Interfaces;
+namespace TaskManagement.Application.Ports;
 
 /// <summary>
 /// <c>IDomainEventDispatcher</c> es la interfaz para publicación de eventos del
@@ -9,9 +9,9 @@ namespace TaskManagement.Domain.Interfaces;
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
-/// <li>Parte de la capa de dominio</li>
+/// <li>Puerto de salida: parte de la capa de aplicación</li>
 /// <li>Define el contrato para envío de eventos del dominio</li>
-/// <li>Abstracción de implementación: Interfaz en el dominio, la implementación
+/// <li>Abstracción de implementación: Interfaz en la aplicación, la implementación
 /// en la infraestructura</li>
 /// <li>Habilita orquestación de envío de eventos después de persistencia exitosa</li>
 /// </ul>
