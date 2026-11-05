@@ -17,7 +17,7 @@ public class ArchitectureTests
     private static readonly Architecture Architecture = new ArchLoader()
         .LoadAssemblies(
             typeof(TaskManagement.Domain.Entities.TaskItem).Assembly,
-            typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly,
+            typeof(TaskManagement.Application.Commands.CreateTaskInteractor).Assembly,
             typeof(TaskManagement.Infrastructure.Persistence.Repositories.TaskRepository).Assembly,
             typeof(TaskManagement.API.Controllers.TasksController).Assembly
         )
@@ -150,32 +150,62 @@ public class ArchitectureTests
     }
 
     /// <summary>
-    /// Verifica que todos los comandos y sus manejadores residan en el
-    /// namespace <c>TaskManagement.Application.Commands</c> y solo contenga
-    /// clases que terminen con "Command" o "CommandHandler".
+    /// Verifica que el namespace <c>TaskManagement.Application.Commands</c> contenga solo
+    /// interactores, sus puertos de entrada y de salida, y sus DTO.
     /// </summary>
     [Test]
-    public void Commands_ShouldBeInApplicationCommands()
+    public void Commands_ShouldContainOnlyUseCaseElements()
     {
-        // TaskManagement.Application.Commands solo tiene *Commands y *CommandHandlers
         var rule = Types()
             .That()
             .ResideInNamespace("TaskManagement.Application.Commands")
             .Should()
-            .HaveNameEndingWith("Command")
+            .HaveNameEndingWith("Interactor")
             .OrShould()
-            .HaveNameEndingWith("CommandHandler");
+            .HaveNameEndingWith("Boundary")
+            .OrShould()
+            .HaveNameEndingWith("Input")
+            .OrShould()
+            .HaveNameEndingWith("Output");
 
         rule.Check(Architecture);
+    }
 
-        // Los *Commands y *CommandHandlers deben residir en TaskManagement.Application.Commands
-        rule = Types()
+    /// <summary>
+    /// Verifica que el namespace <c>TaskManagement.Application.Queries</c> contenga solo
+    /// interactores, sus puertos de entrada y de salida, y sus DTO.
+    /// </summary>
+    [Test]
+    public void Queries_ShouldContainOnlyUseCaseElements()
+    {
+        var rule = Types()
             .That()
-            .HaveNameEndingWith("Command")
-            .Or()
-            .HaveNameEndingWith("CommandHandler")
+            .ResideInNamespace("TaskManagement.Application.Queries")
             .Should()
-            .ResideInNamespace("TaskManagement.Application.Commands");
+            .HaveNameEndingWith("Interactor")
+            .OrShould()
+            .HaveNameEndingWith("Boundary")
+            .OrShould()
+            .HaveNameEndingWith("Input")
+            .OrShould()
+            .HaveNameEndingWith("Dto");
+
+        rule.Check(Architecture);
+    }
+
+    /// <summary>
+    /// Verifica que los interactores residan en los namespaces de comandos o de consultas.
+    /// </summary>
+    [Test]
+    public void Interactors_ShouldBeInCommandsOrQueries()
+    {
+        var rule = Classes()
+            .That()
+            .HaveNameEndingWith("Interactor")
+            .Should()
+            .ResideInNamespace("TaskManagement.Application.Commands")
+            .OrShould()
+            .ResideInNamespace("TaskManagement.Application.Queries");
 
         rule.Check(Architecture);
     }

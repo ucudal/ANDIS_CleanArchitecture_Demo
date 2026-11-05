@@ -10,7 +10,7 @@ public class StabilityMetricsTests
     private static readonly Architecture Architecture = new ArchLoader()
         .LoadAssemblies(
             typeof(TaskManagement.Domain.Entities.TaskItem).Assembly,
-            typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly,
+            typeof(TaskManagement.Application.Commands.CreateTaskInteractor).Assembly,
             typeof(TaskManagement.Infrastructure.Persistence.Repositories.TaskRepository).Assembly,
             typeof(TaskManagement.API.Controllers.TasksController).Assembly
         )

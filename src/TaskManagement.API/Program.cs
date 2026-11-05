@@ -17,13 +17,14 @@
 // - Registra interfaces de capas de Aplicación y Dominio
 // - Implementaciones de capa de Infraestructura
 // - Los controladores usan servicios registrados (inyección de constructor)
-// - Los manejadores de MediatR usan servicios registrados
+// - Los interactores usan servicios registrados: reciben sus puertos de salida por constructor
+// - Los presenters son Scoped: el interactor escribe en la misma instancia que lee el controlador
 //
 // Registro de Capa de Arquitectura:
-// - Capa de aplicación: MediatR, FluentValidation, ValidationBehavior y los puertos IUnitOfWork,
-//   ITaskRepository, IDomainEventDispatcher
+// - Capa de aplicación: interactores, decoradores y los puertos IUnitOfWork, ITaskRepository,
+//   IDomainEventDispatcher
 // - Capa de infraestructura: DbContext, Repositorios, Distribuidor de Eventos
-// - Capa de UI: Controladores, Middleware
+// - Capa de UI: Controladores, Presenters, Middleware
 //
 // Directrices de Raíz de Composición:
 // - La capa de UI puede hacer referencia a Infraestructura para registro de DI
@@ -40,15 +41,16 @@
 using System.Data.Common;
 using System.Reflection;
 using System.Text.Json.Serialization;
-using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using TaskManagement.API.Middleware;
-using TaskManagement.Application.Behaviors;
+using TaskManagement.API.Presenters;
+using TaskManagement.Application.Commands;
 using TaskManagement.Application.Ports;
+using TaskManagement.Application.Queries;
 using TaskManagement.Infrastructure.Email;
 using TaskManagement.Infrastructure.EventDispatching;
 using TaskManagement.Infrastructure.Persistence;
@@ -104,11 +106,7 @@ builder.Services.AddAuthorization();
 
 // Agregar servicios al contenedor
 builder.Services
-    .AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
-        typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly,
-        typeof(MediatRDomainEventDispatcher).Assembly))
-    .AddValidatorsFromAssembly(typeof(TaskManagement.Application.Commands.CreateTaskCommand).Assembly)
-    .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
+    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(MediatRDomainEventDispatcher).Assembly))
     .AddDbContext<TaskDbContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")))
     .AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<TaskDbContext>())
@@ -117,6 +115,21 @@ builder.Services
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>()
     .AddScoped<IEmailService, LoggingEmailService>()
+    // Crear tarea: el puerto de entrada es el decorador que valida y luego llama al interactor.
+    .AddScoped<CreateTaskPresenter>()
+    .AddScoped<ICreateTaskOutputBoundary>(sp => sp.GetRequiredService<CreateTaskPresenter>())
+    .AddScoped<CreateTaskInteractor>()
+    .AddScoped<ICreateTaskInputBoundary>(sp => new ValidatingCreateTaskInteractor(
+        sp.GetRequiredService<CreateTaskInteractor>(),
+        sp.GetRequiredService<ICreateTaskOutputBoundary>()))
+    // Completar tarea
+    .AddScoped<CompleteTaskPresenter>()
+    .AddScoped<ICompleteTaskOutputBoundary>(sp => sp.GetRequiredService<CompleteTaskPresenter>())
+    .AddScoped<ICompleteTaskInputBoundary, CompleteTaskInteractor>()
+    // Consultar tarea
+    .AddScoped<GetTaskByIdPresenter>()
+    .AddScoped<IGetTaskByIdOutputBoundary>(sp => sp.GetRequiredService<GetTaskByIdPresenter>())
+    .AddScoped<IGetTaskByIdInputBoundary, GetTaskByIdInteractor>()
     .AddControllers()
     .AddJsonOptions(options => {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());

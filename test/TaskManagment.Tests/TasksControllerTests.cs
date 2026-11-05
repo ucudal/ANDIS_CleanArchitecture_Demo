@@ -4,8 +4,8 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
 using TaskManagement.API.Requests;
-using TaskManagement.Application.Queries;
-using TaskManagement.Domain.Entities;
+using TaskManagement.API.ViewModels;
+using TaskManagement.Application.Common;
 
 namespace TaskManagment.Tests;
 
@@ -58,7 +58,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Finish Clean Architecture demo",
             description: "Wire up in-memory SQLite and verify endpoint tests",
-            priority: TaskPriority.High,
+            priority: TaskPriorityLevel.High,
             dueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
         );
 
@@ -81,7 +81,7 @@ public class TasksControllerTests
         var getResponse = await _httpClient.GetAsync($"/api/tasks/{taskId}");
         Assert.That(getResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK), "Task should exist after creation");
 
-        var retrievedTask = await getResponse.Content.ReadAsAsync<TaskDto>();
+        var retrievedTask = await getResponse.Content.ReadAsAsync<TaskViewModel>();
         Assert.That(retrievedTask.Title, Is.EqualTo(createRequest.Title), "Task title should match");
         Assert.That(retrievedTask.Description, Is.EqualTo(createRequest.Description), "Task description should match");
         Assert.That(retrievedTask.Priority, Is.EqualTo(createRequest.Priority.ToString()), "Task priority should match");
@@ -100,7 +100,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Test Task",
             description: "Test Description",
-            priority: TaskPriority.Medium,
+            priority: TaskPriorityLevel.Medium,
             dueDate: DateTime.UtcNow.AddDays(7)
         );
 
@@ -129,7 +129,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "",
             description: "Valid Description",
-            priority: TaskPriority.High,
+            priority: TaskPriorityLevel.High,
             dueDate: DateTime.UtcNow.AddDays(7)
         );
 
@@ -153,10 +153,10 @@ public class TasksControllerTests
     /// todas las tareas se crean exitosamente con la prioridad correcta.
     /// </summary>
     [Test]
-    [TestCase(TaskPriority.Low)]
-    [TestCase(TaskPriority.Medium)]
-    [TestCase(TaskPriority.High)]
-    public async Task CreateTask_WithDifferentPriorities_CreatesTasksSuccessfully(TaskPriority priority)
+    [TestCase(TaskPriorityLevel.Low)]
+    [TestCase(TaskPriorityLevel.Medium)]
+    [TestCase(TaskPriorityLevel.High)]
+    public async Task CreateTask_WithDifferentPriorities_CreatesTasksSuccessfully(TaskPriorityLevel priority)
     {
         // Arrange
         var createRequest = new CreateTaskRequest(
@@ -180,7 +180,7 @@ public class TasksControllerTests
 
         var taskId = await response.Content.ReadAsAsync<Guid>();
         var getResponse = await _httpClient.GetAsync($"/api/tasks/{taskId}");
-        var task = await getResponse.Content.ReadAsAsync<TaskDto>();
+        var task = await getResponse.Content.ReadAsAsync<TaskViewModel>();
 
         Assert.That(task.Priority, Is.EqualTo(priority.ToString()), $"Task priority should be {priority}");
     }
@@ -202,7 +202,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Task to Retrieve",
             description: "This task will be retrieved",
-            priority: TaskPriority.Medium,
+            priority: TaskPriorityLevel.Medium,
             dueDate: new DateTime(2027, 6, 15, 10, 0, 0, DateTimeKind.Utc)
         );
 
@@ -221,7 +221,7 @@ public class TasksControllerTests
         // Assert
         Assert.That(getResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK), "Expected 200 OK when task exists");
 
-        var task = await getResponse.Content.ReadAsAsync<TaskDto>();
+        var task = await getResponse.Content.ReadAsAsync<TaskViewModel>();
         Assert.That(task.Id, Is.EqualTo(taskId.ToString()).IgnoreCase, "Task ID should match");
         Assert.That(task.Title, Is.EqualTo(createRequest.Title), "Task title should match");
         Assert.That(task.Status, Is.EqualTo("Todo"), "New task should have Todo status");
@@ -286,7 +286,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Task to Complete",
             description: "This task will be completed",
-            priority: TaskPriority.High,
+            priority: TaskPriorityLevel.High,
             dueDate: DateTime.UtcNow.AddDays(3)
         );
 
@@ -312,7 +312,7 @@ public class TasksControllerTests
 
         // Verify the task status was updated
         var getResponse = await _httpClient.GetAsync($"/api/tasks/{taskId}");
-        var completedTask = await getResponse.Content.ReadAsAsync<TaskDto>();
+        var completedTask = await getResponse.Content.ReadAsAsync<TaskViewModel>();
 
         Assert.That(completedTask.Status, Is.EqualTo("Completed"), "Task status should be Completed");
         Assert.That(completedTask.Id, Is.EqualTo(taskId.ToString()).IgnoreCase, "Task ID should remain unchanged");
@@ -341,10 +341,10 @@ public class TasksControllerTests
     /// Prueba completar tarea inexistente. Valida el manejo de errores al
     /// completar una tarea que no existe. En este escenario el usuario intenta
     /// completar una tarea que no existe. El resultado esperado es que retorne
-    /// 400 BadRequest con un mensaje de error.
+    /// 404 NotFound con un mensaje de error.
     /// </summary>
     [Test]
-    public async Task CompleteTask_WithNonExistentId_ReturnsBadRequest()
+    public async Task CompleteTask_WithNonExistentId_ReturnsNotFound()
     {
         // Arrange
         var nonExistentId = Guid.NewGuid();
@@ -358,7 +358,7 @@ public class TasksControllerTests
         var response = await _httpClient.SendAsync(request);
 
         // Assert
-        Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest), "Expected 400 BadRequest for non-existent task");
+        Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound), "Expected 404 NotFound for non-existent task");
     }
 
     /// <summary>
@@ -375,7 +375,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Already Completed Task",
             description: "This task is already completed",
-            priority: TaskPriority.Low,
+            priority: TaskPriorityLevel.Low,
             dueDate: DateTime.UtcNow.AddDays(1)
         );
 
@@ -435,7 +435,7 @@ public class TasksControllerTests
         var createRequest = new CreateTaskRequest(
             title: "Finish Clean Architecture demo",
             description: "Wire up in-memory SQLite and verify endpoint tests",
-            priority: TaskPriority.High,
+            priority: TaskPriorityLevel.High,
             dueDate: new DateTime(2027, 5, 20, 18, 0, 0, DateTimeKind.Utc)
         );
 
@@ -455,7 +455,7 @@ public class TasksControllerTests
         var getResponse = await _httpClient.GetAsync($"/api/tasks/{taskId}");
         Assert.That(getResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK), "Task retrieval should succeed");
 
-        var task = await getResponse.Content.ReadAsAsync<TaskDto>();
+        var task = await getResponse.Content.ReadAsAsync<TaskViewModel>();
         Assert.That(task.Title, Is.EqualTo(createRequest.Title), "Retrieved task should have correct title");
         Assert.That(task.Status, Is.EqualTo("Todo"), "New task should have Todo status");
 
@@ -470,7 +470,7 @@ public class TasksControllerTests
 
         // Act 4 - Verify Status Updated
         var verifyResponse = await _httpClient.GetAsync($"/api/tasks/{taskId}");
-        var completedTask = await verifyResponse.Content.ReadAsAsync<TaskDto>();
+        var completedTask = await verifyResponse.Content.ReadAsAsync<TaskViewModel>();
 
         Assert.That(completedTask.Status, Is.EqualTo("Completed"), "Completed task should have Completed status");
         Assert.That(completedTask.Title, Is.EqualTo(task.Title), "Task title should remain unchanged");
@@ -493,9 +493,9 @@ public class TasksControllerTests
         // Arrange
         var taskData = new[]
         {
-            new CreateTaskRequest("Task 1", "Description 1", TaskPriority.Low, null),
-            new CreateTaskRequest("Task 2", "Description 2", TaskPriority.Medium, DateTime.UtcNow.AddDays(5)),
-            new CreateTaskRequest("Task 3", "Description 3", TaskPriority.High, DateTime.UtcNow.AddDays(10))
+            new CreateTaskRequest("Task 1", "Description 1", TaskPriorityLevel.Low, null),
+            new CreateTaskRequest("Task 2", "Description 2", TaskPriorityLevel.Medium, DateTime.UtcNow.AddDays(5)),
+            new CreateTaskRequest("Task 3", "Description 3", TaskPriorityLevel.High, DateTime.UtcNow.AddDays(10))
         };
 
         // Act - Create all tasks concurrently
@@ -523,7 +523,7 @@ public class TasksControllerTests
         for (int i = 0; i < taskIds.Count; i++)
         {
             var response = await _httpClient.GetAsync($"/api/tasks/{taskIds[i]}");
-            var task = await response.Content.ReadAsAsync<TaskDto>();
+            var task = await response.Content.ReadAsAsync<TaskViewModel>();
 
             Assert.That(task.Title, Is.EqualTo(taskData[i].Title), $"Task {i} title should match");
             Assert.That(task.Description, Is.EqualTo(taskData[i].Description), $"Task {i} description should match");

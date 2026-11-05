@@ -1,4 +1,4 @@
-using TaskManagement.Domain.Entities;
+using TaskManagement.Application.Common;
 
 namespace TaskManagement.API.Requests;
 
@@ -22,12 +22,10 @@ namespace TaskManagement.API.Requests;
 /// <li>Validación de modelo aplicada con
 /// <a href="https://learn.microsoft.com/en-us/previous-versions/aspnet/ee256141(v=vs.100)?redirectedfrom=MSDN">
 /// anotaciones de datos</a></li>
-/// <li>Controlador transforma a <c>CreateTaskCommand</c></li>
-/// <li>Comando enviado a capa de aplicación a través de <a href="https://mediatr.io">MediatR</a></li>
-/// <li>Validación de capa de aplicación con <a
-/// href="https://github.com/FluentValidation/FluentValidation">FluentValidation</a>
-/// de las reglas del dominio</li>
-/// <li>Lógica del dominio ejecutada</li>
+/// <li>Controlador transforma a <c>CreateTaskInput</c></li>
+/// <li>Controlador llama a ICreateTaskInputBoundary</li>
+/// <li>ValidatingCreateTaskInteractor valida la entrada</li>
+/// <li>CreateTaskInteractor ejecuta el caso de uso y la lógica del dominio</li>
 /// </ol>
 ///
 /// Beneficios de DTO de Entrada:
@@ -50,10 +48,10 @@ public record struct CreateTaskRequest
 {
     public string Title { get; set; }
     public string Description { get; set; }
-    public TaskPriority Priority { get; set; }
+    public TaskPriorityLevel Priority { get; set; }
     public DateTime? DueDate { get; set; }
 
-    public CreateTaskRequest(string title, string description, TaskPriority priority, DateTime? dueDate)
+    public CreateTaskRequest(string title, string description, TaskPriorityLevel priority, DateTime? dueDate)
     {
         Title = title;
         Description = description;

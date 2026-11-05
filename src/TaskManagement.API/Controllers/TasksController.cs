@@ -1,9 +1,10 @@
 // TaskManagement.API/Controllers/TasksController.cs
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using TaskManagement.API.Presenters;
 using TaskManagement.API.Requests;
+using TaskManagement.API.ViewModels;
 using TaskManagement.Application.Commands;
 using TaskManagement.Application.Queries;
 
@@ -17,20 +18,10 @@ namespace TaskManagement.API.Controllers;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de presentación, en este caso, una %API REST</li>
-/// <li>Punto de entrada para solicitudes HTTP</li>
-/// <li>Traduce solicitudes HTTP a comandos y consultas de la capa de
-/// aplicación</li>
-/// <li>Maneja cuestiones específicas de HTTP: códigos de estado, negociación de
-/// contenido</li> <li>Sin lógica de negocio: delega a la capa de aplicación</li>
-/// </ul>
-///
-/// Responsabilidades del controlador:
-/// <ul>
-/// <li>Aceptar solicitudes HTTP y convertirlas a comandos y consultas</li>
-/// <li>Manejar autorización y autenticación</li>
-/// <li>Invocar la capa de aplicación a través de <a href="https://mediatr.io">MediatR</a></li>
-/// <li>Transformar resultados en respuestas HTTP apropiadas</li>
-/// <li>Manejar excepciones y devolver respuestas de error</li>
+/// <li>Adaptador conductor: punto de entrada para solicitudes HTTP</li>
+/// <li>Traduce solicitudes HTTP a los DTO de entrada de los casos de uso</li>
+/// <li>Usa los puertos de entrada -input boundaries-; no conoce a los interactores</li>
+/// <li>Devuelve la respuesta que construyó el presenter</li>
 /// </ul>
 ///
 /// Separación de responsabilidades:
@@ -38,121 +29,72 @@ namespace TaskManagement.API.Controllers;
 /// <li>NO contiene lógica de negocio, se delega a la capa de aplicación</li>
 /// <li>NO interactúa directamente con la base de datos, se delega a la capa de
 /// infraestructura</li>
-/// <li>NO valida reglas de negocio, se delegadan a la capa del dominio o de aplicación</li>
-/// <li>Solo traduce semántica HTTP a casos de uso</li>
+/// <li>NO decide los códigos de estado ni el formato de las respuestas, se delega a los
+/// presenters</li>
 /// </ul>
 ///
-/// Patrones de diseño y convenciones:
-/// <ul>
-/// <li>Patrón <a
-/// href="https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_09_.Patrones_de_arquitectura/2_09_CQRS.md">CQRS</a>
-/// a través de <a href="https://mediatr.io">MediatR</a></li>
-/// <li>Patrón Result para manejo de errores consistente</li>
-/// <li>Convenciones REST: POST para creación, DELETE para eliminación, etc.</li>
-/// <li>Códigos de estado HTTP: 200 OK, 201 Created, 204 NoContent, 400 BadRequest, 404
-/// NotFound, etc.</li>
-/// </ul>
+/// Los casos de uso y los presenters se reciben con <c>FromServices</c> y hay una instancia por
+/// solicitud: el caso de uso escribe en el mismo presenter que el controlador lee.
 /// </remarks>
 [ApiController]
 [Route("api/[controller]")]
 public sealed class TasksController : ControllerBase
 {
-    private readonly IMediator _mediator;
-    public TasksController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
     [HttpGet("{id:guid}")]
-    [ProducesResponseType(typeof(TaskDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(TaskViewModel), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<TaskDto>> GetById(
+    public async Task<IActionResult> GetById(
         Guid id,
+        [FromServices] IGetTaskByIdInputBoundary getTaskById,
+        [FromServices] GetTaskByIdPresenter presenter,
         CancellationToken cancellationToken)
     {
-        var result = await _mediator.Send(
-            new GetTaskByIdQuery(id),
-            cancellationToken).ConfigureAwait(false);
+        ArgumentNullException.ThrowIfNull(getTaskById);
+        ArgumentNullException.ThrowIfNull(presenter);
 
-        if (result.IsSuccess)
-        {
-            return Ok(result.Value);
-        }
-
-        return result.Errors.Any(error => error.Contains("not found", StringComparison.OrdinalIgnoreCase))
-            ? NotFound(CreateProblemDetails(result.Errors))
-            : BadRequest(CreateProblemDetails(result.Errors));
+        await getTaskById.ExecuteAsync(new GetTaskByIdInput(id), cancellationToken).ConfigureAwait(false);
+        return presenter.Result;
     }
 
     [HttpPost]
     [Authorize]
     [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Guid>> Create(
+    public async Task<IActionResult> Create(
         [FromBody] CreateTaskRequest request,
+        [FromServices] ICreateTaskInputBoundary createTask,
+        [FromServices] CreateTaskPresenter presenter,
         CancellationToken cancellationToken)
     {
-        var command = new CreateTaskCommand(
+        ArgumentNullException.ThrowIfNull(createTask);
+        ArgumentNullException.ThrowIfNull(presenter);
+
+        var input = new CreateTaskInput(
             request.Title,
             request.Description,
             request.Priority,
             request.DueDate,
-            GetUserId(User)
-        );
-        var result = await _mediator.Send(command, cancellationToken).ConfigureAwait(false);
-
-        if (result.IsSuccess)
-        {
-            return CreatedAtAction(
-                nameof(GetById),
-                new {
-                    id = result.Value
-                },
-                result.Value);
-        }
-
-        return BadRequest(CreateValidationProblemDetails(result.Errors));
+            GetUserId(User));
+        await createTask.ExecuteAsync(input, cancellationToken).ConfigureAwait(false);
+        return presenter.Result;
     }
 
     [HttpPost("{id:guid}/complete")]
     [Authorize]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult> Complete(
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Complete(
         Guid id,
+        [FromServices] ICompleteTaskInputBoundary completeTask,
+        [FromServices] CompleteTaskPresenter presenter,
         CancellationToken cancellationToken)
     {
-        var result = await _mediator.Send(
-            new CompleteTaskCommand(id),
-            cancellationToken).ConfigureAwait(false);
+        ArgumentNullException.ThrowIfNull(completeTask);
+        ArgumentNullException.ThrowIfNull(presenter);
 
-        if (result.IsSuccess)
-        {
-            return NoContent();
-        }
-
-        return BadRequest(CreateProblemDetails(result.Errors));
-    }
-
-    private static ProblemDetails CreateProblemDetails(IReadOnlyList<string> errors)
-    {
-        return new ProblemDetails {
-            Title = "Request failed",
-            Detail = string.Join("; ", errors),
-            Status = StatusCodes.Status400BadRequest
-        };
-    }
-
-    private static ValidationProblemDetails CreateValidationProblemDetails(
-        IReadOnlyList<string> errors)
-    {
-        return new ValidationProblemDetails(
-            errors.ToDictionary(
-                _ => "General",
-                e => new[] { e })) {
-            Title = "Validation failed",
-            Status = StatusCodes.Status400BadRequest
-        };
+        await completeTask.ExecuteAsync(new CompleteTaskInput(id), cancellationToken).ConfigureAwait(false);
+        return presenter.Result;
     }
 
     private static Guid GetUserId(ClaimsPrincipal user)
