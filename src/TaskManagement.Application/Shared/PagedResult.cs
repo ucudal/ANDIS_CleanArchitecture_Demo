@@ -32,7 +32,7 @@ namespace TaskManagement.Application.Common;
 ///
 /// Patrón de Uso:
 /// <ul>
-/// <li>El manejador de consulta consulta repositorio para conteo total y elementos paginados</li>
+/// <li>El interactor de consulta consulta repositorio para conteo total y elementos paginados</li>
 /// <li>Devuelve PagedResult< T > a controlador</li>
 /// <li>Controlador serializa a JSON con metadatos de paginación</li>
 /// <li>Cliente utiliza metadatos de paginación para solicitar página siguiente</li>

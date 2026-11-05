@@ -27,7 +27,7 @@ namespace TaskManagement.Infrastructure.Persistence;
 /// Diseño de Arquitectura:
 /// <ul>
 /// <li>Configurado a través de inyección de dependencias en Program.cs</li>
-/// <li>Utilizado por repositorios y manejadores de comando a través de interfaz IUnitOfWork</li>
+/// <li>Utilizado por repositorios e interactores a través de interfaz IUnitOfWork</li>
 /// <li>Implementación de IUnitOfWork.SaveChangesAsync delega a Entity Framework</li>
 /// <li>Configuraciones fluidas aplicadas a través de TaskConfiguration</li>
 /// </ul>

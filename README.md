@@ -46,3 +46,7 @@ usando
 [ArchUnitNET](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://archunitnet.readthedocs.io/&ved=2ahUKEwjsoOGN8teUAxVJkZUCHYnuLqEQFnoECB4QAQ&usg=AOvVaw0Y0UC5cvTBUk-CvSEIotmP).
 Esas pruebas están automatizadas en el archivo
 [`./test/TaskManagment.Tests/ArchitectureTests.cs`](./test/TaskManagment.Tests/ArchitectureTests.cs).
+
+Las reglas de negocio y los casos de uso tienen pruebas unitarias que no usan
+base de datos ni servidor web, en
+[`./test/TaskManagement.Application.UnitTests`](./test/TaskManagement.Application.UnitTests).

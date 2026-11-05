@@ -7,7 +7,7 @@ namespace TaskManagement.Application.Queries.SearchTasks;
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de aplicación</li>
-/// <li>DTO de entrada: Transfiere datos de filtro de búsqueda a manejadores de consulta</li>
+/// <li>DTO de entrada: Transfiere datos de filtro de búsqueda a los interactores de consulta</li>
 /// <li>Patrón de especificación: Encapsula lógica de filtrado y clasificación</li>
 /// <li>Soporta consultas complejas con múltiples opciones de filtro</li>
 /// </ul>
@@ -47,7 +47,7 @@ namespace TaskManagement.Application.Queries.SearchTasks;
 /// <ul>
 /// <li>Encapsula criterios de consulta en un solo tipo</li>
 /// <li>Seguro de tipo: Sin análisis o manipulación de cadenas</li>
-/// <li>Reutilizable: Puede ser utilizado por múltiples manejadores de consulta</li>
+/// <li>Reutilizable: Puede ser utilizado por múltiples interactores de consulta</li>
 /// <li>Testeable: Puede probar lógica de búsqueda en aislamiento</li>
 /// </ul>
 ///

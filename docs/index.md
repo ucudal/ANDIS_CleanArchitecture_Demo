@@ -49,7 +49,7 @@ contienen el código de las
 nombre; las propiedades de la librería se especifican en ese proyecto-.
 
 ![Task Management
-Containers](https://www.plantuml.com/plantuml/png/bLJ1RjD04BtxAuPmIGLgBZqXX9hQXWQ5D91KFKRZzJHQkjuri-jI2_59FVKJycFCEiOKKY7mQJtxPjwRDsEV-e0ScieapxHLfYa9NgSda_HaapeRK5lYDycIs3ixRZpnInXT-WPPkv4SKoQ45hRaWtOMGMeH-j5Hicfze6fpvXfR8hTZttg1hz7Vm0UqkAMAR80zQdG4tnAGPs0SOwrx-2_qyNGvYvpJrV9uaQy5pGHNL40Vp-zgPmd8bhNJDdWuNw-NK2CZ6DnBt3rOa0O7bN-Ira-GrhNH2cDxaMIk2oRUtMEianhqv25z7czcLMsw50I5tla8QBnx1SfLQ4i9j7AqlZ7X2UvIGDeUqcTT_E_C6Lthhl6WIombB3HWTWzRqHt1bhPEQIVyhlXCGPJSed5ye47RQyP32RCOze4R5HgcVpQXbftHCbwhD0A1J8IsZAB32fhk0h4zz24hncKXTSwoM7gzdrDy5uuOoJ3ANtsSwz0fcPeA5GsB9osM7OB9T5GelWl7z-GJcNvzzwjrwJ7cnnMPl5zTB0GK8TtbVWzczjQftsVv6FJJB2a4M8WzgFhUzE11AOhmIxEx7nAby33fc4a6AbUISP51RhJLxZ6uP_a_cZwfCt9EDCczObrqVkMo8w65jumLVNLyyo9ZuQ6u2wlpYwlDF7-NBxBnKN8gdr7yAVm0)
+Containers](https://www.plantuml.com/plantuml/png/ZLJ1RjD04BtxAuPmIGLgBZqXX9hQXWQ5D91KFKPZUs8jNU-QsNMfXVWaJls4_1YpjWaDZIfyMi-yVM_cpTZdpYFxfjBH2sLotHG4R-EpINosYQtng0pnksX9xAmPDuxuDOokNOEix4YECHD22oKvhwn142v2Dpg9LgtpL6qkR6CAv7RiMYVmDRfR-8G6Iwh8UEXHenFu4O4yUyKnrcg0_qMVJfUpe3bTBKyNwLhGJ7136GpnzBwsXe1CKLjbl8FBzNe9DJA2nhx4tOC1QN1VvQ6eCbl6fxAp47QUczmtJ45fhZ8ctlt2G1PhTEGWVXaoiwhMtIs4MZnJqfx95GA1L4GbOous2PhkFR4vKWFMzP76wrgh78F5_osVexCk01fdtq1kApI515ev6jTeVqIx490oJ-MJBlwySa9RrPdlLO65X4K6zEwXbBe3s51ffNVHjzbNybB97MhB_zQGPECY4xgB95nQztCAxo8L8Wc6gwlFS-MxIKnrXJdj5q_eYmx1f3khKNeMZP_H5zB3-lQhTUqmt0yhClcukbe8A42wP3-3cRcp-Q6FOOoF1jmG-pxdK4lRuLGpkP3Dmwuz9lspNDBgLfMDB2KP80t8ZEPRGmDsW0qbF2EsvnRWVd3ILU2iR47Q1gnab95FzO2yStXED4bTpYhhZ4nbSBw5zumLVRTy-oeHPWhpMLrUtMpcwOTqaOnFedFvlCBFuZS)
 
 Puedes ver claramente en el diagrama que las dependencias van "de arriba hacia
 abajo", lo que equivale a "afuera hacia adentro" cuando las capas se muestran en
@@ -66,7 +66,7 @@ Traduciendo la terminología de C4 a .NET, los componentes son las clases -las
 clases definen tipos-.
 
 ![Task Management
-Components](https://www.plantuml.com/plantuml/png/XLRDRXiv3Bu7o3kmFhM0sxtqk5WqiTskWNZZs6bx3EWPUg9MbgQIngsns4VQKnyXBrPIy--Pe04IQ2Zo8_Nf8vLtFg0BnK73xEt3p1voQyY4Xxd2pE7XykA5CeakKe8_Ps__wBgyoJdehykBcJK1bI7tS6qBaw8xlSHSJM5oZ_xh2WrcT13tg_LoyWh-lRm0_cbGNYOSxgpMvAeGc3MM2Pkkjkit_opksUheR6lnGp20J9fRPOA7pM9x3pawX8nyK4y_3N3XV3v2FtbrdlcWqbJJTzwDM0dbGLa3VwD9jJ8Ph9hzGHtzhHdceU2a9pYWeIy89609Wv67JDiTQehv_tk6hNo4hJpNAa6fQ8or0wKAWr2sYgjDhEDkiuNosqQ2RjstWeb02UJIKiybtXNa58tGaLG-0bGj9-swf8LSQMD20qd5rUuqucZg6OSflfMv6Q6kebgUUl0VA0ZCzMcPniqfR0bTyYX67or3w2DgbSgv1VszBjZsgJG9Wspxr3YqNqaj4KUHg15MTlI8HrN2hbLEh0o2wzfOac6zVvqK8OXe-7uJSkOyoHHkR9QnmnGMpbdNgEnvMQJsm9QXCkRHFYOA_bMXv7THBQMCCW1MDYKT3R7BeiS9kFr0F_tCM6j2XA7Cid17-IteTlU5ak3BenK4rVTeaWtbZZo7ef4aqbtMSmhzV0uwyb_VWYtYT-nqMS6ws6db7uMrwXIb4DEuFOLAUr67fMsOW-S4kJqcaIMkqNh5cZZ1ih4Bzjgw07FQAwD4Fz6s5FWsOWhBZxnxk_zitTVdRr6PlSFX9Ix5x8Ch4fuSD7QPhiwa-gNMbuhSrbS9rriM9wSMv5RJP_KEgIYQyXb0pW9s3_4qKgz3up694x6jk-nEBrQ4KBfKS-u4ERUlye5Ced2OBTq9E_GZIF7rEWwfpKgwPgyodg5rjrRgVCzF47tdaignsyQDQsUkV8uXUOnlILT4qEwqSgf6JhnlKHPtG4I9CWLkFxvzUtwpynsVX2EsTpSgS4Ly3JlqyHaeJV6jq0TM4bCa0yVttw0DwTxBqtl_FdgiVRhsTjelpF7fV-GW6R1MM6S_N-ZG0Q-TEmDzQOusmO57Eu_x3fsXrvkh2sxtWdLtR0TRMswTh3E5U1gelMfnctmTdnkYUhkrDfEWkfXXbbuVj-gl7VlTqzLUX-A-qsyGkzrorfipQrsgJECwq69x76SPlt7ir1L5jQuwYFaHbtVydmt_ZtLvyGi0)
+Components](https://www.plantuml.com/plantuml/png/ZHRBRXityEwlcEgK08QQGtffYoAsfJO2ubZn8pqQezsHmeHBRackRA7eL-KJycET8VUfNRKnO8dpVi_eZG_eGbLek7hzU6MBqXeouN6XSEUmEFj1cKnNES6lLwz_x7FCIvRvxUpAce3Aa7kyj9N9qHrUOAdEONQF_iir6jnH8TmNwzNi9Vnz1lpNwdXHg3pNz8IEM6Bvd54Pb3Nm5askbTd1TKkVCSF5tNh-VddFyewEIEp6Nf4B15lK6ZsmIxuaXpc_oK1bW9op3dvwzMhsyiYBZ6DmLcjojTyUhbhKoF2Gj7mM9MmYBwqomSFjykuUIdG8E_91VVjgWBF7EIRq8ykb8y_Vv3ohMhU0ABwfGba5QB8A5pcM3OrTyC5L1mwCPSgA3N6OR-_lrt00piCJ53OdBVR-cQvGEL6XijGgGod0HAKsILQHU7hP0kBDshgG7XLNm7g9bqKaz-mE0nwruZU_Ci5bwAq0bRSJfIWABhwFGQQdQ5v9MZ0BjewVanb8_Ey8vr6BfcFyoCHVx6KAuqDwJHZuWu9ekJoiyl_Gj8znIS9Ov6CBY885PTQX2FL8PZVb-4WjxVapZa3gYwN0q21YFtQbWhNbvs5MrxF9GVxU1hMjUMhHSVT9uVe5h7kkXLUYyfPAwnKxUZY7rODHuMRxftLV65WMgFGTkRtAU7xdy_cfViijSvfnooqYVgBR-5-5LAHb_OnPZVnmdPgxrhSAL02FCEXlNtSSiRIMePtDb9sgM4Ktcy-KnS0_2WWrF6c0WqzJYKPio8AA3QvFceZLyvskMBseAzLnNMsqyf-u6TgQnQR88_aS1bMCk5DPLMRhS9pKbQ1bFMIXukKuJgvh2feIVDi3Omum85na6VdK0-9AaJ9mr0z03GRp3ZlAY9DPo9Ef-8gjTdlTJtnI8zIVGIElomr_fbMyLxpTW7iLEEiiDjAVRoGvz1p4-URTs61mgtQLQoSpzjC1VkVZHa_Snt6f_mAg3RFVvDFLNIXVOiW-nNlHBpDqbAxW3QwkEDjtj4FGt4TH6tyZ-Ce3RplwZ3cxCpuKD1YrMPmygE5qXdYT61pWLhsG-gCwxAV5XXF8t7SVtYa-drBz3Vge8A7Ymj45PcHujh1UyEr1koKzEEE3Oxeq-uhqdcg-FcrmK1uyLtXqFIQa1WVp7P4qIti2Q_u-py1ABo4zO-awrRBzbJwGJGjTVaSaqIatczDrokY1Jrx3tLwXxs7kLFSMuyC4kTde3sCxOzBHdVbVXdQpyRndlFgu7LhErgsMQLb8xoJoSECqXhfWQxRU89_a6GtWQSx1o7o_mkFpkp9xc-5a9Drcwtv_fhKbHsbIfB-ikapti74OrsoQrvwq67EyuL-N_6Fxx5y)
 
 Puedes ver claramente como las clases en los contenedores mantienen las
 referencias del diagrama de contenedores, es decir, "de arriba hacia abajo".
@@ -80,7 +80,7 @@ En este caso usamos un diagrama de clases -parcial- mostrando algunas de las
 clases involucradas en la creación de una tarea.
 
 ![Task Management
-Components](https://www.plantuml.com/plantuml/png/rLPjJzim4FxkNs7roxgDyWDGL2WjOf7GYg28ZvFd760rZJFRgLP1__lEBscSDC0gJKYJcZQzEzyzpxtOFjE6ALEjSa9AnfVi4UXW9bTC5FIARK0DADCq29u9fJndMjF1WkbbQc0re4a2XH5cCnuxFQKZccRqX5vM8Wl_5yBaW29jb2WUWt06cYjH6Y6BhkfQ2QdG9Sf5OMhx2cRCM3VsPo5MS1eqKmKeoIOcqhLLvviOq5VwZAIDuDkW7neBi0PnHBC6MYCi0oY72Mqyd0ZD4ULrD1_iCmQjynG2-qHUh35b6hNf3R1iNkIRgSnpu3PW4fcCmwf9baNI8TZlazYNZRIMEthJ79YAGmqZWorfgXZPk4AweBwEiPab4JBPQ-jgR8d-JTrxIhB51p_TC7JqCevP4iJKDEcaB7F1cUkVfbDZQTIktgqB85ShLcIM0lUlCOaFQTGszJT0ViCdjyIIvCc_HbX_63IyWL9gOQIoBjD5IrBRLOKmyuTxgPRMvcxthzQxIiw4BfdXJw2iKPJqHX6QouCQAlXLWSOst4EDSy0A3ddkgh2GIy0fcdP5zN0aDX7ZfWamZw0U6CSAT_ZODAIrTfS8DnqJlIduq2QacRZ3O0HVbs3EDsdm9p9VfWC9rG1EFIlI8TMRszUurHOUaAkKVd_RE9ZwjWkowPBNaDsoDKonAnz1Ut07vKZupMtR7kcqU50C1wpYfb8GJNL7qJc7sYqYzi1YZsS_fnBblzqHKR__7_tZfY9YkuF_AbdfzYeTKvrxqR-jNUyvqkbfqODFWreB3jTAhaNcDvpRjkYZkn-vn0V7Q5IVEwJJULOJMHBoYTvSN4qMwVpxBTdR2UdnyNZNJnZFtW_8lbdOvYdwxcnvkARIxEqLT_7s_gvrRwNUNOWhzycTu9L8Si25f0ixUHdv6q5q6hLw5rs-jB2JVc3UhFyu8hlCVi5eaGrjtOqq8MTGPFQ6-mS0)
+Components](https://www.plantuml.com/plantuml/png/nLVRSjem47ttLsZoKj86Fg33a12W6S-aXI6qVLRa3L4naYl9D4oIVwyk5iZ6DccQJfyOhSxkdhsmArz8XONArsaKPPYiy1BGoPYlCMNe6cz1d20iKI5uZ10YAPOIdIomNCKArYUetmUcgDeE1lOUeGyeJj17T9NJf3Wlg4f1YwGIb2qBuHWa4JHJbBFgrKnGBhH9BJT-_D4hvZ36ojWpFmkwXlFYPYH0IvAX2kxALvVRCZCNs6IZGv3w9fu3JgOitOvucW8ntFe1P51eFUgSAKgU2wiTPU8xGya-eZEK5QIrsF4zGyHpEDMkvY3pLFLz7htfKGfOXAmw1hpXbl5pj2z0WB4riFnS2KAOiL_4NekrvJ4SNbAocYHQNrKdgFiq25CRFGVDDSoob19iwxxli50Qj9cpQWcoBBVinujfoFrjMkjQvoHzQNyTn7z0TfghUhQLJ5jjoXI8EqnqRk9Al9SyPmaMMsE96W7Ak0XBDta0aYiOoYqZ7OlGROOPWJIrkLpm5R3J8jXsXuvpw95RITNbJ83KDRt92G4fEmuKD6c0-OPJcbWU4o6ua1smFmqT7SQk2MAYk721-zFV1buuyhJOiibb0eGB_0OUmrGR-HmoBgast9BWOP8u9qehjFimy2jGbzkuKA59Yy9ks9mFwlW5VzWnbHbMv1v4CqsFSOxjJ95_c96lZAhftNSkLirkRl06HlUOBK4wJytXKJUXdqlZ9cPt0kiHa1EL2mWcJkMYijlAXLhgBlc5j_-fI2LQkZ4JGsaw_upuxG-zf09MkyNqIV3rnAvbIz0RT-f-6F42uM-DrngVuziHrqLxKFMPU4s1zWvYDXFS39B6xZlq-9hEAssWMHnk7dsg55-QW8Lv0bW6P7SAI1IhNy3F7AJootrXko5pumz4MvtZeNrVk7V0e74MphmjmsHdE23Y39Z7IsZmtmnhJV4Tca-kXuju-kKcgkGAzNe3rBJ2j9bSubgLYeP6ccGUWUxoek4fGDIuoL3_gTThKAJhB8MrFk4eQYHUqTzlYhA1TltsdLEsT0JRxRPcsUskAAhLjHKgpxUYCCtm_PG-2gtz4n_LQgpS4SMgdc-SHWK_v3mmggR2bkeWFM6HWsJimBi1MS7MPyEgjO-zifqA7n-8c-Kc5Cus58I2ADe5-BxR3H_WvYqRV5D4qGMmn7pp_GO)
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Implementación de la arquitectura
@@ -103,7 +103,7 @@ independientes, donde cada proyecto corresponde a un círculo:
   [entidades](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Entity.md)
   y [objetos
   valor](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_08_.Patrones_de_diseno/2_08_Value_Object.md),
-  eventos y excepciones. El domino utiliza
+  y eventos. El domino utiliza
   [eventos](./classTaskManagement_1_1Domain_1_1Events_1_1DomainEvent.html)
   para informar cuando se crea, se completa, o se asigna una tarea, o cuando
   cambia su prioridad -ver por ejemplo la propiedad `TaskItem.DomainEvents` y el
@@ -113,8 +113,8 @@ independientes, donde cada proyecto corresponde a un círculo:
   eventos](https://github.com/ucudal/ANDIS_Conceptos/blob/main/3_Plantillas/3_13_Event_Driven_Architecture.md).
   La capa del dominio tiene la responsabilidad de generar eventos, pero es la
   capa de aplicación la que tienen la responsabilidad de procesarlos -ver por
-  ejemplo `CreateTaskCommand.Handle` en
-  [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)-.
+  ejemplo `CreateTaskInteractor.ExecuteAsync` en
+  [CreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTaskInteractor.html)-.
   El proyecto
   [`TaskManagement.Domain`](./namespaceTaskManagement_1_1Domain.html) no
   referencia ningún otro proyecto, es el centro de los círculos concéntricos.
@@ -125,18 +125,24 @@ independientes, donde cada proyecto corresponde a un círculo:
   la lógica de los casos de uso. Esta aplicación usa el patrón
   [CQRS](https://github.com/ucudal/ANDIS_Conceptos/blob/main/2_Tecnicas_y_herramientas/2_09_.Patrones_de_arquitectura/2_09_CQRS.md)
   donde los comandos están separados de las consultas -ver por ejemplo la clase
-  [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)
+  [CreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTaskInteractor.html)
   y la clase
-  [GetTaskByIdQuery](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html)-.
+  [GetTaskByIdInteractor](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskByIdInteractor.html)-.
   La capa de aplicación define -y utiliza- abstracciones que emplean el patrón
   de [inyección de
   dependencias](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/overview)
   -ver por ejemplo las interfaces
-  [IEmailService](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IEmailService.html),
-  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html),
-  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html)
+  [IEmailService](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IEmailService.html),
+  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskRepository.html),
+  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskReadRepository.html)
   o
-  [IUnitOfWork](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IUnitOfWork.html)-[^3].
+  [IUnitOfWork](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IUnitOfWork.html)-[^3].
+  Cada caso de uso tiene además un puerto de entrada, que usa el controlador, y un
+  puerto de salida, que implementa un presenter en la capa de interfaz API -ver
+  por ejemplo las interfaces
+  [ICreateTaskInputBoundary](./interfaceTaskManagement_1_1Application_1_1Commands_1_1ICreateTaskInputBoundary.html)
+  y
+  [ICreateTaskOutputBoundary](./interfaceTaskManagement_1_1Application_1_1Commands_1_1ICreateTaskOutputBoundary.html)-.
   Las clases concretas que implementan estas abstracciones están definidas en la
   capa de infraestructura -ver por ejemplo las clases
   [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
@@ -146,14 +152,14 @@ independientes, donde cada proyecto corresponde a un círculo:
   interfaz API -ver las llamadas a `builder.services…
   .AddScoped<IUnitOfWork>(…), .AddScoped<ITaskReadRepository,
   TaskReadRepository>(), y .AddScoped<IDomainEventDispatcher,
-  MediatRDomainEventDispatcher>()` en
+  InProcessDomainEventDispatcher>()` en
   [Program](./classProgram.html)-. Los eventos
   creados en la capa del dominio son procesados en la capa de aplicación usando
   una abstracción -ver la interfaz
-  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html)-;
+  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IDomainEventDispatcher.html)-;
   y esa abstracción también está implementada en una clase definida en la capa
   de infraestructura -ver la clase
-  [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)-.
+  [InProcessDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1InProcessDomainEventDispatcher.html)-.
   El proyecto
   [`TaskManagement.Application`](./namespaceTaskManagement_1_1Application.html)
   referencia solamente el proyecto
@@ -164,9 +170,9 @@ independientes, donde cada proyecto corresponde a un círculo:
   es otra librería de C# en la que se definen cómo se implementa la
   infraestructura para las abstracciones definidas en la capa de aplicación de
   -repositorios, despacho de eventos y persistencia-. Las abstracciones
-  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskRepository.html)
+  [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskRepository.html)
   y
-  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1ITaskReadRepository.html)
+  [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskReadRepository.html)
   de la capa de aplicación se implementan con las clases
   [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
   y
@@ -177,14 +183,14 @@ independientes, donde cada proyecto corresponde a un círculo:
   `builder.services...AddScoped<ITaskRepository, TaskRepository>()` y
   `builder.services...AddScoped<ITaskReadRepository, TaskReadRepository>()`-.
   Como ya fue mencionado antes, la abstracción
-  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Interfaces_1_1IDomainEventDispatcher.html)
+  [IDomainEventDispatcher](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IDomainEventDispatcher.html)
   definida en la capa de aplicación se implementa con la clase
-  [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)
+  [InProcessDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1InProcessDomainEventDispatcher.html)
   de esta capa de infraestructura y la instancia se crea en tiempo de ejecución
   también con injección de dependencias en la capa de interfaz API en
   [Program](./classProgram.html) -ver
   `builder.services...AddScoped<IDomainEventDispatcher,
-  MediatRDomainEventDispatcher>()`-. El proyecto
+  InProcessDomainEventDispatcher>()`-. El proyecto
   [`TaskManagement.Infrastructure`](./namespaceTaskManagement_1_1Infrastructure.html)
   referencia solamente el proyecto
   [`TaskManagement.Application`](./namespaceTaskManagement_1_1Application.html),
@@ -202,6 +208,11 @@ independientes, donde cada proyecto corresponde a un círculo:
   contiene los controladores que implementan los *endpoint* de la API REST -ver
   por ejemplo
   [TasksController](./classTaskManagement_1_1API_1_1Controllers_1_1TasksController.html)-.
+  También contiene los presenters que convierten el resultado de cada caso de uso
+  en una respuesta HTTP -ver por ejemplo
+  [CreateTaskPresenter](./classTaskManagement_1_1API_1_1Presenters_1_1CreateTaskPresenter.html)-.
+  Solo [Program](./classProgram.html), la raíz de composición, usa la capa de
+  infraestructura.
   El archivo [`TaskManagement.http`](../TaskManagement.http) tiene ejemplos para
   invocar la API REST.
 
@@ -212,24 +223,50 @@ independientes, donde cada proyecto corresponde a un círculo:
     aplicación, porque es allí donde se usan.
 
 <!-- markdownlint-disable-next-line MD025 -->
+# Conceptos de Clean Architecture en esta demo
+
+La siguiente tabla muestra dónde está cada concepto, con el caso de uso de crear
+una tarea como ejemplo.
+
+| Concepto | Círculo | Elemento en esta demo |
+| -------- | ------- | --------------------- |
+| Entidad | Entidades | `TaskItem` |
+| Objeto valor | Entidades | `Email` |
+| Evento del dominio | Entidades | `TaskCreatedEvent`, `TaskCompletedEvent` |
+| *Interactor* | Casos de uso | `CreateTaskInteractor` |
+| DTO de entrada y de salida | Casos de uso | `CreateTaskInput`, `CreateTaskOutput` |
+| Puerto de entrada -*input boundary*- | Casos de uso | `ICreateTaskInputBoundary` |
+| Puerto de salida -*output boundary*- | Casos de uso | `ICreateTaskOutputBoundary` |
+| Puerto de salida -repositorios y servicios externos- | Casos de uso | `ITaskRepository`, `IUnitOfWork`, `IEmailService` |
+| Adaptador conductor -*controller*- | Adaptadores de interfaz | `TasksController` |
+| *Presenter* | Adaptadores de interfaz | `CreateTaskPresenter` |
+| *View model* | Adaptadores de interfaz | `TaskViewModel` |
+| Adaptador conducido -*gateway*- | Adaptadores de interfaz | `TaskRepository`, `LoggingEmailService` |
+| Objeto del ORM | Frameworks & Drivers | `TaskRecord` |
+| Configuración de la inyección de dependencias | Frameworks & Drivers | `Program.cs` |
+
+Los cuatro proyectos no coinciden exactamente con los cuatro círculos:
+`TaskManagement.API` y `TaskManagement.Infrastructure` contienen tanto adaptadores
+de interfaz como código que depende de los frameworks.
+
+La regla de dependencias se verifica con pruebas de arquitectura en
+[`ArchitectureTests.cs`](../test/TaskManagment.Tests/ArchitectureTests.cs), que se
+ejecutan en el *pipeline* de CI. Las reglas de negocio y los casos de uso se
+prueban sin base de datos ni servidor web en
+[`TaskManagement.Application.UnitTests`](../test/TaskManagement.Application.UnitTests).
+
+<!-- markdownlint-disable-next-line MD025 -->
 # Frameworks utilizados
 
 La aplicación utiliza los siguientes frameworks.
 
-## FluentValidation
+## Entity Framework Core
 
-[FluentValidation](https://github.com/FluentValidation/FluentValidation) es una
-librería de .NET para constuir reglas de validación fuertemente tipadas.
+[Entity Framework
+Core](https://learn.microsoft.com/en-us/ef/) es el ORM de .NET. En esta demo se
+usa solo en la capa de infraestructura, para las escrituras.
 
-## MediatR
-
-[MediatR](https://github.com/LuckyPennySoftware/MediatR) es una librería de .NET
-para mensajería en proceso -sin persistencia- sin dependencias. Admite
-solicitudes y respuestas, comandos, consultas, notificaciones y eventos, tanto
-síncronos como asíncronos, con despacho inteligente mediante tipos genéricos en
-C#.
-
-## Drapper
+## Dapper
 
 [Dapper](https://github.com/DapperLib/Dapper) es una librería de mapeo
 objeto-relacional -ORM- de código abierto para aplicaciones .NET. Permite
@@ -250,7 +287,6 @@ La capa del dominio está definida
 | **Objetos valor** | `ValueObjects/Email.cs`, `Shared/ValueObject.cs` | Objetos inmutables representando valores del dominio |
 | **Eventos del dominio** | `Events/DomainEvent.cs` | Eventos representando ocurrencias importantes del dominio |
 | **Interfaces** | Ver nota [^3] | Ver nota [^3] |
-| **Excepciones** | `Exceptions/DomainException.cs` | Excepciones específicas del dominio |
 | **Tipos compartidos** | `Shared/Result.cs`, `Shared/TaskErrors.cs` | Tipos comunes compartidos internamente en el dominio |
 
 **Principio clave:** La capa del dominio **nunca depende** de las capas de
@@ -320,13 +356,14 @@ La capa de aplicación está definida
 
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
-| **Comandos** | `Commands/CreateTaskCommand.cs`, `Commands/CompleteTaskCommand.cs` | Objetos para casos de uso que cambian estado (CQRS) |
-| **Consultas** | `Queries/GetTaskByIdQuery.cs` | Objetos para casos de uso de lecturas de datos (CQRS) |
-| **DTO** | `Queries/GetTaskByIdQuery.cs` (TaskDto), `Requests/CreateTaskRequest.cs` | Objetos de transferencia de datos para entrada/salida |
-| **Interfaces** | `Interfaces/IUnitOfWork.cs`, `Interfaces/ITaskRepository.cs`, `Interfaces/ITaskReadRepository.cs`, `Interfaces/IEmailService.cs`, `Interfaces/IDomainEventDispatcher.cs` | Abstracciones para servicios de infraestructura y despacho de eventos |
-| **Comportamientos** | `Behaviors/ValidationBehavior.cs` | Comportamientos de pipeline MediatR |
-| **Excepciones** | `Exceptions/ValidationException.cs`, `Exceptions/NotFoundException.cs` | Excepciones específicas de la capa de aplicación |
-| **Compartido** | `Shared/PagedResult.cs` | DTOs y tipos comunes |
+| **Comandos** | `Commands/CreateTaskInteractor.cs`, `Commands/CompleteTaskInteractor.cs` | *Interactors* de casos de uso que cambian estado (CQRS) |
+| **Consultas** | `Queries/GetTaskByIdInteractor.cs` | *Interactors* de casos de uso de lecturas de datos (CQRS) |
+| **Puertos de entrada y salida** | `Commands/ICreateTaskInputBoundary.cs`, `Commands/ICreateTaskOutputBoundary.cs`, etc. | Contratos de cada caso de uso con los controladores y los presenters |
+| **DTO** | `Commands/CreateTaskInput.cs`, `Commands/CreateTaskOutput.cs`, `Queries/TaskDto.cs`, etc. | Objetos de transferencia de datos para entrada/salida |
+| **Decoradores** | `Commands/ValidatingCreateTaskInteractor.cs` | Validación de la entrada antes de ejecutar el caso de uso |
+| **Puertos** | `Ports/IUnitOfWork.cs`, `Ports/ITaskRepository.cs`, `Ports/ITaskReadRepository.cs`, `Ports/IEmailService.cs`, `Ports/IDomainEventDispatcher.cs` | Abstracciones para servicios de infraestructura y despacho de eventos |
+| **Manejadores de eventos** | `Events/IDomainEventHandler.cs`, `Events/TaskCompletedNotificationHandler.cs` | Reacciones de la aplicación a los eventos del dominio |
+| **Compartido** | `Shared/PagedResult.cs`, `Shared/TaskPriorityLevel.cs` | DTOs y tipos comunes |
 
 **Principio clave:** La capa de aplicación implementa casos de uso de negocio
 pero **delega la lógica de negocio a la capa del dominio**. Básicamente es un
@@ -336,36 +373,42 @@ El siguiente diagrama muestra una versión simplificada de un comando de la capa
 de aplicación y su interacción con la capa del dominio.
 
 ![Diagrama de
-secuencia](https://www.plantuml.com/plantuml/png/bLPRJrf147uduJzCx0icL6dJz86eKK4hYKqDa3xnifwToiPbb-xkiLN3V--SlPmRO5iIm-pktBzl1i-jOyRbAmbpPXz71faJMitmPuugmsxdnBfdYMVT3j1dghM3ro27SwxuI1k51WRLzINB7XzCU9FQmDmmPTVCe7AL4afSqKNT7S2rLYxOl1iCFbzTNDSVBxNXQFO-tmg5UnutGQIla-DKJxUp51pX1vLqhtyNPvOvCZwucS_lO2G59NS0p4Qnsw42dCZ4cb7I1qMpx8YoDLfAD46nFBQKVLVHzrUlLapngExbbkxaAtB1A965wWLnUkZLq_tVVD_GNyeeoZjodpXSUPLqA1eGAeNtPsUrMePmzsqsXsDNLBnGhquuYNtWQ3CZrWLP-h0sGXlXdkawnp7biudz54zqQ3IcahVYV6TIy49_Mh3FEkg0ogM4R8dPOnzOxfOKvSKJz7279ry-326BqYae_4LE_YdZFkGMpOGVjZAF6BM29J26C4F5Up4YsNBSjgtvgq1CKiiTJHIffGgSXcM2i64GWHqM5VQQAPUOHy7h9vI7fNGKYDCx_FS6PTw2Nput0rOCIb8hP8dhVMvfHgq5aqkqAJ18L0zkMGQ2fqAVGeSmqYK7b1TSCo5jcEOgMgCZKxIvT4U5Ocxm96d53LOsfTNsfj6NNF1eKBMzJTVzDdMoU2i_LqFuD1ZGRkIHtjqEIelrucPvbY7ohVeQtPmeuGJPl21XfDT8W-rxEU5zc0SWntKWPuwvt9xEDTVzXRehOHqdM0CH-8KhHO_m6obSS0vZlM92NJrHOHIy_Er0xg-sx7T1vCkrjWuHXdcfJL5zF-q43xRyUIHwnRwQj4Qod8twEEt1jU6juQKQuZVNsQXOMs22jucD_XAdo-DRXFau-90mAJQlhsYpKBSwyuGPngryd9uYfI8b_uUCv1wDqSPkTe5GN-3TpZafq3yCtSuV)
+secuencia](https://www.plantuml.com/plantuml/png/bLLDRnen4BtxLupI2qWfeLNL0q8eX10LgL8Ge9ouEEj9OiNOrFQYe2Z_lMFluZKRegOv4C-7dz-yiMSldUVMbni5A-wU9nQvbqOlyK-9ka0sT7wlSCI0_XR6U7YDoyeijPWOgz52FtclUF7yQAkGCXPMbcktvHQrJpceS4DsXWLmOxIlTdpfztzEnpTPxCfOWVQZw6-fyNJiZLM_mukw2lOa1S83rN5lNXZZXQTTPxzMgpbCb2HAPy1TlMH4sij2RZanFGlYk0bnj4Ofj5LUCezpxxYIWcJKZr5E37jdsgEDvwrrPvRxjwM_2d9nk-z6s7gxQQ6UmehvZVcUyipZ9YOTZ8ymvnOT1g1ZUhUbVySlfJ9MAGLVHwDCZ07CRvShkE1RUU63R6lzwgLNU0u2NM7bDjomSzXQQQpqUtANU4q7liMEo1qjSssRPJmeoJE0wGiMfSUns-kYqzAqcu4rYdBbIQzTi466j7X3KZmUaEeR79Q7XXezjTPOry7uhyjGkHhzGxIcE__a6pOdpbbNWxyn8-gXdOEqwbLudLwlruPAlG_UWz62gKaZt9UEtfDpO4k5haOYrHPamauQHKaYlR06hLth0bsfVE-6IrLQ71uIHsbhgwB_KBqQ8QHyuEJ0KOvxa2TP7TKu5WAkpOPBFTqHFjtqDF9GH5VtyuKjow8WcKuK9l2qyYUApd7dQ9rq7iAJ0Qx5MWj9WzCNJo0YQS10qNrUm9fYf_sSQmLr9LX6Dxjp8Pf5cXVKVexPiPKoB7agxVB1C1iNePzrOeuKC-Cq6S3t_ZUekm9XNlxez-cp8XRXc-HyJYkR4koIADDdZFq5)
 
-La clase `CreateTaskCommandHandler` implementa un procesador de
-[MediatR](https://github.com/LuckyPennySoftware/MediatR) para el comando
-`CreateTaskCommand`.
+La clase `CreateTaskInteractor` implementa el caso de uso. El resultado no se
+devuelve al controlador: sale por el puerto de salida
+`ICreateTaskOutputBoundary`, de modo que el caso de uso no conoce a quién le
+entrega el resultado ni en qué formato se muestra.
 
 ```csharp
-public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand, Result<Guid>>
+public sealed class CreateTaskInteractor : ICreateTaskInputBoundary
 {
     private readonly ITaskRepository _taskRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IDomainEventDispatcher _eventDispatcher;
+    private readonly ICreateTaskOutputBoundary _output;
 
     …
 
-    public async Task<Result<Guid>> Handle(
-        CreateTaskCommand request,
-        CancellationToken cancellationToken)
+    public async Task ExecuteAsync(CreateTaskInput input, CancellationToken cancellationToken = default)
     {
         …
 
         // Delega a la capa del dominio la lógica de negocio
         var createResult = TaskItem.Create(
-            request.Title,
-            request.Description,
-            request.Priority,
-            request.DueDate,
-            request.CreatedBy);
+            input.Title,
+            input.Description,
+            ToDomainPriority(input.Priority),
+            input.DueDate,
+            input.CreatedBy);
+        if (createResult.IsFailure)
+        {
+            _output.PresentValidationErrors(createResult.Errors);
+            return;
+        }
 
         // Persiste la entidad del dominio
+        var task = createResult.Value!;
         await _taskRepository.AddAsync(task, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
@@ -373,17 +416,20 @@ public sealed class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand
         await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken);
 
         …
+
+        // Entrega el resultado por el puerto de salida
+        _output.PresentSuccess(new CreateTaskOutput(task.Id));
     }
 
     …
 }
 ```
 
-En ese método, las variables `_taskRepository` de tipo `ITaskRepository`
--definido en la capa del dominio-, `_unitOfWork` de tipo `IUnitOfWork` e
-`_eventDispatcher` de tipo `IDomainEventDispatcher` -definidos en la propia capa
-de aplicación- son asignadas mediante injección de dependencias con clases
-implementadas en la capa de infraestructura.
+En ese método, las variables `_taskRepository`, `_unitOfWork` y
+`_eventDispatcher` -de tipos definidos en esta capa de aplicación- son asignadas
+mediante inyección de dependencias con clases implementadas en la capa de
+infraestructura. La variable `_output` es asignada con un presenter de la capa de
+interfaz.
 
 ## 3. Capa de infraestructura
 
@@ -395,10 +441,11 @@ La capa de infraestructura está definida
 | **DbContext** | `Persistence/TaskDbContext.cs` | Contexto de base de datos de [Entity Framework](https://learn.microsoft.com/en-us/ef/) |
 | **Repositorios** | `Persistence/Repositories/TaskRepository.cs`, `TaskReadRepository.cs` | Implementaciones de acceso a datos con [Entity Framework](https://learn.microsoft.com/en-us/ef/) y [Dapper](https://github.com/DapperLib/Dapper)  respectivamente |
 | **Configuraciones** | `Persistence/Configuration/TaskConfiguration.cs` | Configuraciones de [Entity Framework](https://learn.microsoft.com/en-us/ef/) |
-| **Despacho de eventos** | `EventDispatching/MediatRDomainEventDispatcher.cs` | Implementación de publicación de eventos del dominio con [MediatR](https://github.com/LuckyPennySoftware/MediatR) |
+| **Objetos del ORM** | `Persistence/Records/TaskRecord.cs` | Representación de una fila para [Entity Framework](https://learn.microsoft.com/en-us/ef/); no sale de esta capa |
+| **Despacho de eventos** | `EventDispatching/InProcessDomainEventDispatcher.cs` | Entrega los eventos del dominio a sus manejadores, en el mismo proceso |
 
 **Principio clave:** La capa de infraestructura implementa interfaces definidas
-en las capas del dominio y aplicación usando [inyección de
+en la capa de aplicación usando [inyección de
 dependencias](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/overview).
 
 Esta capa implementa el patrón
@@ -422,9 +469,12 @@ public sealed class TaskRepository : ITaskRepository
     // ocultos del dominio y de la aplicación
     public async Task<TaskItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Tasks
+        var record = await _dbContext.Tasks
             .AsNoTracking()
             .FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+
+        // Los objetos del ORM no salen de esta capa
+        return record?.ToEntity();
     }
     …
 }
@@ -438,14 +488,15 @@ En esta demo la interfaz es una API web. La capa de interfaz está definida
 | Componente | Archivos | Propósito |
 | ---------- | -------- | --------- |
 | **Controladores** | `Controllers/TasksController.cs` | Endpoints HTTP |
-| **Middleware** | `Middleware/ExceptionHandlingMiddleware.cs` | Comportamientos de pipeline transversales |
-| **Extensiones** | `Extensions/ClaimsPrincipalExtensions.cs` | Métodos de extensión auxiliares |
+| **Presenters** | `Presenters/CreateTaskPresenter.cs`, `Presenters/CompleteTaskPresenter.cs`, `Presenters/GetTaskByIdPresenter.cs` | Convierten el resultado de un caso de uso en una respuesta HTTP |
+| **View models** | `ViewModels/TaskViewModel.cs` | Datos tal como se muestran en la respuesta HTTP |
+| **Middleware** | `Middleware/ExceptionHandlingMiddleware.cs` | Respuesta para fallas inesperadas |
 | **Solicitudes** | `Requests/CreateTaskRequest.cs` | DTOs de entrada para solicitudes HTTP |
 | **Inicio** | `Program.cs` | Raíz de composición de inyección de dependencias |
 
-**Principio clave:** La capa de UI traduce HTTP a comandos o consultas de
-aplicación. **No tiene lógica de negocio** y delega todo a la capa de
-aplicación.
+**Principio clave:** La capa de UI traduce HTTP a los DTO de entrada de los casos
+de uso, y sus resultados a respuestas HTTP. **No tiene lógica de negocio** y
+delega todo a la capa de aplicación.
 
 A continuación un fragmento de la clase `TaskController` con la implementación
 del POST de HTTP para crear un cliente -hay ejemplos para probar todos los
@@ -456,33 +507,53 @@ endpoints [aquí](../TaskManagement.http)-.
 [Route("api/[controller]")]
 public sealed class TasksController : ControllerBase
 {
-    private readonly IMediator _mediator;
-
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<Guid>> Create(
+    public async Task<IActionResult> Create(
         [FromBody] CreateTaskRequest request,
+        [FromServices] ICreateTaskInputBoundary createTask,
+        [FromServices] CreateTaskPresenter presenter,
         CancellationToken cancellationToken)
     {
-        // Traduce la solicitud HTTP a un comando de la aplicación
-        var command = new CreateTaskCommand(
+        // Traduce la solicitud HTTP al DTO de entrada del caso de uso
+        var input = new CreateTaskInput(
             request.Title,
             request.Description,
             request.Priority,
             request.DueDate,
-            userId);
+            GetUserId(User));
 
-        // Envía el comando a la capa de aplicación
-        var result = await _mediator.Send(command, cancellationToken);
+        // Ejecuta el caso de uso a través de su puerto de entrada
+        await createTask.ExecuteAsync(input, cancellationToken);
 
-        // Traduce resultado a una respuesta HTTP
-        if (result.IsSuccess)
-            return CreatedAtAction(nameof(GetById), new { id = result.Value }, result.Value);
-
-        return BadRequest(CreateProblemDetails(result.Errors));
+        // Devuelve la respuesta HTTP que construyó el presenter
+        return presenter.Result;
     }
 
     …
+}
+```
+
+El presenter implementa el puerto de salida del caso de uso. Decide los códigos
+de estado y el formato de la respuesta. Hay una instancia por solicitud: el caso
+de uso escribe en el mismo objeto que lee el controlador.
+
+```csharp
+public sealed class CreateTaskPresenter : ICreateTaskOutputBoundary
+{
+    public IActionResult Result { get; private set; } = …
+
+    public void PresentSuccess(CreateTaskOutput output)
+    {
+        Result = new CreatedAtActionResult(
+            nameof(TasksController.GetById),
+            "Tasks",
+            new { id = output.TaskId },
+            output.TaskId);
+    }
+
+    public void PresentValidationErrors(IReadOnlyList<string> errors) =>
+        Result = ErrorResponses.ValidationFailed(errors);
 }
 ```
 
@@ -491,22 +562,22 @@ En el programa principal en
 inyección de dependencias.
 
 ```csharp
-// Registra servicios para las abstracciones de la capa del dominio
+// Registra los adaptadores de la capa de infraestructura para los puertos de salida
 builder.Services
+    .AddDbContext<TaskDbContext>(options => options.UseSqlite(…))
     .AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<TaskDbContext>())
     .AddScoped<ITaskRepository, TaskRepository>()
-    .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
+    .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
+    .AddScoped<IEmailService, LoggingEmailService>();
 
-// Registra servicios para las abstracciones de la capa de aplicación
+// Registra el presenter, el caso de uso y su decorador de validación
 builder.Services
-    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(...))
-    .AddValidatorsFromAssembly(...)
-    .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-
-// Registra servicios para las abstracciones de la capa de infraestructura
-builder.Services
-    .AddDbContext<TaskDbContext>(options =>
-        options.UseSqlite(connectionString));
+    .AddScoped<CreateTaskPresenter>()
+    .AddScoped<ICreateTaskOutputBoundary>(sp => sp.GetRequiredService<CreateTaskPresenter>())
+    .AddScoped<CreateTaskInteractor>()
+    .AddScoped<ICreateTaskInputBoundary>(sp => new ValidatingCreateTaskInteractor(
+        sp.GetRequiredService<CreateTaskInteractor>(),
+        sp.GetRequiredService<ICreateTaskOutputBoundary>()));
 ```
 
 <!-- markdownlint-disable-next-line MD025 -->
@@ -526,25 +597,25 @@ builder.Services
 2. Muévete a la capa de aplicación
    [TaskManagement.Application](./namespaceTaskManagement_1_1Application.html)
    * Lee
-     [CreateTaskCommand](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTask_1_1CreateTaskCommandHandler.html)
+     [CreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1CreateTaskInteractor.html)
      para ver cómo se implementa un caso de uso
    * Lee
-     [ValidationBehavior](./classTaskManagement_1_1Application_1_1Behaviors_1_1ValidationBehavior-2-g.html)
-     para entender preocupaciones transversales
+     [ValidatingCreateTaskInteractor](./classTaskManagement_1_1Application_1_1Commands_1_1ValidatingCreateTaskInteractor.html)
+     para ver cómo se agrega validación sin cambiar el caso de uso
    * Lee
-     [GetTaskByIdQuery](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskById_1_1GetTaskByIdQueryHandler.html)
+     [GetTaskByIdInteractor](./classTaskManagement_1_1Application_1_1Queries_1_1GetTaskByIdInteractor.html)
      para ver otro caso de uso pero usando el patrón CQRS
 
 3. Explora la capa de infraestructura
    [TaskManagement.Infrastructure](./namespaceTaskManagement_1_1Infrastructure.html)
    * Lee
      [TaskRepository](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1Repositories_1_1TaskRepository.html)
-     para ver cómo se implementan interfaces del dominio
+     para ver cómo se implementan los puertos de salida
    * Lee
      [TaskDbContext](./classTaskManagement_1_1Infrastructure_1_1Persistence_1_1TaskDbContext.html)
      para ver la configuración de base de datos
    * Lee
-     [MediatRDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1MediatRDomainEventDispatcher.html)
+     [InProcessDomainEventDispatcher](./classTaskManagement_1_1Infrastructure_1_1EventDispatching_1_1InProcessDomainEventDispatcher.html)
      para ver el manejo de eventos
 
 4. Revisa la capa de interfaz API
@@ -552,11 +623,14 @@ builder.Services
    * Lee
      [TasksController](./classTaskManagement_1_1API_1_1Controllers_1_1TasksController.html)
      para ver endpoints HTTP
+   * Lee
+     [CreateTaskPresenter](./classTaskManagement_1_1API_1_1Presenters_1_1CreateTaskPresenter.html)
+     para ver cómo se presenta el resultado de un caso de uso
    * Lee [Program](./classProgram.html) para ver
      la configuración de inyección de dependencias
    * Lee
      [ExceptionHandlingMiddleware](./ExceptionHandlingMiddleware_8cs.html)
-     para ver el manejo de errores
+     para ver cómo se responde a fallas inesperadas
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Beneficios de Clean Architecture

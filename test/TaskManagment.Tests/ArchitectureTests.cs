@@ -352,7 +352,7 @@ public class ArchitectureTests
 
     /// <summary>
     /// Verifica que la capa del dominio no dependa de frameworks de mensajería
-    /// como MediatR -que es el que se usa en este proyecto; podrían incluirse
+    /// como MediatR -que ya no se usa en este proyecto; podrían incluirse
     /// otros como MassTransit o NServiceBus-.
     /// </summary>
     [Test]
