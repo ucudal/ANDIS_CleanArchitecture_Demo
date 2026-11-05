@@ -120,6 +120,122 @@ public class ArchitectureTests
         rule.Check(Architecture);
     }
 
+    // Interface Adapter Rules
+
+    /// <summary>
+    /// Verifica que la capa de aplicación no dependa de frameworks de mensajería, validación, web
+    /// ni acceso a datos: los casos de uso solo conocen sus puertos.
+    /// </summary>
+    [Test]
+    public void ApplicationLayer_ShouldNotDependOnFrameworks()
+    {
+        var rule = Types()
+            .That()
+            .ResideInNamespaceMatching("TaskManagement.Application*")
+            .Should()
+            .NotDependOnAny(
+                Types(true)
+                    .That()
+                    .ResideInNamespaceMatching("MediatR*")
+                    .Or()
+                    .ResideInNamespaceMatching("FluentValidation*")
+                    .Or()
+                    .ResideInNamespaceMatching("Microsoft.AspNetCore*")
+                    .Or()
+                    .ResideInNamespaceMatching("Dapper*")
+            );
+
+        rule.Check(Architecture);
+    }
+
+    /// <summary>
+    /// Verifica que controllers, presenters, view models y requests no dependan de la capa de
+    /// infraestructura. Solo Program.cs, la raíz de composición, conoce esa capa.
+    /// </summary>
+    [Test]
+    public void InterfaceAdapters_ShouldNotDependOnInfrastructure()
+    {
+        var rule = Types()
+            .That()
+            .ResideInNamespace("TaskManagement.API.Controllers")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.Presenters")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.ViewModels")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.Requests")
+            .Should()
+            .NotDependOnAny(
+                Types()
+                    .That()
+                    .ResideInNamespaceMatching("TaskManagement.Infrastructure*")
+            );
+
+        rule.Check(Architecture);
+    }
+
+    /// <summary>
+    /// Verifica que las entidades del dominio no lleguen a la interfaz de usuario: controllers,
+    /// presenters, view models y requests solo conocen los DTO de la capa de aplicación.
+    /// </summary>
+    [Test]
+    public void InterfaceAdapters_ShouldNotDependOnDomain()
+    {
+        var rule = Types()
+            .That()
+            .ResideInNamespace("TaskManagement.API.Controllers")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.Presenters")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.ViewModels")
+            .Or()
+            .ResideInNamespace("TaskManagement.API.Requests")
+            .Should()
+            .NotDependOnAny(
+                Types()
+                    .That()
+                    .ResideInNamespaceMatching("TaskManagement.Domain*")
+            );
+
+        rule.Check(Architecture);
+    }
+
+    /// <summary>
+    /// Verifica que los presenters residan en <c>TaskManagement.API.Presenters</c>.
+    /// </summary>
+    [Test]
+    public void Presenters_ShouldBeInApiPresenters()
+    {
+        var rule = Classes()
+            .That()
+            .HaveNameEndingWith("Presenter")
+            .Should()
+            .ResideInNamespace("TaskManagement.API.Presenters");
+
+        rule.Check(Architecture);
+    }
+
+    /// <summary>
+    /// Verifica que los objetos del ORM no salgan de la capa de infraestructura.
+    /// </summary>
+    [Test]
+    public void OrmRecords_ShouldNotLeaveInfrastructure()
+    {
+        var rule = Types()
+            .That()
+            .ResideInNamespaceMatching("TaskManagement.Application*")
+            .Or()
+            .ResideInNamespaceMatching("TaskManagement.API*")
+            .Should()
+            .NotDependOnAny(
+                Types()
+                    .That()
+                    .ResideInNamespace("TaskManagement.Infrastructure.Persistence.Records")
+            );
+
+        rule.Check(Architecture);
+    }
+
     // Cross-Layer Naming Convention Rules
 
     /// <summary>
@@ -224,7 +340,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.EntityFrameworkCore*")
                     .Or()
@@ -248,7 +364,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("MediatR*")
             );
@@ -268,7 +384,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.AspNetCore*")
                     .Or()
@@ -290,10 +406,10 @@ public class ArchitectureTests
         // Verifica que el dominio no dependa de proveedores de base de datos: SqlClient, Sqlite, MySql, PostgreSQL
         var rule = Types()
             .That()
-            .ResideInNamespaceMatching("TaskManagement.Domain")
+            .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.Data*")
                     .Or()
@@ -316,7 +432,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.Extensions.Logging*")
                     .Or()
@@ -344,7 +460,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Domain*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.IdentityModel*")
                     .Or()
@@ -387,7 +503,7 @@ public class ArchitectureTests
             .ResideInNamespaceMatching("TaskManagement.Application*")
             .Should()
             .NotDependOnAny(
-                Types()
+                Types(true)
                     .That()
                     .ResideInNamespaceMatching("Microsoft.EntityFrameworkCore*")
             );
