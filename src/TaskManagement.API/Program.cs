@@ -41,7 +41,6 @@
 using System.Data.Common;
 using System.Reflection;
 using System.Text.Json.Serialization;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -49,8 +48,10 @@ using Microsoft.IdentityModel.Tokens;
 using TaskManagement.API.Middleware;
 using TaskManagement.API.Presenters;
 using TaskManagement.Application.Commands;
+using TaskManagement.Application.Events;
 using TaskManagement.Application.Ports;
 using TaskManagement.Application.Queries;
+using TaskManagement.Domain.Events;
 using TaskManagement.Infrastructure.Email;
 using TaskManagement.Infrastructure.EventDispatching;
 using TaskManagement.Infrastructure.Persistence;
@@ -106,14 +107,14 @@ builder.Services.AddAuthorization();
 
 // Agregar servicios al contenedor
 builder.Services
-    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(MediatRDomainEventDispatcher).Assembly))
     .AddDbContext<TaskDbContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")))
     .AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<TaskDbContext>())
     .AddScoped<ITaskRepository, TaskRepository>()
     .AddSingleton<Func<DbConnection>>(_ => () => new SqliteConnection(connectionString))
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
-    .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>()
+    .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
+    .AddScoped<IDomainEventHandler<TaskCompletedEvent>, TaskCompletedNotificationHandler>()
     .AddScoped<IEmailService, LoggingEmailService>()
     // Crear tarea: el puerto de entrada es el decorador que valida y luego llama al interactor.
     .AddScoped<CreateTaskPresenter>()
