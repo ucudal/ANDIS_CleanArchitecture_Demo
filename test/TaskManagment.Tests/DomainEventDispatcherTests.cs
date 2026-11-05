@@ -12,7 +12,7 @@ namespace TaskManagment.Tests;
 [TestFixture]
 public class DomainEventDispatcherTests
 {
-    private sealed class SpyHandler<TEvent> : IDomainEventHandler<TEvent>
+    private sealed class SpyHandler<TEvent> : IDomainEventSubscriber<TEvent>
         where TEvent : DomainEvent
     {
         public List<TEvent> Received { get; } = [];
@@ -30,8 +30,8 @@ public class DomainEventDispatcherTests
         var completedHandler = new SpyHandler<TaskCompletedEvent>();
         var createdHandler = new SpyHandler<TaskCreatedEvent>();
         using var services = new ServiceCollection()
-            .AddSingleton<IDomainEventHandler<TaskCompletedEvent>>(completedHandler)
-            .AddSingleton<IDomainEventHandler<TaskCreatedEvent>>(createdHandler)
+            .AddSingleton<IDomainEventSubscriber<TaskCompletedEvent>>(completedHandler)
+            .AddSingleton<IDomainEventSubscriber<TaskCreatedEvent>>(createdHandler)
             .BuildServiceProvider();
         var completedEvent = new TaskCompletedEvent(Guid.NewGuid(), DateTime.UtcNow);
         var dispatcher = new InProcessDomainEventDispatcher(services);

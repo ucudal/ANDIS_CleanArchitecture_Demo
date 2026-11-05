@@ -362,7 +362,7 @@ La capa de aplicación está definida
 | **DTO** | `Commands/CreateTaskInput.cs`, `Commands/CreateTaskOutput.cs`, `Queries/TaskDto.cs`, etc. | Objetos de transferencia de datos para entrada/salida |
 | **Decoradores** | `Commands/ValidatingCreateTaskInteractor.cs` | Validación de la entrada antes de ejecutar el caso de uso |
 | **Puertos** | `Ports/IUnitOfWork.cs`, `Ports/ITaskRepository.cs`, `Ports/ITaskReadRepository.cs`, `Ports/IEmailService.cs`, `Ports/IDomainEventDispatcher.cs` | Abstracciones para servicios de infraestructura y despacho de eventos |
-| **Manejadores de eventos** | `Events/IDomainEventHandler.cs`, `Events/TaskCompletedNotificationHandler.cs` | Reacciones de la aplicación a los eventos del dominio |
+| **Manejadores de eventos** | `Events/IDomainEventSubscriber.cs`, `Events/TaskCompletedNotificationHandler.cs` | Reacciones de la aplicación a los eventos del dominio |
 | **Compartido** | `Shared/PagedResult.cs`, `Shared/TaskPriorityLevel.cs` | DTOs y tipos comunes |
 
 **Principio clave:** La capa de aplicación implementa casos de uso de negocio

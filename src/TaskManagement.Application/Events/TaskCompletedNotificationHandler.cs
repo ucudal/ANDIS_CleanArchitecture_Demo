@@ -14,7 +14,7 @@ namespace TaskManagement.Application.Events;
 /// <li>Usa el puerto de salida IEmailService; no sabe cómo se envía la notificación</li>
 /// </ul>
 /// </remarks>
-public sealed class TaskCompletedNotificationHandler : IDomainEventHandler<TaskCompletedEvent>
+public sealed class TaskCompletedNotificationHandler : IDomainEventSubscriber<TaskCompletedEvent>
 {
     private readonly IEmailService _emailService;
 

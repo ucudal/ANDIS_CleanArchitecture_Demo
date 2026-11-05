@@ -114,7 +114,7 @@ builder.Services
     .AddSingleton<Func<DbConnection>>(_ => () => new SqliteConnection(connectionString))
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
-    .AddScoped<IDomainEventHandler<TaskCompletedEvent>, TaskCompletedNotificationHandler>()
+    .AddScoped<IDomainEventSubscriber<TaskCompletedEvent>, TaskCompletedNotificationHandler>()
     .AddScoped<IEmailService, LoggingEmailService>()
     // Crear tarea: el puerto de entrada es el decorador que valida y luego llama al interactor.
     .AddScoped<CreateTaskPresenter>()

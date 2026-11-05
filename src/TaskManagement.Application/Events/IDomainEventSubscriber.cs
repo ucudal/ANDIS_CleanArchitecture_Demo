@@ -3,7 +3,7 @@ using TaskManagement.Domain.Events;
 namespace TaskManagement.Application.Events;
 
 /// <summary>
-/// <c>IDomainEventHandler</c> es la reacción de la aplicación a un evento del dominio.
+/// <c>IDomainEventSubscriber</c> es la reacción de la aplicación a un evento del dominio.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
@@ -14,7 +14,7 @@ namespace TaskManagement.Application.Events;
 /// </ul>
 /// </remarks>
 /// <typeparam name="TEvent">El tipo de evento del dominio que se maneja.</typeparam>
-public interface IDomainEventHandler<in TEvent>
+public interface IDomainEventSubscriber<in TEvent>
     where TEvent : DomainEvent
 {
     Task HandleAsync(TEvent domainEvent, CancellationToken cancellationToken = default);

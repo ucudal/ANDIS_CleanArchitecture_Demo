@@ -21,7 +21,7 @@ namespace TaskManagement.Infrastructure.EventDispatching;
 /// los casos de uso</li>
 /// </ul>
 ///
-/// Los manejadores implementan IDomainEventHandler y se registran en Program.cs.
+/// Los manejadores implementan IDomainEventSubscriber y se registran en Program.cs.
 /// </remarks>
 public sealed class InProcessDomainEventDispatcher : IDomainEventDispatcher
 {
@@ -41,8 +41,8 @@ public sealed class InProcessDomainEventDispatcher : IDomainEventDispatcher
         foreach (var domainEvent in events)
         {
             // El tipo concreto del evento se conoce recién en tiempo de ejecución.
-            var handlerType = typeof(IDomainEventHandler<>).MakeGenericType(domainEvent.GetType());
-            var handleMethod = handlerType.GetMethod(nameof(IDomainEventHandler<DomainEvent>.HandleAsync))!;
+            var handlerType = typeof(IDomainEventSubscriber<>).MakeGenericType(domainEvent.GetType());
+            var handleMethod = handlerType.GetMethod(nameof(IDomainEventSubscriber<DomainEvent>.HandleAsync))!;
 
             foreach (var handler in _serviceProvider.GetServices(handlerType))
             {

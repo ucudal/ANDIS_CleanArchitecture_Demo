@@ -6,6 +6,12 @@ namespace TaskManagement.Application.UnitTests;
 [TestFixture]
 public class ValidatingCreateTaskInteractorTests
 {
+    private static readonly string[] ExpectedErrors = [
+        "Title is required.",
+        "Due date cannot be in the past.",
+        "CreatedBy is required."
+    ];
+
     private SpyCreateTaskInputBoundary _next = null!;
     private FakeCreateTaskPresenter _presenter = null!;
     private ValidatingCreateTaskInteractor _decorator = null!;
@@ -35,11 +41,7 @@ public class ValidatingCreateTaskInteractorTests
             new CreateTaskInput(" ", "Description", TaskPriorityLevel.Low, DateTime.UtcNow.AddDays(-2), Guid.Empty));
 
         Assert.That(_next.WasCalled, Is.False);
-        Assert.That(_presenter.Errors, Is.EquivalentTo(new[] {
-            "Title is required.",
-            "Due date cannot be in the past.",
-            "CreatedBy is required."
-        }));
+        Assert.That(_presenter.Errors, Is.EquivalentTo(ExpectedErrors));
     }
 
     [Test]
