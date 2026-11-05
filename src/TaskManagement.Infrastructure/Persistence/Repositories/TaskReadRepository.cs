@@ -1,7 +1,6 @@
 // TaskManagement.Infrastructure/Persistence/Repositories/TaskReadRepository.cs
+using System.Data.Common;
 using Dapper;
-using Microsoft.Data.Sqlite;
-using Microsoft.Extensions.Configuration;
 using TaskManagement.Application.Common;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Application.Queries;
@@ -58,12 +57,15 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 #pragma warning restore CS1570 // XML comment has badly formed XML
 public sealed class TaskReadRepository : ITaskReadRepository
 {
-    private readonly string _connectionString;
+    private readonly Func<DbConnection> _createConnection;
 
-    public TaskReadRepository(IConfiguration configuration)
+    /// <param name="createConnection">
+    /// Crea las conexiones. Se recibe desde Program.cs para que esta clase no conozca el
+    /// proveedor de base de datos.
+    /// </param>
+    public TaskReadRepository(Func<DbConnection> createConnection)
     {
-        _connectionString = configuration.GetConnectionString("DefaultConnection")
-            ?? throw new InvalidOperationException("DefaultConnection is not configured.");
+        _createConnection = createConnection;
     }
 
     public async Task<TaskDto?> GetByIdAsync(
@@ -84,7 +86,7 @@ public sealed class TaskReadRepository : ITaskReadRepository
             FROM Tasks t
             WHERE t.Id = @Id";
 
-        using var connection = CreateConnection();
+        using var connection = _createConnection();
         var command = new CommandDefinition(
             sql,
             new {
@@ -114,7 +116,7 @@ public sealed class TaskReadRepository : ITaskReadRepository
         var parameters = new DynamicParameters(request);
         parameters.Add("Offset", (request.Page - 1) * request.PageSize);
 
-        using var connection = CreateConnection();
+        using var connection = _createConnection();
         var command = new CommandDefinition(
             $"{pagedSql}; {countSql} {whereClause}",
             parameters,
@@ -125,8 +127,6 @@ public sealed class TaskReadRepository : ITaskReadRepository
         var totalCount = await multi.ReadSingleAsync<int>().ConfigureAwait(false);
         return new PagedResult<TaskDto>(items, totalCount, request.Page, request.PageSize);
     }
-
-    private SqliteConnection CreateConnection() => new(_connectionString);
 
     private static string BuildWhereClause(TaskSearchRequest request)
     {

@@ -37,6 +37,7 @@
 // - Autenticación, Autorización: Middleware relacionado con seguridad
 // - MapControllers: Enruta solicitudes a controladores
 
+using System.Data.Common;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using FluentValidation;
@@ -113,6 +114,7 @@ builder.Services
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")))
     .AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<TaskDbContext>())
     .AddScoped<ITaskRepository, TaskRepository>()
+    .AddSingleton<Func<DbConnection>>(_ => () => new SqliteConnection(connectionString))
     .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>()
     .AddScoped<IEmailService, LoggingEmailService>()

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Domain.Interfaces;
+using TaskManagement.Infrastructure.Persistence.Records;
 
 namespace TaskManagement.Infrastructure.Persistence.Repositories;
 
@@ -35,8 +36,8 @@ namespace TaskManagement.Infrastructure.Persistence.Repositories;
 /// Detalles de Implementación:
 /// <ul>
 /// <li>Utiliza Entity Framework Core para acceso a base de datos</li>
-/// <li>Usa <c>AsNoTracking</c> para consultas de sólo lectura -GetByIdAsync, GetByAssigneeAsync, GetOverdueAsync-</li>
-/// <li>Seguimiento habilitado para operaciones de escritura -AddAsync, Update, Delete-</li>
+/// <li>Convierte entre TaskItem y TaskRecord: los objetos del ORM no salen de esta clase</li>
+/// <li>Usa <c>AsNoTracking</c> al leer; Update adjunta el objeto TaskRecord al contexto para persistir los cambios</li>
 /// <li>Devuelve colecciones inmutables -IReadOnlyList- para prevenir modificaciones de cliente</li>
 /// </ul>
 ///
@@ -61,42 +62,45 @@ public sealed class TaskRepository : ITaskRepository
         Guid id,
         CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Tasks
-            .AsNoTracking() // Read-only query
+        var record = await _dbContext.Tasks
+            .AsNoTracking()
             .FirstOrDefaultAsync(t => t.Id == id, cancellationToken).ConfigureAwait(false);
+        return record?.ToEntity();
     }
     public async Task<IReadOnlyList<TaskItem>> GetByAssigneeAsync(
         Guid userId,
         CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Tasks
+        var records = await _dbContext.Tasks
             .AsNoTracking()
             .Where(t => t.AssignedTo == userId)
             .OrderByDescending(t => t.Priority)
             .ThenBy(t => t.DueDate)
             .ToListAsync(cancellationToken).ConfigureAwait(false);
+        return records.ConvertAll(record => record.ToEntity());
     }
     public async Task<IReadOnlyList<TaskItem>> GetOverdueAsync(
         CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Tasks
+        var records = await _dbContext.Tasks
             .AsNoTracking()
             .Where(t => t.DueDate < DateTime.UtcNow
                 && t.Status != TaskManagement.Domain.Entities.TaskStatus.Completed)
             .ToListAsync(cancellationToken).ConfigureAwait(false);
+        return records.ConvertAll(record => record.ToEntity());
     }
     public async Task AddAsync(
         TaskItem task,
         CancellationToken cancellationToken = default)
     {
-        await _dbContext.Tasks.AddAsync(task, cancellationToken).ConfigureAwait(false);
+        await _dbContext.Tasks.AddAsync(TaskRecord.FromEntity(task), cancellationToken).ConfigureAwait(false);
     }
     public void Update(TaskItem task)
     {
-        _dbContext.Tasks.Update(task);
+        _dbContext.Tasks.Update(TaskRecord.FromEntity(task));
     }
     public void Delete(TaskItem task)
     {
-        _dbContext.Tasks.Remove(task);
+        _dbContext.Tasks.Remove(TaskRecord.FromEntity(task));
     }
 }

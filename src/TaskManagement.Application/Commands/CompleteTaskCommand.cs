@@ -111,7 +111,6 @@ public sealed class CompleteTaskCommandHandler : IRequestHandler<CompleteTaskCom
         if (result.IsFailure)
             return result;
 
-        // La tarea fue cargada con AsNoTracking; adjuntarla para que los cambios de estado se persistan.
         _taskRepository.Update(task);
         await _unitOfWork.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         await _eventDispatcher.DispatchAsync(task.DomainEvents, cancellationToken).ConfigureAwait(false);

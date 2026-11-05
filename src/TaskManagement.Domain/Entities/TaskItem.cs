@@ -90,8 +90,7 @@ public class TaskItem
 
     public IReadOnlyCollection<DomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
-    // Constructor protegido de EF Core
-    protected TaskItem()
+    private TaskItem()
     {
     }
 
@@ -120,6 +119,37 @@ public class TaskItem
         task.AddDomainEvent(new TaskCreatedEvent(task.Id, task.Title, createdBy));
         return Result.Success(task);
     }
+
+    /// <summary>
+    /// Reconstruye una tarea existente a partir de su estado guardado, sin aplicar validaciones
+    /// ni emitir eventos: esos datos ya fueron validados cuando se crearon.
+    /// </summary>
+    public static TaskItem Restore(
+        Guid id,
+        string title,
+        string description,
+        TaskStatus status,
+        TaskPriority priority,
+        DateTime? dueDate,
+        DateTime createdAt,
+        DateTime? completedAt,
+        Guid createdBy,
+        Guid? assignedTo)
+    {
+        return new TaskItem {
+            Id = id,
+            Title = title,
+            Description = description,
+            Status = status,
+            Priority = priority,
+            DueDate = dueDate,
+            CreatedAt = createdAt,
+            CompletedAt = completedAt,
+            CreatedBy = createdBy,
+            AssignedTo = assignedTo
+        };
+    }
+
     public Result AssignTo(Guid userId)
     {
         if (Status == TaskStatus.Completed)

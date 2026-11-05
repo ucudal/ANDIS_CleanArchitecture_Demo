@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Application.Interfaces;
-using TaskManagement.Domain.Entities;
 using TaskManagement.Infrastructure.Persistence.Configurations;
+using TaskManagement.Infrastructure.Persistence.Records;
 
 namespace TaskManagement.Infrastructure.Persistence;
 
@@ -15,7 +15,7 @@ namespace TaskManagement.Infrastructure.Persistence;
 /// <li>Parte de la capa de Infraestructura</li>
 /// <li>Implementa interfaz IUnitOfWork -definida en Núcleo de Aplicación-</li>
 /// <li>Abstracción de acceso a datos: Encapsula lógica de acceso a base de datos</li>
-/// <li>Mapea entidades del dominio al esquema de base de datos a través de OnModelCreating</li>
+/// <li>Mapea objetos del ORM -TaskRecord- al esquema de base de datos a través de OnModelCreating</li>
 /// </ul>
 ///
 /// Responsabilidad Dual:
@@ -42,7 +42,7 @@ namespace TaskManagement.Infrastructure.Persistence;
 ///
 /// Entidades Clave:
 /// <ul>
-/// <li>Tasks: DbSet< TEntity > para entidades TaskItem</li>
+/// <li>Tasks: DbSet< TEntity > para objetos TaskRecord</li>
 /// </ul>
 ///
 /// Configuración:
@@ -55,7 +55,7 @@ namespace TaskManagement.Infrastructure.Persistence;
 #pragma warning restore CS1570 // XML comment has badly formed XML
 public sealed class TaskDbContext : DbContext, IUnitOfWork
 {
-    public DbSet<TaskItem> Tasks => Set<TaskItem>();
+    public DbSet<TaskRecord> Tasks => Set<TaskRecord>();
 
     public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options) { }
 

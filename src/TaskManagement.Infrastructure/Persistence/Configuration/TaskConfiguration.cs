@@ -1,18 +1,18 @@
 // TaskManagement.Infrastructure/Persistence/Configurations/TaskConfiguration.cs
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TaskManagement.Domain.Entities;
+using TaskManagement.Infrastructure.Persistence.Records;
 
 namespace TaskManagement.Infrastructure.Persistence.Configurations;
 
 /// <summary>
-/// <c>TaskConfiguration</c> es la configuración de Entity Framework Core para entidad TaskItem.
+/// <c>TaskConfiguration</c> es la configuración de Entity Framework Core para el objeto del ORM TaskRecord.
 /// </summary>
 /// <remarks>
 /// Rol en Clean Architecture:
 /// <ul>
 /// <li>Parte de la capa de Infraestructura</li>
-/// <li>Traduce entidad del dominio al esquema de base de datos</li>
+/// <li>Traduce TaskRecord al esquema de base de datos</li>
 /// <li>Encapsula todos los detalles de mapeo de Entity Framework</li>
 /// <li>Aplicada por TaskDbContext durante creación de modelo</li>
 /// </ul>
@@ -52,9 +52,9 @@ namespace TaskManagement.Infrastructure.Persistence.Configurations;
 /// <li><c>ToTable</c>: Establecer nombre de tabla si difiere de nombre de clase</li>
 /// </ul>
 /// </remarks>
-public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
+public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskRecord>
 {
-    public void Configure(EntityTypeBuilder<TaskItem> builder)
+    public void Configure(EntityTypeBuilder<TaskRecord> builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
 
@@ -72,9 +72,6 @@ public sealed class TaskConfiguration : IEntityTypeConfiguration<TaskItem>
         builder.Property(t => t.Priority)
             .HasConversion<string>()
             .HasMaxLength(50);
-
-        // Los eventos del dominio están solo en memoria y no deben ser persistidos por EF.
-        builder.Ignore(t => t.DomainEvents);
 
         builder.HasIndex(t => t.AssignedTo);
         builder.HasIndex(t => t.Status);
