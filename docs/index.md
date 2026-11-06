@@ -365,7 +365,7 @@ La capa de aplicación está definida
 | **DTO** | `Commands/CreateTaskInput.cs`, `Commands/CreateTaskOutput.cs`, `Queries/TaskDto.cs`, etc. | Objetos de transferencia de datos para entrada/salida |
 | **Puertos** | `Ports/IUnitOfWork.cs`, `Ports/ITaskRepository.cs`, `Ports/ITaskReadRepository.cs`, `Ports/IEmailService.cs`, `Ports/IDomainEventDispatcher.cs` | Abstracciones para servicios de infraestructura y despacho de eventos |
 | **Manejadores de eventos** | `Events/IDomainEventSubscriber.cs`, `Events/TaskCompletedNotificationHandler.cs` | Reacciones de la aplicación a los eventos del dominio |
-| **Compartido** | `Shared/PagedResult.cs`, `Shared/TaskPriorityLevel.cs` | DTOs y tipos comunes |
+| **Compartido** | `Shared/PagedResult.cs`, `Shared/TaskPriorityLevel.cs` | DTO y tipos comunes |
 
 **Principio clave:** La capa de aplicación implementa casos de uso de negocio
 pero **delega la lógica de negocio a la capa del dominio**. Básicamente es un
@@ -501,7 +501,7 @@ En esta demo la interfaz es una API web. La capa de interfaz está definida
 | **Presenters** | `Presenters/CreateTaskPresenter.cs`, `Presenters/CompleteTaskPresenter.cs`, `Presenters/GetTaskByIdPresenter.cs` | Convierten el resultado de un caso de uso en una respuesta HTTP |
 | **View models** | `ViewModels/TaskViewModel.cs` | Datos tal como se muestran en la respuesta HTTP |
 | **Middleware** | `Middleware/ExceptionHandlingMiddleware.cs` | Respuesta para fallas inesperadas |
-| **Solicitudes** | `Requests/CreateTaskRequest.cs` | DTOs de entrada para solicitudes HTTP |
+| **Solicitudes** | `Requests/CreateTaskRequest.cs` | DTO de entrada para solicitudes HTTP |
 | **Inicio** | `Program.cs` | Raíz de composición de inyección de dependencias |
 
 **Principio clave:** La capa de UI traduce HTTP a los DTO de entrada de los casos
@@ -574,17 +574,30 @@ inyección de dependencias.
 ```csharp
 // Registra los adaptadores de la capa de infraestructura para los puertos de salida
 builder.Services
-    .AddDbContext<TaskDbContext>(options => options.UseSqlite(…))
+    .AddDbContext<TaskDbContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionStr("DefaultConnection")))
     .AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<TaskDbContext>())
     .AddScoped<ITaskRepository, TaskRepository>()
+    .AddSingleton<Func<DbConnection>>(_ => () => new SqliteConnectiondtos(connectionString))
+    .AddScoped<ITaskReadRepository, TaskReadRepository>()
     .AddScoped<IDomainEventDispatcher, InProcessDomainEventDispatcher>()
-    .AddScoped<IEmailService, LoggingEmailService>();
+    .AddScoped<IDomainEventSubscriber<TaskCompletedEvent>, TaskCompletedNotificationHandler>()
+    .AddScoped<IEmailService, LoggingEmailService>()
 
 // Registra el presenter y el caso de uso
 builder.Services
+    // Crear tarea
     .AddScoped<CreateTaskPresenter>()
     .AddScoped<ICreateTaskOutputBoundary>(sp => sp.GetRequiredService<CreateTaskPresenter>())
-    .AddScoped<ICreateTaskInputBoundary, CreateTaskInteractor>();
+    .AddScoped<ICreateTaskInputBoundary, CreateTaskInteractor>()
+    // Completar tarea
+    .AddScoped<CompleteTaskPresenter>()
+    .AddScoped<ICompleteTaskOutputBoundary>(sp => sp.GetRequiredService<CompleteTaskPresenter>())
+    .AddScoped<ICompleteTaskInputBoundary, CompleteTaskInteractor>()
+    // Consultar tarea
+    .AddScoped<GetTaskByIdPresenter>()
+    .AddScoped<IGetTaskByIdOutputBoundary>(sp => sp.GetRequiredService<GetTaskByIdPresenter>())
+    .AddScoped<IGetTaskByIdInputBoundary, GetTaskByIdInteractor>()
 ```
 
 <!-- markdownlint-disable-next-line MD025 -->
