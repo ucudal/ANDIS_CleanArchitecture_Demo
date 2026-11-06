@@ -136,7 +136,7 @@ independientes, donde cada proyecto corresponde a un círculo:
   [ITaskRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskRepository.html),
   [ITaskReadRepository](./interfaceTaskManagement_1_1Application_1_1Ports_1_1ITaskReadRepository.html)
   o
-  [IUnitOfWork](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IUnitOfWork.html)-[^3].
+  [IUnitOfWork](./interfaceTaskManagement_1_1Application_1_1Ports_1_1IUnitOfWork.html)-<sup><a href="#nota-interfaces">1</a></sup>.
   Cada caso de uso tiene además un puerto de entrada, que usa el controlador, y un
   puerto de salida, que implementa un presenter en la capa de interfaz API -ver
   por ejemplo las interfaces
@@ -216,11 +216,11 @@ independientes, donde cada proyecto corresponde a un círculo:
   El archivo [`TaskManagement.http`](../TaskManagement.http) tiene ejemplos para
   invocar la API REST.
 
-[^3]: Algunos autores definen las abstracciones relacionadas con el dominio en
-    la capa del dominio, aunque no sean utilizadas en esa capa. Siguiendo esos
-    autores, interfaces como `ITaskRepository` se definirían en la capa de
-    dominio. En esta demo, interfaces como esa son definidas en la capa de
-    aplicación, porque es allí donde se usan.
+<a id="nota-interfaces"></a><sup>1</sup> Algunos autores definen las
+abstracciones relacionadas con el dominio en la capa del dominio, aunque no sean
+utilizadas en esa capa. Siguiendo esos autores, interfaces como `ITaskRepository`
+se definirían en la capa de dominio. En esta demo, interfaces como esa son
+definidas en la capa de aplicación, porque es allí donde se usan.
 
 <!-- markdownlint-disable-next-line MD025 -->
 # Conceptos de Clean Architecture en esta demo
@@ -289,7 +289,7 @@ La capa del dominio está definida
 | **Entidades** | `Entities/TaskItem.cs`, `Entities/TaskStatus.cs`, `Entities/TaskPriority.cs` | Clases de modelo de negocio representando conceptos del dominio |
 | **Objetos valor** | `ValueObjects/Email.cs`, `Common/ValueObject.cs` | Objetos inmutables representando valores del dominio |
 | **Eventos del dominio** | `Events/DomainEvent.cs` | Eventos representando ocurrencias importantes del dominio |
-| **Interfaces** | Ver nota [^3] | Ver nota [^3] |
+| **Interfaces** | Ver nota <a href="#nota-interfaces">1</a> | Ver nota <a href="#nota-interfaces">1</a> |
 | **Tipos compartidos** | `Common/Result.cs`, `Common/TaskErrors.cs` | Tipos comunes compartidos internamente en el dominio |
 
 **Principio clave:** La capa del dominio **nunca depende** de las capas de
